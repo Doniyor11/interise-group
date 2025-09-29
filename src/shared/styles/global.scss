@@ -1,11 +1,12 @@
 //@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&family=Taviraj:wght@300;400;500;600;700;800;900&display=swap");
 @import "./font-mixins";
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Onest", sans-serif;
 }
 
 ul,
@@ -64,7 +65,7 @@ a {
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 64px;
+  //padding: 0 64px;
   @media screen and (max-width: 576px) {
     padding: 0 16px;
   }

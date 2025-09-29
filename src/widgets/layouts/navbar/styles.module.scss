@@ -2,14 +2,15 @@
 
 .navbarWrapper {
   width: 100%;
-  height: 80px;
-  padding: 12px 64px;
+  padding: 0.9375rem 1.125rem 0.9375rem 1.0625rem;
+  border-radius: 6px;
+  border: 1px solid #D4E4F7;
+  background: #F2F8FF;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   .logo {
-    @include font-taviraj;
     color: #111827;
     font-size: 30px;
     font-weight: 500;
@@ -20,7 +21,7 @@
   .menu {
     display: flex;
     align-items: center;
-    column-gap: 24px;
+    column-gap: 44px;
 
     .link {
       a {

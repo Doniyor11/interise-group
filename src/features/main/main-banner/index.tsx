@@ -1,5 +1,6 @@
 import { Box, Button, Flex, Text } from "@mantine/core"
 import cx from "clsx"
+import Image from "next/image"
 import { useRouter } from "next/router"
 import React, { useEffect, useState } from "react"
 
@@ -53,7 +54,7 @@ export const MainBanner = () => {
             </Flex>
           </Box>
           <Box className={s.sectionRight}>
-            <img
+            <Image
               src={VideoBanner.src || VideoBanner}
               alt="InteriseGroup Banner"
               className={s.bannerVideo}

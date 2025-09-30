@@ -14,6 +14,7 @@ import cx from "clsx"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { useState } from "react"
+import React from "react"
 
 import { MenuData } from "@/widgets/layouts/navbar/libs.ts"
 
@@ -29,6 +30,7 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [childMenu, setChildMenu] = useState<string>("")
   const matches = useMediaQuery("(max-width: 576px)")
+
   return (
     <>
       <div className={cx(s.navbarWrapper, "container")}>
@@ -149,7 +151,6 @@ export const Navbar = () => {
               ) : (
                 <>
                   <Text
-                    key={index}
                     onClick={() =>
                       setChildMenu(childMenu === item.path ? "" : item.path)
                     }

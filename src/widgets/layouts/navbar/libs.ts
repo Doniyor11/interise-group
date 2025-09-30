@@ -22,7 +22,12 @@ export const MenuData = [
   {
     text: "Контакты",
     path: "/",
-    children: [],
+    children: [
+      {
+        text: "Связаться с нами",
+        path: "",
+      },
+    ],
   },
   // {
   //   text: "Xizmatlar",

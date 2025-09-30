@@ -58,6 +58,8 @@ export const MainBanner = () => {
               src={VideoBanner.src || VideoBanner}
               alt="InteriseGroup Banner"
               className={s.bannerVideo}
+              width={504}
+              height={300}
             />
             <Flex bg={"#FFF"} p={"23px"} className={s.stats}>
               <Flex direction={"column"} align={"center"} className={s.item}>

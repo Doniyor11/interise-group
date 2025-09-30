@@ -18,7 +18,7 @@ const HomePage = () => {
         {/*<MainMarkets />*/}
         {/*<MainRecipes />*/}
       </main>
-      <Contacts />
+      {/*<Contacts />*/}
     </>
   )
 }

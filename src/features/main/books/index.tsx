@@ -3,8 +3,6 @@ import { Flex, Text } from "@mantine/core"
 import Image from "next/image"
 import React from "react"
 
-import ImageBook2 from "@/shared/assets/images/book-image-2.png"
-import ImageBook3 from "@/shared/assets/images/book-image-3.png"
 import ImageBook from "@/shared/assets/images/book-image.png"
 import ImageRight from "@/shared/assets/images/icons/icon-right.svg"
 

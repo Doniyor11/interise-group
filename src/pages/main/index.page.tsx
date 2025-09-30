@@ -1,7 +1,5 @@
 import Head from "next/head"
 
-import { Contacts } from "@/widgets"
-
 import { Books, ConsultingService, MainBanner } from "@/features/main"
 
 const HomePage = () => {

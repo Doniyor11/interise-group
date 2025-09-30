@@ -1,6 +1,6 @@
 //@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&family=Taviraj:wght@300;400;500;600;700;800;900&display=swap");
 @import "./font-mixins";
-@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap");
 
 * {
   margin: 0;
@@ -53,15 +53,15 @@ a {
 }
 
 .section-subtitle {
-  color: #2C333C;
+  color: #2c333c;
   font-size: 32px;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
   letter-spacing: -0.64px;
 
-  span{
-    color: #0076FE;
+  span {
+    color: #0076fe;
   }
 
   @media screen and (max-width: 576px) {
@@ -83,9 +83,9 @@ a {
   height: auto;
   padding: 12px 7px;
   border-radius: 8px;
-  border: 1px solid #1C6BF9;
+  border: 1px solid #1c6bf9;
   background: #fff;
-  color: #01102B;
+  color: #01102b;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -121,8 +121,8 @@ a {
   padding: 12px 7px;
   border-radius: 8px;
   border: 1px solid #111827;
-  background: rgba(255, 255, 255, 0.20);
-  color: #FFF;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;

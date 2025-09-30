@@ -79,18 +79,6 @@ export const Books = () => {
             <Image className={s.image} src={ImageBook} alt={"ImageBook"} />
           </div>
         </Carousel.Slide>
-        <Carousel.Slide>
-          <div className={s.card}>
-            <Image className={s.image} src={ImageBook2} alt={"ImageBook"} />
-            <Text>Kitob 2</Text>
-          </div>
-        </Carousel.Slide>
-        <Carousel.Slide>
-          <div className={s.card}>
-            <Image className={s.image} src={ImageBook3} alt={"ImageBook"} />
-            <Text>Kitob 3</Text>
-          </div>
-        </Carousel.Slide>
       </Carousel>
     </div>
   )

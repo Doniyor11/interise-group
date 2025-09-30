@@ -1,101 +1,110 @@
-import { Box, Button, Text } from "@mantine/core"
+import { Box, Button, Flex, Text } from "@mantine/core"
 import Image from "next/image"
-import { useRouter } from "next/router"
 import React from "react"
 
-import ImageOne from "@/shared/assets/images/consulting-image.png"
-import IconClock from "@/shared/assets/images/icons/icon-clock.svg"
-import IconGps from "@/shared/assets/images/icons/icon-gps.svg"
-import IconLike from "@/shared/assets/images/icons/icon-like.svg"
-import IconRight from "@/shared/assets/images/icons/icon-right.svg"
-import IconUnlimited from "@/shared/assets/images/icons/icon-unlimited.svg"
-import ImageTwo from "@/shared/assets/images/restaurants-image-2.png"
+import aboutImage from "@/shared/assets/images/interise-group/about-img.png"
+import ourStep from "@/shared/assets/images/interise-group/our-step.png"
 
 import s from "./styles.module.scss"
 
 export const ConsultingService = () => {
-  const router = useRouter()
   return (
     <>
       <div className={s.sectionWrapper}>
         <Box className={s.sectionLeft}>
-          <Text className={"section-title sm"}>Konsalting xizmati</Text>
-          <Text className={"section-subtitle"}>
-            Ko‘p yillik tajribaga ega resterator Bahriddin Chustiy tomonidan
-            ochilgan consulting xizmat — restoran va umumiy ovqatlanish sohasida
-            biznes yaratish, rivojlantirish hamda boshqarishda professional va
-            samarali yechimlar taqdim etadi.
-          </Text>
-          <div className={s.cards}>
-            <div className={s.card}>
-              <IconUnlimited />
-              <Text className={s.cardTitle}>Cheksiz imkoniyatlar</Text>
-              <Text className={s.cardSubtitle}>
-                Har bir mijoz uchun moslashtirilgan, chegarasiz yechimlar va
-                strategiyalar
-              </Text>
-            </div>
-            <div className={s.card}>
-              <IconClock />
-              <Text className={s.cardTitle}>Uzoq yillik tajribalar</Text>
-              <Text className={s.cardSubtitle}>
-                Restoran sohasida to‘plangan boy tajribalar va mukammal
-                boshqaruv ko‘nikmalari.
-              </Text>
-            </div>
-            <div className={s.card}>
-              <IconGps />
-              <Text className={s.cardTitle}>Aniq maqsad</Text>
-              <Text className={s.cardSubtitle}>
-                Rivojlanish strategiyasini to‘g‘ri belgilash va unga erishishda
-                yo‘l-yo‘riq berish.
-              </Text>
-            </div>
-            <div className={s.card}>
-              <IconLike />
-              <Text className={s.cardTitle}>Natija kafolati</Text>
-              <Text className={s.cardSubtitle}>
-                Sifatli maslahat va amaliy yordam orqali barqaror natija.
-              </Text>
-            </div>
-          </div>
-        </Box>
-        <Image
-          src={ImageOne}
-          alt={"image-one"}
-          width={555}
-          height={555}
-          className={s.image}
-        />
-      </div>
+          <Flex direction={"column"} h={"100%"}>
+            <Text className={"section-title"} mb={"10px"}>
+              О нас
+            </Text>
+            <Text className={"section-subtitle"} mb={"24px"}>
+              <span>Мы разрабатываем и внедряем стратегии и решения,</span>{" "}
+              <br />
+              которые помогают корпоративным клиентам менять рынки, превращать
+              идеи в масштабные изменения и обеспечивать устойчивый рост
+              бизнеса.
+            </Text>
+            <Text className={s.decription}>
+              Экспертиза InteriseGroup охватывает широкий спектр отраслей — от
+              банков и финтеха до телекоммуникаций, медицины, недвижимости,
+              логистики, ритейла и других ключевых сегментов.
+            </Text>
+          </Flex>
 
-      <div className={s.sectionWrapper}>
-        <Image
-          src={ImageTwo}
-          alt={"image-one"}
-          width={555}
-          height={555}
-          className={s.image}
-        />
-        <Box className={s.sectionLeft}>
-          <Text className={"section-title sm"}>Restoranlar</Text>
-          <Text className={"section-subtitle"}>
-            <b>Bahriddin Chustiy</b> o‘zining oshpazlik faoliyati davomida
-            mehmonlarga nafaqat mazali taomlar, balki unutilmas taassurotlar
-            taqdim etuvchi restoranlar tarmog‘ini yaratdi.{" "}
-            <b>Oshxona.uz, Chustiy Cuisines, Tez Food, Sal-Sal</b> va{" "}
-            <b>Aksu</b> restoranlari shaharning turli nuqtalarida mehmonlarni
-            doimo ochiq qo‘llar bilan kutib oladi.
-          </Text>
           <Button
-            className={"btn-outline"}
-            rightSection={<IconRight />}
-            onClick={() => router.push("/contacts")}
+            bg={"#0076FE"}
+            color={"#FFF"}
+            radius={8}
+            h={"44px"}
+            fz={"16px"}
+            fw={400}
+            lh={"100%"}
+            mt={"78px"}
           >
-            Batafsil
+            Заказать стратегию
           </Button>
         </Box>
+        <Image
+          src={aboutImage}
+          alt={"image-one"}
+          width={411}
+          height={384}
+          className={s.image}
+        />
       </div>
+      <Box mt={"80px"} className={s.ourWrapper}>
+        <Text className={s.ourTitle} mb={"12px"}>
+          Наши принципы
+        </Text>
+        <Text className={"section-subtitle"} c={"#fff"} mb={"24px"}>
+          Мы убеждены – время <span>простого консалтинга</span> прошло.
+        </Text>
+        <Text
+          c={"#92A4B7"}
+          lh={"120%"}
+          lts={"-0.32px"}
+          fz={"16px"}
+          fw={40}
+          maw={"801px"}
+          mb={"32px"}
+        >
+          InteriseGroup работает по модели партнерства: вместе с клиентами
+          анализируем ситуацию, проверяем гипотезы, усиливаем работающие решения
+          и масштабируем результат. Работа в диалоге и прозрачность процесса
+          ускоряет решения и превращает стратегию в реальный, измеримый
+          результат.
+        </Text>
+        <Image
+          src={ourStep}
+          alt={"image-one"}
+          width={990}
+          height={192}
+          className={s.imageOur}
+        />
+        <Text
+          c={"#92A4B7"}
+          lh={"120%"}
+          lts={"-0.32px"}
+          fz={"16px"}
+          fw={40}
+          maw={"680px"}
+          mb={"40px"}
+        >
+          Разделяете эти принципы и ищете партнеров, работающих на результат? Мы
+          будем рады обсудить ваш проект.
+        </Text>
+        <Button
+          bg={"#0076FE"}
+          color={"#FFF"}
+          radius={8}
+          h={"44px"}
+          w={"233px"}
+          fz={"16px"}
+          fw={400}
+          lh={"100%"}
+        >
+          Обсудить проект
+        </Button>
+      </Box>
     </>
   )
 }

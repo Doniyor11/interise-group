@@ -1,7 +1,6 @@
 @import "src/shared/styles/font-mixins";
 
 .navbarWrapper {
-  width: 100%;
   padding: 0.9375rem 1.125rem 0.9375rem 1.0625rem;
   border-radius: 6px;
   border: 1px solid #D4E4F7;
@@ -9,6 +8,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  top: 2%;
+  width: 100vw;
+  z-index: 1000;
+  left: 50%;
+  transform: translateX(-50%);
 
   .logo {
     color: #111827;
@@ -99,10 +104,12 @@
 }
 
 .menuItem {
-  color: #111827;
+  color: #000;
   font-size: 16px;
+  font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  line-height: 150%;
+  letter-spacing: -0.48px;
   display: flex;
   align-items: center;
 
@@ -110,6 +117,7 @@
     font-weight: 600;
   }
 }
+
 
 .mobileDrawer {
   padding: 16px;

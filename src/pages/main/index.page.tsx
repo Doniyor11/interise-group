@@ -2,28 +2,21 @@ import Head from "next/head"
 
 import { Contacts } from "@/widgets"
 
-import {
-  Books,
-  ConsultingService,
-  MainBanner,
-  MainGallery,
-  MainMarkets,
-  MainRecipes,
-} from "@/features/main"
+import { Books, ConsultingService, MainBanner } from "@/features/main"
 
 const HomePage = () => {
   return (
     <>
       <Head>
-        <title>chustiy.uz - Asosiy </title>
+        <title>Inrerise Group</title>
       </Head>
+      <MainBanner />
       <main className={"container"}>
-        <MainBanner />
         <ConsultingService />
         <Books />
-        <MainGallery />
-        <MainMarkets />
-        <MainRecipes />
+        {/*<MainGallery />*/}
+        {/*<MainMarkets />*/}
+        {/*<MainRecipes />*/}
       </main>
       <Contacts />
     </>

@@ -3,29 +3,110 @@
   display: flex;
   align-items: center;
   gap: 28px;
-  margin-top: 40px;
+  padding: 142px 0 125px 0;
+  background-image: url("../../../shared/assets/images/interise-group/hero-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0 0 64px 64px;
+}
 
-  :global(.section-subtitle) {
-    margin: 12px 0 32px;
-  }
+.bannerWrapper {
+  display: flex;
+  width: 1440px;
+}
 
-  .image {
-    width: 100%;
-    height: 100%;
-    max-width: 555px;
-    max-height: 555px;
-    object-fit: contain;
+.sectionLeft, .sectionRight {
+  width: 50%;
+}
+
+.sectionLeft {
+  display: flex;
+  flex-direction: column;
+  padding-top: 65px;
+}
+
+.sectionRight {
+  display: flex;
+  flex-direction: column;
+  gap: 39px;
+  align-items: flex-start;
+}
+
+.bannerTitle {
+  color: #FFF;
+  font-size: 62px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 115%;
+  letter-spacing: -2.48px;
+  margin-bottom: 32px;
+
+  span {
+    color: #107EFD;
   }
 }
 
-@media screen and (max-width: 576px) {
-  .sectionWrapper {
-    gap: 16px;
-    flex-direction: column;
-    margin-top: 32px;
+.bannerDescription {
+  color: #8FB0E1;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.4px;
+  margin-bottom: 83px;
+}
 
-    &:nth-child(1) {
-      flex-direction: column-reverse;
-    }
+.buttonBanner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 44px;
+  padding: 6px 7px 6px 24px;
+}
+
+.buttonBannerIcon {
+  border-radius: 6.4px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bannerVideo {
+  width: 504px;
+  height: 300px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.stats {
+  border-radius: 12px;
+  width: 558px;
+}
+
+.item {
+  flex: 1;
+
+  &:not(:last-child) {
+    border-right: 1px solid #BBB;
   }
+}
+
+.number {
+  color: #0076FE;
+  font-size: 46px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 121.2%;
+}
+
+.info {
+  color: #000;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.32px;
 }

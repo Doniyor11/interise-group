@@ -1,49 +1,106 @@
-import { Button, Text } from "@mantine/core"
-import cx from "clsx"
+import { Badge, Box, Button, Flex, Text } from "@mantine/core"
 import Image from "next/image"
-import { useRouter } from "next/router"
 import React from "react"
 
-import IconRight from "@/shared/assets/images/icons/icon-right.svg"
-import ImageFour from "@/shared/assets/images/image-four.jpg"
-import ImageOne from "@/shared/assets/images/image-one.jpg"
-import ImageThree from "@/shared/assets/images/image-three.jpg"
-import ImageTwo from "@/shared/assets/images/image-two.jpg"
+import ImageBanner from "@/shared/assets/images/interise-group/club.png"
 
 import s from "./styles.module.scss"
 
+const badgeData = [
+  { id: 1, title: "Деловые бранчи" },
+  { id: 2, title: "Инвест-завтраки" },
+  { id: 3, title: "Лекции" },
+  { id: 4, title: "Демо-дни" },
+  { id: 5, title: "Закрытые форумы" },
+  { id: 6, title: "Винные дегустации" },
+  { id: 7, title: "Круглые столы" },
+  { id: 8, title: "Сигарные вечера" },
+]
+
 export const MainGallery = () => {
-  const router = useRouter()
   return (
     <>
       <div className={s.sectionWrapper}>
-        <Text className={"section-title sm"}>Rasm va videolar</Text>
-        <Text className={"section-subtitle"}>
-          Turli mamlakatlarda tashkil etilgan nufuzli tadbirlar, yirik
-          festivallar hamda xalqaro miqyosdagi loyihalarda amalga oshirgan
-          xizmatlarimizdan olingan eng yorqin lahzalarni siz bilan baham
-          ko‘ramiz. Ushbu surat va video lavhalarda bizning professional
-          jamoamizning mehnati, mahorati hamda iliq muhitni his etishingiz
-          mumkin. Ularni bemalol tomosha qilib, biz yaratgan unutilmas
-          taassurotlar bilan tanishishingiz mumkin.
-        </Text>
-
-        <div className={s.cards}>
-          <div className={s.topRectangle} />
-          <Image className={s.image} src={ImageOne} alt={"ImageOne"} />
-          <Image className={s.image} src={ImageTwo} alt={"ImageTwo"} />
-          <Image className={s.image} src={ImageThree} alt={"ImageThree"} />
-          <Image className={s.image} src={ImageFour} alt={"ImageFour"} />
-          <div className={s.bottomRectangle} />
-        </div>
-        {(router.pathname === "/" || router.pathname === "/main") && (
-          <Button
-            className={cx(s.moreBtn, "btn-outline")}
-            rightSection={<IconRight />}
+        <div className={"container"}>
+          <Flex
+            direction={"column"}
+            justify={"center"}
+            align={"center"}
+            mb={"24px"}
           >
-            Batafsil
-          </Button>
-        )}
+            <Text className={"section-title sm"} c={"#8696A9"}>
+              Interise Club
+            </Text>
+            <Text className={"section-subtitle"} c={"#fff"} ta="center">
+              InteriseClub — <span> площадка для общения</span> <br /> и обмена
+              опытом практиков.
+            </Text>
+          </Flex>
+          <Flex gap={"30px"}>
+            <Box w={"50%"}>
+              <Text
+                fz={"16px"}
+                c={"#798B9E"}
+                lh={"120%"}
+                lts={"-0.32px"}
+                mb={"32px"}
+              >
+                Сообщество небезразличных управленцев, сооснователей, акционеров
+                и топ-менеджеров из разных индустрий и географий, которых
+                объединяет желание работать на результат, обмениваться опытом и
+                вместе создавать реальные бизнес-изменения.
+              </Text>
+              <Text
+                fz={"16px"}
+                c={"#798B9E"}
+                lh={"120%"}
+                lts={"-0.32px"}
+                mb={"10px"}
+              >
+                Типы мероприятий:
+              </Text>
+              <Flex mb={"32px"} wrap={"wrap"} gap={"1px"} w={"475px"}>
+                {badgeData.map((item) => (
+                  <Badge className={s.badge} key={item.id}>
+                    {item.title}
+                  </Badge>
+                ))}
+              </Flex>
+              <Button
+                bg={"#0076FE"}
+                color={"#FFF"}
+                w={"192px"}
+                radius={8}
+                h={"44px"}
+              >
+                Вступить в клуб
+              </Button>
+            </Box>
+            <Box w={"50%"}>
+              <Text
+                fz={"16px"}
+                c={"#798B9E"}
+                lh={"120%"}
+                lts={"-0.32px"}
+                mb={"10px"}
+              >
+                В клуб входят CEO, акционеры, члены советов директоров и другие
+                лидеры, разделяющие ценности партнёрства и практического
+                подхода. Регулярные встречи и мероприятия проходят в разных
+                странах и посвящены самым разным отраслям бизнеса: дискуссионные
+                панели, закрытые сессии и практические воркшопы. На сайте
+                доступна форма для подачи заявки на вступление в клуб и участия
+                в мероприятиях.
+              </Text>
+              <Image
+                src={ImageBanner}
+                alt={"Interise Club"}
+                width={640}
+                height={203}
+              />
+            </Box>
+          </Flex>
+        </div>
       </div>
     </>
   )

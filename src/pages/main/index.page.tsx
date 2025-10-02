@@ -1,6 +1,16 @@
 import Head from "next/head"
 
-import { Books, ConsultingService, MainBanner } from "@/features/main"
+import { Contacts } from "@/widgets"
+
+import {
+  Banner,
+  Books,
+  ConsultingService,
+  MainBanner,
+  MainGallery,
+  MainMarkets,
+  MainRecipes,
+} from "@/features/main"
 
 const HomePage = () => {
   return (
@@ -12,11 +22,16 @@ const HomePage = () => {
       <main className={"container"}>
         <ConsultingService />
         <Books />
-        {/*<MainGallery />*/}
-        {/*<MainMarkets />*/}
-        {/*<MainRecipes />*/}
       </main>
-      {/*<Contacts />*/}
+      <Banner />
+      <main className={"container"}>
+        <MainMarkets />
+      </main>
+      <MainGallery />
+      <main className={"container"}>
+        <MainRecipes />
+      </main>
+      <Contacts />
     </>
   )
 }

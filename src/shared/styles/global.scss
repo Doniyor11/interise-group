@@ -20,7 +20,7 @@ a {
 
 .section-title {
   //@include font-taviraj;
-  color: #566677;
+  color: #8696A9;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -93,8 +93,9 @@ a {
   transition: background 0.2s;
 
   &:hover {
-    color: #111827;
-    background: #ffffff;
+    background: #0076FE;
+    border: 1px solid #fff;
+    color: #fff;
 
     //svg {
     //  path {
@@ -115,6 +116,33 @@ a {
     line-height: 18px;
   }
 }
+
+
+.btn-filled__black {
+  height: 44px;
+  border-radius: 8px;
+  border: 1px solid #0076FE;
+  background: #010C22;
+  color: #F5F5F5;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #0076FE;
+    border: 1px solid #fff;
+    color: #fff;
+
+    //svg {
+    //  path {
+    //    fill: #111827;
+    //  }
+    //}
+  }
+}
+
 
 .btn-outline {
   height: auto;

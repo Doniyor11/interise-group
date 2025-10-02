@@ -1,7 +1,7 @@
 @import "src/shared/styles/font-mixins";
 
 .sectionWrapper {
-  margin-top: 100px;
+  padding: 100px 0 84px 0;
 
   :global(.section-title) {
     height: 48px;
@@ -13,10 +13,15 @@
   .card {
     width: 100%;
     max-width: 480px;
+    height: 100%;
     border-radius: 24px;
     border: 1px solid #d4e4f7;
     background: #f2f8ff;
     padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     .image {
       width: 100%;
@@ -24,10 +29,24 @@
       border-radius: 16px;
       object-fit: cover;
       margin: 15px 0 23px 0;
+      border: 1px solid #D4E4F7;
     }
 
-    p {
-      width: 100%;
+    .cardNumber {
+      color: #BFD8F4;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 120%;
+      letter-spacing: -0.48px;
+      position: absolute;
+      top: 12px;
+      right: 24px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .cardInfo {
       color: #566677;
       font-size: 16px;
       font-style: normal;
@@ -35,28 +54,37 @@
       line-height: 120%;
       letter-spacing: -0.32px;
 
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
+      b {
+        font-weight: 700;
+      }
     }
+
+    //p {
+    //  width: 100%;
+    //  color: #566677;
+    //  font-size: 16px;
+    //  font-style: normal;
+    //  font-weight: 400;
+    //  line-height: 120%;
+    //  letter-spacing: -0.32px;
+    //
+    //  overflow: hidden;
+    //  white-space: nowrap;
+    //  text-overflow: ellipsis;
+    //}
   }
 }
 
 .carouselControls {
   height: 48px;
-  top: -72px;
+  top: 50%;
+  transform: translateY(-50%);
   left: initial;
   right: 0;
-  width: 200px;
+  width: 100%;
 }
 
 .carouselControl {
-  width: 80px;
-  padding: 8px 12px;
-  border-radius: 24px;
-  border: 1px solid #111827;
-  box-shadow: none;
-
   &:nth-child(1) {
     svg {
       transform: rotate(-180deg);
@@ -66,11 +94,5 @@
   &[data-inactive="true"] {
     border: none;
     background: #f2f4f7;
-
-    svg {
-      path {
-        fill: #667085;
-      }
-    }
   }
 }

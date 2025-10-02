@@ -1,7 +1,7 @@
-import { Button, Flex, Input, Textarea } from "@mantine/core"
-import { useMediaQuery } from "@mantine/hooks"
+import { Button, Flex, Input } from "@mantine/core"
 import React from "react"
 import { Controller, useForm } from "react-hook-form"
+import { IMaskInput } from "react-imask"
 
 import { useSendMessageQuery } from "@/features/contact-forms/api/query"
 import { IEmailFormTypes } from "@/features/contact-forms/email-form/types"
@@ -9,8 +9,6 @@ import { IEmailFormTypes } from "@/features/contact-forms/email-form/types"
 import s from "../styles.module.scss"
 
 export const EmailForm = () => {
-  const matches = useMediaQuery("(max-width: 576px)")
-
   const {
     control,
     handleSubmit,
@@ -23,6 +21,7 @@ export const EmailForm = () => {
       fullName: "",
       email: "",
       message: "",
+      phone: "",
     })
   })
 
@@ -37,17 +36,49 @@ export const EmailForm = () => {
 
   return (
     <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
-      <Flex
-        gap={matches ? 16 : 20}
-        mb={16}
-        direction={matches ? "column" : "row"}
-      >
+      <Flex gap={"8px"} wrap={"wrap"}>
+        <Controller
+          name={"email"}
+          control={control}
+          render={({ field }) => (
+            <Input.Wrapper className={s.inputWrapper}>
+              <Input
+                required
+                type={"email"}
+                placeholder={"Ваше имя"}
+                {...field}
+              />
+            </Input.Wrapper>
+          )}
+        />
+
         <Controller
           name={"fullName"}
           control={control}
           render={({ field }) => (
-            <Input.Wrapper label={"Ism"} className={s.inputWrapper}>
-              <Input required placeholder={"Enter your name"} {...field} />
+            <Input.Wrapper className={s.inputWrapper}>
+              <Input required placeholder={"Компания"} {...field} />
+            </Input.Wrapper>
+          )}
+        />
+
+        <Controller
+          name={"phone"}
+          control={control}
+          render={({ field }) => (
+            <Input.Wrapper className={s.inputWrapper}>
+              <Input
+                required
+                inputMode="tel"
+                autoComplete="off"
+                value={field.value}
+                component={IMaskInput}
+                mask="+7 (000) 000 00 00"
+                placeholder={"+7 (000) 000 00 00"}
+                onAccept={(value: any) => {
+                  field.onChange?.(value)
+                }}
+              />
             </Input.Wrapper>
           )}
         />
@@ -56,11 +87,11 @@ export const EmailForm = () => {
           name={"email"}
           control={control}
           render={({ field }) => (
-            <Input.Wrapper label={"Email"} className={s.inputWrapper}>
+            <Input.Wrapper className={s.inputWrapper}>
               <Input
                 required
-                type={"email"}
-                placeholder={"E.g name@email.com"}
+                type={"telegram"}
+                placeholder={"Ваш Telegram"}
                 {...field}
               />
             </Input.Wrapper>
@@ -68,29 +99,15 @@ export const EmailForm = () => {
         />
       </Flex>
 
-      <Controller
-        name={"message"}
-        control={control}
-        render={({ field }) => (
-          <Textarea
-            required
-            label={"Message"}
-            placeholder={"Type your message here"}
-            className={s.textarea}
-            {...field}
-          />
-        )}
-      />
-
       <Flex justify={"flex-end"} mt={32}>
         <Button
-          w={160}
+          fullWidth
           type={"submit"}
-          className={"btn-filled__back"}
+          className={"btn-filled__black"}
           loading={isPending}
           disabled={!isDirty || !isValid}
         >
-          Send
+          Записаться
         </Button>
       </Flex>
     </form>

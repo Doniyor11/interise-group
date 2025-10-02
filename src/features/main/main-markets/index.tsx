@@ -75,7 +75,7 @@ export const MainMarkets = () => {
 
         <Box className={s.sectionLefGrid} mt="40px">
           {boxData.map((data) => (
-            <Box className={cx(s.sectionLeftBox, data.className)}>
+            <Box key={data.id} className={cx(s.sectionLeftBox, data.className)}>
               <Flex gap={"12px"} align={"center"}>
                 <Image src={Icon1} alt={""} width={72} height={72} />
                 <Text

@@ -1,4 +1,5 @@
 import { Box, Flex, Text } from "@mantine/core"
+import cx from "clsx"
 import Image from "next/image"
 import React from "react"
 
@@ -7,6 +8,8 @@ import { EmailForm } from "@/features/contact-forms"
 import Imaga1 from "@/shared/assets/images/interise-group/formbg.png"
 import IconLogo from "@/shared/assets/images/interise-group/logo.svg"
 import IconMap from "@/shared/assets/images/interise-group/map.png"
+import UserImage1 from "@/shared/assets/images/interise-group/partneruser1.png"
+import UserImage2 from "@/shared/assets/images/interise-group/partneruser2.png"
 import IconTg from "@/shared/assets/images/interise-group/tg.svg"
 import IconVk from "@/shared/assets/images/interise-group/vk.svg"
 import IconYoutube from "@/shared/assets/images/interise-group/yu.svg"
@@ -29,6 +32,33 @@ export const Contacts = () => {
           >
             <span>Команда</span> InteriseGroup
           </Text>
+
+          <Flex gap={"18px"}>
+            <Box className={cx(s.partnerBoxUser, s.leftUser)}>
+              <Box className={s.image}>
+                <Image
+                  src={UserImage1}
+                  alt={"UserImage1"}
+                  width={342}
+                  height={287}
+                />
+              </Box>
+            </Box>
+            <Box className={cx(s.partnerBoxUser, s.rightUser)}></Box>
+          </Flex>
+          <Flex gap={"18px"}>
+            <Box className={cx(s.partnerBoxUser, s.leftUser)}>
+              <Box className={s.image}>
+                <Image
+                  src={UserImage2}
+                  alt={"UserImage1"}
+                  width={342}
+                  height={287}
+                />
+              </Box>
+            </Box>
+            <Box className={cx(s.partnerBoxUser, s.rightUser)}></Box>
+          </Flex>
 
           <Flex mb={"40px"} gap={"32px"}>
             <Box className={s.boxForm}>

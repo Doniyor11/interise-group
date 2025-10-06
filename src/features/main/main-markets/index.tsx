@@ -59,12 +59,18 @@ export const MainMarkets = () => {
               Как мы работаем
             </Text>
             <Text className={"section-subtitle"}>
-              <span>Мы работаем стримами</span> — от быстрой диагностики до
+              <span>Мы работаем спринтами</span> — от быстрой диагностики до
               комплексного внедрения.
             </Text>
           </Flex>
           <Flex w={"50%"}>
-            <Text c={"#798B9E"} fz={"16px"} lh={"120%"} lts={"-0.32px"}>
+            <Text
+              c={"#798B9E"}
+              fz={"16px"}
+              lh={"120%"}
+              lts={"-0.32px"}
+              mt={"15px"}
+            >
               За короткое время формулируем и проверяем гипотезы, усиливаем
               работающие решения и масштабируем результат. Такой подход даёт
               прозрачность, экономит ресурсы и позволяет быстро увидеть эффект
@@ -77,7 +83,7 @@ export const MainMarkets = () => {
           {boxData.map((data) => (
             <Box key={data.id} className={cx(s.sectionLeftBox, data.className)}>
               <Flex gap={"12px"} align={"center"}>
-                <Image src={Icon1} alt={""} width={72} height={72} />
+                <Image src={data.icon} alt={""} width={72} height={72} />
                 <Text
                   className={s.sectionLeftBoxTitle}
                   fz={"24px"}
@@ -86,22 +92,19 @@ export const MainMarkets = () => {
                   lts={"-0.48px"}
                   fw={400}
                 >
-                  Диагностика
+                  {data.title}
                 </Text>
               </Flex>
               <Text
                 className={s.sectionLeftBoxDesc}
-                mt={"2px"}
+                mt={"20px"}
                 fz={"16px"}
                 c={"#798B9E"}
                 lh={"120%"}
                 lts={"-0.32px"}
                 fw={400}
               >
-                Быстрый обзор бизнеса: анализ данных, интервью,
-                экспресс-диагностика и, при необходимости, внутренний аудит.
-                Помогает увидеть ключевые проблемы, точки роста и возможные
-                решения, сформировать ясную дорожную карту дальнейших действий.
+                {data.desc}
               </Text>
             </Box>
           ))}
@@ -109,7 +112,14 @@ export const MainMarkets = () => {
       </div>
 
       <Flex justify={"center"} align={"center"} mt={"32px"}>
-        <Button bg={"#0076FE"} color={"#FFF"} radius={8} h={"44px"} w={"192px"}>
+        <Button
+          bg={"#0076FE"}
+          color={"#FFF"}
+          radius={8}
+          h={"44px"}
+          w={"192px"}
+          fw={"400"}
+        >
           Оставить заявку
         </Button>
       </Flex>

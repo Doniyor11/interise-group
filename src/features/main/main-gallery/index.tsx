@@ -76,7 +76,7 @@ export const MainGallery = () => {
                 Вступить в клуб
               </Button>
             </Box>
-            <Box w={"50%"}>
+            <Flex w={"50%"} direction={"column"}>
               <Text
                 fz={"16px"}
                 c={"#798B9E"}
@@ -92,13 +92,15 @@ export const MainGallery = () => {
                 доступна форма для подачи заявки на вступление в клуб и участия
                 в мероприятиях.
               </Text>
-              <Image
-                src={ImageBanner}
-                alt={"Interise Club"}
-                width={640}
-                height={203}
-              />
-            </Box>
+              <Box className={s.clubImage}>
+                <Image
+                  src={ImageBanner}
+                  alt={"Interise Club"}
+                  width={640}
+                  height={203}
+                />
+              </Box>
+            </Flex>
           </Flex>
         </div>
       </div>

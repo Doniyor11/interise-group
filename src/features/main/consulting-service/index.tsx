@@ -4,6 +4,7 @@ import React from "react"
 
 import aboutImage from "@/shared/assets/images/interise-group/about-img.png"
 import ourStep from "@/shared/assets/images/interise-group/our-step.png"
+import { onLinkClick } from "@/shared/libs/scroll.ts"
 
 import s from "./styles.module.scss"
 
@@ -25,8 +26,9 @@ export const ConsultingService = () => {
             </Text>
             <Text className={s.decription}>
               Экспертиза InteriseGroup охватывает широкий спектр отраслей — от
-              банков и финтеха до телекоммуникаций, медицины, недвижимости,
-              логистики, ритейла и других ключевых сегментов.
+              банков <br /> и финтеха до телекоммуникаций, медицины,
+              недвижимости, логистики, ритейла <br /> и других ключевых
+              сегментов.
             </Text>
           </Flex>
 
@@ -101,6 +103,7 @@ export const ConsultingService = () => {
           fz={"16px"}
           fw={400}
           lh={"100%"}
+          onClick={() => onLinkClick("form")}
         >
           Обсудить проект
         </Button>

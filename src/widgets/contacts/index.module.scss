@@ -1,12 +1,15 @@
 .sectionWrapper {
   width: 100%;
-  background-size: cover;
   padding: 60px 0;
   display: flex;
   justify-content: flex-end;
   margin: 100px auto 0;
-  background: #010C22;
-
+  position: relative;
+  background-color: #010C22;
+  background-image: url("../../shared/assets/images/interise-group/formt-bg-bottom.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size:contain;
 }
 
 .box {

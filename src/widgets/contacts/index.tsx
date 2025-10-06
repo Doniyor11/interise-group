@@ -273,7 +273,7 @@ export const Contacts = () => {
             <span>Команда</span> InteriseGroup
           </Text>
 
-          <Flex direction={"column"} gap={"22px"}>
+          <Flex direction={"column"} gap={"22px"} mb={"32px"}>
             {PARTNERS_DATA.map((partner, idx) => (
               <Grid key={idx}>
                 <Grid.Col span={4}>
@@ -286,7 +286,7 @@ export const Contacts = () => {
             ))}
           </Flex>
 
-          <Flex mb="40px" gap="32px">
+          <Flex mb="40px" gap="32px" id={"form"}>
             <Box className={s.boxForm}>
               <Flex direction="column" gap="8px" mb="32px">
                 <Text component="h2">Запишитесь на консультацию</Text>
@@ -302,7 +302,7 @@ export const Contacts = () => {
             </Box>
           </Flex>
 
-          <Flex gap="37px" align="stretch">
+          <Flex gap="20px" align="stretch">
             <Box className={s.mapLeft}>
               <Flex direction="column">
                 <Flex direction="column" gap="8px" mb="31px">
@@ -347,6 +347,18 @@ export const Contacts = () => {
             <Box className={s.mapRight}>
               <Image src={IconMap} alt="IconMap" width={415} height={353} />
             </Box>
+          </Flex>
+
+          <Flex justify={"center"}>
+            <Text
+              c={"#8696A9"}
+              fz={"16px"}
+              fw={"400"}
+              lh={"121.2%"}
+              mt={"60px"}
+            >
+              InteriseGroup · 2025
+            </Text>
           </Flex>
         </div>
       </div>

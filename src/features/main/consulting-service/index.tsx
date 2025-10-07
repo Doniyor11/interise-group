@@ -41,6 +41,7 @@ export const ConsultingService = () => {
             fw={400}
             lh={"100%"}
             mt={"78px"}
+            w={"233px"}
           >
             Заказать стратегию
           </Button>

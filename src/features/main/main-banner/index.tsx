@@ -4,8 +4,9 @@ import Image from "next/image"
 import { useRouter } from "next/router"
 import React, { useEffect, useState } from "react"
 
+// import VideoBanner from "@/shared/assets/images/interise-group/output10.webp"
+import VideoBanner from "@/shared/assets/images/interise-group/3dtext.png"
 import IconArrow from "@/shared/assets/images/interise-group/arrow-up-right.svg"
-import VideoBanner from "@/shared/assets/images/interise-group/output10.webp"
 
 import s from "./styles.module.scss"
 

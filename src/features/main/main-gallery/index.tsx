@@ -29,7 +29,7 @@ export const MainGallery = () => {
             mb={"24px"}
           >
             <Text className={"section-title sm"} c={"#8696A9"}>
-              Interise Club
+              Мероприятия
             </Text>
             <Text className={"section-subtitle"} c={"#fff"} ta="center">
               InteriseClub — <span> площадка для общения</span> <br /> и обмена

@@ -9,7 +9,7 @@
   background-image: url("../../shared/assets/images/interise-group/formt-bg-bottom.png");
   background-repeat: no-repeat;
   background-position: center bottom;
-  background-size:contain;
+  background-size: contain;
 }
 
 .box {
@@ -59,10 +59,12 @@
   background: #F2F8FF;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   .image {
     width: 100%;
-    height: 300px;
     border-radius: 20px;
     overflow: hidden;
     margin-bottom: 13px;
@@ -74,6 +76,16 @@
     }
   }
 
+}
+
+.partnerBoxRight{
+  display: inherit;
+}
+
+.listWrapper {
+  &::marker {
+    padding-right: 0;
+  }
 }
 
 .mapLeft {
@@ -113,6 +125,7 @@
       text-underline-offset: auto;
       text-underline-position: from-font;
     }
+
   }
 
 }

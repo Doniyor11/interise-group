@@ -1,33 +1,28 @@
 export const MenuData = [
   {
     text: "О нас",
-    path: "/",
+    path: "navbar1",
     children: [],
   },
   {
     text: "Направления работы",
-    path: "/",
+    path: "navbar2",
     children: [],
   },
   {
     text: "Исследования",
-    path: "/",
+    path: "navbar3",
     children: [],
   },
   {
-    text: "Interise Club",
-    path: "/",
+    text: "Мероприятия",
+    path: "navbar4",
     children: [],
   },
   {
     text: "Контакты",
-    path: "/",
-    children: [
-      {
-        text: "Связаться с нами",
-        path: "",
-      },
-    ],
+    path: "navbar5",
+    children: [],
   },
   // {
   //   text: "Xizmatlar",

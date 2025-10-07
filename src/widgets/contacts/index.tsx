@@ -1,12 +1,13 @@
 import { Box, Flex, Grid, List, Text } from "@mantine/core"
+import cx from "clsx"
 import Image, { StaticImageData } from "next/image"
 import Link from "next/link"
 import React, { ComponentType, FC, SVGProps } from "react"
 
 import { EmailForm } from "@/features/contact-forms"
 
+import IconLogo from "@/shared/assets/images/interise-group/footer_logo.svg"
 import Imaga1 from "@/shared/assets/images/interise-group/formbg.png"
-import IconLogo from "@/shared/assets/images/interise-group/logo.svg"
 import IconMap from "@/shared/assets/images/interise-group/map.png"
 import Icon1 from "@/shared/assets/images/interise-group/partner/icon1.svg"
 import Icon2 from "@/shared/assets/images/interise-group/partner/icon2.svg"
@@ -86,7 +87,7 @@ const TEXT_STYLES: Record<string, TextStyle> = {
 
 // Компоненты
 const SocialLinks: FC = () => (
-  <Flex gap="12px" mt="37px">
+  <Flex gap="12px" mt={"20px"}>
     {SOCIAL_LINKS.map(({ Icon, href }, idx) => (
       <Link key={idx} href={href}>
         <Icon />
@@ -102,23 +103,25 @@ const PartnerCard: FC<PartnerCardProps> = ({
   achievements,
 }) => (
   <Box className={s.partnerBox} p="25px">
-    <Box className={s.image}>
-      <Image src={image} alt={name} width={342} height={257} />
+    <Box>
+      <Box className={s.image}>
+        <Image src={image} alt={name} width={342} height={257} />
+      </Box>
+      <Text {...TEXT_STYLES.title}>{name}</Text>
+      <Text {...TEXT_STYLES.subtitle} mb="20px">
+        {role}
+      </Text>
+      <List w={"290px"} className={s.listWrapper}>
+        {achievements.map((achievement, idx) => (
+          <List.Item key={idx} mb="10px">
+            <Text
+              {...TEXT_STYLES.body}
+              dangerouslySetInnerHTML={{ __html: achievement }}
+            />
+          </List.Item>
+        ))}
+      </List>
     </Box>
-    <Text {...TEXT_STYLES.title}>{name}</Text>
-    <Text {...TEXT_STYLES.subtitle} mb="40px">
-      {role}
-    </Text>
-    <List>
-      {achievements.map((achievement, idx) => (
-        <List.Item key={idx} mb="10px">
-          <Text
-            {...TEXT_STYLES.body}
-            dangerouslySetInnerHTML={{ __html: achievement }}
-          />
-        </List.Item>
-      ))}
-    </List>
     <SocialLinks />
   </Box>
 )
@@ -140,7 +143,11 @@ const ExperienceSection: FC<ExperienceSection> = ({
 )
 
 const ExperienceCard: FC<ExperienceCardProps> = ({ sections }) => (
-  <Box className={s.partnerBox} p="45px 28px" mb={"32px"}>
+  <Box
+    className={cx(s.partnerBox, s.partnerBoxRight)}
+    p="45px 28px"
+    mb={"32px"}
+  >
     <Text {...TEXT_STYLES.title} mb="40px">
       Проектный опыт:
     </Text>
@@ -198,7 +205,7 @@ const PARTNERS_DATA: PartnerData[] = [
         },
         {
           icon: Icon3,
-          title: "Опыт и карьерные результаты",
+          title: "Опыт и карьерные </br>  результаты",
           description:
             "15+ лет опыта в инвестиционной, банковской, финансовой и IT-отраслях. Только в 2021 году участвовал в 30 проектах. Работал стратегом и консультантом в банковской сфере, ритейле и телекоме. Руководил развитием инноваций и перспективных проектов в Альфа-Банк Россия, разрабатывал стратегию для розничного и цифрового бизнеса, МСБ и СРКБ. Разработал инновационную стратегию развития банка и группы ABH Holding и реализовал её, участвовал в запуске инвестиционного фонда группы (€500 млн) и выстроил работу между банком и фондом для интеграции портфельных компаний.",
         },
@@ -276,10 +283,10 @@ export const Contacts = () => {
           <Flex direction={"column"} gap={"22px"} mb={"32px"}>
             {PARTNERS_DATA.map((partner, idx) => (
               <Grid key={idx}>
-                <Grid.Col span={4}>
+                <Grid.Col span={3}>
                   <PartnerCard {...partner} />
                 </Grid.Col>
-                <Grid.Col span={8}>
+                <Grid.Col span={9}>
                   <ExperienceCard sections={partner.experience} />
                 </Grid.Col>
               </Grid>
@@ -289,7 +296,7 @@ export const Contacts = () => {
           <Flex mb="40px" gap="32px" id={"form"}>
             <Box className={s.boxForm}>
               <Flex direction="column" gap="8px" mb="32px">
-                <Text component="h2">Запишитесь на консультацию</Text>
+                <Text component="h2">Записаться на консультацию</Text>
                 <Text component="p">
                   Получите персональные рекомендации и ответы <br /> на ваши
                   вопросы.
@@ -302,7 +309,7 @@ export const Contacts = () => {
             </Box>
           </Flex>
 
-          <Flex gap="20px" align="stretch">
+          <Flex gap="37px" align="stretch">
             <Box className={s.mapLeft}>
               <Flex direction="column">
                 <Flex direction="column" gap="8px" mb="31px">

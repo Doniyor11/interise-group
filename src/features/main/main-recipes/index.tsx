@@ -82,7 +82,7 @@ export const MainRecipes = () => {
         <Button
           bg={"#0076FE"}
           color={"#FFF"}
-          w={"192px"}
+          w={"220px"}
           radius={8}
           h={"44px"}
           mt={"32px"}

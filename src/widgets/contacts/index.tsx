@@ -134,9 +134,11 @@ const ExperienceSection: FC<ExperienceSection> = ({
   <Box w="100%">
     <Flex gap="12px" mb="12px" align="flex-start">
       <Icon />
-      <Text {...TEXT_STYLES.sectionTitle} mb="12px">
-        {title}
-      </Text>
+      <Text
+        {...TEXT_STYLES.sectionTitle}
+        mb="12px"
+        dangerouslySetInnerHTML={{ __html: title }} //
+      />
     </Flex>
     <Text {...TEXT_STYLES.body}>{description}</Text>
   </Box>
@@ -185,6 +187,7 @@ const ContactInfo: FC<ContactInfoProps> = ({ title, items }) => (
 )
 
 // Данные партнеров
+
 const PARTNERS_DATA: PartnerData[] = [
   {
     image: User1,
@@ -205,7 +208,7 @@ const PARTNERS_DATA: PartnerData[] = [
         },
         {
           icon: Icon3,
-          title: "Опыт и карьерные </br>  результаты",
+          title: "Опыт и карьерные <br /> результаты", // ✅ Исправлено
           description:
             "15+ лет опыта в инвестиционной, банковской, финансовой и IT-отраслях. Только в 2021 году участвовал в 30 проектах. Работал стратегом и консультантом в банковской сфере, ритейле и телекоме. Руководил развитием инноваций и перспективных проектов в Альфа-Банк Россия, разрабатывал стратегию для розничного и цифрового бизнеса, МСБ и СРКБ. Разработал инновационную стратегию развития банка и группы ABH Holding и реализовал её, участвовал в запуске инвестиционного фонда группы (€500 млн) и выстроил работу между банком и фондом для интеграции портфельных компаний.",
         },
@@ -232,7 +235,7 @@ const PARTNERS_DATA: PartnerData[] = [
     role: "Сооснователь, InteriseGroup",
     achievements: [
       "Управляющий партнер, Senteo & CEO Сентео Восток",
-      "Председатель правления, банк <br /> и международная P2P платежная система",
+      "Председатель правления, банк <br /> и международная P2P платежная система", // ✅ Исправлено
       "Инвестор и совладелец daily и venture проектов",
     ],
     experience: [
@@ -245,7 +248,7 @@ const PARTNERS_DATA: PartnerData[] = [
         },
         {
           icon: Icon6,
-          title: "Фокус на стратегиях и внедрении",
+          title: "Фокус на стратегиях <br /> и внедрении", // ✅ Исправлено
           description:
             "Разрабатывал стратегии с фокусом на внедрение, реализовывал проекты по управлению трансформацией, цифровизации, развитию корпоративной культуры, системному ценообразованию, клиентоориентированной аналитике и внедрению CRM-систем.",
         },
@@ -273,7 +276,7 @@ export const Contacts = () => {
     <div className={s.sectionWrapper}>
       <div className="container">
         <div className={s.box}>
-          <Text className="section-title" ta="center">
+          <Text className="section-title" ta="center" mb={"11px"}>
             Партнёры
           </Text>
           <Text className="section-subtitle" c="#fff" ta="center" mb="40px">
@@ -309,7 +312,7 @@ export const Contacts = () => {
             </Box>
           </Flex>
 
-          <Flex gap="37px" align="stretch">
+          <Flex gap="30px" align="stretch">
             <Box className={s.mapLeft}>
               <Flex direction="column">
                 <Flex direction="column" gap="8px" mb="31px">

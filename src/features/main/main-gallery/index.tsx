@@ -27,7 +27,7 @@ export const MainGallery = () => {
           align={"center"}
           mb={"24px"}
         >
-          <Text className={"section-title sm"} c={"#8696A9"}>
+          <Text className={"section-title sm"} c={"#8696A9"} mb={"11px"}>
             Мероприятия
           </Text>
           <Text className={"section-subtitle"} c={"#fff"} ta="center">

@@ -15,7 +15,7 @@ export const Banner = () => {
             m={"auto 24px"}
             maw={"900px"}
           >
-            <Text className={"section-title sm"} c={"#8696A9"}>
+            <Text className={"section-title sm"} c={"#8696A9"} mb={"11px"}>
               Опыт и признание
             </Text>
             <Text

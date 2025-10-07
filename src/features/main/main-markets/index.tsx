@@ -8,6 +8,7 @@ import Icon2 from "@/shared/assets/images/interise-group/icon2.png"
 import Icon3 from "@/shared/assets/images/interise-group/icon3.png"
 import Icon4 from "@/shared/assets/images/interise-group/icon4.png"
 import Icon5 from "@/shared/assets/images/interise-group/icon5.png"
+import { onLinkClick } from "@/shared/libs/scroll.ts"
 
 import s from "./styles.module.scss"
 
@@ -52,7 +53,7 @@ const boxData = [
 export const MainMarkets = () => {
   return (
     <>
-      <div className={s.sectionWrapper}>
+      <div className={s.sectionWrapper} id={"navbar2"}>
         <Box className={s.sectionLeft}>
           <Flex gap={""} direction={"column"} w={"50%"}>
             <Text className={"section-title"} mb={"12px"}>
@@ -109,20 +110,21 @@ export const MainMarkets = () => {
             </Box>
           ))}
         </Box>
-      </div>
 
-      <Flex justify={"center"} align={"center"} mt={"32px"}>
-        <Button
-          bg={"#0076FE"}
-          color={"#FFF"}
-          radius={8}
-          h={"44px"}
-          w={"192px"}
-          fw={"400"}
-        >
-          Оставить заявку
-        </Button>
-      </Flex>
+        <Flex justify={"center"} align={"center"} mt={"32px"}>
+          <Button
+            bg={"#0076FE"}
+            color={"#FFF"}
+            radius={8}
+            h={"44px"}
+            w={"192px"}
+            fw={"400"}
+            onClick={() => onLinkClick("navbar5")}
+          >
+            Оставить заявку
+          </Button>
+        </Flex>
+      </div>
     </>
   )
 }

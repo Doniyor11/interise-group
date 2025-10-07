@@ -7,27 +7,27 @@ export interface MenuItem {
 export const MenuData: MenuItem[] = [
   {
     text: "О нас",
-    path: "navbar1",
+    path: "#navbar1",
     children: [],
   },
   {
     text: "Направления работы",
-    path: "navbar2",
+    path: "#navbar2",
     children: [],
   },
   {
     text: "Исследования",
-    path: "navbar3",
+    path: "#navbar3",
     children: [],
   },
   {
     text: "Мероприятия",
-    path: "navbar4",
+    path: "#navbar4",
     children: [],
   },
   {
     text: "Контакты",
-    path: "navbar5",
+    path: "#navbar5",
     children: [],
   },
   // {

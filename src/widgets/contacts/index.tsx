@@ -8,6 +8,7 @@ import { EmailForm } from "@/features/contact-forms"
 
 import IconLogo from "@/shared/assets/images/interise-group/footer_logo.svg"
 import Imaga1 from "@/shared/assets/images/interise-group/formbg.png"
+import IconTg from "@/shared/assets/images/interise-group/linkedin.svg"
 import IconMap from "@/shared/assets/images/interise-group/map.png"
 import Icon1 from "@/shared/assets/images/interise-group/partner/icon1.svg"
 import Icon2 from "@/shared/assets/images/interise-group/partner/icon2.svg"
@@ -19,8 +20,7 @@ import Icon7 from "@/shared/assets/images/interise-group/partner/icon7.svg"
 import Icon8 from "@/shared/assets/images/interise-group/partner/icon8.svg"
 import User1 from "@/shared/assets/images/interise-group/partner/user1.png"
 import User2 from "@/shared/assets/images/interise-group/partner/user2.png"
-import IconTg from "@/shared/assets/images/interise-group/tg.svg"
-import IconVk from "@/shared/assets/images/interise-group/vk.svg"
+import IconVk from "@/shared/assets/images/interise-group/tg 2.svg"
 import IconYoutube from "@/shared/assets/images/interise-group/yu.svg"
 
 import s from "./index.module.scss"
@@ -293,7 +293,7 @@ export const Contacts = () => {
             ))}
           </Flex>
 
-          <Flex mb="40px" gap="32px" id={"form"}>
+          <Flex mb="40px" gap="32px" id={"navbar5"} mt={"30px"}>
             <Box className={s.boxForm}>
               <Flex direction="column" gap="8px" mb="32px">
                 <Text component="h2">Записаться на консультацию</Text>

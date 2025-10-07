@@ -11,7 +11,7 @@ import s from "./styles.module.scss"
 export const ConsultingService = () => {
   return (
     <>
-      <div className={s.sectionWrapper}>
+      <div className={s.sectionWrapper} id={"navbar1"}>
         <Box className={s.sectionLeft}>
           <Flex direction={"column"} h={"100%"}>
             <Text className={"section-title"} mb={"10px"}>

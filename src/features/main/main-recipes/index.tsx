@@ -10,7 +10,7 @@ import s from "./styles.module.scss"
 
 export const MainRecipes = () => {
   return (
-    <div className={s.sectionWrapper}>
+    <div className={s.sectionWrapper} id={"navbar3"}>
       <Text className={"section-subtitle"} ta={"center"} mb={"24px"}>
         <span>Исследования</span> и макро-тренды
       </Text>

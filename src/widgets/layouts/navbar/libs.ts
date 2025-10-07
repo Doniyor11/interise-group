@@ -1,4 +1,10 @@
-export const MenuData = [
+export interface MenuItem {
+  text: string
+  path: string
+  children: MenuItem[]
+}
+
+export const MenuData: MenuItem[] = [
   {
     text: "О нас",
     path: "navbar1",

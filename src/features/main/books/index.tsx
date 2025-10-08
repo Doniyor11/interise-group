@@ -222,6 +222,7 @@ export const Books: FC = () => {
           controls: s.carouselControls,
           control: s.carouselControl,
         }}
+        loop={true}
         mt="35px"
         nextControlIcon={<ImageRight />}
         previousControlIcon={<ImageRight />}

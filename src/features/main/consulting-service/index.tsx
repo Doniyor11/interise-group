@@ -42,6 +42,7 @@ export const ConsultingService = () => {
             lh={"100%"}
             mt={"78px"}
             w={"233px"}
+            onClick={() => onLinkClick("navbar5")}
           >
             Заказать стратегию
           </Button>
@@ -104,7 +105,7 @@ export const ConsultingService = () => {
           fz={"16px"}
           fw={400}
           lh={"100%"}
-          onClick={() => onLinkClick("form")}
+          onClick={() => onLinkClick("navbar5")}
         >
           Обсудить проект
         </Button>

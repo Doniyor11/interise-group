@@ -332,25 +332,35 @@ export const Contacts = () => {
                 />
               </Flex>
 
-              <Flex direction="column" gap="18px" align="flex-start">
-                <ContactInfo
-                  title="Контакты партнёров:"
-                  items={[
-                    "Дмитрий Вакин <br /> Со-основатель, Управляющий партнер +79652877590",
-                  ]}
-                />
-                <ContactInfo
-                  title="Наш офис:"
-                  items={[
-                    "Остоженка 37/7 с.2, особняк <br /> Conversation Cafe, 4 этаж",
-                  ]}
-                />
+              <Flex
+                direction="column"
+                gap="18px"
+                align="flex-start"
+                justify={"space-between"}
+              >
+                <Flex direction="column" gap="6px">
+                  <Text component="p" className={s.infoTitle} mb="23px">
+                    Контакты партнёров:
+                  </Text>
+                  <Text component="p" className={s.infoText}>
+                    Дмитрий Вакин <br /> Со-основатель, Управляющий
+                    <br /> партнер +79652877590
+                  </Text>
+                </Flex>
+                <Flex direction="column" gap="6px">
+                  <Text component="p" className={s.infoTitle} mb="34px">
+                    Наш офис:
+                  </Text>
+                  <Text component="p" className={s.infoText}>
+                    Остоженка 37/7 с.2, особняк <br /> Conversation Cafe, 4 этаж
+                  </Text>
+                </Flex>
               </Flex>
 
-              <Flex direction="column" gap="18px">
-                <Text component="p" className={s.infoText}>
-                  Алексей Веретенов Со-основатель, Управляющий партнер
-                  +79032846834
+              <Flex direction="column" gap="18px" h={"100%"}>
+                <Text component="p" className={s.infoText} mt={"50px"}>
+                  Алексей Веретенов <br /> Со-основатель, Управляющий <br />{" "}
+                  партнер +79032846834
                 </Text>
               </Flex>
             </Box>

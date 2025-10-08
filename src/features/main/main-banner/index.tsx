@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react"
 // import VideoBanner from "@/shared/assets/images/interise-group/output10.webp"
 import VideoBanner from "@/shared/assets/images/interise-group/3dtext.png"
 import IconArrow from "@/shared/assets/images/interise-group/arrow-up-right.svg"
+import { onLinkClick } from "@/shared/libs/scroll.ts"
 
 import s from "./styles.module.scss"
 
@@ -29,7 +30,7 @@ export const MainBanner = () => {
             </Box>
             <Flex align={"center"} gap={5}>
               <Button
-                onClick={() => router.push("/")}
+                onClick={() => onLinkClick("navbar5")}
                 className={cx(s.buttonBanner, "btn-filled__back")}
               >
                 Оставить заявку
@@ -39,6 +40,7 @@ export const MainBanner = () => {
                   h={"32px"}
                   ml={"10px"}
                   className={s.buttonBannerIcon}
+                  onClick={() => onLinkClick("navbar5")}
                 >
                   <IconArrow />
                 </Flex>

@@ -40,7 +40,13 @@ export const Banner = () => {
               трансформацию бизнес-моделей подтверждают результативность нашего
               подхода.
             </Text>
-            <Button bg={"#0076FE"} color={"#FFF"} radius={8} h={"44px"}>
+            <Button
+              bg={"#0076FE"}
+              color={"#FFF"}
+              radius={8}
+              h={"44px"}
+              onClick={() => onLinkClick("navbar5")}
+            >
               Оставить заявку
             </Button>
           </Flex>

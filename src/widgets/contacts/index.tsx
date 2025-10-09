@@ -9,7 +9,6 @@ import { EmailForm } from "@/features/contact-forms"
 import IconLogo from "@/shared/assets/images/interise-group/footer_logo.svg"
 import Imaga1 from "@/shared/assets/images/interise-group/formbg.png"
 import IconTg from "@/shared/assets/images/interise-group/linkedin.svg"
-import IconMap from "@/shared/assets/images/interise-group/map.png"
 import Icon1 from "@/shared/assets/images/interise-group/partner/icon1.svg"
 import Icon2 from "@/shared/assets/images/interise-group/partner/icon2.svg"
 import Icon3 from "@/shared/assets/images/interise-group/partner/icon3.svg"
@@ -365,7 +364,12 @@ export const Contacts = () => {
               </Flex>
             </Box>
             <Box className={s.mapRight}>
-              <Image src={IconMap} alt="IconMap" width={415} height={353} />
+              <iframe
+                src="https://yandex.com/map-widget/v1/?um=constructor%3A42c9af928a64586089fec4baa8e2113d4c45085dfbda73f148aca3da4fddc4a3&amp;source=constructor"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+              ></iframe>
             </Box>
           </Flex>
 

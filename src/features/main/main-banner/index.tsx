@@ -15,7 +15,7 @@ export const MainBanner = () => {
   const router = useRouter()
   return (
     <div className={s.sectionWrapper}>
-      <div className={"container"}>
+      <Box className={"container"} w={"100%"}>
         <Box className={s.bannerWrapper}>
           <Box className={s.sectionLeft}>
             <Text className={s.bannerTitle}>
@@ -80,7 +80,7 @@ export const MainBanner = () => {
             </Flex>
           </Box>
         </Box>
-      </div>
+      </Box>
     </div>
   )
 }

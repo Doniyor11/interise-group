@@ -13,6 +13,7 @@ const App = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         <title>chustiy.uz</title>
+        <link rel="icon" href="/favicon.png" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1"

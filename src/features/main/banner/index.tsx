@@ -1,6 +1,8 @@
 import { Button, Flex, Text } from "@mantine/core"
 import React from "react"
 
+import { onLinkClick } from "@/shared/libs/scroll.ts"
+
 import s from "./styles.module.scss"
 
 export const Banner = () => {

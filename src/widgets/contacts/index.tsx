@@ -1,13 +1,14 @@
 import { Box, Flex, Grid, List, Text } from "@mantine/core"
+import cx from "clsx"
 import Image, { StaticImageData } from "next/image"
 import Link from "next/link"
 import React, { ComponentType, FC, SVGProps } from "react"
 
 import { EmailForm } from "@/features/contact-forms"
 
+import IconLogo from "@/shared/assets/images/interise-group/footer_logo.svg"
 import Imaga1 from "@/shared/assets/images/interise-group/formbg.png"
-import IconLogo from "@/shared/assets/images/interise-group/logo.svg"
-import IconMap from "@/shared/assets/images/interise-group/map.png"
+import IconTg from "@/shared/assets/images/interise-group/linkedin.svg"
 import Icon1 from "@/shared/assets/images/interise-group/partner/icon1.svg"
 import Icon2 from "@/shared/assets/images/interise-group/partner/icon2.svg"
 import Icon3 from "@/shared/assets/images/interise-group/partner/icon3.svg"
@@ -18,8 +19,7 @@ import Icon7 from "@/shared/assets/images/interise-group/partner/icon7.svg"
 import Icon8 from "@/shared/assets/images/interise-group/partner/icon8.svg"
 import User1 from "@/shared/assets/images/interise-group/partner/user1.png"
 import User2 from "@/shared/assets/images/interise-group/partner/user2.png"
-import IconTg from "@/shared/assets/images/interise-group/tg.svg"
-import IconVk from "@/shared/assets/images/interise-group/vk.svg"
+import IconVk from "@/shared/assets/images/interise-group/tg 2.svg"
 import IconYoutube from "@/shared/assets/images/interise-group/yu.svg"
 
 import s from "./index.module.scss"
@@ -86,7 +86,7 @@ const TEXT_STYLES: Record<string, TextStyle> = {
 
 // Компоненты
 const SocialLinks: FC = () => (
-  <Flex gap="12px" mt="37px">
+  <Flex gap="12px" mt={"20px"}>
     {SOCIAL_LINKS.map(({ Icon, href }, idx) => (
       <Link key={idx} href={href}>
         <Icon />
@@ -102,23 +102,25 @@ const PartnerCard: FC<PartnerCardProps> = ({
   achievements,
 }) => (
   <Box className={s.partnerBox} p="25px">
-    <Box className={s.image}>
-      <Image src={image} alt={name} width={342} height={257} />
+    <Box>
+      <Box className={s.image}>
+        <Image src={image} alt={name} width={342} height={257} />
+      </Box>
+      <Text {...TEXT_STYLES.title}>{name}</Text>
+      <Text {...TEXT_STYLES.subtitle} mb="20px">
+        {role}
+      </Text>
+      <List w={"290px"} className={s.listWrapper}>
+        {achievements.map((achievement, idx) => (
+          <List.Item key={idx} mb="10px">
+            <Text
+              {...TEXT_STYLES.body}
+              dangerouslySetInnerHTML={{ __html: achievement }}
+            />
+          </List.Item>
+        ))}
+      </List>
     </Box>
-    <Text {...TEXT_STYLES.title}>{name}</Text>
-    <Text {...TEXT_STYLES.subtitle} mb="40px">
-      {role}
-    </Text>
-    <List>
-      {achievements.map((achievement, idx) => (
-        <List.Item key={idx} mb="10px">
-          <Text
-            {...TEXT_STYLES.body}
-            dangerouslySetInnerHTML={{ __html: achievement }}
-          />
-        </List.Item>
-      ))}
-    </List>
     <SocialLinks />
   </Box>
 )
@@ -131,16 +133,22 @@ const ExperienceSection: FC<ExperienceSection> = ({
   <Box w="100%">
     <Flex gap="12px" mb="12px" align="flex-start">
       <Icon />
-      <Text {...TEXT_STYLES.sectionTitle} mb="12px">
-        {title}
-      </Text>
+      <Text
+        {...TEXT_STYLES.sectionTitle}
+        mb="12px"
+        dangerouslySetInnerHTML={{ __html: title }} //
+      />
     </Flex>
     <Text {...TEXT_STYLES.body}>{description}</Text>
   </Box>
 )
 
 const ExperienceCard: FC<ExperienceCardProps> = ({ sections }) => (
-  <Box className={s.partnerBox} p="45px 28px" mb={"32px"}>
+  <Box
+    className={cx(s.partnerBox, s.partnerBoxRight)}
+    p="45px 28px"
+    mb={"32px"}
+  >
     <Text {...TEXT_STYLES.title} mb="40px">
       Проектный опыт:
     </Text>
@@ -178,6 +186,7 @@ const ContactInfo: FC<ContactInfoProps> = ({ title, items }) => (
 )
 
 // Данные партнеров
+
 const PARTNERS_DATA: PartnerData[] = [
   {
     image: User1,
@@ -198,7 +207,7 @@ const PARTNERS_DATA: PartnerData[] = [
         },
         {
           icon: Icon3,
-          title: "Опыт и карьерные результаты",
+          title: "Опыт и карьерные <br /> результаты", // ✅ Исправлено
           description:
             "15+ лет опыта в инвестиционной, банковской, финансовой и IT-отраслях. Только в 2021 году участвовал в 30 проектах. Работал стратегом и консультантом в банковской сфере, ритейле и телекоме. Руководил развитием инноваций и перспективных проектов в Альфа-Банк Россия, разрабатывал стратегию для розничного и цифрового бизнеса, МСБ и СРКБ. Разработал инновационную стратегию развития банка и группы ABH Holding и реализовал её, участвовал в запуске инвестиционного фонда группы (€500 млн) и выстроил работу между банком и фондом для интеграции портфельных компаний.",
         },
@@ -225,7 +234,7 @@ const PARTNERS_DATA: PartnerData[] = [
     role: "Сооснователь, InteriseGroup",
     achievements: [
       "Управляющий партнер, Senteo & CEO Сентео Восток",
-      "Председатель правления, банк <br /> и международная P2P платежная система",
+      "Председатель правления, банк <br /> и международная P2P платежная система", // ✅ Исправлено
       "Инвестор и совладелец daily и venture проектов",
     ],
     experience: [
@@ -238,7 +247,7 @@ const PARTNERS_DATA: PartnerData[] = [
         },
         {
           icon: Icon6,
-          title: "Фокус на стратегиях и внедрении",
+          title: "Фокус на стратегиях <br /> и внедрении", // ✅ Исправлено
           description:
             "Разрабатывал стратегии с фокусом на внедрение, реализовывал проекты по управлению трансформацией, цифровизации, развитию корпоративной культуры, системному ценообразованию, клиентоориентированной аналитике и внедрению CRM-систем.",
         },
@@ -266,7 +275,7 @@ export const Contacts = () => {
     <div className={s.sectionWrapper}>
       <div className="container">
         <div className={s.box}>
-          <Text className="section-title" ta="center">
+          <Text className="section-title" ta="center" mb={"11px"}>
             Партнёры
           </Text>
           <Text className="section-subtitle" c="#fff" ta="center" mb="40px">
@@ -276,20 +285,20 @@ export const Contacts = () => {
           <Flex direction={"column"} gap={"22px"} mb={"32px"}>
             {PARTNERS_DATA.map((partner, idx) => (
               <Grid key={idx}>
-                <Grid.Col span={4}>
+                <Grid.Col span={3}>
                   <PartnerCard {...partner} />
                 </Grid.Col>
-                <Grid.Col span={8}>
+                <Grid.Col span={9}>
                   <ExperienceCard sections={partner.experience} />
                 </Grid.Col>
               </Grid>
             ))}
           </Flex>
 
-          <Flex mb="40px" gap="32px" id={"form"}>
+          <Flex mb="40px" gap="32px" id={"navbar5"} mt={"30px"}>
             <Box className={s.boxForm}>
               <Flex direction="column" gap="8px" mb="32px">
-                <Text component="h2">Запишитесь на консультацию</Text>
+                <Text component="h2">Записаться на консультацию</Text>
                 <Text component="p">
                   Получите персональные рекомендации и ответы <br /> на ваши
                   вопросы.
@@ -302,7 +311,7 @@ export const Contacts = () => {
             </Box>
           </Flex>
 
-          <Flex gap="20px" align="stretch">
+          <Flex gap="30px" align="stretch">
             <Box className={s.mapLeft}>
               <Flex direction="column">
                 <Flex direction="column" gap="8px" mb="31px">
@@ -322,30 +331,45 @@ export const Contacts = () => {
                 />
               </Flex>
 
-              <Flex direction="column" gap="18px" align="flex-start">
-                <ContactInfo
-                  title="Контакты партнёров:"
-                  items={[
-                    "Дмитрий Вакин <br /> Со-основатель, Управляющий партнер +79652877590",
-                  ]}
-                />
-                <ContactInfo
-                  title="Наш офис:"
-                  items={[
-                    "Остоженка 37/7 с.2, особняк <br /> Conversation Cafe, 4 этаж",
-                  ]}
-                />
+              <Flex
+                direction="column"
+                gap="18px"
+                align="flex-start"
+                justify={"space-between"}
+              >
+                <Flex direction="column" gap="6px">
+                  <Text component="p" className={s.infoTitle} mb="23px">
+                    Контакты партнёров:
+                  </Text>
+                  <Text component="p" className={s.infoText}>
+                    Дмитрий Вакин <br /> Со-основатель, Управляющий
+                    <br /> партнер +79652877590
+                  </Text>
+                </Flex>
+                <Flex direction="column" gap="6px">
+                  <Text component="p" className={s.infoTitle} mb="34px">
+                    Наш офис:
+                  </Text>
+                  <Text component="p" className={s.infoText}>
+                    Остоженка 37/7 с.2, особняк <br /> Conversation Cafe, 4 этаж
+                  </Text>
+                </Flex>
               </Flex>
 
-              <Flex direction="column" gap="18px">
-                <Text component="p" className={s.infoText}>
-                  Алексей Веретенов Со-основатель, Управляющий партнер
-                  +79032846834
+              <Flex direction="column" gap="18px" h={"100%"}>
+                <Text component="p" className={s.infoText} mt={"50px"}>
+                  Алексей Веретенов <br /> Со-основатель, Управляющий <br />{" "}
+                  партнер +79032846834
                 </Text>
               </Flex>
             </Box>
             <Box className={s.mapRight}>
-              <Image src={IconMap} alt="IconMap" width={415} height={353} />
+              <iframe
+                src="https://yandex.com/map-widget/v1/?um=constructor%3A42c9af928a64586089fec4baa8e2113d4c45085dfbda73f148aca3da4fddc4a3&amp;source=constructor"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+              ></iframe>
             </Box>
           </Flex>
 

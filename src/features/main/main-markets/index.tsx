@@ -8,6 +8,7 @@ import Icon2 from "@/shared/assets/images/interise-group/icon2.png"
 import Icon3 from "@/shared/assets/images/interise-group/icon3.png"
 import Icon4 from "@/shared/assets/images/interise-group/icon4.png"
 import Icon5 from "@/shared/assets/images/interise-group/icon5.png"
+import { onLinkClick } from "@/shared/libs/scroll.ts"
 
 import s from "./styles.module.scss"
 
@@ -30,7 +31,7 @@ const boxData = [
     id: 3,
     icon: Icon3,
     className: s.div3,
-    title: "Операционная модель",
+    title: "Large Scale Change",
     desc: `Реализация комплексных трансформаций: изменение бизнес-моделей, процессов и структур с фокусом на измеримый результат. Многие проекты выполняются по модели success fee — команда InteriseGroup заинтересована в успехе наравне с клиентом. Опыт включает интеграцию крупных игроков, перестройку операционных моделей, запуск десятков проектов изменений и обучение сотен сотрудников.`,
   },
   {
@@ -38,7 +39,7 @@ const boxData = [
     icon: Icon4,
     className: s.div4,
     title: "Переупаковка бизнеса для продажи/инвестиций",
-    desc: `Подготовка компаний к масштабным сделкам и привлечению капитала: от оценки потенциала до структурирования сделки и подготовки к IPO. Это повышает стоимость бизнеса и помогает привлечь стратегических инвесторов. `,
+    desc: `Подготовка компаний к масштабным сделкам и привлечению капитала: от оценки потенциала до структурирования сделки и подготовки к IPO. Это повышает стоимость бизнеса и помогает привлечь стратегических инвесторов.`,
   },
   {
     id: 4,
@@ -52,7 +53,7 @@ const boxData = [
 export const MainMarkets = () => {
   return (
     <>
-      <div className={s.sectionWrapper}>
+      <div className={s.sectionWrapper} id={"navbar2"}>
         <Box className={s.sectionLeft}>
           <Flex gap={""} direction={"column"} w={"50%"}>
             <Text className={"section-title"} mb={"12px"}>
@@ -86,7 +87,7 @@ export const MainMarkets = () => {
                 <Image src={data.icon} alt={""} width={72} height={72} />
                 <Text
                   className={s.sectionLeftBoxTitle}
-                  fz={"24px"}
+                  fz={"22px"}
                   c={"#535E6B"}
                   lh={"120%"}
                   lts={"-0.48px"}
@@ -109,20 +110,21 @@ export const MainMarkets = () => {
             </Box>
           ))}
         </Box>
-      </div>
 
-      <Flex justify={"center"} align={"center"} mt={"32px"}>
-        <Button
-          bg={"#0076FE"}
-          color={"#FFF"}
-          radius={8}
-          h={"44px"}
-          w={"192px"}
-          fw={"400"}
-        >
-          Оставить заявку
-        </Button>
-      </Flex>
+        <Flex justify={"center"} align={"center"} mt={"32px"}>
+          <Button
+            bg={"#0076FE"}
+            color={"#FFF"}
+            radius={8}
+            h={"44px"}
+            w={"192px"}
+            fw={"400"}
+            onClick={() => onLinkClick("navbar5")}
+          >
+            Оставить заявку
+          </Button>
+        </Flex>
+      </div>
     </>
   )
 }

@@ -11,7 +11,7 @@ import s from "./styles.module.scss"
 export const ConsultingService = () => {
   return (
     <>
-      <div className={s.sectionWrapper}>
+      <div className={s.sectionWrapper} id={"navbar1"}>
         <Box className={s.sectionLeft}>
           <Flex direction={"column"} h={"100%"}>
             <Text className={"section-title"} mb={"10px"}>
@@ -41,6 +41,8 @@ export const ConsultingService = () => {
             fw={400}
             lh={"100%"}
             mt={"78px"}
+            w={"233px"}
+            onClick={() => onLinkClick("navbar5")}
           >
             Заказать стратегию
           </Button>
@@ -103,7 +105,7 @@ export const ConsultingService = () => {
           fz={"16px"}
           fw={400}
           lh={"100%"}
-          onClick={() => onLinkClick("form")}
+          onClick={() => onLinkClick("navbar5")}
         >
           Обсудить проект
         </Button>

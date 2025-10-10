@@ -1,6 +1,8 @@
 import { Button, Flex, Text } from "@mantine/core"
 import React from "react"
 
+import { onLinkClick } from "@/shared/libs/scroll.ts"
+
 import s from "./styles.module.scss"
 
 export const Banner = () => {
@@ -15,7 +17,7 @@ export const Banner = () => {
             m={"auto 24px"}
             maw={"900px"}
           >
-            <Text className={"section-title sm"} c={"#8696A9"}>
+            <Text className={"section-title sm"} c={"#8696A9"} mb={"11px"}>
               Опыт и признание
             </Text>
             <Text
@@ -40,7 +42,13 @@ export const Banner = () => {
               трансформацию бизнес-моделей подтверждают результативность нашего
               подхода.
             </Text>
-            <Button bg={"#0076FE"} color={"#FFF"} radius={8} h={"44px"}>
+            <Button
+              bg={"#0076FE"}
+              color={"#FFF"}
+              radius={8}
+              h={"44px"}
+              onClick={() => onLinkClick("navbar5")}
+            >
               Оставить заявку
             </Button>
           </Flex>

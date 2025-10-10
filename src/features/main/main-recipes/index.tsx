@@ -10,7 +10,7 @@ import s from "./styles.module.scss"
 
 export const MainRecipes = () => {
   return (
-    <div className={s.sectionWrapper}>
+    <div className={s.sectionWrapper} id={"navbar3"}>
       <Text className={"section-subtitle"} ta={"center"} mb={"24px"}>
         <span>Исследования</span> и макро-тренды
       </Text>
@@ -82,7 +82,7 @@ export const MainRecipes = () => {
         <Button
           bg={"#0076FE"}
           color={"#FFF"}
-          w={"192px"}
+          w={"220px"}
           radius={8}
           h={"44px"}
           mt={"32px"}

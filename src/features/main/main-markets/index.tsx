@@ -1,4 +1,5 @@
 import { Box, Button, Flex, Text } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
 import Image from "next/image"
 import React from "react"
@@ -51,11 +52,12 @@ const boxData = [
 ]
 
 export const MainMarkets = () => {
+  const matches = useMediaQuery("(max-width: 1040px)")
   return (
     <>
       <div className={s.sectionWrapper} id={"navbar2"}>
         <Box className={s.sectionLeft}>
-          <Flex gap={""} direction={"column"} w={"50%"}>
+          <Flex gap={""} direction={"column"} w={matches ? "100%" : "50%"}>
             <Text className={"section-title"} mb={"12px"}>
               Как мы работаем
             </Text>
@@ -64,7 +66,7 @@ export const MainMarkets = () => {
               комплексного внедрения.
             </Text>
           </Flex>
-          <Flex w={"50%"}>
+          <Flex w={matches ? "100%" : "50%"}>
             <Text
               c={"#798B9E"}
               fz={"16px"}
@@ -84,10 +86,15 @@ export const MainMarkets = () => {
           {boxData.map((data) => (
             <Box key={data.id} className={cx(s.sectionLeftBox, data.className)}>
               <Flex gap={"12px"} align={"center"}>
-                <Image src={data.icon} alt={""} width={72} height={72} />
+                <Image
+                  src={data.icon}
+                  alt={""}
+                  width={matches ? 40 : 72}
+                  height={matches ? 40 : 72}
+                />
                 <Text
                   className={s.sectionLeftBoxTitle}
-                  fz={"22px"}
+                  fz={matches ? "18px" : "22px"}
                   c={"#535E6B"}
                   lh={"120%"}
                   lts={"-0.48px"}
@@ -99,7 +106,7 @@ export const MainMarkets = () => {
               <Text
                 className={s.sectionLeftBoxDesc}
                 mt={"20px"}
-                fz={"16px"}
+                fz={matches ? "12px" : "16px"}
                 c={"#798B9E"}
                 lh={"120%"}
                 lts={"-0.32px"}
@@ -117,7 +124,7 @@ export const MainMarkets = () => {
             color={"#FFF"}
             radius={8}
             h={"44px"}
-            w={"192px"}
+            w={matches ? "100%" : "192px"}
             fw={"400"}
             onClick={() => onLinkClick("navbar5")}
           >

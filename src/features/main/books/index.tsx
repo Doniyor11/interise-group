@@ -1,5 +1,6 @@
 import { Carousel } from "@mantine/carousel"
 import { Box, Button, Flex, Text } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import Image, { StaticImageData } from "next/image"
 import React, { FC } from "react"
 
@@ -142,7 +143,7 @@ const InfoRow: FC<InfoRowProps> = ({ label, value }) => (
 
 const CaseCard: FC<CaseCardProps> = ({ caseStudy }) => {
   const { number, country, industry, image, task, solution, result } = caseStudy
-
+  const matches = useMediaQuery("(max-width: 1040px)")
   return (
     <div className={s.card}>
       <Box>
@@ -165,7 +166,14 @@ const CaseCard: FC<CaseCardProps> = ({ caseStudy }) => {
         </Flex>
       </Box>
 
-      <Button bg="#0076FE" color="#FFF" radius={8} h="44px" w="192px" mt="60px">
+      <Button
+        bg="#0076FE"
+        color="#FFF"
+        radius={8}
+        h="44px"
+        w={matches ? "100%" : "192px"}
+        mt="60px"
+      >
         Подробнее
       </Button>
     </div>
@@ -173,10 +181,12 @@ const CaseCard: FC<CaseCardProps> = ({ caseStudy }) => {
 }
 
 export const Books: FC = () => {
+  const matches = useMediaQuery("(max-width: 576px)")
+
   return (
     <div className={s.sectionWrapper}>
       <Flex>
-        <Flex direction="column" w="50%">
+        <Flex direction="column" w={matches ? "100%" : "50%"}>
           <Text className="section-title" mb={"12px"}>
             От идей к результатам: реальные кейсы
           </Text>
@@ -213,11 +223,11 @@ export const Books: FC = () => {
       </Flex>
 
       <Carousel
-        slideGap={16}
-        slideSize={485}
+        slideGap={matches ? 8 : 16}
+        slideSize={matches ? "100%" : 485}
         align="start"
         height="auto"
-        slidesToScroll="auto"
+        slidesToScroll={matches ? 1 : "auto"}
         classNames={{
           controls: s.carouselControls,
           control: s.carouselControl,

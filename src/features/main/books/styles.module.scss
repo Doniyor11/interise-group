@@ -65,6 +65,13 @@
     //  white-space: nowrap;
     //  text-overflow: ellipsis;
     //}
+    @media screen and (max-width: 1040px) {
+      max-width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 1040px) {
+    padding: 50px 15px 40px 15px;
   }
 }
 
@@ -75,6 +82,11 @@
   left: -5%;
   right: 0;
   width: 110%;
+  @media screen and (max-width: 1040px) {
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
 }
 
 .carouselControl {

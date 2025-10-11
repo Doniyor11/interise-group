@@ -8,6 +8,9 @@
   text-align: center;
   display: flex;
   justify-content: center;
+  @media screen and (max-width: 1040px) {
+    padding: 60px 15px 60px 15px;
+  }
 }
 
 

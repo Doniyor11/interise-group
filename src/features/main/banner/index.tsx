@@ -1,4 +1,5 @@
 import { Button, Flex, Text } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import React from "react"
 
 import { onLinkClick } from "@/shared/libs/scroll.ts"
@@ -6,6 +7,8 @@ import { onLinkClick } from "@/shared/libs/scroll.ts"
 import s from "./styles.module.scss"
 
 export const Banner = () => {
+  const matchesIpad = useMediaQuery("(max-width: 1040px)")
+  const matches = useMediaQuery("(max-width: 576px)")
   return (
     <>
       <div className={s.sectionWrapper}>
@@ -14,7 +17,7 @@ export const Banner = () => {
             direction={"column"}
             justify={"center"}
             align={"center"}
-            m={"auto 24px"}
+            m={matchesIpad ? "30px auto 0 auto" : "auto 24px"}
             maw={"900px"}
           >
             <Text className={"section-title sm"} c={"#8696A9"} mb={"11px"}>
@@ -48,6 +51,7 @@ export const Banner = () => {
               radius={8}
               h={"44px"}
               onClick={() => onLinkClick("navbar5")}
+              w={matches ? "100%" : "233px"}
             >
               Оставить заявку
             </Button>

@@ -82,7 +82,7 @@
     color: #107efd;
   }
   @media screen and (max-width: 1040px){
-    font-size: 42px;
+    font-size: 40px;
     br{
         display: none;
     }
@@ -137,6 +137,8 @@
   @media screen and (max-width: 1040px){
     width: 100%;
     border-radius: 5.749px;
+    height: 70px;
+    padding: 8px 0 !important;
   }
 }
 
@@ -145,6 +147,9 @@
 
   &:not(:last-child) {
     border-right: 1px solid #bbb;
+  }
+  @media screen and (max-width: 1040px){
+    justify-content: center;
   }
 }
 
@@ -155,7 +160,7 @@
   font-weight: 400;
   line-height: 121.2%;
   @media screen and (max-width: 1040px){
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 500;
     line-height: 121.2%;
   }
@@ -169,7 +174,7 @@
   line-height: 120%;
   letter-spacing: -0.32px;
   @media screen and (max-width: 1040px){
-    font-size: 8px;
+    font-size: 16px;
     line-height: 110%;
     letter-spacing: -0.16px;
   }

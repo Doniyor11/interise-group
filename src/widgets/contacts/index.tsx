@@ -1,4 +1,5 @@
 import { Box, Flex, Grid, List, Text } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
 import Image, { StaticImageData } from "next/image"
 import Link from "next/link"
@@ -72,21 +73,39 @@ const SOCIAL_LINKS: SocialLink[] = [
 ]
 
 const TEXT_STYLES: Record<string, TextStyle> = {
-  title: { fz: "32px", fw: "400", c: "#535E6B", lh: "120%", lts: "-0.64px" },
-  subtitle: { fz: "16px", fw: "400", c: "#0076FE", lh: "120%", lts: "-0.32px" },
+  title: {
+    fz: "clamp(22px, 4vw, 32px)",
+    fw: "400",
+    c: "#535E6B",
+    lh: "120%",
+    lts: "-0.64px",
+  },
+  subtitle: {
+    fz: "clamp(12px, 2vw, 16px)",
+    fw: "400",
+    c: "#0076FE",
+    lh: "120%",
+    lts: "-0.32px",
+  },
   sectionTitle: {
-    fz: "24px",
+    fz: "clamp(16px, 3vw, 24px)",
     fw: "400",
     c: "#535E6B",
     lh: "120%",
     lts: "-0.48px",
   },
-  body: { fz: "16px", fw: "400", c: "#566677", lh: "120%", lts: "-0.32px" },
+  body: {
+    fz: "clamp(12px, 2vw, 16px)",
+    fw: "400",
+    c: "#566677",
+    lh: "120%",
+    lts: "-0.32px",
+  },
 }
 
 // Компоненты
 const SocialLinks: FC = () => (
-  <Flex gap="12px" mt={"20px"}>
+  <Flex gap="12px" mt={"20px"} className={s.socialLinksIcon}>
     {SOCIAL_LINKS.map(({ Icon, href }, idx) => (
       <Link key={idx} href={href}>
         <Icon />
@@ -143,31 +162,36 @@ const ExperienceSection: FC<ExperienceSection> = ({
   </Box>
 )
 
-const ExperienceCard: FC<ExperienceCardProps> = ({ sections }) => (
-  <Box
-    className={cx(s.partnerBox, s.partnerBoxRight)}
-    p="45px 28px"
-    mb={"32px"}
-  >
-    <Text {...TEXT_STYLES.title} mb="40px">
-      Проектный опыт:
-    </Text>
-    <Flex gap="70px">
-      {sections.map((column, idx) => (
-        <Flex
-          key={idx}
-          gap={idx === 0 ? "40px" : "32px"}
-          direction="column"
-          w="50%"
-        >
-          {column.map((section, sIdx) => (
-            <ExperienceSection key={sIdx} {...section} />
+const ExperienceCard: FC<ExperienceCardProps> = ({ sections }) => {
+  const matches = useMediaQuery("(max-width: 1040px)")
+  return (
+    <>
+      <Box
+        className={cx(s.partnerBox, s.partnerBoxRight)}
+        p={matches ? "26px 20px" : "45px 28px"}
+        mb={"32px"}
+      >
+        <Text {...TEXT_STYLES.title} mb={matches ? "24px" : "40px"}>
+          Проектный опыт:
+        </Text>
+        <Flex gap="70px" direction={matches ? "column" : "row"}>
+          {sections.map((column: ExperienceSection[], idx: number) => (
+            <Flex
+              key={idx}
+              gap={idx === 0 ? "40px" : "32px"}
+              direction="column"
+              w={matches ? "100%" : idx === 0 ? "50%" : "calc(50% - 38px)"}
+            >
+              {column.map((section: ExperienceSection, sIdx: number) => (
+                <ExperienceSection key={sIdx} {...section} />
+              ))}
+            </Flex>
           ))}
         </Flex>
-      ))}
-    </Flex>
-  </Box>
-)
+      </Box>
+    </>
+  )
+}
 
 const ContactInfo: FC<ContactInfoProps> = ({ title, items }) => (
   <Flex direction="column" gap="6px">
@@ -271,6 +295,8 @@ const PARTNERS_DATA: PartnerData[] = [
 ]
 
 export const Contacts = () => {
+  const matchesIpad = useMediaQuery("(max-width: 1040px)")
+  const matches = useMediaQuery("(max-width: 840px)")
   return (
     <div className={s.sectionWrapper}>
       <div className="container">
@@ -285,19 +311,29 @@ export const Contacts = () => {
           <Flex direction={"column"} gap={"22px"} mb={"32px"}>
             {PARTNERS_DATA.map((partner, idx) => (
               <Grid key={idx}>
-                <Grid.Col span={3}>
+                <Grid.Col span={matches ? 12 : matchesIpad ? 4 : 3}>
                   <PartnerCard {...partner} />
                 </Grid.Col>
-                <Grid.Col span={9}>
+                <Grid.Col span={matches ? 12 : matchesIpad ? 8 : 9}>
                   <ExperienceCard sections={partner.experience} />
                 </Grid.Col>
               </Grid>
             ))}
           </Flex>
 
-          <Flex mb="40px" gap="32px" id={"navbar5"} mt={"30px"}>
+          <Flex
+            mb="40px"
+            gap="32px"
+            id={"navbar5"}
+            mt={"30px"}
+            direction={matches ? "column" : "row"}
+          >
             <Box className={s.boxForm}>
-              <Flex direction="column" gap="8px" mb="32px">
+              <Flex
+                direction="column"
+                gap="8px"
+                mb={matches ? "200px" : "32px"}
+              >
                 <Text component="h2">Записаться на консультацию</Text>
                 <Text component="p">
                   Получите персональные рекомендации и ответы <br /> на ваши
@@ -311,7 +347,11 @@ export const Contacts = () => {
             </Box>
           </Flex>
 
-          <Flex gap="30px" align="stretch">
+          <Flex
+            gap="30px"
+            align="stretch"
+            direction={matches ? "column" : "row"}
+          >
             <Box className={s.mapLeft}>
               <Flex direction="column">
                 <Flex direction="column" gap="8px" mb="31px">

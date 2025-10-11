@@ -115,7 +115,11 @@ export const Navbar = () => {
           </Flex>
         )}
         {matches && (
-          <Burger opened={isOpen} onClick={() => setIsOpen(!isOpen)} />
+          <Burger
+            color={"#0076FE"}
+            opened={isOpen}
+            onClick={() => setIsOpen(!isOpen)}
+          />
         )}
       </div>
 

@@ -1,4 +1,5 @@
 import { Box, Button, Flex, Text } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
 import Image from "next/image"
 import { useRouter } from "next/router"
@@ -13,6 +14,8 @@ import s from "./styles.module.scss"
 
 export const MainBanner = () => {
   const router = useRouter()
+  const matches = useMediaQuery("(max-width: 1040px)")
+
   return (
     <div className={s.sectionWrapper}>
       <Box className={"container"} w={"100%"}>
@@ -21,7 +24,7 @@ export const MainBanner = () => {
             <Text className={s.bannerTitle}>
               Стратегии, которые <br /> <span>меняют рынки</span>
             </Text>
-            <Box w={"455px"}>
+            <Box w={matches ? "100%" : "450px"}>
               <Text className={s.bannerDescription}>
                 InteriseGroup — международная консалтинговая группа с
                 экспертизой в стратегическом развитии и комплексном
@@ -64,7 +67,11 @@ export const MainBanner = () => {
               width={504}
               height={300}
             />
-            <Flex bg={"#FFF"} p={"23px"} className={s.stats}>
+            <Flex
+              bg={"#FFF"}
+              p={matches ? "0" : "7px 13px"}
+              className={s.stats}
+            >
               <Flex direction={"column"} align={"center"} className={s.item}>
                 <AnimatedNumber value={300} className={s.number} />
                 <Text className={s.info}>проектов</Text>

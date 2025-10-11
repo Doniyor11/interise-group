@@ -1,4 +1,5 @@
 import { Badge, Box, Button, Flex, Text } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import Image from "next/image"
 import React from "react"
 
@@ -18,6 +19,8 @@ const badgeData = [
 ]
 
 export const MainGallery = () => {
+  const matches = useMediaQuery("(max-width: 1040px)")
+
   return (
     <div className={s.sectionWrapper} id={"navbar4"}>
       <div className={"container"}>
@@ -35,8 +38,12 @@ export const MainGallery = () => {
             опытом практиков.
           </Text>
         </Flex>
-        <Flex gap={"30px"}>
-          <Box w={"50%"}>
+        <Flex
+          gap={"30px"}
+          direction={matches ? "column-reverse" : "row"}
+          p={matches ? "0 15px" : "0"}
+        >
+          <Box w={matches ? "100%" : "50%"}>
             <Text
               fz={"16px"}
               c={"#798B9E"}
@@ -58,7 +65,12 @@ export const MainGallery = () => {
             >
               Типы мероприятий:
             </Text>
-            <Flex mb={"32px"} wrap={"wrap"} gap={"1px"} w={"475px"}>
+            <Flex
+              mb={"32px"}
+              wrap={"wrap"}
+              gap={"1px"}
+              w={matches ? "100%" : "475px"}
+            >
               {badgeData.map((item) => (
                 <Badge className={s.badge} key={item.id}>
                   {item.title}
@@ -68,14 +80,14 @@ export const MainGallery = () => {
             <Button
               bg={"#0076FE"}
               color={"#FFF"}
-              w={"192px"}
+              w={matches ? "100%" : "fit-content"}
               radius={8}
               h={"44px"}
             >
               Вступить в клуб
             </Button>
           </Box>
-          <Flex w={"50%"} direction={"column"}>
+          <Flex w={matches ? "100%" : "50%"} direction={"column"}>
             <Text
               fz={"16px"}
               c={"#798B9E"}

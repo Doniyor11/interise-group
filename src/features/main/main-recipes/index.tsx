@@ -1,4 +1,5 @@
 import { Box, Button, Flex, Text } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import Image from "next/image"
 import React from "react"
 
@@ -9,6 +10,8 @@ import ImageSlider3 from "@/shared/assets/images/interise-group/makro3.png"
 import s from "./styles.module.scss"
 
 export const MainRecipes = () => {
+  const matches = useMediaQuery("(max-width: 1040px)")
+
   return (
     <div className={s.sectionWrapper} id={"navbar3"}>
       <Text className={"section-subtitle"} ta={"center"} mb={"24px"}>
@@ -82,7 +85,7 @@ export const MainRecipes = () => {
         <Button
           bg={"#0076FE"}
           color={"#FFF"}
-          w={"220px"}
+          w={matches ? "100%" : "fit-content"}
           radius={8}
           h={"44px"}
           mt={"32px"}

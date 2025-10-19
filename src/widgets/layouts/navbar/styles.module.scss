@@ -38,6 +38,9 @@
         font-weight: 400;
         line-height: normal;
         user-select: none;
+        &:hover {
+          color: #0076FE;
+        }
       }
 
       &.active {
@@ -101,15 +104,32 @@
 }
 
 .lang {
-  max-width: 90px;
+  max-width: 97px;
+  background: #2C2C2C;
+  border-radius: 8px;
 
   input {
     border: none;
-    color: #67637a;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
     text-transform: uppercase;
+    background: #2C2C2C;
+    color: #FFF;
+    font-size: 16px;
+    height: 44px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+  }
+}
+
+.selectOption{
+  font-weight: 400;
+  font-size: 16px;
+  &:hover{
+    border-radius: 5px;
+    background: #E1EEFF;
+    color: #0076FE;
+    font-weight: 400;
+    font-size: 16px;
   }
 }
 

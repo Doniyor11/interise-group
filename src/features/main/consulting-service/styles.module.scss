@@ -8,19 +8,24 @@
   padding: 84px 0;
   height: 100%;
 
-  .sectionLeft {
+  .sectionRow {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
+    width: 100%;
   }
 
-  .image {
-    width: 100%;
-    height: 100%;
-    max-width: 642px;
-    max-height: 384px;
-    object-fit: contain;
+  .titleAbout {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.72px;
+    background: linear-gradient(90deg, #107EFD 0%, #47C0FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   @media screen and (max-width: 1040px) {
@@ -38,15 +43,17 @@
 }
 
 .imageOur {
-  width: 990px;
-  height: 192px;
-  margin: 0 auto 32px auto;
-  img{
+  width: 1190px;
+  height: 184px;
+  margin: 0 auto 40px auto;
+
+  img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  @media screen and (max-width: 1040px){
+
+  @media screen and (max-width: 1040px) {
     width: 100%;
     height: auto;
     margin: 0 auto 16px auto;
@@ -54,7 +61,7 @@
 }
 
 .description {
-  margin-top: 24px;
+  margin: 20px 0 40px 0;
   color: #566677;
   font-size: 16px;
   font-style: normal;
@@ -62,8 +69,41 @@
   line-height: 120%;
   letter-spacing: -0.32px;
   @media screen and (max-width: 1040px) {
-    margin-top: 12px;
+    margin: 12px 0 32px 0;
   }
+}
+
+.aboutBox {
+  border-radius: 24px;
+  border: 1px solid #0076FE;
+  padding: 25px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: radial-gradient(133.63% 142.52% at 43.38% 84.4%, #000B21 29.33%, #005CC7 100%);
+  gap: 63px;
+  height: 100%;
+    transition: background 0.5s ease;
+
+  &:hover{
+    background: radial-gradient(73.34% 78.23% at 43.38% 84.4%, #000B21 29.33%, #005CC7 100%), radial-gradient(133.63% 142.52% at 43.38% 84.4%, #000B21 29.33%, #005CC7 100%);
+    transition: background 0.5s ease;
+  }
+}
+
+.aboutBoxTitle {
+  color: #FFF;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.48px;
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+    letter-spacing: -0.4px;
+  }
+
 }
 
 .ourWrapper {
@@ -73,25 +113,28 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 37px 0;
+  padding: 80px 100px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   @media screen and (max-width: 1040px) {
-    padding: 20px 8px;
+    padding: 20px 15px;
     margin: 0 15px;
   }
 }
 
-.ourTitle {
-  color: #8696a9;
-  font-size: 16px;
+.aboutBottomTitle {
+  color: #FFF;
+  font-size: 36px;
   font-style: normal;
-  font-weight: 400;
-  line-height: 121.2%;
+  text-align: left;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.72px;
   @media screen and (max-width: 1040px) {
-    font-size: 14px;
-    line-height: 121.2%;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.48px;
   }
 }

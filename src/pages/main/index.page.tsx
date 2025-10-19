@@ -8,7 +8,6 @@ import {
   ConsultingService,
   MainBanner,
   MainGallery,
-  MainMarkets,
   MainRecipes,
 } from "@/features/main"
 
@@ -21,11 +20,10 @@ const HomePage = () => {
       <MainBanner />
       <main className={"container"}>
         <ConsultingService />
-        <Books />
       </main>
       <Banner />
       <main className={"container"}>
-        <MainMarkets />
+        <Books />
       </main>
       <MainGallery />
       <main className={"container"}>

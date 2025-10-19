@@ -1,248 +1,264 @@
-import { Carousel } from "@mantine/carousel"
-import { Box, Button, Flex, Text } from "@mantine/core"
+import { Box, Button, Flex, Grid, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
-import Image, { StaticImageData } from "next/image"
+import Image from "next/image"
 import React, { FC } from "react"
 
-import ImageRight from "@/shared/assets/images/interise-group/imgright.svg"
-import ImageSlider1 from "@/shared/assets/images/interise-group/slider1.png"
-import ImageSlider2 from "@/shared/assets/images/interise-group/slider2.png"
-import ImageSlider3 from "@/shared/assets/images/interise-group/slider3.png"
-import ImageSlider4 from "@/shared/assets/images/interise-group/slider4.png"
-import ImageSlider5 from "@/shared/assets/images/interise-group/slider5.png"
-import ImageSlider6 from "@/shared/assets/images/interise-group/slider6.png"
-import ImageSlider7 from "@/shared/assets/images/interise-group/slider7.png"
-import ImageSlider8 from "@/shared/assets/images/interise-group/slider8.png"
+import Icon1 from "@/shared/assets/images/interise-group/geo-alt.svg"
+import Icon2 from "@/shared/assets/images/interise-group/graph-up.svg"
+import Image1 from "@/shared/assets/images/interise-group/idea-1.png"
+import Image2 from "@/shared/assets/images/interise-group/idea-2.png"
+import Image3 from "@/shared/assets/images/interise-group/idea-3.png"
+import Image4 from "@/shared/assets/images/interise-group/idea-4.png"
+import Image5 from "@/shared/assets/images/interise-group/idea-5.png"
+import Image6 from "@/shared/assets/images/interise-group/idea-6.png"
+import Image7 from "@/shared/assets/images/interise-group/idea-7.png"
+import Image8 from "@/shared/assets/images/interise-group/idea-8.png"
 
+// import { onLinkClick } from "@/shared/libs/scroll.ts"
 import s from "./styles.module.scss"
 
-// Типы
-type CaseStudy = {
-  number: string
-  country: string
-  industry: string
-  image: StaticImageData
-  task: string
-  solution: string
-  result: string
-}
-
-type CaseCardProps = {
-  caseStudy: CaseStudy
-}
-
-type InfoRowProps = {
-  label: string
-  value: string
-}
-
-// Константы
-const CASE_STUDIES: CaseStudy[] = [
+const IDEAS_DATA = [
   {
-    number: "№1",
-    country: "Казахстан",
-    industry: "Банковский сектор",
-    image: ImageSlider1,
-    task: "Провести интеграцию с другим банком и полномасштабная трансформация операционной модели",
-    solution:
-      "Разработана и реализована стратегия изменений, запущено в работу 52 проекта, сформированы новые подходы к клиентскому опыту, 500+ сотрудников прошли обучение",
-    result:
-      "Операционная прибыль выросла в 6 раз за два года, ускорен вывод новых продуктов",
+    rank: "Топ-3",
+    rankDesc: "компания в стране",
+    info: [
+      { icon: Icon1, label: "Страна:", value: "Средняя Азия" },
+      { icon: Icon2, label: "Финтех", value: "Финтех" },
+    ],
+    description:
+      "Интеграция ведущих банков и запуск крупнейшей трансформации на рынке",
+    results: [
+      { icon: Image1, text: "Операционная прибыль выросла ×6 за 2 года" },
+      { icon: Image2, text: "Ускорен вывод новых продуктов" },
+      { icon: Image3, text: "500+ сотрудников обучены" },
+    ],
   },
   {
-    number: "№2",
-    country: "Армения",
-    industry: "Государственные инвестиции / авиация",
-    image: ImageSlider2,
-    task: "Разработать национальную инвестиционную платформу и подготовить условия для запуска нового авиаперевозчика.",
-    solution:
-      "Сформирован инвестиционный план, создана платформа, проработана модель авиакомпании, подготовлен запуск и внедрены ESG-практики.",
-    result:
-      "Перевозчик выполняет регулярные рейсы, привлечено 210+ млн $ инвестиций, создано 800+ рабочих мест, выплачено 14+ млн $ налогов.",
+    rank: "Топ-3",
+    rankDesc: "компания в стране",
+    info: [
+      { icon: Icon1, label: "Страна:", value: "Закавказье" },
+      { icon: Icon2, label: "Авиация", value: "Авиация" },
+    ],
+    description: "Создание новой </br> национальной авиакомпании </br> с нуля",
+    results: [
+      {
+        icon: Image1,
+        text: "Привлечено 210+ млн $ инвестиций, выплачено 14+ млн $ налогов",
+      },
+      {
+        icon: Image2,
+        text: "Национальный перевозик запущен и выполняет регулярные рейсы",
+      },
+      { icon: Image3, text: "Создано 800+ рабочих мест" },
+    ],
   },
   {
-    number: "№3",
-    country: "Россия",
-    industry: "Частная сеть медицининских клиник",
-    image: ImageSlider3,
-    task: "Увеличить выручку и подготовить компанию к международной экспансии",
-    solution:
-      "Проведена комплексная диагностика, discovery-анализ, выявлено 46 инициатив для роста, сформирован план запуска новых программ и выхода на рынки СНГ, Южной Кореи и MENA.",
-    result:
-      "Запущены новые направления, начата экспансия, подготовлен пилот в Южной Корее.",
-  },
-  {
-    number: "№4",
-    country: "Грузия",
-    industry: "Ритейл",
-    image: ImageSlider4,
-    task: "Подготовить бизнес к продаже стратегическому инвестору",
-    solution:
-      "Проведены аудит и оптимизация процессов, переупаковка бизнеса. Подготовлена финансовая модель" +
-      "и презентации для сделки",
-    result: "Заключена многомиллионная сделка с новым владельцем",
-  },
-  {
-    number: "№5",
-    country: "Армения",
-    industry: "Банковский сектор",
-    image: ImageSlider5,
-    task: "Создать data-driven стратегию персонализации и рост доходов",
-    solution:
-      "Проведен анализ 430 тыс. профилей клиентов банка, разработано 18 инициатив, запущен Telegram-бот, внедрена персонализация",
-    result:
-      "Сформирован фундамент персонализации, выявлен дополнительный доход до 22–52 млрд драм, заложена база для роста выручки",
-  },
-  {
-    number: "№6",
-    country: "Катар",
-    industry: "Банковский сектор",
-    image: ImageSlider6,
-    task: "Запустить новое направление по управлению ликвидностью; создать комплексное предложение для обслуживания групп компаний",
-    solution:
-      "Разработано и внедрено новое продуктовое направление Cash Management; сформирован базовый перечень продуктов для работы с корпоративными группами.",
-    result:
-      "За 2 месяца запущено MVP, рост базы пассивов по корпоративным клиентам составил 140%; привлечены крупные оптовые трейдеры из ОАЭ.",
-  },
-  {
-    number: "№7",
-    country: "Россия",
-    industry: "Инвестиционные услуги",
-    image: ImageSlider7,
-    task: "Запустить инвестиционный бизнес для физлиц в новом регионе присутствия холдинга.",
-    solution:
-      "Определены элементы российской модели для масштабирования, описаны бизнес-процессы, подготовлена продуктовая и сервисная модель.",
-    result:
-      "Сделан успешный выход на безубыточность в первый год работы, обеспечен рост эффективности бизнеса за счет стандартизации процессов.",
-  },
-  {
-    number: "№8",
-    country: "ОАЭ",
-    industry: "Банковский сектор",
-    image: ImageSlider8,
-    task: "Запустить цифровой банк для состоятельных клиентов (Affluent & HNWI).",
-    solution:
-      "Определены целевой сегмент и продуктовая модель, разработана стратегия привлечения клиентов, сформирована организационная структура и MVP мобильного приложения.",
-    result:
-      "Получена лицензия на рынке ОАЭ, создано мобильное приложение, подготовлен выход банка на рынок.",
+    rank: "Топ-1",
+    rankDesc: "компания </br> в премиальной </br> медицине",
+    info: [
+      { icon: Icon1, label: "Страна:", value: "Россия" },
+      { icon: Icon2, label: "Медицина", value: "Медицина" },
+    ],
+    description:
+      "Стратегия экспансии </br> и развитие премиального </br> медицинского бренда",
+    results: [
+      {
+        icon: Image1,
+        text: "Проведён анализ и вывлено 46 инициатив для роста выручки",
+      },
+      { icon: Image2, text: "Запущены новые направления и программы развития" },
+      {
+        icon: Image3,
+        text: "Начата международная экспансия, подготовлен пилот в Южной Корее",
+      },
+    ],
   },
 ]
 
-// const HEADER_INFO = {
-//   stats: "300+ проектов · 30+ стран · 15 отраслей",
-//   description:
-//     "Здесь представлены проекты из разных стран и отраслей, реализованные в тесном партнерстве с клиентами.",
-// }
-
-// Компоненты
-const InfoRow: FC<InfoRowProps> = ({ label, value }) => (
-  <Text className={s.cardInfo}>
-    <b>{label}:</b> {value}
-  </Text>
+const IdeaInfoItem: FC<{ icon: any; label: string; value: string }> = ({
+  icon: Icon,
+  label,
+  value,
+}) => (
+  <Flex className={s.ideaBoxInfoCountry} gap={"14px"} align={"center"}>
+    <Icon />
+    <Flex direction={"column"}>
+      <Text className={s.ideaBoxCountry}>{label}</Text>
+      {value && <Text className={s.ideaBoxCity}>{value}</Text>}
+    </Flex>
+  </Flex>
 )
 
-const CaseCard: FC<CaseCardProps> = ({ caseStudy }) => {
-  const { number, country, industry, image, task, solution, result } = caseStudy
-  const matches = useMediaQuery("(max-width: 1040px)")
-  return (
-    <div className={s.card}>
-      <Box>
-        <Text className={s.cardNumber}>{number}</Text>
-        <InfoRow label="Страна" value={country} />
-        <InfoRow label="Отрасль" value={industry} />
+const IdeaResultItem: FC<{ icon: any; text: string }> = ({ icon, text }) => (
+  <Flex gap={"24px"} align={"center"} p={"13px 18px"} className={s.ideaItem}>
+    <Image src={icon} alt={""} width={44} height={44} />
+    <Text component={"p"}>{text}</Text>
+  </Flex>
+)
 
-        <Image className={s.image} src={image} alt={`Case study ${number}`} />
-
-        <Flex direction="column" gap="4px">
-          <Text className={s.cardInfo} mb="4px">
-            <b>Задача:</b> {task}
-          </Text>
-          <Text className={s.cardInfo}>
-            <b>Решение:</b> {solution}
-          </Text>
-          <Text className={s.cardInfo}>
-            <b>Результат:</b> {result}
-          </Text>
+const IdeaCard: FC<{ data: (typeof IDEAS_DATA)[0] }> = ({ data }) => (
+  <Box className={s.ideaBox}>
+    <Box className={s.ideaBoxTop}>
+      <Flex gap={"26px"} justify={"space-between"}>
+        <Text className={s.ideaBoxTitle}>
+          {data.rank} <br />
+          <span dangerouslySetInnerHTML={{ __html: data.rankDesc }} />
+        </Text>
+        <Flex direction="column" gap="6px">
+          {data.info.map((info, i) => (
+            <IdeaInfoItem key={i} {...info} />
+          ))}
         </Flex>
-      </Box>
+      </Flex>
+      <Text
+        className={s.ideaBoxDescription}
+        dangerouslySetInnerHTML={{ __html: data.description }}
+      />
+    </Box>
 
-      <Button
-        bg="#0076FE"
-        color="#FFF"
-        radius={8}
-        h="44px"
-        w={matches ? "100%" : "192px"}
-        mt="60px"
-      >
-        Подробнее
-      </Button>
-    </div>
-  )
-}
+    <Box p={"12px 10px"}></Box>
+
+    <Box p={"0 5px 0 10px"}>
+      <Text className={s.ideaBoxResult}>Результат:</Text>
+      <Flex direction={"column"} gap={"12px"}>
+        {data.results.map((result, i) => (
+          <IdeaResultItem key={i} {...result} />
+        ))}
+      </Flex>
+    </Box>
+  </Box>
+)
 
 export const Books: FC = () => {
-  const matches = useMediaQuery("(max-width: 576px)")
+  const matches = useMediaQuery("(max-width: 1040px)")
 
   return (
     <div className={s.sectionWrapper}>
-      <Flex>
-        <Flex direction="column" w={matches ? "100%" : "50%"}>
-          <Text className="section-title" mb={"12px"}>
-            От идей к результатам: реальные кейсы
-          </Text>
-          <Text className="section-subtitle">
-            Эффективность нашего подхода лучше всего демонстрируют конкретные
-            результаты —
-            <span>рост выручки, доли рынка и операционной эффективности.</span>
-          </Text>
-        </Flex>
-
-        {/*<Flex direction="column" w="50%" justify="center" align="flex-end">*/}
-        {/*  <Text*/}
-        {/*    className={s.infoNumber}*/}
-        {/*    mb="13px"*/}
-        {/*    fz="24px"*/}
-        {/*    c="#0076FE"*/}
-        {/*    fw={400}*/}
-        {/*    lts="-0.48px"*/}
-        {/*    lh="120%"*/}
-        {/*  >*/}
-        {/*    {HEADER_INFO.stats}*/}
-        {/*  </Text>*/}
-        {/*  <Text*/}
-        {/*    fz="16px"*/}
-        {/*    c="#566677"*/}
-        {/*    fw={400}*/}
-        {/*    lts="-0.32px"*/}
-        {/*    lh="120%"*/}
-        {/*    maw="438px"*/}
-        {/*  >*/}
-        {/*    {HEADER_INFO.description}*/}
-        {/*  </Text>*/}
-        {/*</Flex>*/}
-      </Flex>
-
-      <Carousel
-        slideGap={matches ? 8 : 16}
-        slideSize={matches ? "100%" : 485}
-        align="start"
-        height="auto"
-        slidesToScroll={matches ? 1 : "auto"}
-        classNames={{
-          controls: s.carouselControls,
-          control: s.carouselControl,
-        }}
-        loop={true}
-        mt="35px"
-        nextControlIcon={<ImageRight />}
-        previousControlIcon={<ImageRight />}
+      <Flex
+        direction="column"
+        align={matches ? "flex-start" : "center"}
+        gap={"20px"}
       >
-        {CASE_STUDIES.map((caseStudy, idx) => (
-          <Carousel.Slide key={idx}>
-            <CaseCard caseStudy={caseStudy} />
-          </Carousel.Slide>
+        <Text className={s.ideaTitle}>От идей к результатам</Text>
+        <Text className={s.ideaDescription} maw={matches ? "100%" : "512px"}>
+          Главный показатель нашей эффективности — реальные результаты: рост
+          выручки, доли рынка и производительности.
+        </Text>
+      </Flex>
+      <Grid gutter={"32px"}>
+        {IDEAS_DATA.map((idea, idx) => (
+          <Grid.Col span={matches ? 12 : 4} key={idx}>
+            <IdeaCard data={idea} />
+          </Grid.Col>
         ))}
-      </Carousel>
+      </Grid>
+      <Flex justify={"center"} mt={"24px"}>
+        <Button
+          bg={"#0076FE"}
+          color={"#FFF"}
+          radius={8}
+          h={"44px"}
+          w={matches ? "100%" : "233px"}
+          fz={"16px"}
+          fw={400}
+          lh={"100%"}
+          // onClick={() => onLinkClick("navbar5")}
+        >
+          Обсудить проект
+        </Button>
+      </Flex>
+      {/* ----- */}
+
+      <Grid gutter={"32px"} mt={"120px"}>
+        <Grid.Col span={matches ? 12 : 4}>
+          <Box h={"100%"}>
+            <Text className={s.ideaInfoBoxTitleOne}>
+              Мы работаем спринтами — от быстрой диагностики до комплексного
+              внедрения.
+            </Text>
+            <Text className={s.ideaInfoBoxDescriptionOne}>
+              За короткое время формулируем и проверяем гипотезы, усиливаем
+              работающие решения и масштабируем результат.
+            </Text>
+          </Box>
+        </Grid.Col>
+        <Grid.Col span={matches ? 12 : 4}>
+          <Box className={s.ideaInfoBox}>
+            <Flex justify={"flex-end"} mb={"45px"}>
+              <Image src={Image4} alt={""} width={59} height={59} />
+            </Flex>
+            <Text className={s.ideaInfoBoxTitle}>Диагностика</Text>
+            <Text className={s.ideaInfoBoxDescription}>
+              Быстрый анализ и диагностика бизнеса: определяем точки роста и
+              создаём дорожную карту дальнейших действий.
+            </Text>
+          </Box>
+        </Grid.Col>
+        <Grid.Col span={matches ? 12 : 4}>
+          <Box className={s.ideaInfoBox}>
+            <Flex justify={"flex-end"} mb={"45px"}>
+              <Image src={Image5} alt={""} width={59} height={59} />
+            </Flex>
+            <Text className={s.ideaInfoBoxTitle}>Стратегия</Text>
+            <Text className={s.ideaInfoBoxDescription}>
+              Формируем стратегию, проверяем гипотезы практикой, усиливаем
+              сильное и убираем лишнее.
+            </Text>
+          </Box>
+        </Grid.Col>
+        <Grid.Col span={matches ? 12 : 4}>
+          <Box className={s.ideaInfoBox}>
+            <Flex justify={"flex-end"} mb={"45px"}>
+              <Image src={Image6} alt={""} width={59} height={59} />
+            </Flex>
+            <Text className={s.ideaInfoBoxTitle}>Цифровая транформация</Text>
+            <Text className={s.ideaInfoBoxDescription}>
+              Реализуем комплексные трансформации, перестраиваем процессы и
+              добиваемся измеримых результатов.
+            </Text>
+          </Box>
+        </Grid.Col>
+        <Grid.Col span={matches ? 12 : 4}>
+          <Box className={s.ideaInfoBox}>
+            <Flex justify={"flex-end"} mb={"45px"}>
+              <Image src={Image7} alt={""} width={59} height={59} />
+            </Flex>
+            <Text className={s.ideaInfoBoxTitle}>Инвестирование</Text>
+            <Text className={s.ideaInfoBoxDescription}>
+              Готовим бизнес к сделкам и IPO, увеличиваем капитализацию и
+              инвестиционную привлекательность.
+            </Text>
+          </Box>
+        </Grid.Col>
+        <Grid.Col span={matches ? 12 : 4}>
+          <Box className={s.ideaInfoBox}>
+            <Flex justify={"flex-end"} mb={"45px"}>
+              <Image src={Image8} alt={""} width={59} height={59} />
+            </Flex>
+            <Text className={s.ideaInfoBoxTitle}>Выход на новые рынки</Text>
+            <Text className={s.ideaInfoBoxDescription}>
+              Помогаем компаниям масштабироваться и выходить на международные
+              рынки.
+            </Text>
+          </Box>
+        </Grid.Col>
+      </Grid>
+      <Flex justify={"center"} mt={"24px"}>
+        <Button
+          bg={"#0076FE"}
+          color={"#FFF"}
+          radius={8}
+          h={"44px"}
+          w={matches ? "100%" : "233px"}
+          fz={"16px"}
+          fw={400}
+          lh={"100%"}
+          // onClick={() => onLinkClick("navbar5")}
+        >
+          Связаться с нами
+        </Button>
+      </Flex>
     </div>
   )
 }

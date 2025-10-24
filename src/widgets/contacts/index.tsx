@@ -373,7 +373,7 @@ export const Contacts = () => {
 
               <Flex
                 direction="column"
-                gap="18px"
+                gap="19px"
                 align="flex-start"
                 justify={"space-between"}
               >

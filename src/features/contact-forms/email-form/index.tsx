@@ -1,4 +1,4 @@
-import { Button, Flex, Input, Select } from "@mantine/core"
+import { Button, Checkbox, Flex, Input, Select } from "@mantine/core"
 import React from "react"
 import { Controller, useForm } from "react-hook-form"
 import { IMaskInput } from "react-imask"
@@ -97,6 +97,16 @@ export const EmailForm = () => {
               />
             </Input.Wrapper>
           )}
+        />
+
+        <Checkbox
+          defaultChecked
+          classNames={{
+            root: s.checkboxRoot,
+            label: s.checkboxLabel,
+            input: s.checkboxInput,
+          }}
+          label="Я ознакомлен и согласен с условиями обработки данных"
         />
       </Flex>
 

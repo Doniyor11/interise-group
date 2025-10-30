@@ -156,7 +156,6 @@
   border-radius: 13px;
   border: 1px solid #D4E4F7;
   background: radial-gradient(328.23% 268.04% at 41.88% 40.77%, #F2F8FF 20.19%, #0076FE 100%);
-
   p {
     color: #566677;
     font-size: 16px;
@@ -177,10 +176,10 @@
   background: radial-gradient(133.63% 142.52% at 43.38% 84.4%, #000B21 29.33%, #005CC7 100%);
   padding: 19px 20px;
   height: 100%;
-  transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out background;
     &:hover{
       background: radial-gradient(73.34% 78.23% at 43.38% 84.4%, #000B21 29.33%, #005CC7 100%);
-      transition: 0.2s ease-in-out;
+      transition: 0.2s ease-in-out background;
     }
 }
 

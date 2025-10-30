@@ -90,8 +90,8 @@ export const Navbar = () => {
           <Flex gap={5} align={"center"}>
             <Select
               className={s.lang}
-              defaultValue={"Uz"}
-              data={["Ru", "Uz"]}
+              defaultValue={"Ru"}
+              data={["Ru", "Eng"]}
               leftSection={<IconGlobal />}
               rightSection={<IconLangArrow />}
               classNames={{

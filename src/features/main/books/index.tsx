@@ -23,7 +23,7 @@ const IDEAS_DATA = [
     rankDesc: "компания в стране",
     info: [
       { icon: Icon1, label: "Страна:", value: "Средняя Азия" },
-      { icon: Icon2, label: "Финтех", value: "Финтех" },
+      { icon: Icon2, label: "Отрасль:", value: "Финтех" },
     ],
     description:
       "Интеграция ведущих банков и запуск крупнейшей трансформации на рынке",
@@ -165,7 +165,7 @@ export const Books: FC = () => {
           lh={"100%"}
           // onClick={() => onLinkClick("navbar5")}
         >
-          Обсудить проект
+          Все проекты
         </Button>
       </Flex>
       {/* ----- */}
@@ -256,7 +256,7 @@ export const Books: FC = () => {
           lh={"100%"}
           // onClick={() => onLinkClick("navbar5")}
         >
-          Связаться с нами
+          Все проекты
         </Button>
       </Flex>
     </div>

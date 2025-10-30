@@ -55,7 +55,7 @@ export const MainBanner = () => {
                 className={s.item}
                 pl={matches ? "10px" : "28px"}
               >
-                <AnimatedNumber value={30} className={s.number} />
+                <AnimatedNumber value={31} className={s.number} />
                 <Text className={s.info}>
                   стран для международной <br /> экспансии
                 </Text>

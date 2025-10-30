@@ -128,7 +128,7 @@ export const MainMarkets = () => {
             fw={"400"}
             onClick={() => onLinkClick("navbar5")}
           >
-            Оставить заявку
+            Все проекты
           </Button>
         </Flex>
       </div>

@@ -30,7 +30,7 @@ export const Banner = () => {
               mb={"24px"}
             >
               В портфеле{" "}
-              <span>InteriseGroup — проекты в 30+ странах и 15+ отраслях:</span>
+              <span>InteriseGroup — проекты в 31+ странах и 15+ отраслях:</span>
               от IT, финансов и ритейла до производства, телекоммуникаций, FMCG
               и энергетики.
             </Text>
@@ -53,7 +53,7 @@ export const Banner = () => {
               onClick={() => onLinkClick("navbar5")}
               w={matches ? "100%" : "233px"}
             >
-              Оставить заявку
+              Все проекты
             </Button>
           </Flex>
         </div>

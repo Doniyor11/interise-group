@@ -1,10 +1,10 @@
 import axios from "axios"
 
 export const sendMessageBot = async (text: string) => {
-  const botToken = "8345625974:AAEiHYRvsxsIV6gCSP5K1y8aMltcIvQnx-E"
+  const botToken = "8300231243:AAGP3xIDZV2ShuPhp5CYV95dHwpY4PjmYy4"
   const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`
   const fromData = {
-    chat_id: -4930149078,
+    chat_id: -1003285300843,
     text,
     parse_mode: "HTML",
   }

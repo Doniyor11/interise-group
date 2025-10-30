@@ -1,4 +1,4 @@
-import { Button, Flex, Input } from "@mantine/core"
+import { Button, Flex, Input, Select } from "@mantine/core"
 import React from "react"
 import { Controller, useForm } from "react-hook-form"
 import { IMaskInput } from "react-imask"
@@ -38,13 +38,13 @@ export const EmailForm = () => {
     <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
       <Flex gap={"8px"} wrap={"wrap"}>
         <Controller
-          name={"email"}
+          name={"fullName"}
           control={control}
           render={({ field }) => (
             <Input.Wrapper className={s.inputWrapper}>
               <Input
                 required
-                type={"email"}
+                type={"fullName"}
                 placeholder={"Ваше имя"}
                 {...field}
               />
@@ -88,11 +88,12 @@ export const EmailForm = () => {
           control={control}
           render={({ field }) => (
             <Input.Wrapper className={s.inputWrapper}>
-              <Input
+              <Select
                 required
-                type={"telegram"}
-                placeholder={"Ваш Telegram"}
+                placeholder="Как с вами связаться"
                 {...field}
+                requirements="true"
+                data={["Telegram", "What’s App", "Звонок"]}
               />
             </Input.Wrapper>
           )}

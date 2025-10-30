@@ -10,7 +10,7 @@ export const useSendMessageQuery = (onSuccess: () => void) => {
   return useMutation({
     mutationFn: (text: string) => sendMessageBot(text),
     onSuccess: () => {
-      toast.success("Xabar yuborildi!")
+      toast.success("Сообщение отправлено!")
       onSuccess && onSuccess()
       if (openModal) {
         setOpenModal(false)

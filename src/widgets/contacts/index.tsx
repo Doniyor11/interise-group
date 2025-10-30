@@ -169,14 +169,11 @@ export const Contacts = () => {
             gap="32px"
             id={"navbar5"}
             mt={"30px"}
+            align={"stretch"}
             direction={matches ? "column" : "row"}
           >
             <Box className={s.boxForm}>
-              <Flex
-                direction="column"
-                gap="8px"
-                mb={matches ? "200px" : "32px"}
-              >
+              <Flex direction="column" gap="8px">
                 <Text component="h2">Записаться на консультацию</Text>
                 <Text component="p">
                   Получите персональные рекомендации и ответы <br /> на ваши

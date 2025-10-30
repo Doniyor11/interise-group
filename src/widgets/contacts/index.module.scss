@@ -229,6 +229,10 @@
       text-underline-offset: auto;
       text-underline-position: from-font;
     }
+    @media screen and (max-width: 1366px){
+      font-size: 16px !important;
+    }
+
 
   }
 
@@ -239,7 +243,7 @@
     }
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1040px) {
     flex-direction: column;
     width: 100%;
     padding: 26px 20px;
@@ -248,7 +252,9 @@
       width: 100%;
     }
   }
-
+  @media screen and (max-width: 1040px){
+    width: 100%;
+  }
 }
 
 .mapRight {
@@ -256,7 +262,7 @@
   border-radius: 24px;
   border: 1px solid #D4E4F7;
   overflow: hidden;
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1040px) {
     width: 100%;
     height: 278px;
   }

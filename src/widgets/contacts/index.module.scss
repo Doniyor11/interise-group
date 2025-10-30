@@ -263,6 +263,10 @@
   width: 100%;
   background-color: #D4E4F7;
   margin: 27px 0;
+  display: none;
+  @media screen and (max-width: 1040px){
+    display: block;
+  }
 }
 
 .mapRight {

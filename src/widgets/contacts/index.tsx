@@ -196,7 +196,7 @@ export const Contacts = () => {
               {/* 1 */}
               <Flex
                 direction={"column"}
-                gap={"50px"}
+                gap={matches ? "15px" : "50px"}
                 h={"100%"}
                 justify={"space-between"}
               >
@@ -224,10 +224,11 @@ export const Contacts = () => {
                   </Text>
                 </Flex>
               </Flex>
+              <span className={s.line} />
               {/* 2 */}
               <Flex
                 direction={"column"}
-                gap={"50px"}
+                gap={matches ? "15px" : "50px"}
                 h={"100%"}
                 justify={"space-between"}
               >
@@ -290,10 +291,11 @@ export const Contacts = () => {
                   </Text>
                 </Flex>
               </Flex>
+              <span className={s.line} />
               {/* 3 */}
               <Flex
                 direction={"column"}
-                gap={"50px"}
+                gap={matches ? "15px" : "50px"}
                 h={"100%"}
                 justify={"space-between"}
               >

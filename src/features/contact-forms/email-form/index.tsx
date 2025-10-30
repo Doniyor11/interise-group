@@ -92,7 +92,6 @@ export const EmailForm = () => {
                 required
                 placeholder="Как с вами связаться"
                 {...field}
-                requirements="true"
                 data={["Telegram", "What’s App", "Звонок"]}
               />
             </Input.Wrapper>

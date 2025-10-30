@@ -1,325 +1,168 @@
 import { Box, Flex, Grid, List, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
-import Image, { StaticImageData } from "next/image"
-import Link from "next/link"
-import React, { ComponentType, FC, SVGProps } from "react"
+import Image from "next/image"
+import React from "react"
 
 import { EmailForm } from "@/features/contact-forms"
 
+import IconCall from "@/shared/assets/images/interise-group/call-outline.svg"
 import IconLogo from "@/shared/assets/images/interise-group/footer_logo.svg"
 import Imaga1 from "@/shared/assets/images/interise-group/formbg.png"
-import IconTg from "@/shared/assets/images/interise-group/linkedin.svg"
-import Icon1 from "@/shared/assets/images/interise-group/partner/icon1.svg"
-import Icon2 from "@/shared/assets/images/interise-group/partner/icon2.svg"
-import Icon3 from "@/shared/assets/images/interise-group/partner/icon3.svg"
-import Icon4 from "@/shared/assets/images/interise-group/partner/icon4.svg"
-import Icon5 from "@/shared/assets/images/interise-group/partner/icon5.svg"
-import Icon6 from "@/shared/assets/images/interise-group/partner/icon6.svg"
-import Icon7 from "@/shared/assets/images/interise-group/partner/icon7.svg"
-import Icon8 from "@/shared/assets/images/interise-group/partner/icon8.svg"
+import IconLin from "@/shared/assets/images/interise-group/linkedin.svg"
+import IconLocation from "@/shared/assets/images/interise-group/location-outline.svg"
+import IconEmail from "@/shared/assets/images/interise-group/mail-outline.svg"
 import User1 from "@/shared/assets/images/interise-group/partner/user1.png"
 import User2 from "@/shared/assets/images/interise-group/partner/user2.png"
-import IconVk from "@/shared/assets/images/interise-group/tg 2.svg"
-import IconYoutube from "@/shared/assets/images/interise-group/yu.svg"
+import IconTg from "@/shared/assets/images/interise-group/tg 2.svg"
 
 import s from "./index.module.scss"
 
-// Типы
-type SocialLink = {
-  Icon: ComponentType<SVGProps<SVGSVGElement>>
-  href: string
-}
-
-type TextStyle = {
-  fz: string
-  fw: string
-  c: string
-  lh: string
-  lts: string
-}
-
-type ExperienceSection = {
-  icon: ComponentType<SVGProps<SVGSVGElement>>
-  title: string
-  description: string
-}
-
-type PartnerCardProps = {
-  image: StaticImageData
-  name: string
-  role: string
-  achievements: string[]
-}
-
-type ExperienceCardProps = {
-  sections: ExperienceSection[][]
-}
-
-type ContactInfoProps = {
-  title: string
-  items: string[]
-}
-
-type PartnerData = PartnerCardProps & {
-  experience: ExperienceSection[][]
-}
-
-// Константы
-const SOCIAL_LINKS: SocialLink[] = [
-  { Icon: IconTg, href: "/" },
-  { Icon: IconVk, href: "/" },
-  { Icon: IconYoutube, href: "/" },
-]
-
-const TEXT_STYLES: Record<string, TextStyle> = {
-  title: {
-    fz: "clamp(22px, 4vw, 32px)",
-    fw: "400",
-    c: "#535E6B",
-    lh: "120%",
-    lts: "-0.64px",
-  },
-  subtitle: {
-    fz: "clamp(12px, 2vw, 16px)",
-    fw: "400",
-    c: "#0076FE",
-    lh: "120%",
-    lts: "-0.32px",
-  },
-  sectionTitle: {
-    fz: "clamp(16px, 3vw, 24px)",
-    fw: "400",
-    c: "#535E6B",
-    lh: "120%",
-    lts: "-0.48px",
-  },
-  body: {
-    fz: "clamp(12px, 2vw, 16px)",
-    fw: "400",
-    c: "#566677",
-    lh: "120%",
-    lts: "-0.32px",
-  },
-}
-
-// Компоненты
-const SocialLinks: FC = () => (
-  <Flex gap="12px" mt={"20px"} className={s.socialLinksIcon}>
-    {SOCIAL_LINKS.map(({ Icon, href }, idx) => (
-      <Link key={idx} href={href}>
-        <Icon />
-      </Link>
-    ))}
-  </Flex>
-)
-
-const PartnerCard: FC<PartnerCardProps> = ({
-  image,
-  name,
-  role,
-  achievements,
-}) => (
-  <Box className={s.partnerBox} p="25px">
-    <Box>
-      <Box className={s.image}>
-        <Image src={image} alt={name} width={342} height={257} />
-      </Box>
-      <Text {...TEXT_STYLES.title}>{name}</Text>
-      <Text {...TEXT_STYLES.subtitle} mb="20px">
-        {role}
-      </Text>
-      <List w={"290px"} className={s.listWrapper}>
-        {achievements.map((achievement, idx) => (
-          <List.Item key={idx} mb="10px">
-            <Text
-              {...TEXT_STYLES.body}
-              dangerouslySetInnerHTML={{ __html: achievement }}
-            />
-          </List.Item>
-        ))}
-      </List>
-    </Box>
-    <SocialLinks />
-  </Box>
-)
-
-const ExperienceSection: FC<ExperienceSection> = ({
-  icon: Icon,
-  title,
-  description,
-}) => (
-  <Box w="100%">
-    <Flex gap="12px" mb="12px" align="flex-start">
-      <Icon />
-      <Text
-        {...TEXT_STYLES.sectionTitle}
-        mb="12px"
-        dangerouslySetInnerHTML={{ __html: title }} //
-      />
-    </Flex>
-    <Text {...TEXT_STYLES.body}>{description}</Text>
-  </Box>
-)
-
-const ExperienceCard: FC<ExperienceCardProps> = ({ sections }) => {
-  const matches = useMediaQuery("(max-width: 1040px)")
-  return (
-    <>
-      <Box
-        className={cx(s.partnerBox, s.partnerBoxRight)}
-        p={matches ? "26px 20px" : "45px 28px"}
-        mb={"32px"}
-      >
-        <Text {...TEXT_STYLES.title} mb={matches ? "24px" : "40px"}>
-          Проектный опыт:
-        </Text>
-        <Flex gap="70px" direction={matches ? "column" : "row"}>
-          {sections.map((column: ExperienceSection[], idx: number) => (
-            <Flex
-              key={idx}
-              gap={idx === 0 ? "40px" : "32px"}
-              direction="column"
-              w={matches ? "100%" : idx === 0 ? "50%" : "calc(50% - 38px)"}
-            >
-              {column.map((section: ExperienceSection, sIdx: number) => (
-                <ExperienceSection key={sIdx} {...section} />
-              ))}
-            </Flex>
-          ))}
-        </Flex>
-      </Box>
-    </>
-  )
-}
-
-const ContactInfo: FC<ContactInfoProps> = ({ title, items }) => (
-  <Flex direction="column" gap="6px">
-    <Text component="p" className={s.infoTitle} mb="3px">
-      {title}
-    </Text>
-    {items.map((item, idx) => (
-      <Text
-        key={idx}
-        component="p"
-        className={s.infoText}
-        dangerouslySetInnerHTML={{ __html: item }}
-      />
-    ))}
-  </Flex>
-)
-
-// Данные партнеров
-
-const PARTNERS_DATA: PartnerData[] = [
-  {
-    image: User1,
-    name: "Дмитрий Вакин",
-    role: "Сооснователь, InteriseGroup",
-    achievements: [
-      "Инвестор и совладелец daily и tech проектов",
-      "Top-100 Forbes 30 under 30",
-      "Член делового совета BRICS, Мьянмы",
-    ],
-    experience: [
-      [
-        {
-          icon: Icon1,
-          title: "Международные позиции",
-          description:
-            "Сооснователь InteriseGroup. Инвестор и совладелец daily- и tech-проектов. Член делового совета BRICS (Мьянма). Вошел в топ-100 Forbes «30 до 30» в категории «Финансы и инвестиции» (2020).",
-        },
-        {
-          icon: Icon3,
-          title: "Опыт и карьерные <br /> результаты", // ✅ Исправлено
-          description:
-            "15+ лет опыта в инвестиционной, банковской, финансовой и IT-отраслях. Только в 2021 году участвовал в 30 проектах. Работал стратегом и консультантом в банковской сфере, ритейле и телекоме. Руководил развитием инноваций и перспективных проектов в Альфа-Банк Россия, разрабатывал стратегию для розничного и цифрового бизнеса, МСБ и СРКБ. Разработал инновационную стратегию развития банка и группы ABH Holding и реализовал её, участвовал в запуске инвестиционного фонда группы (€500 млн) и выстроил работу между банком и фондом для интеграции портфельных компаний.",
-        },
-      ],
-      [
-        {
-          icon: Icon2,
-          title: "Компетенции и ключевые экспертизы",
-          description:
-            "Эксперт в стратегии и трансформации, управлении системно значимыми проектами и изменениями. Имеет опыт формирования кросс-индустриальных стратегий и O2O-партнерств в соответствии с концепцией Industry 4.0 (крупнейшие кейсы в РФ на стыке банк+ритейл, банк+телеком).",
-        },
-        {
-          icon: Icon4,
-          title: "Текущая деятельность",
-          description:
-            "Сегодня консультирует и входит в советы директоров ряда компаний как директор программ трансформации, а также является инвестором и совладельцем международного консалтинга, проектов в области нейросенсорики, metaverse, производства и дистрибуции инновационной пищевой продукции, медиасети, проектов по работе с данными и аналитикой. Жил и работал в Китае, знаком с работой крупных финансовых и экосистемных компаний изнутри.",
-        },
-      ],
-    ],
-  },
-  {
-    image: User2,
-    name: "Алексей Веретенов",
-    role: "Сооснователь, InteriseGroup",
-    achievements: [
-      "Управляющий партнер, Senteo & CEO Сентео Восток",
-      "Председатель правления, банк <br /> и международная P2P платежная система", // ✅ Исправлено
-      "Инвестор и совладелец daily и venture проектов",
-    ],
-    experience: [
-      [
-        {
-          icon: Icon5,
-          title: "Международный опыт",
-          description:
-            "Эксперт по трансформации, цифровизации и управлению изменениями с 20-летним опытом работы в 26 странах, 150+ компаниях и более чем 300 проектах.",
-        },
-        {
-          icon: Icon6,
-          title: "Фокус на стратегиях <br /> и внедрении", // ✅ Исправлено
-          description:
-            "Разрабатывал стратегии с фокусом на внедрение, реализовывал проекты по управлению трансформацией, цифровизации, развитию корпоративной культуры, системному ценообразованию, клиентоориентированной аналитике и внедрению CRM-систем.",
-        },
-      ],
-      [
-        {
-          icon: Icon7,
-          title: "Профессиональный путь",
-          description:
-            "Работал в Альфа-Банке (Россия, Беларусь, Украина), Райффайзенбанке, Импэксбанке, розничной сети «Евросеть», инвестиционном фонде ANIF и консультантом в банковской сфере, розничной торговле, страховании, тяжёлой промышленности, автомобилестроении и телекоммуникациях.",
-        },
-        {
-          icon: Icon8,
-          title: "Глобальные проекты",
-          description:
-            "Опыт охватывает США, Европу и Центральную Азию; среди компаний — BNP Paribas, Atlant-M, Societe Generale, Росбанк, Росинтер, 360 Federal Credit Union, MasterCard, Альфа-Банк, ВТБ, Мегафон, ЧТПЗ, TBC Bank, Ак Барс, Yelo Bank, Societe Generale Group и другие.",
-        },
-      ],
-    ],
-  },
-]
-
 export const Contacts = () => {
-  const matchesIpad = useMediaQuery("(max-width: 1040px)")
-  const matches = useMediaQuery("(max-width: 840px)")
+  const matches = useMediaQuery("(max-width: 1040px)")
+  const matchesSmall = useMediaQuery("(max-width: 845px)")
+  const matchesIpad = useMediaQuery("(max-width: 1140px)")
   return (
     <div className={s.sectionWrapper}>
       <div className="container">
         <div className={s.box}>
-          <Text className="section-title" ta="center" mb={"11px"}>
-            Партнёры
-          </Text>
-          <Text className="section-subtitle" c="#fff" ta="center" mb="40px">
-            <span>Команда</span> InteriseGroup
-          </Text>
+          <Text className={s.teamTitle}>Команда InteriseGroup</Text>
 
-          <Flex direction={"column"} gap={"22px"} mb={"32px"}>
-            {PARTNERS_DATA.map((partner, idx) => (
-              <Grid key={idx}>
-                <Grid.Col span={matches ? 12 : matchesIpad ? 4 : 3}>
-                  <PartnerCard {...partner} />
-                </Grid.Col>
-                <Grid.Col span={matches ? 12 : matchesIpad ? 8 : 9}>
-                  <ExperienceCard sections={partner.experience} />
-                </Grid.Col>
-              </Grid>
-            ))}
-          </Flex>
+          <Box mb={"32px"}>
+            <Grid>
+              <Grid.Col span={matchesSmall ? 12 : 6}>
+                <Flex direction={"column"}>
+                  <Flex
+                    direction={"column"}
+                    bg={"#D4E8FF"}
+                    className={s.teamBox}
+                  >
+                    <Flex className={s.teamBoxTop}>
+                      <Box className={s.teamBoxImage}>
+                        <Image src={User1} alt={""} width={254} height={284} />
+                      </Box>
+                      <Box h={matchesIpad ? "240px" : "280px"}>
+                        <Text className={s.teamBoxTitle}>Дмитрий Вакин</Text>
+                        <Text className={s.teamBoxSubTitle}>
+                          Сооснователь, InteriseGroup
+                        </Text>
+                        <List>
+                          <List.Item className={s.teamBoxText}>
+                            Инвестор и совладелец daily- и tech-
+                            <br />
+                            проектов
+                          </List.Item>
+                          <List.Item className={s.teamBoxText}>
+                            Член делового совета BRICS
+                            <br /> (Мьянма)
+                          </List.Item>
+                          <List.Item className={s.teamBoxText}>
+                            Топ-100 Forbes “30 до 30”(Финансы
+                            <br /> и инвестиции, 2020).
+                          </List.Item>
+                        </List>
+                        <Flex gap={"8px"} mt={"15px"}>
+                          <IconTg />
+                          <IconLin />
+                        </Flex>
+                      </Box>
+                    </Flex>
+                    <Flex
+                      direction={"column"}
+                      className={s.teamBoxBottom}
+                      gap={"15px"}
+                      p={"35px"}
+                    >
+                      <Text className={s.teamBoxBottomTitle}>
+                        Проектный опыт:
+                      </Text>
+                      <Text className={s.teamBoxBottomSubTitle}>
+                        Эксперт по стратегии, трансформации и управлению
+                        изменениями. Более 15 лет опыта в инвестиционной,
+                        банковской и IT-сферах. Реализовал свыше 30 крупных
+                        проектов в России и СНГ, включая крупнейшие интеграции и
+                        программы цифровой трансформации.
+                      </Text>
+                      <Text className={s.teamBoxBottomSubTitle}>
+                        Руководил развитием инноваций в Альфа-Банке, участвовал
+                        в создании инвестиционного фонда группы (€500 млн).
+                        Консультирует компании, входит в советы директоров и
+                        инвестирует в международные консалтинговые и
+                        технологические бизнесы.
+                      </Text>
+                    </Flex>
+                  </Flex>
+                </Flex>
+              </Grid.Col>
+              <Grid.Col span={matchesSmall ? 12 : 6}>
+                <Flex direction={"column"}>
+                  <Flex
+                    direction={"column"}
+                    bg={"#D4E8FF"}
+                    className={s.teamBox}
+                  >
+                    <Flex className={s.teamBoxTop}>
+                      <Box className={s.teamBoxImage}>
+                        <Image src={User2} alt={""} width={254} height={284} />
+                      </Box>
+                      <Flex
+                        direction={"column"}
+                        justify={"space-between"}
+                        h={matchesIpad ? "240px" : "280px"}
+                      >
+                        <Box>
+                          <Text className={s.teamBoxTitle}>
+                            Алексей Веретенов
+                          </Text>
+                          <Text className={s.teamBoxSubTitle}>
+                            Сооснователь, InteriseGroup
+                          </Text>
+                          <List>
+                            <List.Item className={s.teamBoxText}>
+                              Управляющий партнёр Sentoo <br />и CEO Sentoo
+                              Восток
+                            </List.Item>
+                            <List.Item className={s.teamBoxText}>
+                              Инвестор и совладелец daily- <br />и
+                              venture-проектов.
+                            </List.Item>
+                          </List>
+                        </Box>
+                        <Flex gap={"8px"} mt={"15px"}>
+                          <IconTg />
+                          <IconLin />
+                        </Flex>
+                      </Flex>
+                    </Flex>
+                    <Flex
+                      direction={"column"}
+                      className={s.teamBoxBottom}
+                      gap={"15px"}
+                      p={"35px"}
+                    >
+                      <Text className={s.teamBoxBottomTitle}>
+                        Проектный опыт:
+                      </Text>
+                      <Text className={s.teamBoxBottomSubTitle}>
+                        Эксперт по стратегии, трансформации и управлению
+                        изменениями. Более 15 лет опыта в инвестиционной,
+                        банковской и IT-сферах. Реализовал свыше 30 крупных
+                        проектов в России и СНГ, включая крупнейшие интеграции и
+                        программы цифровой трансформации.
+                      </Text>
+                      <Text className={s.teamBoxBottomSubTitle}>
+                        Руководил развитием инноваций в Альфа-Банке, участвовал
+                        в создании инвестиционного фонда группы (€500 млн).
+                        Консультирует компании, входит в советы директоров и
+                        инвестирует в международные консалтинговые и
+                        технологические бизнесы.
+                      </Text>
+                    </Flex>
+                  </Flex>
+                </Flex>
+              </Grid.Col>
+            </Grid>
+          </Box>
 
           <Flex
             mb="40px"
@@ -353,54 +196,161 @@ export const Contacts = () => {
             direction={matches ? "column" : "row"}
           >
             <Box className={s.mapLeft}>
-              <Flex direction="column">
-                <Flex direction="column" gap="8px" mb="31px">
-                  <IconLogo />
-                </Flex>
-                <Flex gap="18px" mb="20px">
-                  <IconYoutube />
-                  <IconTg />
-                  <IconVk />
-                </Flex>
-                <ContactInfo
-                  title="Email:"
-                  items={[
-                    "PR и СМИ: <span>pr@interisegroup.com</span>",
-                    "Запросы бизнеса: <br /><span>request@interisegroup.com</span>",
-                  ]}
-                />
-              </Flex>
-
+              {/* 1 */}
               <Flex
-                direction="column"
-                gap="19px"
-                align="flex-start"
+                direction={"column"}
+                gap={"50px"}
+                h={"100%"}
                 justify={"space-between"}
               >
-                <Flex direction="column" gap="6px">
-                  <Text component="p" className={s.infoTitle} mb="23px">
-                    Контакты партнёров:
-                  </Text>
-                  <Text component="p" className={s.infoText}>
-                    Дмитрий Вакин <br /> Со-основатель, Управляющий
-                    <br /> партнер +79652877590
-                  </Text>
+                <Flex gap={"35px"} direction={"column"}>
+                  <Flex>
+                    <IconLogo />
+                  </Flex>
+                  <Flex gap="18px" mb="20px">
+                    <IconLin />
+                    <IconTg />
+                  </Flex>
                 </Flex>
-                <Flex direction="column" gap="6px">
-                  <Text component="p" className={s.infoTitle} mb="34px">
-                    Наш офис:
+                <Flex direction={"column"} gap="8px">
+                  <Text component="p" className={cx(s.infoText, s.menu)}>
+                    О нас
                   </Text>
-                  <Text component="p" className={s.infoText}>
-                    Остоженка 37/7 с.2, особняк <br /> Conversation Cafe, 4 этаж
+                  <Text component="p" className={cx(s.infoText, s.menu)}>
+                    Исследования
+                  </Text>
+                  <Text component="p" className={cx(s.infoText, s.menu)}>
+                    Interise Club
+                  </Text>
+                  <Text component="p" className={cx(s.infoText, s.menu)}>
+                    Направления работы
                   </Text>
                 </Flex>
               </Flex>
-
-              <Flex direction="column" gap="18px" h={"100%"}>
-                <Text component="p" className={s.infoText} mt={"50px"}>
-                  Алексей Веретенов <br /> Со-основатель, Управляющий <br />{" "}
-                  партнер +79032846834
-                </Text>
+              {/* 2 */}
+              <Flex
+                direction={"column"}
+                gap={"50px"}
+                h={"100%"}
+                justify={"space-between"}
+              >
+                <Flex
+                  direction="column"
+                  gap="19px"
+                  align="flex-start"
+                  justify={"space-between"}
+                >
+                  <Flex direction="column" gap="6px">
+                    <Flex
+                      align={"center"}
+                      gap={"8px"}
+                      className={s.infoTitle}
+                      mb="24px"
+                    >
+                      <IconEmail />
+                      Напишите нам:
+                    </Flex>
+                    <Flex direction="column" mb={"16px"}>
+                      <Text component="p" className={s.infoText}>
+                        PR и СМИ:
+                      </Text>
+                      <Text
+                        component="p"
+                        className={s.infoText}
+                        c={"#535E6B"}
+                        fz={"24px"}
+                      >
+                        pr@interisegroup.com
+                      </Text>
+                    </Flex>
+                    <Flex direction="column">
+                      <Text component="p" className={s.infoText}>
+                        По вопросам сотрудничества:
+                      </Text>
+                      <Text
+                        component="p"
+                        className={s.infoText}
+                        c={"#535E6B"}
+                        fz={"24px"}
+                      >
+                        request@interisegroup.com
+                      </Text>
+                    </Flex>
+                  </Flex>
+                </Flex>
+                <Flex direction={"column"} gap="8px">
+                  <Text component="p" className={cx(s.infoText, s.menu)}>
+                    Политика конфединциальности
+                  </Text>
+                  <Text component="p" className={cx(s.infoText, s.menu)}>
+                    Пользовательское соглашения
+                  </Text>
+                  <Text component="p" className={cx(s.infoText, s.menu)}>
+                    Согласие на получение рассылок
+                  </Text>
+                  <Text component="p" className={cx(s.infoText, s.menu)}>
+                    Обработка файлов Cookies
+                  </Text>
+                </Flex>
+              </Flex>
+              {/* 3 */}
+              <Flex
+                direction={"column"}
+                gap={"50px"}
+                h={"100%"}
+                justify={"space-between"}
+              >
+                <Flex
+                  direction="column"
+                  gap="19px"
+                  align="flex-start"
+                  justify={"space-between"}
+                >
+                  <Flex direction="column" gap="6px">
+                    <Flex
+                      align={"center"}
+                      gap={"8px"}
+                      className={s.infoTitle}
+                      mb="24px"
+                    >
+                      <IconCall />
+                      Позвоните:
+                    </Flex>
+                    <Flex direction="column" mb={"16px"}>
+                      <Text component="p" className={s.infoText}>
+                        Телефон:
+                      </Text>
+                      <Text
+                        component="p"
+                        className={s.infoText}
+                        c={"#535E6B"}
+                        fz={"24px"}
+                      >
+                        8 800 000 00 00
+                      </Text>
+                    </Flex>
+                  </Flex>
+                </Flex>
+                <Flex direction="column" gap="18px" justify={"space-between"}>
+                  <Flex align={"center"} gap={"8px"} className={s.infoTitle}>
+                    <IconLocation />
+                    Наш офис:
+                  </Flex>
+                  <Flex direction="column">
+                    <Text component="p" className={s.infoText}>
+                      Адрес:
+                    </Text>
+                    <Text
+                      component="p"
+                      className={s.infoText}
+                      c={"#535E6B"}
+                      fz={"16px"}
+                    >
+                      Остоженка 37/7 с.2, особняк <br /> Conversation Cafe, 4
+                      этаж
+                    </Text>
+                  </Flex>
+                </Flex>
               </Flex>
             </Box>
             <Box className={s.mapRight}>

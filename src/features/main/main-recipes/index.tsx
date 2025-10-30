@@ -14,69 +14,89 @@ export const MainRecipes = () => {
 
   return (
     <div className={s.sectionWrapper} id={"navbar3"}>
-      <Text className={"section-subtitle"} ta={"center"} mb={"24px"}>
-        <span>Исследования</span> и макро-тренды
-      </Text>
+      <Flex
+        direction={"column"}
+        align={matches ? "flex-start" : "center"}
+        gap={"20px"}
+        mb={"24px"}
+      >
+        <Text className={s.researchTitle} ta={"center"}>
+          Исследования и макро-тренды
+        </Text>
+        <Text className={s.researchDescription} ta={"center"}>
+          Наши исследования объединяют опыт десятков стран и отраслей, превращая
+          накопленные данные и инсайты в практические решения. Они помогают
+          компаниям видеть картину рынка глубже, чем традиционная аналитика, —
+          понимать мотивы клиентов, динамику изменений и реальные точки роста.
+        </Text>
+      </Flex>
       <div className={s.cards}>
         <Box className={s.card}>
-          <Image className={s.image} src={ImageSlider1} alt={"ImageBook"} />
+          <Box className={s.cardImageBox}>
+            <Image
+              className={s.image}
+              src={ImageSlider1}
+              alt={"ImageBook"}
+              width={102}
+              height={102}
+            />
+          </Box>
           <Flex direction={"column"} gap={"12px"}>
             <Text
               c={"#535E6B"}
-              fz={"24px"}
+              fz={matches ? "20px" : "24px"}
               lh={"120%"}
               lts={"-0.48px"}
               fw={"400"}
+              component={"p"}
             >
-              Индексные исследования
-            </Text>
-            <Text className={s.cardInfo}>
-              Customer Choice Index — это комплексная диагностика клиентского
-              опыта, которая вскрывает настоящие причины побед и поражений в
-              борьбе за клиента. Исследование выходит далеко за рамки
-              традиционных оценок качества и фокусируется на критических
-              моментах принятия решений.
+              Customer Choice Index
             </Text>
           </Flex>
         </Box>
         <Box className={s.card}>
-          <Image className={s.image} src={ImageSlider2} alt={"ImageBook"} />
+          <Box className={s.cardImageBox}>
+            <Image
+              className={s.image}
+              src={ImageSlider2}
+              alt={"ImageBook"}
+              width={102}
+              height={102}
+            />
+          </Box>
           <Flex direction={"column"} gap={"12px"}>
             <Text
               c={"#535E6B"}
-              fz={"24px"}
+              fz={matches ? "20px" : "24px"}
               lh={"120%"}
               lts={"-0.48px"}
               fw={"400"}
+              component={"p"}
             >
-              Сравнительный анализ стран и индустрий
-            </Text>
-            <Text className={s.cardInfo}>
-              Комплексные макроэкономические обзоры и прогнозирование позволяют
-              сравнивать экономики, отрасли и бизнес-среды в разных
-              странах.Такой подход помогает компаниям принимать стратегические
-              решения, видеть перспективные возможности и опережать изменения на
-              рынке, а не реагировать на них постфактум.
+              Сравнительный <br /> анализ стран <br /> и индустрий
             </Text>
           </Flex>
         </Box>
         <Box className={s.card}>
-          <Image className={s.image} src={ImageSlider3} alt={"ImageBook"} />
+          <Box className={s.cardImageBox}>
+            <Image
+              className={s.image}
+              src={ImageSlider3}
+              alt={"ImageBook"}
+              width={102}
+              height={102}
+            />
+          </Box>
           <Flex direction={"column"} gap={"12px"}>
             <Text
               c={"#535E6B"}
-              fz={"24px"}
+              fz={matches ? "20px" : "24px"}
               lh={"120%"}
               lts={"-0.48px"}
               fw={"400"}
+              component={"p"}
             >
-              Медиа и публикации
-            </Text>
-            <Text className={s.cardInfo}>
-              Экспертные статьи в ведущих деловых СМИ, аналитические материалы,
-              видеоканал с участием партнеров и приглашенных лидеров индустрий,
-              а также авторская колонка партнеров и экспертов
-              InteriseGroup.story.
+              Маркетинговые исследования
             </Text>
           </Flex>
         </Box>
@@ -85,7 +105,7 @@ export const MainRecipes = () => {
         <Button
           bg={"#0076FE"}
           color={"#FFF"}
-          w={matches ? "100%" : "fit-content"}
+          w={matches ? "100%" : "220px"}
           radius={8}
           h={"44px"}
           mt={"32px"}

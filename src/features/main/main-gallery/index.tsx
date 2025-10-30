@@ -27,14 +27,18 @@ export const MainGallery = () => {
         <Flex
           direction={"column"}
           justify={"center"}
-          align={"center"}
-          mb={"24px"}
+          align={matches ? "flex-start" : "center"}
+          mb={matches ? "0" : "24px"}
         >
-          <Text className={s.clubTitle} c={"#fff"} ta="center">
+          <Text
+            className={s.clubTitle}
+            c={"#fff"}
+            ta={matches ? "left" : "center"}
+          >
             InteriseClub — площадка для общения <br /> и обмена опытом
             практиков.
           </Text>
-          <Text className={"section-title sm"} c={"#8696A9"} mb={"24px"}>
+          <Text className={s.clubInfoTitle} c={"#8696A9"} mb={"24px"}>
             Типы мероприятий:
           </Text>
           <Flex
@@ -42,7 +46,7 @@ export const MainGallery = () => {
             wrap={"wrap"}
             gap={"1px"}
             w={matches ? "100%" : "750px"}
-            justify={"center"}
+            justify={matches ? "flex-start" : "center"}
           >
             {badgeData.map((item) => (
               <Badge className={s.badge} key={item.id}>
@@ -54,7 +58,7 @@ export const MainGallery = () => {
         <Flex
           gap={"30px"}
           direction={matches ? "column-reverse" : "row"}
-          p={matches ? "0 15px" : "0"}
+          p={matches ? "0" : "0"}
         >
           <Box w={matches ? "100%" : "50%"}>
             <Text

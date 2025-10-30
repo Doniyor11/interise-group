@@ -3,7 +3,7 @@
 .sectionWrapper {
   margin-top: 78px;
   padding: 78px 0 125px 0;
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     padding: 40px 15px 0 15px;
     margin-top: 40px;
   }
@@ -23,42 +23,65 @@
   border-radius: 20px;
   border: 1px solid #D4E4F7;
   background: #F2F8FF;
-  padding: 24px 20px;
+  padding: 13px;
   flex: 1;
-
-  .image {
-    width: 100%;
-    height: 152px;
-    border-radius: 16px;
-    object-fit: cover;
-    margin: 15px 0 23px 0;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  transition: background 0.3s ease, color 0.3s ease;
+  .cardImageBox{
+    min-width: 102px;
+    height: 102px;
+    border-radius: 24px;
     border: 1px solid #D4E4F7;
+    overflow: hidden;
+    .image {
+      width: 100%;
+      height: 102px;
+      object-fit: cover;
+    }
   }
+  
+  &:hover{
+    background: #D4E8FF;
+    cursor: pointer;
 
-  .cardInfo {
-    color: #566677;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 120%;
-    letter-spacing: -0.32px;
-
-    b {
-      font-weight: 700;
+    p{
+      color: #0076FE !important;
     }
   }
 
-  //p {
-  //  width: 100%;
-  //  color: #566677;
-  //  font-size: 16px;
-  //  font-style: normal;
-  //  font-weight: 400;
-  //  line-height: 120%;
-  //  letter-spacing: -0.32px;
-  //
-  //  overflow: hidden;
-  //  white-space: nowrap;
-  //  text-overflow: ellipsis;
-  //}
+}
+
+
+.researchTitle {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.04rem;
+  background: linear-gradient(90deg, #107EFD 32.34%, #47C0FF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  @media screen  and (max-width: 1024px){
+    font-size: 1.5rem;
+    text-align: left !important;
+  }
+}
+
+.researchDescription {
+  color: #798B9E;
+  text-align: center;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.02rem;
+  max-width: 42.4375rem;
+  @media screen  and (max-width: 1024px){
+    font-size: 0.875rem;
+    text-align: left !important;
+    max-width: 100%;
+  }
 }

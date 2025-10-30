@@ -1,6 +1,6 @@
 .sectionWrapper {
   width: 100%;
-  padding: 60px 0;
+  padding: 80px 0;
   display: flex;
   justify-content: flex-end;
   margin: 100px auto 0;
@@ -12,6 +12,126 @@
   background-size: contain;
   @media screen and (max-width: 1040px) {
     padding: 60px 15px;
+  }
+}
+
+.teamTitle {
+  color: #FFF;
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.64px;
+  margin-bottom: 52px;
+}
+
+.teamBox {
+  border-radius: 24px;
+  background: #D4E8FF;
+}
+
+.teamBoxTop {
+  border-radius: 24px;
+  border: 1px solid #D4E4F7;
+  background: #fff;
+  padding: 24px;
+  gap: 25px;
+  width: 100%;
+  @media screen and (max-width: 1140px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.teamBoxBottom {
+  .teamBoxBottomTitle {
+    color: #535E6B;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.48px;
+    @media screen and (max-width: 1140px) {
+      text-align: left;
+      font-size: 20px;
+      letter-spacing: -0.4px;
+    }
+  }
+
+  .teamBoxBottomSubTitle {
+    color: #798B9E;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.32px;
+    @media screen and (max-width: 1140px) {
+      text-align: left;
+      font-size: 14px;
+    }
+  }
+}
+
+.teamBoxImage {
+  width: 254px;
+  height: 284px;
+  border-radius: 16px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.teamBoxTitle {
+  background: linear-gradient(90deg, #107EFD 32.34%, #47C0FF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.64px;
+  margin-bottom: 8px;
+  @media screen and (max-width: 1140px){
+    text-align: left;
+    font-size: 24px;
+    letter-spacing: -0.48px;
+  }
+}
+
+.teamBoxSubTitle {
+  color: #0076FE;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.32px;
+  margin-bottom: 20px;
+  @media screen and (max-width: 1140px){
+    text-align: left;
+    font-size: 14px;
+  }
+}
+
+.teamBoxText {
+  color: #798B9E;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.32px;
+  @media screen and (max-width: 1140px){
+    text-align: left;
+    font-size: 14px;
+    br{
+        display: none;
+    }
   }
 }
 
@@ -45,8 +165,8 @@
     font-weight: 400;
     line-height: 120%;
     letter-spacing: -0.32px;
-    @media screen and (max-width: 1040px){
-      br{
+    @media screen and (max-width: 1040px) {
+      br {
         display: none;
       }
     }
@@ -69,52 +189,6 @@
   }
 }
 
-.partnerBox {
-  border-radius: 24px;
-  border: 1px solid #D4E4F7;
-  background: #F2F8FF;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  .image {
-    width: 100%;
-    border-radius: 20px;
-    overflow: hidden;
-    margin-bottom: 13px;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    @media screen and (max-width: 845px) {
-      height: 257px;
-    }
-  }
-
-  @media screen and (max-width: 1024px) {
-    border-radius: 20px;
-  }
-
-}
-
-.partnerBoxRight {
-  display: inherit;
-}
-
-.socialLinksIcon {
-  @media screen and (max-width: 1024px) {
-    svg {
-      width: 44.195px;
-      height: 44.195px;
-    }
-  }
-}
-
 .listWrapper {
   &::marker {
     padding-right: 0;
@@ -128,9 +202,7 @@
   padding: 30px;
   width: 70%;
   display: flex;
-  align-items: center;
-  gap: 64px;
-  justify-content: space-between;
+  gap: 50px;
 
   .infoTitle {
     color: #535E6B;
@@ -158,6 +230,13 @@
       text-underline-position: from-font;
     }
 
+  }
+
+  .menu{
+    &:hover {
+      color: #0076FE;
+      cursor: pointer;
+    }
   }
 
   @media screen and (max-width: 1024px) {

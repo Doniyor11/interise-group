@@ -6,7 +6,7 @@
   background-size: cover;
   padding: 84px 0;
   @media screen and (max-width: 1040px) {
-    padding: 40px 0;
+    padding: 40px 15px;
   }
 }
 
@@ -17,6 +17,19 @@
   background: rgba(96, 154, 255, 0.10);
   padding: 10px 16px;
   height: 40px;
+  color: #FFF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.32px;
+  @media screen and (max-width: 1040px){
+    height: 32px;
+    padding: 8px 12px;
+    font-size: 14px;
+    letter-spacing: -0.28px;
+    text-transform: revert;
+  }
 }
 
 .clubImage {
@@ -28,12 +41,28 @@
 }
 
 .clubTitle{
-  color: #FFF;
-  text-align: center;
   font-size: 32px;
   font-style: normal;
   font-weight: 500;
   line-height: 120%;
   letter-spacing: -0.64px;
   margin-bottom: 20px;
+  @media screen and (max-width: 1040px) {
+    font-size: 20px;
+    letter-spacing: -0.48px;
+  }
+}
+
+.clubInfoTitle{
+  color: #798B9E;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.32px;
+  @media screen and (max-width: 1040px){
+    font-size: 14px;
+    letter-spacing: -0.28px;
+    margin-bottom: 10px !important;
+  }
 }

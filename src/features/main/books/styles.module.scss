@@ -176,10 +176,9 @@
   background: radial-gradient(133.63% 142.52% at 43.38% 84.4%, #000B21 29.33%, #005CC7 100%);
   padding: 19px 20px;
   height: 100%;
-  transition: 0.3s ease-in-out background;
+  transition: background 0.3s ease;
     &:hover{
       background: radial-gradient(73.34% 78.23% at 43.38% 84.4%, #000B21 29.33%, #005CC7 100%);
-      transition: 0.2s ease-in-out background;
     }
 }
 

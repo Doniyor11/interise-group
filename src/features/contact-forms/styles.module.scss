@@ -1,0 +1,32 @@
+.form {
+  margin-top: 34px;
+
+  .inputWrapper {
+    width: 49%;
+    input {
+      height: 48px;
+      border-radius: 40px;
+      border: 1px solid #A5C1E1;
+      background: #D4E4F7;
+      padding: 10px 16px;
+
+      color: #000;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+      letter-spacing: -0.32px;
+
+      &::placeholder {
+        color: #798B9E;
+      }
+    }
+    @media screen and (max-width: 1200px){
+        width: 48%;
+    }
+    @media screen and (max-width: 1040px) {
+      width: 100%;
+    }
+  }
+
+}

@@ -1,5 +1,0 @@
-export { AboutSection } from "./about-section"
-export { OurMission } from "./our-mission"
-export { OurHistory } from "./our-history"
-export { OurStaff } from "./our-staff"
-export { Partners } from "./partners"

@@ -292,7 +292,7 @@ export const Contacts = () => {
                 </Flex>
               </Flex>
               <span className={s.line} />
-              {/* 3 */}
+              {/* 3/3 */}
               <Flex
                 direction={"column"}
                 gap={matches ? "15px" : "50px"}

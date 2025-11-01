@@ -3,11 +3,10 @@
   display: flex;
   align-items: center;
   gap: 28px;
-  padding: 142px 0 125px 0;
-  background-image: url("../../../shared/assets/images/interise-group/hero-bg.png");
+  padding: 142px 0 100px 0;
+  background: url("../../../shared/assets/images/interise-group/hero-bg.png")
+    no-repeat right top fixed;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   @media screen and (max-width: 1440px) {
     padding: 142px 15px 125px 15px;
   }
@@ -41,6 +40,7 @@
   span {
     color: #107efd;
   }
+
   @media screen and (max-width: 1040px) {
     font-size: 36px;
     margin-bottom: 21px;
@@ -89,42 +89,63 @@
 
 .stats {
   border-radius: 12px;
+
   background: rgba(111, 166, 255, 0.1);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+
+  border: 1px solid rgba(111, 166, 255, 0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+
   width: 850px;
   margin-bottom: 40px;
-
+  gap: 30px;
+  align-items: stretch;
   @media screen and (max-width: 1040px) {
     width: 100%;
     margin-bottom: 183px;
   }
+
+  .line {
+    width: 1px;
+    height: 106px;
+    background: #444c6f;
+  }
 }
 
 .item {
-  padding: 0 30px;
   width: 25%;
-  &:not(:last-child) {
-    border-right: 1px solid #444c6f;
-  }
+
   &:last-child {
     width: 40%;
   }
+
   @media screen and (max-width: 1040px) {
     justify-content: center;
   }
 }
 
-.number {
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 121.2%;
-  background: linear-gradient(299deg, #0076fe 33.43%, #6dc9ff 88.06%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  @media screen and (max-width: 1040px) {
-    font-size: 20px;
+.counter {
+  span {
+    font-size: 48px;
+    font-style: normal;
     font-weight: 500;
+    line-height: 121.2%;
+    background: linear-gradient(299deg, #0076fe 33.43%, #6dc9ff 88.06%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @media screen and (max-width: 1040px) {
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+
+  sup {
+    color: #0076fe;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 121.2%;
   }
 }
 

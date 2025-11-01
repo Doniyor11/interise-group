@@ -81,7 +81,7 @@ const IdeaInfoItem: FC<{ icon: any; label: string; value: string }> = ({
   label,
   value,
 }) => (
-  <Flex className={s.ideaBoxInfoCountry} gap={"14px"} align={"center"}>
+  <Flex className={s.ideaBoxInfoCountry} gap={"12px"} align={"center"}>
     <Icon />
     <Flex direction={"column"}>
       <Text className={s.ideaBoxCountry}>{label}</Text>
@@ -117,8 +117,6 @@ const IdeaCard: FC<{ data: (typeof IDEAS_DATA)[0] }> = ({ data }) => (
       />
     </Box>
 
-    <Box p={"12px 10px"}></Box>
-
     <Box p={"0 5px 0 10px"}>
       <Text className={s.ideaBoxResult}>Результат:</Text>
       <Flex direction={"column"} gap={"12px"}>
@@ -146,7 +144,7 @@ export const Books: FC = () => {
           выручки, доли рынка и производительности.
         </Text>
       </Flex>
-      <Grid gutter={"32px"}>
+      <Grid gutter={32}>
         {IDEAS_DATA.map((idea, idx) => (
           <Grid.Col span={matches ? 12 : 4} key={idx}>
             <IdeaCard data={idea} />
@@ -266,7 +264,7 @@ export const Books: FC = () => {
           lh={"100%"}
           // onClick={() => onLinkClick("navbar5")}
         >
-          Все проекты
+          Связаться с нами
         </Button>
       </Flex>
     </div>

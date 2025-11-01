@@ -112,6 +112,7 @@ export const EmailForm = () => {
           render={({ field }) => (
             <Checkbox
               required
+              m={"33px 0 26px"}
               classNames={{
                 root: s.checkboxRoot,
                 label: s.checkboxLabel,
@@ -125,17 +126,16 @@ export const EmailForm = () => {
         />
       </Flex>
 
-      <Flex justify={"flex-end"} mt={32}>
-        <Button
-          fullWidth
-          type={"submit"}
-          className={"btn-filled__black"}
-          loading={isPending}
-          disabled={!isDirty || !isValid}
-        >
-          Записаться
-        </Button>
-      </Flex>
+      <Button
+        h={44}
+        w={233}
+        type={"submit"}
+        className={"btn-filled__black"}
+        loading={isPending}
+        disabled={!isDirty || !isValid}
+      >
+        Отправить
+      </Button>
     </form>
   )
 }

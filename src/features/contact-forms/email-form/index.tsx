@@ -35,7 +35,7 @@ export const EmailForm = () => {
 
   const onSubmit = (data: IEmailFormTypes) => {
     mutate(
-      `<b>📩 Новая заявка с сайта!</b>` +
+      `<b>📩 Новая заявка с сайта!</b>\n` +
         `<b>🌐 Страница:</b> ${pathMap[router.pathname]}\n` +
         `<b>👤 Имя:</b> ${data.name}\n` +
         `<b>👥 Фамилия:</b> ${data.surname}\n` +

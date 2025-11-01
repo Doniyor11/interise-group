@@ -11,7 +11,7 @@
   @media screen and (max-width: 1440px) {
     padding: 142px 15px 125px 15px;
   }
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     flex-direction: column;
     padding: 107px 15px 50px 15px;
     gap: 50px;
@@ -24,10 +24,9 @@
   flex-direction: column;
   align-items: flex-start;
   padding-top: 65px;
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     padding-top: 30px;
   }
-
 }
 
 .bannerTitle {
@@ -42,24 +41,24 @@
   span {
     color: #107efd;
   }
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     font-size: 36px;
     margin-bottom: 21px;
-    br{
-        display: none;
+    br {
+      display: none;
     }
   }
 }
 
 .bannerDescription {
-  color: #798B9E;
+  color: #798b9e;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
   letter-spacing: -0.4px;
   margin-bottom: 39px;
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     margin-bottom: 21px;
     font-size: 14px;
   }
@@ -73,7 +72,7 @@
   height: 44px;
   padding: 6px 22px 6px 24px;
   width: 183px;
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     width: 100%;
     justify-content: center;
   }
@@ -90,11 +89,11 @@
 
 .stats {
   border-radius: 12px;
-  background: rgba(111, 166, 255, 0.10);
+  background: rgba(111, 166, 255, 0.1);
   width: 850px;
   margin-bottom: 40px;
 
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     width: 100%;
     margin-bottom: 183px;
   }
@@ -104,12 +103,12 @@
   padding: 0 30px;
   width: 25%;
   &:not(:last-child) {
-    border-right: 1px solid #444C6F;
+    border-right: 1px solid #444c6f;
   }
-  &:last-child{
+  &:last-child {
     width: 40%;
   }
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     justify-content: center;
   }
 }
@@ -119,25 +118,25 @@
   font-style: normal;
   font-weight: 500;
   line-height: 121.2%;
-  background: linear-gradient(299deg, #0076FE 33.43%, #6DC9FF 88.06%);
+  background: linear-gradient(299deg, #0076fe 33.43%, #6dc9ff 88.06%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     font-size: 20px;
     font-weight: 500;
   }
 }
 
 .info {
-  color: #FFF;
+  color: #fff;
   text-align: center;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 110%;
   letter-spacing: -0.32px;
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     font-size: 8px;
     letter-spacing: -0.16px;
   }

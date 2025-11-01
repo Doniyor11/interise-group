@@ -7,8 +7,11 @@ import React from "react"
 import Icon1 from "@/shared/assets/images/interise-group/about-icon1.png"
 import Icon2 from "@/shared/assets/images/interise-group/about-icon2.png"
 import Icon3 from "@/shared/assets/images/interise-group/about-icon3.png"
-import ourStepMobile from "@/shared/assets/images/interise-group/our-step-mobile.png"
-import ourStep from "@/shared/assets/images/interise-group/our-step.png"
+import IconOurStep1 from "@/shared/assets/images/interise-group/icon-our-step-1.svg"
+import IconOurStep2 from "@/shared/assets/images/interise-group/icon-our-step-2.svg"
+import IconOurStep3 from "@/shared/assets/images/interise-group/icon-our-step-3.svg"
+import VectorOurStepMobile from "@/shared/assets/images/interise-group/vector-our-step-mb.svg"
+import VectorOurStep from "@/shared/assets/images/interise-group/vector-our-step.svg"
 import { onLinkClick } from "@/shared/libs/scroll.ts"
 
 import s from "./styles.module.scss"
@@ -121,12 +124,48 @@ export const ConsultingService = () => {
           )}
         </Flex>
         <Box className={s.imageOur}>
-          <Image
-            src={matchesMobile ? ourStepMobile : ourStep}
-            alt={"image-one"}
-            width={1190}
-            height={184}
-          />
+          <div className={s.cards}>
+            <div className={s.card}>
+              <div className={s.icon}>
+                <IconOurStep1 />
+              </div>
+              <Text>
+                Открытый <br /> диалог
+              </Text>
+            </div>
+            {!matchesMobile ? (
+              <VectorOurStep />
+            ) : (
+              <VectorOurStepMobile className={s.vector} />
+            )}
+            <div className={s.card}>
+              <div className={s.icon}>
+                <IconOurStep2 />
+              </div>
+              <Text>Партнёрство</Text>
+            </div>
+            {!matchesMobile ? (
+              <VectorOurStep />
+            ) : (
+              <VectorOurStepMobile className={s.vector} />
+            )}
+            <div className={s.card}>
+              <div className={s.icon}>
+                <IconOurStep3 />
+              </div>
+              <Text>
+                Ответственность <br /> за результат
+              </Text>
+            </div>
+          </div>
+
+          {/*<Image*/}
+          {/*  src={matchesMobile ? ourStepMobile : ourStep}*/}
+          {/*  alt={"image-one"}*/}
+          {/*  width={1190}*/}
+          {/*  height={184}*/}
+          {/*  className={s.image}*/}
+          {/*/>*/}
           {matches && (
             <Box w={"100%"} mt={"32px"}>
               <Text

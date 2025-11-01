@@ -21,19 +21,21 @@
 
 .card {
   border-radius: 20px;
-  border: 1px solid #D4E4F7;
-  background: #F2F8FF;
+  border: 1px solid #d4e4f7;
+  background: #f2f8ff;
   padding: 13px;
   flex: 1;
   display: flex;
   align-items: center;
   gap: 13px;
-  transition: background 0.3s ease, color 0.3s ease;
-  .cardImageBox{
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+  .cardImageBox {
     min-width: 102px;
     height: 102px;
     border-radius: 24px;
-    border: 1px solid #D4E4F7;
+    border: 1px solid #d4e4f7;
     overflow: hidden;
     .image {
       width: 100%;
@@ -41,18 +43,16 @@
       object-fit: cover;
     }
   }
-  
-  &:hover{
-    background: #D4E8FF;
+
+  &:hover {
+    background: #d4e8ff;
     cursor: pointer;
 
-    p{
-      color: #0076FE !important;
+    p {
+      color: #0076fe !important;
     }
   }
-
 }
-
 
 .researchTitle {
   font-size: 2rem;
@@ -60,18 +60,18 @@
   font-weight: 500;
   line-height: 120%;
   letter-spacing: -0.04rem;
-  background: linear-gradient(90deg, #107EFD 32.34%, #47C0FF 100%);
+  background: linear-gradient(90deg, #107efd 32.34%, #47c0ff 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  @media screen  and (max-width: 1024px){
+  @media screen and (max-width: 1024px) {
     font-size: 1.5rem;
     text-align: left !important;
   }
 }
 
 .researchDescription {
-  color: #798B9E;
+  color: #798b9e;
   text-align: center;
   font-size: 1rem;
   font-style: normal;
@@ -79,7 +79,7 @@
   line-height: 120%;
   letter-spacing: -0.02rem;
   max-width: 42.4375rem;
-  @media screen  and (max-width: 1024px){
+  @media screen and (max-width: 1024px) {
     font-size: 0.875rem;
     text-align: left !important;
     max-width: 100%;

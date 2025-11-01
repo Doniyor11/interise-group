@@ -1,14 +1,4 @@
-import {
-  ActionIcon,
-  Burger,
-  Button,
-  Collapse,
-  Drawer,
-  Flex,
-  Menu,
-  Select,
-  Text,
-} from "@mantine/core"
+import { ActionIcon, Burger, Button, Drawer, Flex, Select } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
 import Link from "next/link"
@@ -17,7 +7,6 @@ import React, { useState } from "react"
 
 import { MenuData } from "@/widgets/layouts/navbar/libs.ts"
 
-import IconDown from "@/shared/assets/images/icons/icon-chevron-down.svg"
 import IconClose from "@/shared/assets/images/icons/icon-close.svg"
 import IconLangArrow from "@/shared/assets/images/interise-group/lang-arrow.svg"
 import IconGlobal from "@/shared/assets/images/interise-group/language.svg"
@@ -29,7 +18,6 @@ import s from "./styles.module.scss"
 export const Navbar = () => {
   const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
-  const [childMenu, setChildMenu] = useState<string>("")
   const matches = useMediaQuery("(max-width: 1040px)")
 
   return (
@@ -42,7 +30,7 @@ export const Navbar = () => {
         <ul className={s.menu}>
           {MenuData?.map((item, index) => {
             const pathName = router.pathname
-            return item.children.length === 0 ? (
+            return (
               <li
                 key={index}
                 className={cx(s.link, {
@@ -51,37 +39,6 @@ export const Navbar = () => {
               >
                 <Link href={item?.path}>{item?.text}</Link>
               </li>
-            ) : (
-              <Menu
-                trigger={"hover"}
-                position={"bottom"}
-                radius={12}
-                offset={16}
-              >
-                <Menu.Target>
-                  <Text
-                    className={cx(s.parentLink, {
-                      [s.active]: pathName.split("/")[1] === item?.path,
-                    })}
-                  >
-                    {item?.text} <IconDown />
-                  </Text>
-                </Menu.Target>
-                <Menu.Dropdown>
-                  {item?.children?.map((child, index) => (
-                    <Menu.Item
-                      className={cx(s.menuItem, {
-                        [s.active]: child.path === pathName,
-                      })}
-                      key={index}
-                      component={Link}
-                      href={child.path}
-                    >
-                      {child.text}
-                    </Menu.Item>
-                  ))}
-                </Menu.Dropdown>
-              </Menu>
             )
           })}
         </ul>
@@ -144,55 +101,17 @@ export const Navbar = () => {
           <div className={s.drawerBody}>
             {MenuData?.map((item, index) => {
               const pathName = router.pathname
-              return item.children.length === 0 ? (
+              return (
                 <Link
                   key={index}
                   className={cx(s.link, { [s.active]: item.path === pathName })}
                   href={item?.path}
                   onClick={() => {
-                    setChildMenu("")
                     setIsOpen(false)
                   }}
                 >
                   {item?.text}
                 </Link>
-              ) : (
-                <>
-                  <Text
-                    onClick={() =>
-                      setChildMenu(childMenu === item.path ? "" : item.path)
-                    }
-                    className={cx(s.link, {
-                      [s.active]: pathName.split("/")[1] === item?.path,
-                    })}
-                  >
-                    {item?.text}
-                    <IconDown />
-                  </Text>
-                  <Collapse
-                    in={
-                      childMenu === item.path ||
-                      pathName.split("/")[1] === item?.path
-                    }
-                    className={s.collapse}
-                  >
-                    {item?.children?.map((child, index) => (
-                      <Link
-                        key={index}
-                        href={child?.path}
-                        className={cx(s.link, {
-                          [s.active]: child.path === pathName,
-                        })}
-                        onClick={() => {
-                          setChildMenu("")
-                          setIsOpen(false)
-                        }}
-                      >
-                        {child?.text}
-                      </Link>
-                    ))}
-                  </Collapse>
-                </>
               )
             })}
           </div>

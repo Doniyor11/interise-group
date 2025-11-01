@@ -2,13 +2,13 @@
 
 .sectionWrapper {
   padding: 100px 0 84px 0;
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     padding: 60px 15px;
   }
 }
 
 .ideaTitle {
-  background: linear-gradient(90deg, #107EFD 32.34%, #47C0FF 100%);
+  background: linear-gradient(90deg, #107efd 32.34%, #47c0ff 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -17,7 +17,7 @@
   font-weight: 500;
   line-height: 120%;
   letter-spacing: -0.64px;
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     font-size: 24px;
     letter-spacing: -0.48px;
   }
@@ -31,7 +31,7 @@
   line-height: 120%;
   letter-spacing: -0.32px;
   margin-bottom: 40px;
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     margin-bottom: 32px;
     font-size: 14px;
     letter-spacing: -0.28px;
@@ -40,60 +40,65 @@
 
 .ideaBox {
   border-radius: 24px;
-  border: 1px solid #D4E4F7;
-  background: #F2F8FF;
+  border: 1px solid #d4e4f7;
+  background: #f2f8ff;
   padding: 12px;
-  @media screen and (max-width: 1040px){
+  height: 100%;
+  @media screen and (max-width: 1040px) {
     padding: 8px;
   }
 }
 
 .ideaBoxTop {
   border-radius: 17px;
-  background: radial-gradient(136.62% 129.65% at 0% 0%, #000B21 29.33%, #005CC7 100%);
+  background: radial-gradient(
+    136.62% 129.65% at 0% 0%,
+    #000b21 29.33%,
+    #005cc7 100%
+  );
   padding: 10px 10px 20px 20px;
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     padding: 8px 8px 16px 16px;
   }
 }
 
 .ideaBoxTitle {
-  color: #FFF;
+  color: #fff;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
   letter-spacing: -0.48px;
   margin-top: 8px;
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     font-size: 20px;
     letter-spacing: -0.4px;
     margin-top: 6px;
   }
 
   span {
-    color: #FFF;
+    color: #fff;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
     letter-spacing: -0.32px;
-    @media screen and (max-width: 1040px){
-        font-size: 14px;
-        letter-spacing: -0.28px;
+    @media screen and (max-width: 1040px) {
+      font-size: 14px;
+      letter-spacing: -0.28px;
     }
   }
 }
 
-.ideaBoxDescription{
-  color: #FFF;
+.ideaBoxDescription {
+  color: #fff;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
   letter-spacing: -0.48px;
   margin-top: 25px;
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     font-size: 20px;
     letter-spacing: -0.4px;
     margin-top: 20px;
@@ -102,50 +107,49 @@
 
 .ideaBoxInfoCountry {
   border-radius: 12px;
-  border: 1.135px solid rgba(194, 224, 255, 0.20);
-  background: #002F66;
+  border: 1.135px solid rgba(194, 224, 255, 0.2);
+  background: #002f66;
   padding: 9px 12px;
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     padding: 6px 8px;
   }
 }
 
 .ideaBoxCountry {
-  color: #798B9E;
+  color: #798b9e;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
   letter-spacing: -0.28px;
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     font-size: 12px;
     letter-spacing: -0.24px;
   }
 }
 
 .ideaBoxCity {
-  color: #FFF;
+  color: #fff;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
   letter-spacing: -0.4px;
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     font-size: 16px;
     letter-spacing: -0.32px;
   }
 }
 
-
 .ideaBoxResult {
-  color: #798B9E;
+  color: #798b9e;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
   letter-spacing: -0.32px;
   margin: 28px 0 12px 0;
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     font-size: 14px;
     letter-spacing: -0.28px;
     margin: 20px 0 8px 0;
@@ -154,8 +158,13 @@
 
 .ideaItem {
   border-radius: 13px;
-  border: 1px solid #D4E4F7;
-  background: radial-gradient(328.23% 268.04% at 41.88% 40.77%, #F2F8FF 20.19%, #0076FE 100%);
+  border: 1px solid #d4e4f7;
+  background: radial-gradient(
+    328.23% 268.04% at 41.88% 40.77%,
+    #f2f8ff 20.19%,
+    #0076fe 100%
+  );
+
   p {
     color: #566677;
     font-size: 16px;
@@ -163,79 +172,110 @@
     font-weight: 400;
     line-height: 120%;
     letter-spacing: -0.32px;
-    @media screen and (max-width: 1040px){
+    @media screen and (max-width: 1040px) {
       font-size: 14px;
       letter-spacing: -0.28px;
     }
   }
 }
 
-.ideaInfoBox{
+.ideaInfoBox {
   border-radius: 24px;
-  border: 1px solid #0076FE;
-  background: radial-gradient(133.63% 142.52% at 43.38% 84.4%, #000B21 29.33%, #005CC7 100%);
+  border: 1px solid #0076fe;
+  background: radial-gradient(
+    133.63% 142.52% at 43.38% 84.4%,
+    #000b21 29.33%,
+    #005cc7 100%
+  );
   padding: 19px 20px;
   height: 100%;
   transition: background 0.3s ease;
-    &:hover{
-      background: radial-gradient(73.34% 78.23% at 43.38% 84.4%, #000B21 29.33%, #005CC7 100%);
+
+  &:hover {
+    background: radial-gradient(
+      73.34% 78.23% at 43.38% 84.4%,
+      #000b21 29.33%,
+      #005cc7 100%
+    );
+
+    .icon {
+      border: 1px solid #0076fe;
+      background: linear-gradient(0deg, #0076fe 0%, #0076fe 100%),
+        radial-gradient(
+          77.05% 82.18% at 43.38% 84.4%,
+          #000b21 29.33%,
+          #005cc7 100%
+        );
     }
+  }
+
+  .icon {
+    display: flex;
+    width: 59px;
+    height: 59px;
+    padding: 12px;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+    background: #0f448c;
+  }
 }
 
-.ideaInfoBoxTitleOne{
+.ideaInfoBoxTitleOne {
   font-size: 32px;
   font-style: normal;
   font-weight: 500;
   line-height: 120%;
   letter-spacing: -0.64px;
-  background: linear-gradient(90deg, #107EFD 32.34%, #47C0FF 100%);
+  background: linear-gradient(90deg, #107efd 32.34%, #47c0ff 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 20px;
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     font-size: 24px;
     letter-spacing: -0.48px;
     margin-bottom: 16px;
   }
 }
 
-.ideaInfoBoxDescriptionOne{
-  color: #798B9E;
+.ideaInfoBoxDescriptionOne {
+  color: #798b9e;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
   letter-spacing: -0.32px;
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     font-size: 14px;
     letter-spacing: -0.28px;
   }
 }
 
-.ideaInfoBoxTitle{
-  color: #FFF;
+.ideaInfoBoxTitle {
+  color: #fff;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
   letter-spacing: -0.48px;
   margin-bottom: 12px;
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     font-size: 20px;
     letter-spacing: -0.4px;
     margin-bottom: 10px;
   }
 }
 
-.ideaInfoBoxDescription{
-  color: #798B9E;
+.ideaInfoBoxDescription {
+  color: #798b9e;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
   letter-spacing: -0.32px;
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 1040px) {
     font-size: 14px;
     letter-spacing: -0.28px;
   }

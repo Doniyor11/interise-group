@@ -8,11 +8,11 @@ import Icon2 from "@/shared/assets/images/interise-group/graph-up.svg"
 import Image1 from "@/shared/assets/images/interise-group/idea-1.png"
 import Image2 from "@/shared/assets/images/interise-group/idea-2.png"
 import Image3 from "@/shared/assets/images/interise-group/idea-3.png"
-import Image4 from "@/shared/assets/images/interise-group/idea-4.png"
-import Image5 from "@/shared/assets/images/interise-group/idea-5.png"
-import Image6 from "@/shared/assets/images/interise-group/idea-6.png"
-import Image7 from "@/shared/assets/images/interise-group/idea-7.png"
-import Image8 from "@/shared/assets/images/interise-group/idea-8.png"
+import Image4 from "@/shared/assets/images/interise-group/idea-4.svg"
+import Image5 from "@/shared/assets/images/interise-group/idea-5.svg"
+import Image6 from "@/shared/assets/images/interise-group/idea-6.svg"
+import Image7 from "@/shared/assets/images/interise-group/idea-7.svg"
+import Image8 from "@/shared/assets/images/interise-group/idea-8.svg"
 
 // import { onLinkClick } from "@/shared/libs/scroll.ts"
 import s from "./styles.module.scss"
@@ -38,7 +38,7 @@ const IDEAS_DATA = [
     rankDesc: "компания в стране",
     info: [
       { icon: Icon1, label: "Страна:", value: "Закавказье" },
-      { icon: Icon2, label: "Авиация", value: "Авиация" },
+      { icon: Icon2, label: "Отрасль:", value: "Авиация" },
     ],
     description: "Создание новой </br> национальной авиакомпании </br> с нуля",
     results: [
@@ -58,7 +58,7 @@ const IDEAS_DATA = [
     rankDesc: "компания </br> в премиальной </br> медицине",
     info: [
       { icon: Icon1, label: "Страна:", value: "Россия" },
-      { icon: Icon2, label: "Медицина", value: "Медицина" },
+      { icon: Icon2, label: "Отрасль:", value: "Медицина" },
     ],
     description:
       "Стратегия экспансии </br> и развитие премиального </br> медицинского бренда",
@@ -186,7 +186,9 @@ export const Books: FC = () => {
         <Grid.Col span={matches ? 12 : 4}>
           <Box className={s.ideaInfoBox}>
             <Flex justify={"flex-end"} mb={"45px"}>
-              <Image src={Image4} alt={""} width={59} height={59} />
+              <div className={s.icon}>
+                <Image4 />
+              </div>
             </Flex>
             <Text className={s.ideaInfoBoxTitle}>Диагностика</Text>
             <Text className={s.ideaInfoBoxDescription}>
@@ -198,7 +200,9 @@ export const Books: FC = () => {
         <Grid.Col span={matches ? 12 : 4}>
           <Box className={s.ideaInfoBox}>
             <Flex justify={"flex-end"} mb={"45px"}>
-              <Image src={Image5} alt={""} width={59} height={59} />
+              <div className={s.icon}>
+                <Image5 />
+              </div>
             </Flex>
             <Text className={s.ideaInfoBoxTitle}>Стратегия</Text>
             <Text className={s.ideaInfoBoxDescription}>
@@ -210,7 +214,9 @@ export const Books: FC = () => {
         <Grid.Col span={matches ? 12 : 4}>
           <Box className={s.ideaInfoBox}>
             <Flex justify={"flex-end"} mb={"45px"}>
-              <Image src={Image6} alt={""} width={59} height={59} />
+              <div className={s.icon}>
+                <Image6 />
+              </div>
             </Flex>
             <Text className={s.ideaInfoBoxTitle}>Цифровая транформация</Text>
             <Text className={s.ideaInfoBoxDescription}>
@@ -222,7 +228,9 @@ export const Books: FC = () => {
         <Grid.Col span={matches ? 12 : 4}>
           <Box className={s.ideaInfoBox}>
             <Flex justify={"flex-end"} mb={"45px"}>
-              <Image src={Image7} alt={""} width={59} height={59} />
+              <div className={s.icon}>
+                <Image7 />
+              </div>
             </Flex>
             <Text className={s.ideaInfoBoxTitle}>Инвестирование</Text>
             <Text className={s.ideaInfoBoxDescription}>
@@ -234,7 +242,9 @@ export const Books: FC = () => {
         <Grid.Col span={matches ? 12 : 4}>
           <Box className={s.ideaInfoBox}>
             <Flex justify={"flex-end"} mb={"45px"}>
-              <Image src={Image8} alt={""} width={59} height={59} />
+              <div className={s.icon}>
+                <Image8 />
+              </div>
             </Flex>
             <Text className={s.ideaInfoBoxTitle}>Выход на новые рынки</Text>
             <Text className={s.ideaInfoBoxDescription}>

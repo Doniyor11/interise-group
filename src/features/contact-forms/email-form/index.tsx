@@ -1,4 +1,5 @@
 import { Button, Checkbox, Flex, Input, Select } from "@mantine/core"
+import { useRouter } from "next/router"
 import React from "react"
 import { Controller, useForm } from "react-hook-form"
 import { IMaskInput } from "react-imask"
@@ -9,6 +10,12 @@ import { IEmailFormTypes } from "@/features/contact-forms/email-form/types"
 import s from "../styles.module.scss"
 
 export const EmailForm = () => {
+  const router = useRouter()
+  const pathMap: Record<string, string> = {
+    "/": "Главная",
+    "/main": "Главная",
+    "/about": "О нас",
+  }
   const {
     control,
     handleSubmit,
@@ -18,19 +25,22 @@ export const EmailForm = () => {
 
   const { mutate, isPending } = useSendMessageQuery(() => {
     reset({
-      fullName: "",
-      email: "",
+      name: "",
+      surname: "",
       message: "",
       phone: "",
+      check: false,
     })
   })
 
   const onSubmit = (data: IEmailFormTypes) => {
     mutate(
-      `<b>Ma’lumot:</b>\n` +
-        `<b>Ism:</b> ${data.fullName}\n` +
-        `<b>Email:</b> ${data.email}\n` +
-        `<b>Message:</b> ${data.message}\n`,
+      `<b>📩 Новая заявка с сайта!</b>` +
+        `<b>🌐 Страница:</b> ${pathMap[router.pathname]}\n` +
+        `<b>👤 Имя:</b> ${data.name}\n` +
+        `<b>👥 Фамилия:</b> ${data.surname}\n` +
+        `<b>📞 Телефон:</b> ${data.phone}\n` +
+        `<b>💬 Способ связи:</b> ${data.message}\n`,
     )
   }
 
@@ -38,26 +48,21 @@ export const EmailForm = () => {
     <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
       <Flex gap={"8px"} wrap={"wrap"}>
         <Controller
-          name={"fullName"}
+          name={"name"}
           control={control}
           render={({ field }) => (
             <Input.Wrapper className={s.inputWrapper}>
-              <Input
-                required
-                type={"fullName"}
-                placeholder={"Ваше имя"}
-                {...field}
-              />
+              <Input required placeholder={"Ваше имя"} {...field} />
             </Input.Wrapper>
           )}
         />
 
         <Controller
-          name={"fullName"}
+          name={"surname"}
           control={control}
           render={({ field }) => (
             <Input.Wrapper className={s.inputWrapper}>
-              <Input required placeholder={"Компания"} {...field} />
+              <Input required placeholder={"Фамилия"} {...field} />
             </Input.Wrapper>
           )}
         />
@@ -78,13 +83,16 @@ export const EmailForm = () => {
                 onAccept={(value: any) => {
                   field.onChange?.(value)
                 }}
+                onChange={(value: any) => {
+                  field.onChange?.(value)
+                }}
               />
             </Input.Wrapper>
           )}
         />
 
         <Controller
-          name={"email"}
+          name={"message"}
           control={control}
           render={({ field }) => (
             <Input.Wrapper className={s.inputWrapper}>
@@ -98,14 +106,22 @@ export const EmailForm = () => {
           )}
         />
 
-        <Checkbox
-          defaultChecked
-          classNames={{
-            root: s.checkboxRoot,
-            label: s.checkboxLabel,
-            input: s.checkboxInput,
-          }}
-          label="Я ознакомлен и согласен с условиями обработки данных"
+        <Controller
+          name={"check"}
+          control={control}
+          render={({ field }) => (
+            <Checkbox
+              required
+              classNames={{
+                root: s.checkboxRoot,
+                label: s.checkboxLabel,
+                input: s.checkboxInput,
+              }}
+              label="Я ознакомлен и согласен с условиями обработки данных"
+              checked={field.value}
+              onChange={(value: any) => field.onChange?.(value)}
+            />
+          )}
         />
       </Flex>
 

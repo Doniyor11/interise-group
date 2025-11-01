@@ -2,7 +2,8 @@
 
 .sectionWrapper {
   position: relative;
-  background: url("../../../shared/assets/images/interise-group/banner-bg.png") no-repeat center;
+  background: url("../../../shared/assets/images/interise-group/banner-bg.png")
+    no-repeat center;
   background-size: cover;
   padding: 97px 0 86px 0;
   text-align: center;
@@ -14,11 +15,10 @@
   }
 }
 
-
-.badge{
+.badge {
   border-radius: 35px;
-  border: 1px solid #0076FE;
-  background: rgba(96, 154, 255, 0.10);
+  border: 1px solid #0076fe;
+  background: rgba(96, 154, 255, 0.1);
   padding: 10px 16px;
   height: 40px;
 }

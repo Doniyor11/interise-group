@@ -1,0 +1,198 @@
+.sectionWrapper {
+  .head {
+    margin: 74px 0 42px;
+    max-width: 625px;
+
+    h3 {
+      color: transparent;
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 120%;
+      letter-spacing: -0.64px;
+
+      background: linear-gradient(90deg, #107efd 10%, #107efd 10%, #47c0ff 70%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    p {
+      color: #566677;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 121.2%;
+    }
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-column-gap: 32px;
+    grid-row-gap: 30px;
+
+    .card {
+      padding: 30px;
+      border-radius: 24px;
+      border: 1px solid #d4e4f7;
+      background: #f2f8ff;
+      display: flex;
+      align-items: center;
+      column-gap: 38px;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background: radial-gradient(
+          140% 161% at 34% 50%,
+          #f2f8ff 20.19%,
+          #0076fe 100%
+        );
+
+        .icon {
+          border: 1px solid #0076fe;
+          background: radial-gradient(
+            77.05% 82.18% at 43.38% 84.4%,
+            #000b21 29.33%,
+            #005cc7 100%
+          );
+
+          svg {
+            path {
+              stroke: #ffffff;
+            }
+          }
+        }
+
+        p {
+          color: #0076fe;
+        }
+      }
+
+      .icon {
+        display: flex;
+        width: 105px;
+        height: 105px;
+        padding: 24px;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 16px;
+        background: #cde4ff;
+      }
+
+      p {
+        max-width: 368px;
+
+        color: #535e6b;
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 120%;
+        letter-spacing: -0.56px;
+      }
+    }
+  }
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  column-gap: 35px;
+  margin: 70px 0 100px;
+
+  .image {
+    width: 100%;
+    max-width: 525px;
+    height: 312px;
+    border-radius: 24px;
+    border: 1px solid #d4e4f7;
+    object-fit: cover;
+  }
+
+  .boxRight {
+    .text {
+      color: #566677;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 121.2%;
+    }
+
+    h3 {
+      color: #566677;
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 120%;
+      letter-spacing: -0.64px;
+      margin: 15px 0;
+
+      span {
+        color: #0076fe;
+      }
+    }
+
+    .btn {
+      margin-top: 30px;
+      width: 252px;
+      height: 44px;
+
+      border-radius: 8px;
+      background: #0076fe;
+
+      color: #fff;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 100%;
+    }
+  }
+}
+
+.bannerWrapper {
+  padding: 40px;
+  overflow: hidden;
+  width: 100%;
+  min-height: 355px;
+  border-radius: 24px;
+  border: 1px solid #d4e4f7;
+  background: url("../../../shared/assets/images/interise-group/image-about-3.png")
+    bottom right;
+  background-size: cover;
+  margin-bottom: 36px;
+
+  h3 {
+    max-width: 750px;
+    color: #566677;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.48px;
+    margin-top: 24px;
+
+    span {
+      color: #0076fe;
+    }
+  }
+
+  .text {
+    max-width: 590px;
+    color: #566677;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    margin: 6px 0 24px;
+  }
+
+  .textBottom {
+    color: #7894b2;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  .btn {
+    margin-top: 28px;
+    width: 233px;
+    height: 44px;
+    padding: 8px;
+
+    border-radius: 8px;
+    background: #0076fe;
+  }
+}

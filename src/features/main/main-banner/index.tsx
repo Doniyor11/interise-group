@@ -1,15 +1,15 @@
 import { Box, Button, Flex, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
-import React, { useEffect, useState } from "react"
+import React from "react"
 
 import IconArrow from "@/shared/assets/images/interise-group/arrow-up-right.svg"
 import { onLinkClick } from "@/shared/libs/scroll.ts"
+import { AnimatedNumber } from "@/shared/ui"
 
 import s from "./styles.module.scss"
 
 export const MainBanner = () => {
-  // const router = useRouter()
   const matches = useMediaQuery("(max-width: 1040px)")
 
   return (
@@ -86,35 +86,4 @@ export const MainBanner = () => {
       </Box>
     </div>
   )
-}
-
-interface AnimatedNumberProps {
-  value: number
-  duration?: number // ms
-  className?: string
-}
-
-const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
-  value,
-  duration = 3000,
-  className,
-}) => {
-  const [display, setDisplay] = useState(0)
-
-  useEffect(() => {
-    let start = 0
-    const increment = value / (duration / 16)
-    const timer = setInterval(() => {
-      start += increment
-      if (start >= value) {
-        setDisplay(value)
-        clearInterval(timer)
-      } else {
-        setDisplay(Math.floor(start))
-      }
-    }, 16)
-    return () => clearInterval(timer)
-  }, [value, duration])
-
-  return <span className={className}>{display}</span>
 }

@@ -1,0 +1,208 @@
+.sectionWrapper {
+  margin-bottom: 80px;
+  h3 {
+    width: fit-content;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.64px;
+    background: linear-gradient(90deg, #107efd 32.34%, #47c0ff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .label {
+    color: #566677;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 121.2%;
+    margin: 24px 0 16px;
+  }
+
+  .filtersWrapper {
+    margin-bottom: 60px;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+      max-width: 620px;
+
+      .item {
+        padding: 10px 16px;
+        border-radius: 35px;
+        border: 1px solid #d4e4f7;
+        background: #f2f8ff;
+
+        color: #000;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 120%;
+        letter-spacing: -0.32px;
+        cursor: pointer;
+        user-select: none;
+
+        &.active {
+          border: 1px solid #0076fe;
+          background: #0076fe;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-column-gap: 30px;
+    grid-row-gap: 24px;
+
+    .ideaBox {
+      height: 100%;
+      padding: 22px;
+      border-radius: 24px;
+      border: 1px solid #d4e4f7;
+      background: #f2f8ff;
+    }
+
+    .ideaBoxTop {
+    }
+
+    .ideaBoxTitle {
+      max-width: 80px;
+      color: #000b21;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 120%;
+      letter-spacing: -0.48px;
+
+      span {
+        display: block;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 18px !important;
+        letter-spacing: -0.32px;
+      }
+    }
+
+    .ideaBoxInfoCountry {
+      .icon {
+        display: flex;
+        width: 42px;
+        height: 42px;
+        padding: 4px;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 6px;
+        border: 1px solid rgba(194, 224, 255, 0.2);
+        background: #002f66;
+      }
+
+      .ideaBoxCountry {
+        color: #798b9e;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 120%;
+        letter-spacing: -0.32px;
+      }
+
+      .ideaBoxCity {
+        color: #002f66;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 120%;
+        letter-spacing: -0.48px;
+      }
+    }
+
+    .ideaBoxDescription {
+      max-width: 332px;
+      color: #000b21;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 120%;
+      letter-spacing: -0.48px;
+      margin: 32px 0;
+    }
+
+    .ideaBoxResult {
+      margin: 24px 0 12px;
+      color: #798b9e;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+      letter-spacing: -0.32px;
+    }
+
+    .ideaItem {
+      border-radius: 13px;
+      border: 1px solid #d4e4f7;
+      background: radial-gradient(
+        169% 309% at 41.88% 40.77%,
+        #f2f8ff 20.19%,
+        #0076fe 100%
+      );
+
+      p {
+        color: #566677;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+        letter-spacing: -0.32px;
+        @media screen and (max-width: 1040px) {
+          font-size: 14px;
+          letter-spacing: -0.28px;
+        }
+      }
+    }
+
+    .collapseWrapper {
+      border-bottom: 1px solid #d4e4f7;
+
+      .collapseBtn {
+        padding: 16px 0;
+        margin-bottom: 10px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        color: #798b9e;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 120%;
+        letter-spacing: -0.32px;
+
+        &.active {
+          color: #0076fe;
+
+          svg {
+            transform: rotate(180deg);
+
+            line {
+              stroke: #0076fe;
+            }
+          }
+        }
+      }
+
+      .collapseText {
+        color: #798b9e;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 120%;
+        letter-spacing: -0.32px;
+        margin-bottom: 18px;
+      }
+    }
+  }
+}

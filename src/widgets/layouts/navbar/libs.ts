@@ -14,11 +14,11 @@ export const MenuData: MenuItem[] = [
   },
   {
     text: "Исследования",
-    path: "#navbar3",
+    path: "/research",
   },
   {
-    text: "Мероприятия",
-    path: "#navbar4",
+    text: "Interise Club",
+    path: "/interise-club",
   },
   {
     text: "Контакты",

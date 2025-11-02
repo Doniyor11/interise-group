@@ -1,0 +1,36 @@
+.topSectionWrapper {
+  width: 100%;
+  background: #ffffff;
+  min-height: 333px;
+  padding-top: 123px;
+
+  .container {
+    padding: 0 65px;
+    margin-bottom: 25px;
+
+    .sectionHead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .breadcrumbs {
+        a {
+          color: #566677 !important;
+        }
+        svg {
+          path {
+            fill: #566677;
+          }
+        }
+      }
+    }
+  }
+
+  .image {
+    width: 100%;
+    max-width: 1440px;
+    height: 203px;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+}

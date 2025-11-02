@@ -1,0 +1,658 @@
+import { Box, Collapse, Flex, Text } from "@mantine/core"
+import cx from "clsx"
+import Image from "next/image"
+import React from "react"
+
+import Icon1 from "@/shared/assets/images/interise-group/geo-alt.svg"
+import Icon2 from "@/shared/assets/images/interise-group/graph-up.svg"
+import IconArrow from "@/shared/assets/images/interise-group/icon-arrow-down.svg"
+import Image1 from "@/shared/assets/images/interise-group/idea-1.png"
+import Image2 from "@/shared/assets/images/interise-group/idea-2.png"
+import Image3 from "@/shared/assets/images/interise-group/idea-3.png"
+import { SearchInput } from "@/shared/ui"
+
+import s from "./styles.module.scss"
+
+export const CaseList = () => {
+  return (
+    <>
+      <div className={cx(s.sectionWrapper, "container")}>
+        <h3>Кейсы:</h3>
+        <Text className={s.label}>Выберите категорию:</Text>
+        <Flex className={s.filtersWrapper}>
+          <div className={s.categories}>
+            <Text className={cx(s.item, s.active)}>Все отрасли</Text>
+            <Text className={s.item}>Банковская сфера</Text>
+            <Text className={s.item}>Финансы</Text>
+            <Text className={s.item}>Медицина</Text>
+            <Text className={s.item}>Ритейл</Text>
+            <Text className={s.item}>Инвестиции</Text>
+            <Text className={s.item}>Авиация</Text>
+            <Text className={s.item}>Транспорт</Text>
+          </div>
+          <SearchInput />
+        </Flex>
+        <div className={s.cards}>
+          <Box className={s.ideaBox}>
+            <Box className={s.ideaBoxTop}>
+              <Flex gap={"26px"} justify={"space-between"}>
+                <Text className={s.ideaBoxTitle}>
+                  Топ-3
+                  <br />
+                  <span>компания в стране</span>
+                </Text>
+                <Flex direction="column" gap="6px">
+                  <Flex
+                    className={s.ideaBoxInfoCountry}
+                    gap={"12px"}
+                    align={"center"}
+                  >
+                    <div className={s.icon}>
+                      <Icon1 />
+                    </div>
+                    <Flex direction={"column"}>
+                      <Text className={s.ideaBoxCountry}>Страна:</Text>
+                      <Text className={s.ideaBoxCity}>Казахстан</Text>
+                    </Flex>
+                  </Flex>
+                  <Flex
+                    className={s.ideaBoxInfoCountry}
+                    gap={"12px"}
+                    align={"center"}
+                  >
+                    <div className={s.icon}>
+                      <Icon2 />
+                    </div>
+                    <Flex direction={"column"}>
+                      <Text className={s.ideaBoxCountry}>Отрасль:</Text>
+                      <Text className={s.ideaBoxCity}>Банкинг</Text>
+                    </Flex>
+                  </Flex>
+                </Flex>
+              </Flex>
+              <Text className={s.ideaBoxDescription}>
+                Интеграция ведущих банков и запуск крупнейшей трансформации на
+                рынке
+              </Text>
+            </Box>
+
+            <div className={s.collapseWrapper}>
+              <Text className={cx(s.collapseBtn, s.active)}>
+                Задача:
+                <IconArrow />
+              </Text>
+              <Collapse in={true}>
+                <Text className={s.collapseText}>
+                  Провести интеграцию с другим банком и полномасштабная
+                  трансформация операционной модели
+                </Text>
+              </Collapse>
+            </div>
+            <div className={s.collapseWrapper}>
+              <Text className={s.collapseBtn}>
+                Задача:
+                <IconArrow />
+              </Text>
+              <Collapse in={true}>
+                <Text className={s.collapseText}>
+                  Провести интеграцию с другим банком и полномасштабная
+                  трансформация операционной модели
+                </Text>
+              </Collapse>
+            </div>
+
+            <Box>
+              <Text className={s.ideaBoxResult}>Результат:</Text>
+              <Flex direction={"column"} gap={"12px"}>
+                <Flex
+                  gap={"24px"}
+                  align={"center"}
+                  p={"13px 18px"}
+                  className={s.ideaItem}
+                >
+                  <Image src={Image1} alt={""} width={44} height={44} />
+                  <Text component={"p"}>
+                    Операционная прибыль выросла ×6 за 2 года
+                  </Text>
+                </Flex>
+                <Flex
+                  gap={"24px"}
+                  align={"center"}
+                  p={"13px 18px"}
+                  className={s.ideaItem}
+                >
+                  <Image src={Image2} alt={""} width={44} height={44} />
+                  <Text component={"p"}>Ускорен вывод новых продуктов</Text>
+                </Flex>
+                <Flex
+                  gap={"24px"}
+                  align={"center"}
+                  p={"13px 18px"}
+                  className={s.ideaItem}
+                >
+                  <Image src={Image3} alt={""} width={44} height={44} />
+                  <Text component={"p"}>500+ сотрудников обучены</Text>
+                </Flex>
+              </Flex>
+            </Box>
+          </Box>
+          <Box className={s.ideaBox}>
+            <Box className={s.ideaBoxTop}>
+              <Flex gap={"26px"} justify={"space-between"}>
+                <Text className={s.ideaBoxTitle}>
+                  Топ-3
+                  <br />
+                  <span>компания в стране</span>
+                </Text>
+                <Flex direction="column" gap="6px">
+                  <Flex
+                    className={s.ideaBoxInfoCountry}
+                    gap={"12px"}
+                    align={"center"}
+                  >
+                    <div className={s.icon}>
+                      <Icon1 />
+                    </div>
+                    <Flex direction={"column"}>
+                      <Text className={s.ideaBoxCountry}>Страна:</Text>
+                      <Text className={s.ideaBoxCity}>Казахстан</Text>
+                    </Flex>
+                  </Flex>
+                  <Flex
+                    className={s.ideaBoxInfoCountry}
+                    gap={"12px"}
+                    align={"center"}
+                  >
+                    <div className={s.icon}>
+                      <Icon2 />
+                    </div>
+                    <Flex direction={"column"}>
+                      <Text className={s.ideaBoxCountry}>Отрасль:</Text>
+                      <Text className={s.ideaBoxCity}>Банкинг</Text>
+                    </Flex>
+                  </Flex>
+                </Flex>
+              </Flex>
+              <Text className={s.ideaBoxDescription}>
+                Интеграция ведущих банков и запуск крупнейшей трансформации на
+                рынке
+              </Text>
+            </Box>
+
+            <div className={s.collapseWrapper}>
+              <Text className={cx(s.collapseBtn, s.active)}>
+                Задача:
+                <IconArrow />
+              </Text>
+              <Collapse in={true}>
+                <Text className={s.collapseText}>
+                  Провести интеграцию с другим банком и полномасштабная
+                  трансформация операционной модели
+                </Text>
+              </Collapse>
+            </div>
+            <div className={s.collapseWrapper}>
+              <Text className={s.collapseBtn}>
+                Задача:
+                <IconArrow />
+              </Text>
+              <Collapse in={true}>
+                <Text className={s.collapseText}>
+                  Провести интеграцию с другим банком и полномасштабная
+                  трансформация операционной модели
+                </Text>
+              </Collapse>
+            </div>
+
+            <Box>
+              <Text className={s.ideaBoxResult}>Результат:</Text>
+              <Flex direction={"column"} gap={"12px"}>
+                <Flex
+                  gap={"24px"}
+                  align={"center"}
+                  p={"13px 18px"}
+                  className={s.ideaItem}
+                >
+                  <Image src={Image1} alt={""} width={44} height={44} />
+                  <Text component={"p"}>
+                    Операционная прибыль выросла ×6 за 2 года
+                  </Text>
+                </Flex>
+                <Flex
+                  gap={"24px"}
+                  align={"center"}
+                  p={"13px 18px"}
+                  className={s.ideaItem}
+                >
+                  <Image src={Image2} alt={""} width={44} height={44} />
+                  <Text component={"p"}>Ускорен вывод новых продуктов</Text>
+                </Flex>
+                <Flex
+                  gap={"24px"}
+                  align={"center"}
+                  p={"13px 18px"}
+                  className={s.ideaItem}
+                >
+                  <Image src={Image3} alt={""} width={44} height={44} />
+                  <Text component={"p"}>500+ сотрудников обучены</Text>
+                </Flex>
+              </Flex>
+            </Box>
+          </Box>
+          <Box className={s.ideaBox}>
+            <Box className={s.ideaBoxTop}>
+              <Flex gap={"26px"} justify={"space-between"}>
+                <Text className={s.ideaBoxTitle}>
+                  Топ-3
+                  <br />
+                  <span>компания в стране</span>
+                </Text>
+                <Flex direction="column" gap="6px">
+                  <Flex
+                    className={s.ideaBoxInfoCountry}
+                    gap={"12px"}
+                    align={"center"}
+                  >
+                    <div className={s.icon}>
+                      <Icon1 />
+                    </div>
+                    <Flex direction={"column"}>
+                      <Text className={s.ideaBoxCountry}>Страна:</Text>
+                      <Text className={s.ideaBoxCity}>Казахстан</Text>
+                    </Flex>
+                  </Flex>
+                  <Flex
+                    className={s.ideaBoxInfoCountry}
+                    gap={"12px"}
+                    align={"center"}
+                  >
+                    <div className={s.icon}>
+                      <Icon2 />
+                    </div>
+                    <Flex direction={"column"}>
+                      <Text className={s.ideaBoxCountry}>Отрасль:</Text>
+                      <Text className={s.ideaBoxCity}>Банкинг</Text>
+                    </Flex>
+                  </Flex>
+                </Flex>
+              </Flex>
+              <Text className={s.ideaBoxDescription}>
+                Интеграция ведущих банков и запуск крупнейшей трансформации на
+                рынке
+              </Text>
+            </Box>
+
+            <div className={s.collapseWrapper}>
+              <Text className={cx(s.collapseBtn, s.active)}>
+                Задача:
+                <IconArrow />
+              </Text>
+              <Collapse in={true}>
+                <Text className={s.collapseText}>
+                  Провести интеграцию с другим банком и полномасштабная
+                  трансформация операционной модели
+                </Text>
+              </Collapse>
+            </div>
+            <div className={s.collapseWrapper}>
+              <Text className={s.collapseBtn}>
+                Задача:
+                <IconArrow />
+              </Text>
+              <Collapse in={true}>
+                <Text className={s.collapseText}>
+                  Провести интеграцию с другим банком и полномасштабная
+                  трансформация операционной модели
+                </Text>
+              </Collapse>
+            </div>
+
+            <Box>
+              <Text className={s.ideaBoxResult}>Результат:</Text>
+              <Flex direction={"column"} gap={"12px"}>
+                <Flex
+                  gap={"24px"}
+                  align={"center"}
+                  p={"13px 18px"}
+                  className={s.ideaItem}
+                >
+                  <Image src={Image1} alt={""} width={44} height={44} />
+                  <Text component={"p"}>
+                    Операционная прибыль выросла ×6 за 2 года
+                  </Text>
+                </Flex>
+                <Flex
+                  gap={"24px"}
+                  align={"center"}
+                  p={"13px 18px"}
+                  className={s.ideaItem}
+                >
+                  <Image src={Image2} alt={""} width={44} height={44} />
+                  <Text component={"p"}>Ускорен вывод новых продуктов</Text>
+                </Flex>
+                <Flex
+                  gap={"24px"}
+                  align={"center"}
+                  p={"13px 18px"}
+                  className={s.ideaItem}
+                >
+                  <Image src={Image3} alt={""} width={44} height={44} />
+                  <Text component={"p"}>500+ сотрудников обучены</Text>
+                </Flex>
+              </Flex>
+            </Box>
+          </Box>
+          <Box className={s.ideaBox}>
+            <Box className={s.ideaBoxTop}>
+              <Flex gap={"26px"} justify={"space-between"}>
+                <Text className={s.ideaBoxTitle}>
+                  Топ-3
+                  <br />
+                  <span>компания в стране</span>
+                </Text>
+                <Flex direction="column" gap="6px">
+                  <Flex
+                    className={s.ideaBoxInfoCountry}
+                    gap={"12px"}
+                    align={"center"}
+                  >
+                    <div className={s.icon}>
+                      <Icon1 />
+                    </div>
+                    <Flex direction={"column"}>
+                      <Text className={s.ideaBoxCountry}>Страна:</Text>
+                      <Text className={s.ideaBoxCity}>Казахстан</Text>
+                    </Flex>
+                  </Flex>
+                  <Flex
+                    className={s.ideaBoxInfoCountry}
+                    gap={"12px"}
+                    align={"center"}
+                  >
+                    <div className={s.icon}>
+                      <Icon2 />
+                    </div>
+                    <Flex direction={"column"}>
+                      <Text className={s.ideaBoxCountry}>Отрасль:</Text>
+                      <Text className={s.ideaBoxCity}>Банкинг</Text>
+                    </Flex>
+                  </Flex>
+                </Flex>
+              </Flex>
+              <Text className={s.ideaBoxDescription}>
+                Интеграция ведущих банков и запуск крупнейшей трансформации на
+                рынке
+              </Text>
+            </Box>
+
+            <div className={s.collapseWrapper}>
+              <Text className={cx(s.collapseBtn, s.active)}>
+                Задача:
+                <IconArrow />
+              </Text>
+              <Collapse in={true}>
+                <Text className={s.collapseText}>
+                  Провести интеграцию с другим банком и полномасштабная
+                  трансформация операционной модели
+                </Text>
+              </Collapse>
+            </div>
+            <div className={s.collapseWrapper}>
+              <Text className={s.collapseBtn}>
+                Задача:
+                <IconArrow />
+              </Text>
+              <Collapse in={true}>
+                <Text className={s.collapseText}>
+                  Провести интеграцию с другим банком и полномасштабная
+                  трансформация операционной модели
+                </Text>
+              </Collapse>
+            </div>
+
+            <Box>
+              <Text className={s.ideaBoxResult}>Результат:</Text>
+              <Flex direction={"column"} gap={"12px"}>
+                <Flex
+                  gap={"24px"}
+                  align={"center"}
+                  p={"13px 18px"}
+                  className={s.ideaItem}
+                >
+                  <Image src={Image1} alt={""} width={44} height={44} />
+                  <Text component={"p"}>
+                    Операционная прибыль выросла ×6 за 2 года
+                  </Text>
+                </Flex>
+                <Flex
+                  gap={"24px"}
+                  align={"center"}
+                  p={"13px 18px"}
+                  className={s.ideaItem}
+                >
+                  <Image src={Image2} alt={""} width={44} height={44} />
+                  <Text component={"p"}>Ускорен вывод новых продуктов</Text>
+                </Flex>
+                <Flex
+                  gap={"24px"}
+                  align={"center"}
+                  p={"13px 18px"}
+                  className={s.ideaItem}
+                >
+                  <Image src={Image3} alt={""} width={44} height={44} />
+                  <Text component={"p"}>500+ сотрудников обучены</Text>
+                </Flex>
+              </Flex>
+            </Box>
+          </Box>
+          <Box className={s.ideaBox}>
+            <Box className={s.ideaBoxTop}>
+              <Flex gap={"26px"} justify={"space-between"}>
+                <Text className={s.ideaBoxTitle}>
+                  Топ-3
+                  <br />
+                  <span>компания в стране</span>
+                </Text>
+                <Flex direction="column" gap="6px">
+                  <Flex
+                    className={s.ideaBoxInfoCountry}
+                    gap={"12px"}
+                    align={"center"}
+                  >
+                    <div className={s.icon}>
+                      <Icon1 />
+                    </div>
+                    <Flex direction={"column"}>
+                      <Text className={s.ideaBoxCountry}>Страна:</Text>
+                      <Text className={s.ideaBoxCity}>Казахстан</Text>
+                    </Flex>
+                  </Flex>
+                  <Flex
+                    className={s.ideaBoxInfoCountry}
+                    gap={"12px"}
+                    align={"center"}
+                  >
+                    <div className={s.icon}>
+                      <Icon2 />
+                    </div>
+                    <Flex direction={"column"}>
+                      <Text className={s.ideaBoxCountry}>Отрасль:</Text>
+                      <Text className={s.ideaBoxCity}>Банкинг</Text>
+                    </Flex>
+                  </Flex>
+                </Flex>
+              </Flex>
+              <Text className={s.ideaBoxDescription}>
+                Интеграция ведущих банков и запуск крупнейшей трансформации на
+                рынке
+              </Text>
+            </Box>
+
+            <div className={s.collapseWrapper}>
+              <Text className={cx(s.collapseBtn, s.active)}>
+                Задача:
+                <IconArrow />
+              </Text>
+              <Collapse in={true}>
+                <Text className={s.collapseText}>
+                  Провести интеграцию с другим банком и полномасштабная
+                  трансформация операционной модели
+                </Text>
+              </Collapse>
+            </div>
+            <div className={s.collapseWrapper}>
+              <Text className={s.collapseBtn}>
+                Задача:
+                <IconArrow />
+              </Text>
+              <Collapse in={true}>
+                <Text className={s.collapseText}>
+                  Провести интеграцию с другим банком и полномасштабная
+                  трансформация операционной модели
+                </Text>
+              </Collapse>
+            </div>
+
+            <Box>
+              <Text className={s.ideaBoxResult}>Результат:</Text>
+              <Flex direction={"column"} gap={"12px"}>
+                <Flex
+                  gap={"24px"}
+                  align={"center"}
+                  p={"13px 18px"}
+                  className={s.ideaItem}
+                >
+                  <Image src={Image1} alt={""} width={44} height={44} />
+                  <Text component={"p"}>
+                    Операционная прибыль выросла ×6 за 2 года
+                  </Text>
+                </Flex>
+                <Flex
+                  gap={"24px"}
+                  align={"center"}
+                  p={"13px 18px"}
+                  className={s.ideaItem}
+                >
+                  <Image src={Image2} alt={""} width={44} height={44} />
+                  <Text component={"p"}>Ускорен вывод новых продуктов</Text>
+                </Flex>
+                <Flex
+                  gap={"24px"}
+                  align={"center"}
+                  p={"13px 18px"}
+                  className={s.ideaItem}
+                >
+                  <Image src={Image3} alt={""} width={44} height={44} />
+                  <Text component={"p"}>500+ сотрудников обучены</Text>
+                </Flex>
+              </Flex>
+            </Box>
+          </Box>
+          <Box className={s.ideaBox}>
+            <Box className={s.ideaBoxTop}>
+              <Flex gap={"26px"} justify={"space-between"}>
+                <Text className={s.ideaBoxTitle}>
+                  Топ-3
+                  <br />
+                  <span>компания в стране</span>
+                </Text>
+                <Flex direction="column" gap="6px">
+                  <Flex
+                    className={s.ideaBoxInfoCountry}
+                    gap={"12px"}
+                    align={"center"}
+                  >
+                    <div className={s.icon}>
+                      <Icon1 />
+                    </div>
+                    <Flex direction={"column"}>
+                      <Text className={s.ideaBoxCountry}>Страна:</Text>
+                      <Text className={s.ideaBoxCity}>Казахстан</Text>
+                    </Flex>
+                  </Flex>
+                  <Flex
+                    className={s.ideaBoxInfoCountry}
+                    gap={"12px"}
+                    align={"center"}
+                  >
+                    <div className={s.icon}>
+                      <Icon2 />
+                    </div>
+                    <Flex direction={"column"}>
+                      <Text className={s.ideaBoxCountry}>Отрасль:</Text>
+                      <Text className={s.ideaBoxCity}>Банкинг</Text>
+                    </Flex>
+                  </Flex>
+                </Flex>
+              </Flex>
+              <Text className={s.ideaBoxDescription}>
+                Интеграция ведущих банков и запуск крупнейшей трансформации на
+                рынке
+              </Text>
+            </Box>
+
+            <div className={s.collapseWrapper}>
+              <Text className={cx(s.collapseBtn, s.active)}>
+                Задача:
+                <IconArrow />
+              </Text>
+              <Collapse in={true}>
+                <Text className={s.collapseText}>
+                  Провести интеграцию с другим банком и полномасштабная
+                  трансформация операционной модели
+                </Text>
+              </Collapse>
+            </div>
+            <div className={s.collapseWrapper}>
+              <Text className={s.collapseBtn}>
+                Задача:
+                <IconArrow />
+              </Text>
+              <Collapse in={true}>
+                <Text className={s.collapseText}>
+                  Провести интеграцию с другим банком и полномасштабная
+                  трансформация операционной модели
+                </Text>
+              </Collapse>
+            </div>
+
+            <Box>
+              <Text className={s.ideaBoxResult}>Результат:</Text>
+              <Flex direction={"column"} gap={"12px"}>
+                <Flex
+                  gap={"24px"}
+                  align={"center"}
+                  p={"13px 18px"}
+                  className={s.ideaItem}
+                >
+                  <Image src={Image1} alt={""} width={44} height={44} />
+                  <Text component={"p"}>
+                    Операционная прибыль выросла ×6 за 2 года
+                  </Text>
+                </Flex>
+                <Flex
+                  gap={"24px"}
+                  align={"center"}
+                  p={"13px 18px"}
+                  className={s.ideaItem}
+                >
+                  <Image src={Image2} alt={""} width={44} height={44} />
+                  <Text component={"p"}>Ускорен вывод новых продуктов</Text>
+                </Flex>
+                <Flex
+                  gap={"24px"}
+                  align={"center"}
+                  p={"13px 18px"}
+                  className={s.ideaItem}
+                >
+                  <Image src={Image3} alt={""} width={44} height={44} />
+                  <Text component={"p"}>500+ сотрудников обучены</Text>
+                </Flex>
+              </Flex>
+            </Box>
+          </Box>
+        </div>
+      </div>
+    </>
+  )
+}

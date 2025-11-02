@@ -1,0 +1,70 @@
+.sectionWrapper {
+  width: 100%;
+  height: 367px;
+  border-radius: 24px;
+  background: #0076fe
+    url("../../../shared/assets/images/interise-group/image-event-3.png")
+    no-repeat;
+  background-size: contain;
+  padding: 28px 34px;
+  margin-bottom: 80px;
+
+  p {
+    color: #fff;
+    font-weight: 400;
+    line-height: 120%;
+  }
+
+  .title {
+    font-size: 32px;
+    letter-spacing: -0.64px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    letter-spacing: -0.32px;
+    margin: 6px 0 27px;
+  }
+
+  .form {
+    .inputs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      grid-column-gap: 8px;
+      grid-row-gap: 8px;
+
+      .select {
+        grid-area: 3 / 1 / 4 / 3;
+      }
+
+      input {
+        height: 39px;
+        border-radius: 40px;
+        border: 1px solid #a5c1e1;
+        background: #d4e4f7;
+
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 120%;
+        letter-spacing: -0.32px;
+
+        &::placeholder {
+          color: #798b9e;
+        }
+      }
+    }
+
+    .btn {
+      width: 100%;
+      height: 44px;
+      border-radius: 8px;
+      background: #010c22;
+      color: #f5f5f5;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 100%;
+      margin-top: 24px;
+    }
+  }
+}

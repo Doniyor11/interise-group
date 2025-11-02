@@ -1,0 +1,144 @@
+.topSectionWrapper {
+  width: 100%;
+  background: url("../../../shared/assets/images/interise-group/image-case-banner.png")
+    no-repeat center top fixed;
+  background-size: contain;
+  min-height: 333px;
+  padding-top: 123px;
+
+  .container {
+    .sectionHead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    h1 {
+      margin-top: 40px;
+      color: #fff;
+      font-size: 64px;
+      font-weight: 400;
+      line-height: 64px;
+      letter-spacing: -1.28px;
+    }
+  }
+}
+
+.sectionWrapper {
+  margin: 80px 0 65px;
+
+  .stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 52px;
+    margin-bottom: 80px;
+
+    .sectionTitle {
+      width: 100%;
+      max-width: 422px;
+      color: #566677;
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 120%;
+      letter-spacing: -0.64px;
+
+      span {
+        color: #0076fe;
+      }
+    }
+
+    .counts {
+      display: flex;
+      align-items: center;
+      gap: 52px;
+      width: 100%;
+
+      .countsItem {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+
+        .icon {
+          width: 80px;
+          height: 80px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 12px;
+          border: 1px solid #d4e4f7;
+          background: #f2f8ff;
+        }
+
+        .count {
+          color: #0076fe;
+          font-size: 46px;
+          font-weight: 400;
+          line-height: 75%;
+        }
+
+        .countLabel {
+          color: #000;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 120%;
+          letter-spacing: -0.32px;
+        }
+      }
+
+      .line {
+        width: 1px;
+        height: 79px;
+        background: #bbb;
+      }
+    }
+  }
+
+  .box {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    .boxLeft {
+      padding: 32px 40px;
+      width: 100%;
+      max-width: 976px;
+      border-radius: 20px;
+      border: 1px solid #d4e4f7;
+      background: #f2f8ff;
+
+      .title {
+        max-width: 730px;
+        color: #535e6b;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 120%;
+        letter-spacing: -0.48px;
+        margin-bottom: 25px;
+
+        span {
+          color: #0076fe;
+        }
+      }
+
+      .text {
+        color: #2c333c;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 140%;
+      }
+    }
+
+    .boxRight {
+      max-width: 304px;
+
+      .text {
+        color: #798b9e;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 140%;
+      }
+    }
+  }
+}

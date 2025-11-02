@@ -1,1 +1,2 @@
-export { HeadBanner } from "./head-banner"
+export { SearchInput } from "./search-input"
+export { AnimatedNumber } from "./counter"

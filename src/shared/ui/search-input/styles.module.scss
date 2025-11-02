@@ -1,0 +1,20 @@
+.input {
+  width: 100%;
+  max-width: 331px;
+
+  input {
+    height: 40px;
+
+    border-radius: 6px;
+    border: 1px solid #d4e4f7;
+    background: #fff;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 121.2%;
+
+    &::placeholder {
+      color: #94a3b8;
+    }
+  }
+}

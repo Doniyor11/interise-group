@@ -1,0 +1,63 @@
+.topSectionWrapper {
+  width: 100%;
+  background: url("../../../shared/assets/images/interise-group/image-research-1.png")
+    no-repeat top center fixed;
+  background-size: contain;
+  min-height: 333px;
+  padding-top: 123px;
+
+  .container {
+    padding: 0 65px;
+
+    .sectionHead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    h1 {
+      margin-top: 40px;
+      color: #fff;
+      font-size: 64px;
+      font-weight: 400;
+      line-height: 64px;
+      letter-spacing: -1.28px;
+    }
+  }
+}
+
+.sectionWrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 33px;
+  margin: 60px 0;
+
+  .title {
+    color: #566677;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.64px;
+
+    span {
+      color: #0076fe;
+    }
+  }
+
+  .subtitle {
+    color: #2c333c;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    margin-top: 32px;
+    max-width: 566px;
+  }
+
+  .image {
+    width: 528px;
+    height: 312px;
+    border-radius: 24px;
+    border: 1px solid #d4e4f7;
+    object-fit: cover;
+  }
+}

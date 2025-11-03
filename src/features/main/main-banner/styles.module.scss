@@ -4,17 +4,25 @@
   align-items: center;
   gap: 28px;
   padding: 142px 0 100px 0;
-  background: url("../../../shared/assets/images/interise-group/hero-bg.png")
-    no-repeat right top fixed;
-  background-size: cover;
+  background: #0e101f
+    url("../../../shared/assets/images/interise-group/hero-bg.png") no-repeat
+    right top fixed;
+  background-size: contain;
   @media screen and (max-width: 1440px) {
-    padding: 142px 15px 125px 15px;
+    padding: 142px 0 125px 0;
   }
   @media screen and (max-width: 1040px) {
     flex-direction: column;
     padding: 107px 15px 50px 15px;
     gap: 50px;
-    border-radius: 0 0 32px 32px;
+  }
+  @media screen and (max-width: 992px) {
+    padding: 107px 15px 50px 15px;
+    gap: 50px;
+    background: #0e101f
+      url("../../../shared/assets/images/interise-group/hero-bg-mobile.png")
+      no-repeat center top fixed;
+    background-size: contain;
   }
 }
 
@@ -103,7 +111,7 @@
   align-items: stretch;
   @media screen and (max-width: 1040px) {
     width: 100%;
-    margin-bottom: 183px;
+    margin-bottom: 170px;
   }
 
   .line {

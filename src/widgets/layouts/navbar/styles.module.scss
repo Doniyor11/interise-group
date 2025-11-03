@@ -10,11 +10,11 @@
   justify-content: space-between;
   position: fixed;
   top: 2%;
-  width: 100vw;
+  width: 100%;
   z-index: 100;
   left: 50%;
   transform: translateX(-50%);
-  max-width: 1440px;
+  max-width: calc(1440px - 128px);
   margin: 0 auto;
 
   .logo {
@@ -51,43 +51,16 @@
       }
     }
 
-    .parentLink {
-      color: #111827;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: normal;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-      user-select: none;
-
-      &.active {
-        font-weight: 600;
-        position: relative;
-
-        &::after {
-          content: "";
-          display: block;
-          position: absolute;
-          bottom: -4px;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: calc(100% - 40px);
-          height: 1px;
-          background-color: #f4b645;
-          border-radius: 2px;
-        }
-      }
-    }
-
-    @media screen and (max-width: 1140px) {
-      column-gap: 20px;
+    @media screen and (max-width: 1250px) {
+      column-gap: 16px;
     }
   }
 
   @media screen and (max-width: 1440px) {
-    width: 91.12vw;
+    max-width: calc(100% - 128px);
+  }
+  @media screen and (max-width: 992px) {
+    max-width: calc(100% - 32px);
   }
 }
 

@@ -14,7 +14,7 @@ export const MainBanner = () => {
 
   return (
     <div className={s.sectionWrapper}>
-      <Box className={"container"} w={"100%"} p={0}>
+      <Box className={"container"} w={"100%"}>
         <Box className={s.sectionLeft}>
           <Text className={s.bannerTitle}>
             Стратегии, которые <br /> меняют рынки

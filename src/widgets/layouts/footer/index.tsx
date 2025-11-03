@@ -24,7 +24,7 @@ export const Footer = () => {
       <Flex
         mb="40px"
         gap="32px"
-        id={"navbar5"}
+        id={"contacts"}
         mt={"30px"}
         align={"stretch"}
         direction={matches ? "column" : "row"}

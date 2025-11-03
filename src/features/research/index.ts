@@ -1,3 +1,8 @@
 export { ResearchMainBanner } from "./main-banner"
 export { ResearchTypes } from "./research-types"
 export { SingleResearchBanner } from "./single-main-banner"
+export { WhyCustomersLeaving } from "./why-customers-leaving"
+export { CustomersChoice } from "./customers-choice"
+export { ScopeResearch } from "./scope-research"
+export { PurchasingAccess } from "./purchasing-access"
+export { InteractiveDashboard } from "./interactive-dashboard"

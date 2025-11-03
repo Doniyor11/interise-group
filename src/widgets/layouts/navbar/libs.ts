@@ -22,6 +22,6 @@ export const MenuData: MenuItem[] = [
   },
   {
     text: "Контакты",
-    path: "#navbar5",
+    path: "#contacts",
   },
 ]

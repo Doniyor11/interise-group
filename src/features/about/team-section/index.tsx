@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, List, Text } from "@mantine/core"
+import { Anchor, Box, Flex, Grid, List, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
 import Image from "next/image"
@@ -63,8 +63,20 @@ export const TeamSection = () => {
                     </List>
                   </Box>
                   <Flex gap={"8px"} className={s.socials}>
-                    <IconTg />
-                    <IconLin />
+                    <Anchor
+                      h={50}
+                      href={"https://t.me/Di_VC"}
+                      target={"_blank"}
+                    >
+                      <IconTg />
+                    </Anchor>
+                    <Anchor
+                      h={50}
+                      href={"https://ru.linkedin.com/in/dmitrii-vakin-9585a679"}
+                      target={"_blank"}
+                    >
+                      <IconLin />
+                    </Anchor>
                   </Flex>
                 </Flex>
               </Flex>
@@ -119,8 +131,20 @@ export const TeamSection = () => {
                     </List>
                   </Box>
                   <Flex gap={"8px"} className={s.socials}>
-                    <IconTg />
-                    <IconLin />
+                    <Anchor
+                      h={50}
+                      href={"https://t.me/aoveretenov"}
+                      target={"_blank"}
+                    >
+                      <IconTg />
+                    </Anchor>
+                    <Anchor
+                      h={50}
+                      href={"https://ru.linkedin.com/in/aoveretenov/ru"}
+                      target={"_blank"}
+                    >
+                      <IconLin />
+                    </Anchor>
                   </Flex>
                 </Flex>
               </Flex>

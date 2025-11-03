@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 
 interface AnimatedNumberProps {
   value: number
+  symbols?: string
   duration?: number // ms
   className?: string
 }
@@ -10,6 +11,7 @@ export const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
   value,
   duration = 3000,
   className,
+  symbols,
 }) => {
   const [display, setDisplay] = useState(0)
 
@@ -28,5 +30,10 @@ export const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
     return () => clearInterval(timer)
   }, [value, duration])
 
-  return <span className={className}>{display}</span>
+  return (
+    <span className={className}>
+      {display}
+      {symbols}
+    </span>
+  )
 }

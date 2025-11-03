@@ -1,7 +1,7 @@
 import { Loader } from "@mantine/core"
 import React, { ReactNode } from "react"
 
-import { FormModal } from "@/widgets/form-modal/ui"
+import { CookiesPopup } from "@/widgets"
 import { Navbar } from "@/widgets/layouts/navbar"
 
 interface ILayout {
@@ -13,8 +13,7 @@ export const Layout = ({ children }: ILayout) => {
     <>
       <Navbar />
       {children ? children : <Loader />}
-      {/*<Footer />*/}
-      <FormModal />
+      <CookiesPopup />
     </>
   )
 }

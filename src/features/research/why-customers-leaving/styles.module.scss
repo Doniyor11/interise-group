@@ -1,0 +1,62 @@
+.sectionWrapper {
+  h2 {
+    text-align: center;
+    color: #566677;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.64px;
+
+    span {
+      color: #0076fe;
+    }
+  }
+
+  .subtitle {
+    color: #2c333c;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    margin-top: 18px;
+  }
+
+  .cards {
+    display: flex;
+    gap: 32px;
+    margin-top: 50px;
+
+    .card {
+      padding: 26px 32px;
+      width: 100%;
+      border-radius: 24px;
+      border: 1px solid #d4e4f7;
+      background: radial-gradient(
+        169% 309% at 41.88% 40.77%,
+        #f2f8ff 20.19%,
+        #0076fe 100%
+      );
+
+      .cardTitle {
+        color: #535e6b;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 120%;
+        letter-spacing: -0.48px;
+
+        span {
+          color: #0076fe;
+        }
+      }
+
+      .cardText {
+        margin-top: 20px;
+        color: #566677;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 120%;
+        letter-spacing: -0.32px;
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+.sectionWrapper {
+  margin: 0 auto 100px;
+
+  h2 {
+    text-align: center;
+    color: #566677;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.64px;
+
+    span {
+      color: #0076fe;
+    }
+  }
+
+  .subtitle {
+    color: #2c333c;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    margin: 18px auto 40px;
+    max-width: 752.547px;
+  }
+
+  .tabLabel {
+    color: #535e6b;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.4px;
+  }
+
+  .cards {
+    width: 100%;
+    padding: 28px;
+    border-radius: 20px;
+    border: 1px solid #d4e4f7;
+    background: #f2f8ff;
+    display: flex;
+    gap: 14px;
+
+    .leftSide {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 293px;
+    }
+
+    .rightSide {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-gap: 14px;
+    }
+
+    .card {
+      padding: 18px;
+      border-radius: 11px;
+      border: 1px solid #bed7fb;
+      background: #e6f1ff;
+
+      .cardTitle {
+        color: #535e6b;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 120%;
+        letter-spacing: -0.36px;
+        margin-bottom: 2px;
+      }
+
+      .cardBody {
+        width: 100%;
+        height: calc(100% - 24px);
+      }
+
+      &.firstCard {
+        grid-area: 1 / 1 / 2 / 4;
+      }
+
+      &.lastCard {
+        grid-area: 3 / 2 / 4 / 4;
+      }
+    }
+  }
+
+  .tabWrapper {
+    width: fit-content;
+    padding: 4px;
+    gap: 4px;
+
+    border-radius: 8px;
+    background: #d6e2f1;
+
+    &.transparent {
+      background: transparent;
+    }
+
+    .tabBtn {
+      width: fit-content;
+      height: 39px;
+      color: #76777a;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 21px;
+      border-radius: 8px;
+      background: transparent;
+
+      &.active {
+        color: #f8fafc;
+        background: #0076ff;
+      }
+    }
+  }
+}

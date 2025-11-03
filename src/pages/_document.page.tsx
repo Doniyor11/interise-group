@@ -1,5 +1,6 @@
 import { ColorSchemeScript } from "@mantine/core"
 import { Head, Html, Main, NextScript } from "next/document"
+import React from "react"
 
 export default function Document() {
   return (
@@ -9,10 +10,10 @@ export default function Document() {
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
-          crossOrigin={"use-credentials"}
+          crossOrigin={"anonymous"}
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&family=Taviraj:wght@300;400;500;600;700;800;900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap"
           rel="stylesheet"
         />
         <ColorSchemeScript />

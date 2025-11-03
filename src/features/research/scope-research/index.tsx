@@ -87,10 +87,8 @@ export const ScopeResearch = () => {
                     <span>{bank.id}</span>
                     {bank.name}
                   </Text>
-                  <Text className={s.text}>
-                    <Text className={cx(s.text, s.bold)}>
-                      {bank.value} <span>{bank.subValue}</span>
-                    </Text>
+                  <Text className={cx(s.text, s.bold)}>
+                    {bank.value} <span>{bank.subValue}</span>
                   </Text>
                 </div>
                 <Box mih={12}>

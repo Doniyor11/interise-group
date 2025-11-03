@@ -60,7 +60,7 @@ export const MainBanner = () => {
                 <AnimatedNumber value={31} className={s.number} />
               </Text>
               <Text className={s.info}>
-                стран для международной <br /> экспансии
+                страна для международной <br /> экспансии
               </Text>
             </Flex>
           </Flex>

@@ -32,7 +32,7 @@ export const Footer = () => {
         <Box className={s.boxForm}>
           <Text component="h2">Напишите нам</Text>
           <Text component="p">
-            И мы пришлем план экспресс Discovery <br /> вашего бизнеса
+            И мы свяжемся с вами для обсуждения <br /> ваших задач
           </Text>
           <EmailForm />
         </Box>
@@ -100,59 +100,55 @@ export const Footer = () => {
                   <Text component="p" className={s.infoText}>
                     PR и СМИ:
                   </Text>
-                  <Text
-                    component="p"
+                  <Anchor
                     className={s.infoText}
                     c={"#535E6B"}
                     fz={"24px"}
+                    href={"mailto:pr@interisegroup.com"}
                   >
                     pr@interisegroup.com
-                  </Text>
+                  </Anchor>
                 </Flex>
                 <Flex direction="column">
                   <Text component="p" className={s.infoText}>
                     По вопросам сотрудничества:
                   </Text>
-                  <Text
-                    component="p"
+                  <Anchor
                     className={s.infoText}
                     c={"#535E6B"}
                     fz={"24px"}
+                    href={"mailto:request@interisegroup.comcom"}
                   >
                     request@interisegroup.com
-                  </Text>
+                  </Anchor>
                 </Flex>
               </Flex>
             </Flex>
             <Flex direction={"column"} gap="8px">
               <Anchor
                 target={"_blank"}
-                href={"/0710_Политика_ПДн_услуги_ИнтерайзГрупп.pdf"}
+                href={"/Политика_конфединциальности.pdf"}
                 className={cx(s.infoText, s.menu)}
               >
                 Политика конфединциальности
               </Anchor>
               <Anchor
                 target={"_blank"}
-                href={
-                  "/0710_Услуги_Согласие_рекламная_инф_рассылка_ИнтерайзГрупп.pdf"
-                }
+                href={"/Пользовательское_соглашения.pdf"}
                 className={cx(s.infoText, s.menu)}
               >
                 Пользовательское соглашения
               </Anchor>
               <Anchor
                 target={"_blank"}
-                href={
-                  "/0710_Услуги_Согласие_рекламная_инф_рассылка_ИнтерайзГрупп.pdf"
-                }
+                href={"/Согласие_на_получение_рассылок.pdf"}
                 className={cx(s.infoText, s.menu)}
               >
                 Согласие на получение рассылок
               </Anchor>
               <Anchor
                 target={"_blank"}
-                href={"/0710_Услуги_Согласие_COOKIES_ИнтерайзГрупп_1.pdf"}
+                href={"/Обработка_файлов_Cookies.pdf"}
                 className={cx(s.infoText, s.menu)}
               >
                 Обработка файлов Cookies

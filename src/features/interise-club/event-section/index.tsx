@@ -18,7 +18,7 @@ export const EventSection = () => {
     <div className={cx(s.sectionWrapper, "container")}>
       <h3>
         InteriseClub — <span>площадка для общения</span> <br /> и обмена опытом
-        практиков.
+        практиков
       </h3>
       <Text className={s.subtitle}>Выберите мероприятие:</Text>
       <div className={s.filters}>

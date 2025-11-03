@@ -141,7 +141,7 @@ export const Books: FC = () => {
         <Text className={s.ideaTitle}>От идей к результатам</Text>
         <Text className={s.ideaDescription} maw={matches ? "100%" : "512px"}>
           Главный показатель нашей эффективности — реальные результаты: рост
-          выручки, доли рынка и производительности.
+          выручки, доли рынка и производительности
         </Text>
       </Flex>
       <Grid gutter={32}>
@@ -173,11 +173,11 @@ export const Books: FC = () => {
           <Box h={"100%"}>
             <Text className={s.ideaInfoBoxTitleOne}>
               Мы работаем спринтами — от быстрой диагностики до комплексного
-              внедрения.
+              внедрения
             </Text>
             <Text className={s.ideaInfoBoxDescriptionOne}>
               За короткое время формулируем и проверяем гипотезы, усиливаем
-              работающие решения и масштабируем результат.
+              работающие решения и масштабируем результат
             </Text>
           </Box>
         </Grid.Col>
@@ -191,7 +191,7 @@ export const Books: FC = () => {
             <Text className={s.ideaInfoBoxTitle}>Диагностика</Text>
             <Text className={s.ideaInfoBoxDescription}>
               Быстрый анализ и диагностика бизнеса: определяем точки роста и
-              создаём дорожную карту дальнейших действий.
+              создаём дорожную карту дальнейших действий
             </Text>
           </Box>
         </Grid.Col>
@@ -205,7 +205,7 @@ export const Books: FC = () => {
             <Text className={s.ideaInfoBoxTitle}>Стратегия</Text>
             <Text className={s.ideaInfoBoxDescription}>
               Формируем стратегию, проверяем гипотезы практикой, усиливаем
-              сильное и убираем лишнее.
+              сильное и убираем лишнее
             </Text>
           </Box>
         </Grid.Col>
@@ -219,7 +219,7 @@ export const Books: FC = () => {
             <Text className={s.ideaInfoBoxTitle}>Цифровая транформация</Text>
             <Text className={s.ideaInfoBoxDescription}>
               Реализуем комплексные трансформации, перестраиваем процессы и
-              добиваемся измеримых результатов.
+              добиваемся измеримых результатов
             </Text>
           </Box>
         </Grid.Col>
@@ -233,7 +233,7 @@ export const Books: FC = () => {
             <Text className={s.ideaInfoBoxTitle}>Инвестирование</Text>
             <Text className={s.ideaInfoBoxDescription}>
               Готовим бизнес к сделкам и IPO, увеличиваем капитализацию и
-              инвестиционную привлекательность.
+              инвестиционную привлекательность
             </Text>
           </Box>
         </Grid.Col>
@@ -247,7 +247,7 @@ export const Books: FC = () => {
             <Text className={s.ideaInfoBoxTitle}>Выход на новые рынки</Text>
             <Text className={s.ideaInfoBoxDescription}>
               Помогаем компаниям масштабироваться и выходить на международные
-              рынки.
+              рынки
             </Text>
           </Box>
         </Grid.Col>

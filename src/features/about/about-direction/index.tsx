@@ -19,7 +19,7 @@ export const AboutDirection = () => {
         <div className={s.sectionWrapper}>
           <Box className={s.head}>
             <h3>В своей работе мы объединяем четыре ключевых направления:</h3>
-            <Text>Направления работы</Text>
+            {/*<Text>Направления работы</Text>*/}
           </Box>
           <div className={s.cards}>
             <div className={s.card}>

@@ -37,8 +37,8 @@
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     mask:
-            linear-gradient(90deg, #fff 0%, #fff 100%) content-box,
-            linear-gradient(90deg, #fff 0%, #fff 100%);
+      linear-gradient(90deg, #fff 0%, #fff 100%) content-box,
+      linear-gradient(90deg, #fff 0%, #fff 100%);
     mask-composite: exclude;
     z-index: -1;
   }

@@ -220,7 +220,7 @@ export const Footer = () => {
             src="https://yandex.com/map-widget/v1/?um=constructor%3A42c9af928a64586089fec4baa8e2113d4c45085dfbda73f148aca3da4fddc4a3&amp;source=constructor"
             width="100%"
             height="100%"
-            frameBorder="0"
+            frameBorder={0}
           />
         </Box>
       </Flex>

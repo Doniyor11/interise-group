@@ -36,11 +36,9 @@
     background: linear-gradient(15deg, #000b21, #0076fe);
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
     mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
+            linear-gradient(90deg, #fff 0%, #fff 100%) content-box,
+            linear-gradient(90deg, #fff 0%, #fff 100%);
     mask-composite: exclude;
     z-index: -1;
   }

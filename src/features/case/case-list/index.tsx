@@ -37,6 +37,7 @@ export const CaseList = () => {
           <div className={s.categories}>
             {FilterKeys?.map((i, index) => (
               <Text
+                key={index}
                 onClick={() => setCategory(index)}
                 className={cx(s.item, { [s.active]: category === index })}
               >
@@ -48,7 +49,7 @@ export const CaseList = () => {
         </Flex>
         <div className={s.cards}>
           {Array.from({ length: 6 }).map((_, i) => (
-            <Box className={s.ideaBox}>
+            <Box className={s.ideaBox} key={i}>
               <Box className={s.ideaBoxTop}>
                 <Flex gap={"26px"} justify={"space-between"}>
                   <Text className={s.ideaBoxTitle}>

@@ -53,8 +53,9 @@ export const ResearchTypes = () => {
           </PopoverTarget>
           <PopoverDropdown>
             <div className={s.monthsWrapper}>
-              {MonthsData?.map((item) => (
+              {MonthsData?.map((item, index) => (
                 <Button
+                  key={index}
                   className={cx(s.month, {
                     [s.active]: selectMonth === item?.key,
                   })}

@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import Image from "next/image"
+import { useRouter } from "next/router"
 import React from "react"
 
 import ImageSlider1 from "@/shared/assets/images/interise-group/makro1.png"
@@ -10,10 +11,11 @@ import ImageSlider3 from "@/shared/assets/images/interise-group/makro3.png"
 import s from "./styles.module.scss"
 
 export const MainRecipes = () => {
+  const router = useRouter()
   const matches = useMediaQuery("(max-width: 1040px)")
 
   return (
-    <div className={s.sectionWrapper} id={"navbar3"}>
+    <div className={s.sectionWrapper}>
       <Flex
         direction={"column"}
         align={matches ? "flex-start" : "center"}
@@ -109,6 +111,7 @@ export const MainRecipes = () => {
           radius={8}
           h={"44px"}
           mt={"32px"}
+          onClick={() => router.push("/research")}
         >
           Подробнее
         </Button>

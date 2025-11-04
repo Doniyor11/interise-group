@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Grid, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import Image from "next/image"
+import { useRouter } from "next/router"
 import React, { FC } from "react"
 
 import Icon1 from "@/shared/assets/images/interise-group/geo-alt.svg"
@@ -13,6 +14,7 @@ import Image5 from "@/shared/assets/images/interise-group/idea-5.svg"
 import Image6 from "@/shared/assets/images/interise-group/idea-6.svg"
 import Image7 from "@/shared/assets/images/interise-group/idea-7.svg"
 import Image8 from "@/shared/assets/images/interise-group/idea-8.svg"
+import { onLinkClick } from "@/shared/libs/scroll.ts"
 
 // import { onLinkClick } from "@/shared/libs/scroll.ts"
 import s from "./styles.module.scss"
@@ -97,8 +99,11 @@ const IdeaResultItem: FC<{ icon: any; text: string }> = ({ icon, text }) => (
   </Flex>
 )
 
-const IdeaCard: FC<{ data: (typeof IDEAS_DATA)[0] }> = ({ data }) => (
-  <Box className={s.ideaBox}>
+const IdeaCard: FC<{ data: (typeof IDEAS_DATA)[0]; onClick?: () => void }> = ({
+  data,
+  onClick,
+}) => (
+  <Box onClick={onClick} className={s.ideaBox}>
     <Box className={s.ideaBoxTop}>
       <Flex gap={"26px"} justify={"space-between"}>
         <Text className={s.ideaBoxTitle}>
@@ -129,6 +134,7 @@ const IdeaCard: FC<{ data: (typeof IDEAS_DATA)[0] }> = ({ data }) => (
 )
 
 export const Books: FC = () => {
+  const router = useRouter()
   const matches = useMediaQuery("(max-width: 1040px)")
 
   return (
@@ -147,7 +153,7 @@ export const Books: FC = () => {
       <Grid gutter={32}>
         {IDEAS_DATA.map((idea, idx) => (
           <Grid.Col span={matches ? 12 : 4} key={idx}>
-            <IdeaCard data={idea} />
+            <IdeaCard data={idea} onClick={() => router.push("/case")} />
           </Grid.Col>
         ))}
       </Grid>
@@ -161,14 +167,14 @@ export const Books: FC = () => {
           fz={"16px"}
           fw={400}
           lh={"100%"}
-          // onClick={() => onLinkClick("navbar5")}
+          onClick={() => router.push("/case")}
         >
           Все проекты
         </Button>
       </Flex>
       {/* ----- */}
 
-      <Grid gutter={"32px"} mt={"120px"}>
+      <Grid gutter={"32px"} pt={"100px"} id={"directions"}>
         <Grid.Col span={matches ? 12 : 4}>
           <Box h={"100%"}>
             <Text className={s.ideaInfoBoxTitleOne}>
@@ -262,7 +268,7 @@ export const Books: FC = () => {
           fz={"16px"}
           fw={400}
           lh={"100%"}
-          // onClick={() => onLinkClick("navbar5")}
+          onClick={() => onLinkClick("contacts")}
         >
           Связаться с нами
         </Button>

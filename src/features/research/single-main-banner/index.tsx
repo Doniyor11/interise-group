@@ -2,6 +2,7 @@ import { Button, Text } from "@mantine/core"
 import cx from "clsx"
 import React from "react"
 
+import { onLinkClick } from "@/shared/libs/scroll.ts"
 import { SearchInput } from "@/shared/ui"
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs"
 
@@ -31,7 +32,9 @@ export const SingleResearchBanner = () => {
             существующих. Узнайте, где вы <br /> теряете лояльность и как
             опередить конкурентов.
           </Text>
-          <Button className={s.btn}>Получить демо-доступ</Button>
+          <Button className={s.btn} onClick={() => onLinkClick("contacts")}>
+            Получить демо-доступ
+          </Button>
         </div>
       </div>
     </>

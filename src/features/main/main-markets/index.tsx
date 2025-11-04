@@ -55,7 +55,7 @@ export const MainMarkets = () => {
   const matches = useMediaQuery("(max-width: 1040px)")
   return (
     <>
-      <div className={s.sectionWrapper} id={"navbar2"}>
+      <div className={s.sectionWrapper}>
         <Box className={s.sectionLeft}>
           <Flex gap={""} direction={"column"} w={matches ? "100%" : "50%"}>
             <Text className={"section-title"} mb={"12px"}>
@@ -126,7 +126,7 @@ export const MainMarkets = () => {
             h={"44px"}
             w={matches ? "100%" : "192px"}
             fw={"400"}
-            onClick={() => onLinkClick("navbar5")}
+            onClick={() => onLinkClick("contacts")}
           >
             Все проекты
           </Button>

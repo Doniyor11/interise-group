@@ -60,7 +60,7 @@ export const Navbar = () => {
               color={"#FFF"}
               radius={8}
               h={"44px"}
-              onClick={() => onLinkClick("navbar5")}
+              onClick={() => onLinkClick("contacts")}
             >
               Связаться с нами
             </Button>

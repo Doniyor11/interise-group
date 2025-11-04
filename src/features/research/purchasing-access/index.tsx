@@ -2,6 +2,8 @@ import { Box, Button, Text } from "@mantine/core"
 import cx from "clsx"
 import React from "react"
 
+import { onLinkClick } from "@/shared/libs/scroll.ts"
+
 import s from "./styles.module.scss"
 
 export const PurchasingAccess = () => {
@@ -54,7 +56,9 @@ export const PurchasingAccess = () => {
               главным инструментом для вашего роста.
             </Text>
           </Box>
-          <Button className={s.btn}>Запросить демо</Button>
+          <Button className={s.btn} onClick={() => onLinkClick("contacts")}>
+            Запросить демо
+          </Button>
         </Box>
       </div>
     </>

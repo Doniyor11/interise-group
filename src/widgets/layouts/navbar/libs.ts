@@ -10,7 +10,7 @@ export const MenuData: MenuItem[] = [
   },
   {
     text: "Направления работы",
-    path: "#navbar2",
+    path: "/#directions",
   },
   {
     text: "Исследования",
@@ -18,7 +18,7 @@ export const MenuData: MenuItem[] = [
   },
   {
     text: "Interise Club",
-    path: "/interise-club",
+    path: "/#interise-club",
   },
   {
     text: "Контакты",

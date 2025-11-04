@@ -28,7 +28,7 @@ export const Banner = () => {
             ta="center"
             mb={"24px"}
           >
-            В портфеле InteriseGroup — проекты в 31+ странах и 15 отраслях:{" "}
+            В портфеле InteriseGroup — проекты в 31 странах и 15 отраслях:{" "}
             <br />
             от IT, финансов и ритейла до производства, <br /> телекоммуникаций,
             FMCG и энергетики
@@ -49,10 +49,10 @@ export const Banner = () => {
             color={"#FFF"}
             radius={8}
             h={"44px"}
-            onClick={() => onLinkClick("navbar5")}
+            onClick={() => onLinkClick("contacts")}
             w={matches ? "100%" : "233px"}
           >
-            Все проекты
+            Оставить заявку
           </Button>
         </Flex>
       </div>

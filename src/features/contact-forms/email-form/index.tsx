@@ -15,6 +15,8 @@ export const EmailForm = () => {
     "/": "Главная",
     "/main": "Главная",
     "/about": "О нас",
+    "/case": "Кейсы",
+    "/research": "Исследования",
   }
   const {
     control,
@@ -36,7 +38,9 @@ export const EmailForm = () => {
   const onSubmit = (data: IEmailFormTypes) => {
     mutate(
       `<b>📩 Новая заявка с сайта!</b>\n` +
-        `<b>🌐 Страница:</b> ${pathMap[router.pathname]}\n` +
+        `<b>🌐 Страница:</b> ${
+          pathMap[router.pathname] ? pathMap[router.pathname] : "Главная"
+        }\n` +
         `<b>👤 Имя:</b> ${data.name}\n` +
         `<b>👥 Фамилия:</b> ${data.surname}\n` +
         `<b>📞 Телефон:</b> ${data.phone}\n` +
@@ -112,7 +116,7 @@ export const EmailForm = () => {
           render={({ field }) => (
             <Checkbox
               required
-              m={"33px 0 26px"}
+              m={"20px 0 16px"}
               classNames={{
                 root: s.checkboxRoot,
                 label: s.checkboxLabel,

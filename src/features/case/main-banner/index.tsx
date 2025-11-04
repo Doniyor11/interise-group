@@ -2,8 +2,6 @@ import { Box, Text } from "@mantine/core"
 import cx from "clsx"
 import React from "react"
 
-import { DataBreadcrumbs } from "@/features/about/main-banner/libs.ts"
-
 import IconBusiness from "@/shared/assets/images/interise-group/icon-business.svg"
 import IconDocument from "@/shared/assets/images/interise-group/icon-document.svg"
 import IconEyeOff from "@/shared/assets/images/interise-group/icon-eye-off.svg"
@@ -11,6 +9,7 @@ import IconMap from "@/shared/assets/images/interise-group/icon-map.svg"
 import { AnimatedNumber, SearchInput } from "@/shared/ui"
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs"
 
+import { DataBreadcrumbs } from "./libs.ts"
 import s from "./styles.module.scss"
 
 export const CaseMainBanner = () => {
@@ -78,8 +77,9 @@ export const CaseMainBanner = () => {
               </span>
             </Text>
             <Text className={s.text}>
-              Здесь представлены проекты из разных стран и отраслей,
-              реализованные в тесном партнерстве с клиентами.
+              Здесь представлены проекты, которыми мы гордимся, реализованные в
+              партнерстве с сильными командами топовых игроков на российском и
+              международном рынках.
             </Text>
           </div>
           <div className={s.boxRight}>

@@ -203,13 +203,8 @@ export const Footer = () => {
                 <Text component="p" className={s.infoText}>
                   Адрес:
                 </Text>
-                <Text
-                  component="p"
-                  className={s.infoText}
-                  c={"#535E6B"}
-                  fz={"16px"}
-                >
-                  Остоженка 37/7 с.2, особняк <br /> Conversation Cafe, 4 этаж
+                <Text component="p" className={cx(s.infoText, s.address)}>
+                  Остоженка 37/7 с.2, особняк Conversation Cafe, 4 этаж
                 </Text>
               </Flex>
             </Flex>

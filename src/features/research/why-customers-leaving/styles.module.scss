@@ -1,4 +1,24 @@
 .sectionWrapper {
+  &.newTerritories {
+    margin-bottom: 100px;
+    .box {
+      width: 100%;
+      border-radius: 20px;
+      border: 1px solid #d4e4f7;
+      background: #f2f8ff;
+      padding: 36px;
+    }
+
+    .cards {
+      .card {
+        .cardText {
+          margin: 0;
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
+
   h2 {
     text-align: center;
     color: #566677;

@@ -1,7 +1,7 @@
 @import "src/shared/styles/font-mixins";
 
 .sectionWrapper {
-  padding: 100px 0 84px 0;
+  padding: 100px 0 0;
   @media screen and (max-width: 1040px) {
     padding: 60px 15px;
   }
@@ -44,6 +44,7 @@
   background: #f2f8ff;
   padding: 12px;
   height: 100%;
+  cursor: pointer;
   @media screen and (max-width: 1040px) {
     padding: 8px;
   }

@@ -66,7 +66,7 @@ export const MainBanner = () => {
           </Flex>
           <Flex align={"center"} gap={5} w={matches ? "100%" : "fit-content"}>
             <Button
-              onClick={() => onLinkClick("navbar5")}
+              onClick={() => onLinkClick("contacts")}
               className={cx(s.buttonBanner, "btn-filled__back")}
             >
               Связаться
@@ -76,7 +76,6 @@ export const MainBanner = () => {
                 h={"32px"}
                 ml={"10px"}
                 className={s.buttonBannerIcon}
-                onClick={() => onLinkClick("navbar5")}
               >
                 <IconArrow />
               </Flex>

@@ -1,6 +1,7 @@
 import { Box, Button, Center, Flex, Grid, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
+import { useRouter } from "next/router"
 import React from "react"
 
 import Icon1 from "@/shared/assets/images/interise-group/about-icon1.svg"
@@ -16,6 +17,7 @@ import { onLinkClick } from "@/shared/libs/scroll.ts"
 import s from "./styles.module.scss"
 
 export const ConsultingService = () => {
+  const router = useRouter()
   const matches = useMediaQuery("(max-width: 1040px)")
   const matchesMobile = useMediaQuery("(max-width: 768px)")
 
@@ -34,7 +36,10 @@ export const ConsultingService = () => {
           </Flex>
           <Grid w={"100%"} gutter={32}>
             <Grid.Col span={matchesMobile ? 12 : 4}>
-              <Box className={cx(s.aboutBox, s.one)}>
+              <Box
+                onClick={() => router.push("/about")}
+                className={cx(s.aboutBox, s.one)}
+              >
                 <div className={s.icon}>
                   <Icon1 />
                 </div>
@@ -45,7 +50,10 @@ export const ConsultingService = () => {
               </Box>
             </Grid.Col>
             <Grid.Col span={matchesMobile ? 12 : 4}>
-              <Box className={cx(s.aboutBox, s.two)}>
+              <Box
+                onClick={() => router.push("/about")}
+                className={cx(s.aboutBox, s.two)}
+              >
                 <div className={s.icon}>
                   <Icon2 />
                 </div>
@@ -56,7 +64,10 @@ export const ConsultingService = () => {
               </Box>
             </Grid.Col>
             <Grid.Col span={matchesMobile ? 12 : 4}>
-              <Box className={cx(s.aboutBox, s.three)}>
+              <Box
+                onClick={() => router.push("/about")}
+                className={cx(s.aboutBox, s.three)}
+              >
                 <div className={s.icon}>
                   <Icon3 />
                 </div>
@@ -78,7 +89,7 @@ export const ConsultingService = () => {
             lh={"100%"}
             mt={matches ? "31px" : "40px"}
             w={matches ? "100%" : "233px"}
-            onClick={() => onLinkClick("navbar5")}
+            onClick={() => onLinkClick("contacts")}
           >
             Заказать стратегию
           </Button>
@@ -194,7 +205,7 @@ export const ConsultingService = () => {
             fz={"16px"}
             fw={400}
             lh={"100%"}
-            onClick={() => onLinkClick("navbar5")}
+            onClick={() => onLinkClick("contacts")}
           >
             Обсудить проект
           </Button>

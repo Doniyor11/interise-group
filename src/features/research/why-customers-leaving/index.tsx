@@ -7,6 +7,28 @@ import s from "./styles.module.scss"
 export const WhyCustomersLeaving = () => {
   return (
     <>
+      <div className={cx(s.sectionWrapper, s.newTerritories, "container")}>
+        <div className={s.box}>
+          <h2>Новые территории</h2>
+
+          <div className={s.cards}>
+            <div className={s.card}>
+              <Text className={s.cardText}>Customer Choice Index</Text>
+              <Text className={s.cardTitle}>
+                Стал доступен для новой страны: <br />
+                <span>Узбекистан</span>
+              </Text>
+            </div>
+            <div className={s.card}>
+              <Text className={s.cardText}>Customer Choice Index</Text>
+              <Text className={s.cardTitle}>
+                Будет доступен до конца года для страны: <br />
+                <span>Казахстан</span>
+              </Text>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className={cx(s.sectionWrapper, "container")}>
         <h2>
           <span>Почему клиенты уходят</span>, так и не начав с вами работать?

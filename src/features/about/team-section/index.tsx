@@ -135,7 +135,7 @@ export const TeamSection = () => {
                   </p>
                   <List>
                     <List.Item className={s.teamBoxText}>
-                      Управляющий партнёр Sentoo <br />и CEO Sentoo Восток
+                      Управляющий партнер и CEO Interise
                     </List.Item>
                     <List.Item className={s.teamBoxText}>
                       Инвестор и совладелец daily- <br />и venture-проектов.

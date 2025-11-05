@@ -122,7 +122,17 @@ export const EmailForm = () => {
                 label: s.checkboxLabel,
                 input: s.checkboxInput,
               }}
-              label="Я ознакомлен и согласен с условиями обработки данных"
+              label={
+                <>
+                  Я ознакомлен и согласен с{" "}
+                  <a
+                    target={"_blank"}
+                    href={"/Политика_конфединциальности.pdf"}
+                  >
+                    условиями обработки данных
+                  </a>
+                </>
+              }
               checked={field.value}
               onChange={(value: any) => field.onChange?.(value)}
             />

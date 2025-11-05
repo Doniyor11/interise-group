@@ -2,11 +2,11 @@ import { Anchor, Box, Flex, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
 import Image from "next/image"
+import Link from "next/link"
 import React from "react"
 
 import { EmailForm } from "@/features/contact-forms"
 
-import IconCall from "@/shared/assets/images/interise-group/call-outline.svg"
 import IconLogo from "@/shared/assets/images/interise-group/footer_logo.svg"
 import Imaga1 from "@/shared/assets/images/interise-group/formbg.png"
 import IconLin from "@/shared/assets/images/interise-group/linkedin.svg"
@@ -50,26 +50,31 @@ export const Footer = () => {
             h={"100%"}
             justify={"space-between"}
           >
-            <Flex gap={"35px"} direction={"column"} align={"flex-end"}>
-              <IconLogo />
-              <Flex gap="18px" mb="20px">
+            <Flex
+              gap={"35px"}
+              direction={matches ? "row" : "column"}
+              align={matches ? "center" : "flex-end"}
+              mb="20px"
+            >
+              <IconLogo className={s.logo} />
+              <Flex gap="18px" className={s.messengers}>
                 <IconLin />
                 <IconTg />
               </Flex>
             </Flex>
             <Flex direction={"column"} gap="8px">
-              <Text component="p" className={cx(s.infoText, s.menu)}>
+              <Link href={"/about"} className={cx(s.infoText, s.menu)}>
                 О нас
-              </Text>
-              <Text component="p" className={cx(s.infoText, s.menu)}>
-                Исследования
-              </Text>
-              <Text component="p" className={cx(s.infoText, s.menu)}>
+              </Link>
+              <Link href={"/case"} className={cx(s.infoText, s.menu)}>
+                Кейсы
+              </Link>
+              <Link href={"/#interise-club"} className={cx(s.infoText, s.menu)}>
                 Interise Club
-              </Text>
-              <Text component="p" className={cx(s.infoText, s.menu)}>
+              </Link>
+              <Link href={"/#directions"} className={cx(s.infoText, s.menu)}>
                 Направления работы
-              </Text>
+              </Link>
             </Flex>
           </Flex>
           <span className={s.line} />
@@ -81,8 +86,8 @@ export const Footer = () => {
             justify={"space-between"}
           >
             <Flex
-              direction="column"
               gap="19px"
+              direction="column"
               align="flex-start"
               justify={"space-between"}
             >
@@ -158,42 +163,11 @@ export const Footer = () => {
           <span className={s.line} />
           {/* 3/3 */}
           <Flex
+            h={"100%"}
             direction={"column"}
             gap={matches ? "15px" : "50px"}
-            h={"100%"}
-            justify={"space-between"}
+            justify={"flex-end"}
           >
-            <Flex
-              direction="column"
-              gap="19px"
-              align="flex-start"
-              justify={"space-between"}
-            >
-              <Flex direction="column" gap="6px">
-                <Flex
-                  align={"center"}
-                  gap={"8px"}
-                  className={s.infoTitle}
-                  mb="24px"
-                >
-                  <IconCall />
-                  Позвоните:
-                </Flex>
-                <Flex direction="column" mb={"16px"}>
-                  <Text component="p" className={s.infoText}>
-                    Телефон:
-                  </Text>
-                  <Text
-                    component="p"
-                    className={s.infoText}
-                    c={"#535E6B"}
-                    fz={"24px"}
-                  >
-                    8 800 000 00 00
-                  </Text>
-                </Flex>
-              </Flex>
-            </Flex>
             <Flex direction="column" gap="18px" justify={"space-between"}>
               <Flex align={"center"} gap={"8px"} className={s.infoTitle}>
                 <IconLocation />

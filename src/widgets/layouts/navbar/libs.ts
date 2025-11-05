@@ -13,8 +13,8 @@ export const MenuData: MenuItem[] = [
     path: "/#directions",
   },
   {
-    text: "Исследования",
-    path: "/research",
+    text: "Кейсы",
+    path: "/case",
   },
   {
     text: "Interise Club",

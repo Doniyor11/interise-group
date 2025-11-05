@@ -131,6 +131,8 @@
     @media screen and (max-width: 1040px) {
       gap: 6px;
       align-items: stretch;
+      justify-content: space-between;
+      padding-right: 12px;
       .vector {
         margin-top: 22px;
       }
@@ -213,6 +215,7 @@
   line-height: 120%;
   letter-spacing: -0.32px;
   @media screen and (max-width: 1040px) {
+    color: #8fb0e1;
     margin: 12px 0 32px 0;
   }
 }
@@ -293,13 +296,17 @@
     padding: 20px 15px;
     margin: 0 15px;
   }
+  @media screen and (max-width: 570px) {
+    background-image: url("../../../shared/assets/images/interise-group/back-p-mobile.png");
+    object-fit: cover;
+    padding: 20px 15px;
+    margin: 0 15px;
+  }
 }
 
 .aboutBottomTitle {
-  white-space: nowrap;
   color: #fff;
   font-size: 36px;
-  font-style: normal;
   text-align: left;
   font-weight: 500;
   line-height: 120%;
@@ -308,5 +315,10 @@
     font-size: 24px;
     font-weight: 500;
     letter-spacing: -0.48px;
+  }
+  @media screen and (max-width: 570px) {
+    br {
+      display: none;
+    }
   }
 }

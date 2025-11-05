@@ -1,4 +1,12 @@
-import { Box, Button, Flex, Grid, Text } from "@mantine/core"
+import {
+  Accordion,
+  AccordionControl,
+  Box,
+  Button,
+  Flex,
+  Grid,
+  Text,
+} from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import Image from "next/image"
 import { useRouter } from "next/router"
@@ -6,6 +14,7 @@ import React, { FC } from "react"
 
 import Icon1 from "@/shared/assets/images/interise-group/geo-alt.svg"
 import Icon2 from "@/shared/assets/images/interise-group/graph-up.svg"
+import IconArrow from "@/shared/assets/images/interise-group/icon-arrow-down.svg"
 import Image1 from "@/shared/assets/images/interise-group/idea-1.png"
 import Image2 from "@/shared/assets/images/interise-group/idea-2.png"
 import Image3 from "@/shared/assets/images/interise-group/idea-3.png"
@@ -122,7 +131,46 @@ const IdeaCard: FC<{ data: (typeof IDEAS_DATA)[0]; onClick?: () => void }> = ({
       />
     </Box>
 
-    <Box p={"0 5px 0 10px"}>
+    <Accordion
+      unstyled
+      w={"100%"}
+      key={"card-1"}
+      chevron={<IconArrow />}
+      multiple={false}
+      m={"8px 0 18px"}
+    >
+      <Accordion.Item value="item-1" className={s.collapseWrapper}>
+        <AccordionControl
+          onClick={(e) => e.stopPropagation()}
+          className={s.collapseBtn}
+        >
+          Задача:
+        </AccordionControl>
+        <Accordion.Panel>
+          <Text className={s.collapseText}>
+            Провести интеграцию с другим банком и полномасштабная трансформация
+            операционной модели
+          </Text>
+        </Accordion.Panel>
+      </Accordion.Item>
+      <Accordion.Item value="item-2" className={s.collapseWrapper}>
+        <AccordionControl
+          onClick={(e) => e.stopPropagation()}
+          className={s.collapseBtn}
+        >
+          Решение:
+        </AccordionControl>
+        <Accordion.Panel>
+          <Text className={s.collapseText}>
+            Разработана и реализована стратегия изменений, запущено в работу 52
+            проекта, сформированы новые подходы к клиентскому опыту, 500+
+            сотрудников прошли обучение
+          </Text>
+        </Accordion.Panel>
+      </Accordion.Item>
+    </Accordion>
+
+    <Box>
       <Text className={s.ideaBoxResult}>Результат:</Text>
       <Flex direction={"column"} gap={"12px"}>
         {data.results.map((result, i) => (

@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Text } from "@mantine/core"
+import { Box, Button, Text } from "@mantine/core"
 import Image from "next/image"
 import React from "react"
 
@@ -7,8 +7,6 @@ import IconTwo from "@/shared/assets/images/about/icon-about-2.svg"
 import IconThree from "@/shared/assets/images/about/icon-about-3.svg"
 import IconFour from "@/shared/assets/images/about/icon-about-4.svg"
 import ImageBanner from "@/shared/assets/images/interise-group/image-about-2.png"
-import ImageTableau from "@/shared/assets/images/tableau.svg"
-import ImageVizuators from "@/shared/assets/images/vizuators.svg"
 import { onLinkClick } from "@/shared/libs/scroll.ts"
 
 import s from "./styles.module.scss"
@@ -75,22 +73,14 @@ export const AboutDirection = () => {
           </div>
         </div>
         <div className={s.bannerWrapper}>
-          <ImageVizuators />
           <h3>
-            В группе InteriseGroup присутствует{" "}
-            <span>отдельный актив Vizuators</span>
+            В группе InteriseGroup присутствует <span>отдельный актив</span>
           </h3>
           <Text className={s.text}>
             Компания специализируется на формировании отчетности, построении и
             разработке dashboard, системах мониторинга и контроля, на базе
             лучших мировых практик.
           </Text>
-          <Flex align={"center"} gap={24}>
-            <ImageTableau />{" "}
-            <Text className={s.textBottom}>
-              Компания явялется серфицированным партнером Tableu
-            </Text>
-          </Flex>
           <Button className={s.btn} onClick={() => onLinkClick("contacts")}>
             Заказать отчет
           </Button>

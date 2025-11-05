@@ -102,11 +102,11 @@ export const ConsultingService = () => {
         </Text>
         <Flex w={"100%"} gap={"60px"} mb={36}>
           <Text
-            c={"#DBE9F9"}
+            c={matches ? "#8FB0E1" : "#DBE9F9"}
             lh={"120%"}
             lts={"-0.32px"}
             fz={matches ? "14px" : "16px"}
-            fw={40}
+            fw={400}
             ta={"left"}
             maw={635}
           >
@@ -119,11 +119,11 @@ export const ConsultingService = () => {
           {!matches && (
             <Box w={"50%"}>
               <Text
-                c={"#DBE9F9"}
+                c={matches ? "#8FB0E1" : "#DBE9F9"}
                 lh={"120%"}
                 lts={"-0.32px"}
                 fz={"16px"}
-                fw={40}
+                fw={400}
                 maw={"450px"}
                 ta={"left"}
               >
@@ -170,21 +170,14 @@ export const ConsultingService = () => {
             </div>
           </div>
 
-          {/*<Image*/}
-          {/*  src={matchesMobile ? ourStepMobile : ourStep}*/}
-          {/*  alt={"image-one"}*/}
-          {/*  width={1190}*/}
-          {/*  height={184}*/}
-          {/*  className={s.image}*/}
-          {/*/>*/}
           {matches && (
             <Box w={"100%"} mt={"32px"}>
               <Text
-                c={"#DBE9F9"}
+                c={matches ? "#8FB0E1" : "#DBE9F9"}
                 lh={"120%"}
                 lts={"-0.32px"}
-                fz={"16px"}
-                fw={40}
+                fz={matches ? "14px" : "16px"}
+                fw={400}
                 maw={"450px"}
                 mb={"40px"}
                 ta={"left"}

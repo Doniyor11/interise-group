@@ -17,15 +17,16 @@ export const MainBanner = () => {
       <Box className={"container"} w={"100%"}>
         <Box className={s.sectionLeft}>
           <Text className={s.bannerTitle}>
-            Стратегии, которые <br /> меняют рынки
+            Стратегии, <br className={s.brMobile} /> которые{" "}
+            <br className={s.brDesktop} /> меняют рынки
           </Text>
-          <Box w={matches ? "100%" : "514px"}>
+          <Box w={"100%"} maw={matches ? "480px" : "514px"}>
             <Text className={s.bannerDescription}>
               InteriseGroup — международная консалтинговая группа с экспертизой
               в стратегическом развитии и комплексном преобразовании бизнеса
             </Text>
           </Box>
-          <Flex p={matches ? "8px" : "18px 19px 17px 20px"} className={s.stats}>
+          <Flex className={s.stats}>
             <Flex direction={"column"} align={"center"} className={s.item}>
               <Text className={s.counter}>
                 <AnimatedNumber value={115} className={s.number} />
@@ -67,16 +68,10 @@ export const MainBanner = () => {
           <Flex align={"center"} gap={5} w={matches ? "100%" : "fit-content"}>
             <Button
               onClick={() => onLinkClick("contacts")}
-              className={cx(s.buttonBanner, "btn-filled__back")}
+              className={cx(s.buttonBanner)}
             >
               Связаться
-              <Flex
-                bg={"#0076FE"}
-                w={"32px"}
-                h={"32px"}
-                ml={"10px"}
-                className={s.buttonBannerIcon}
-              >
+              <Flex ml={"10px"} className={s.buttonBannerIcon}>
                 <IconArrow />
               </Flex>
             </Button>

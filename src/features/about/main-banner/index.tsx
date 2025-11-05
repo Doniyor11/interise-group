@@ -30,7 +30,7 @@ export const AboutMainBanner = () => {
       <div className={cx(s.sectionWrapper, "container")}>
         <div className={s.head}>
           <Text>
-            <span>InteriseGroup</span> это группа компаний, собранная
+            <span>InteriseGroup</span> - это группа компаний, собранная
             глобальными экспертами, практиками и консультантами для обеспечения
             внедрения выигрышных на рынке системных изменений, проектов и
             стратегий.

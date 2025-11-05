@@ -64,6 +64,22 @@
   display: flex;
   gap: 50px;
 
+  .logo {
+    @media screen and (max-width: 1040px) {
+      width: 100%;
+      max-width: 115px;
+    }
+  }
+
+  .messengers {
+    @media screen and (max-width: 1040px) {
+      svg {
+        width: 44px;
+        height: 44px;
+      }
+    }
+  }
+
   .infoTitle {
     color: #535e6b;
     font-size: 24px;

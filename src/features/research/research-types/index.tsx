@@ -169,7 +169,7 @@ export const ResearchTypes = () => {
           </Button>
           <div className={s.disabledWrapper}>
             <Text className={s.label}>Планируется релиз</Text>
-            <Text className={s.date}>01.05.2026</Text>
+            <Text className={s.date}>01.12.2025</Text>
           </div>
         </div>
         <div className={s.card} onClick={() => router.push("/research/1")}>
@@ -198,7 +198,7 @@ export const ResearchTypes = () => {
           </Button>
           <div className={s.disabledWrapper}>
             <Text className={s.label}>Планируется релиз</Text>
-            <Text className={s.date}>01.05.2026</Text>
+            <Text className={s.date}>01.12.2025</Text>
           </div>
         </div>
         <div className={s.card} onClick={() => router.push("/research/1")}>
@@ -227,7 +227,7 @@ export const ResearchTypes = () => {
           </Button>
           <div className={s.disabledWrapper}>
             <Text className={s.label}>Планируется релиз</Text>
-            <Text className={s.date}>01.05.2026</Text>
+            <Text className={s.date}>01.12.2025</Text>
           </div>
         </div>
       </div>

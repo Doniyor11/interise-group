@@ -52,6 +52,10 @@
 
 .checkboxLabel {
   color: #fff !important;
+  a {
+    color: #fff !important;
+    text-decoration: underline;
+  }
 }
 
 .modalWrapper {

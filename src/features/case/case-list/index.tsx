@@ -63,9 +63,7 @@ export const CaseList = () => {
                       gap={"12px"}
                       align={"center"}
                     >
-                      <div className={s.icon}>
-                        <Icon1 />
-                      </div>
+                      <Icon1 />
                       <Flex direction={"column"}>
                         <Text className={s.ideaBoxCountry}>Страна:</Text>
                         <Text className={s.ideaBoxCity}>Казахстан</Text>
@@ -76,9 +74,7 @@ export const CaseList = () => {
                       gap={"12px"}
                       align={"center"}
                     >
-                      <div className={s.icon}>
-                        <Icon2 />
-                      </div>
+                      <Icon2 />
                       <Flex direction={"column"}>
                         <Text className={s.ideaBoxCountry}>Отрасль:</Text>
                         <Text className={s.ideaBoxCity}>Банкинг</Text>

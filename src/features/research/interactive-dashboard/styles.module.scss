@@ -105,6 +105,136 @@
         }
       }
 
+      &.cardOne {
+        .bankName {
+          .bank {
+            color: #535e6b;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 120%;
+            letter-spacing: -0.4px;
+          }
+
+          .text {
+            color: #94a3b8;
+            font-size: 11px;
+            font-weight: 400;
+            line-height: 14px;
+          }
+        }
+
+        .rating {
+          .number {
+            color: #97a2b0;
+            text-align: right;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 22px;
+
+            span {
+              color: #5281b8;
+              font-size: 27px;
+              font-weight: 800;
+              line-height: 33px;
+            }
+          }
+
+          .text {
+            color: #64748b;
+            text-align: right;
+            font-size: 11px;
+            font-weight: 400;
+            line-height: 14px;
+            text-transform: uppercase;
+          }
+        }
+
+        .progressLabel {
+          color: #535e6b;
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 120%;
+          letter-spacing: -0.36px;
+        }
+
+        .progressValue {
+          color: #5281b8;
+          font-size: 33px;
+          font-weight: 800;
+          line-height: 36px;
+          text-align: center;
+        }
+
+        svg {
+          circle {
+            &:nth-child(1) {
+              stroke: #b9cde5;
+            }
+          }
+        }
+      }
+
+      &.cardTwo {
+        .progressRoot {
+          background: #b9cde5;
+        }
+
+        .label {
+          color: #7289a5;
+          font-size: 12px;
+          font-weight: 600;
+          line-height: 18px;
+        }
+
+        .value {
+          color: #808bab;
+          font-size: 12px;
+          font-weight: 700;
+          line-height: 18px;
+        }
+      }
+
+      &.cardFive {
+        .label {
+          color: #7289a5;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 18px;
+          max-width: 80px;
+          width: 100%;
+        }
+
+        .progressRoot {
+          background: #b9cde5;
+        }
+
+        .value {
+          color: #808bab;
+          text-align: right;
+          font-size: 12px;
+          font-weight: 700;
+          line-height: 18px;
+        }
+
+        .description {
+          color: #566677;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 120%;
+          letter-spacing: -0.24px;
+          margin-top: 30px;
+          padding-top: 12px;
+          border-top: 1px solid #bed7fb;
+          span {
+            display: block;
+            color: #0076fe;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 8px;
+          }
+        }
+      }
+
       &.firstCard {
         grid-area: 1 / 1 / 2 / 4;
       }

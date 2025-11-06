@@ -18,6 +18,7 @@ import {
 } from "recharts"
 
 import IconRecommendationsTwo from "@/shared/assets/images/interise-group/icon-customer-experience.svg"
+import IconArrow from "@/shared/assets/images/interise-group/icon-double-arrow.svg"
 import IconRecommendationsOne from "@/shared/assets/images/interise-group/icon-segmentation.svg"
 import IconRecommendationsThree from "@/shared/assets/images/interise-group/icon-working-data.svg"
 import LogoKaspi from "@/shared/assets/images/interise-group/logo-kaspi.svg"
@@ -40,20 +41,20 @@ export const InteractiveDashboard = () => {
 
   // Bank Rankings Data
   const bankRankings = [
-    { name: "Банк A", score: 4.0, trend: "up" },
-    { name: "Банк B", score: 3.8, trend: "down" },
-    { name: "Банк C", score: 3.6, trend: "down" },
-    { name: "Банк D", score: 3.4, trend: "up" },
-    { name: "Банк E", score: 3.1, trend: "up" },
+    { name: "Банк A", score: "4.0" },
+    { name: "Банк B", score: "3.8" },
+    { name: "Банк C", score: "3.6" },
+    { name: "Банк D", score: "3.4" },
+    { name: "Банк E", score: "3.1" },
   ]
 
   // Index Criteria Data
   const criteriaData = [
-    { name: "Онлайн", value: 4.3, color: "#ff4757" },
-    { name: "Офлайн", value: 4.5, color: "#0076fe" },
-    { name: "Опыт", value: 4.0, color: "#ffa502" },
-    { name: "Связи", value: 3.6, color: "#2ed573" },
-    { name: "Культура", value: 3.6, color: "#ff6348" },
+    { name: "Онлайн", value: " 4.3", color: "#ff4757" },
+    { name: "Офлайн", value: " 4.5", color: "#0076fe" },
+    { name: "Опыт", value: " 4.0", color: "#ffa502" },
+    { name: "Связи", value: " 3.6", color: "#2ed573" },
+    { name: "Культура", value: " 3.6", color: "#ff6348" },
   ]
 
   // Scatter Data for "Совокупный опыт"
@@ -127,48 +128,46 @@ export const InteractiveDashboard = () => {
       <Box className={s.cards}>
         <div className={s.leftSide}>
           {/* Customer Choice Index Card */}
-          <Box mih={220} className={s.card}>
-            <Flex align="center" gap={12} mb={8}>
-              <LogoKaspi />
-              <Box>
-                <Text size="xs" c="#76777a">
-                  1 место
+          <Box mih={220} className={cx(s.card, s.cardOne)}>
+            <Flex
+              align="center"
+              gap={12}
+              mb={8}
+              w={"100%"}
+              justify="space-between"
+            >
+              <Flex align={"center"}>
+                <LogoKaspi />
+                <Box className={s.bankName}>
+                  <Text className={s.bank}>Банк A</Text>
+                  <Text className={s.text}>Retail Clients</Text>
+                </Box>
+              </Flex>
+
+              <Box className={s.rating}>
+                <Text className={s.number}>
+                  <span>1</span> место
                 </Text>
-                <Text size="xs" c="#76777a">
-                  общий рейтинг
-                </Text>
-              </Box>
-              <Box ml="auto">
-                <Text size="xs" c="#76777a">
-                  Путь клиента
-                </Text>
+                <Text className={s.text}>общий рейтинг</Text>
               </Box>
             </Flex>
             <Flex direction="column" align="center" justify="center" mt={20}>
               <RingProgress
                 size={120}
                 thickness={12}
-                sections={[{ value: 80, color: "#0076fe" }]}
-                label={
-                  <Text
-                    ta="center"
-                    size="xl"
-                    fw={700}
-                    c="#0076fe"
-                    style={{ fontSize: 32 }}
-                  >
-                    4.0
-                  </Text>
-                }
+                roundCaps
+                sections={[{ value: 80, color: "#0076FE" }]}
+                classNames={{
+                  curve: s.progressCurve,
+                }}
+                label={<Text className={s.progressValue}>4.0</Text>}
               />
-              <Text mt={12} size="sm" c="#76777a" ta="center">
-                Customer Choice Index
-              </Text>
+              <Text className={s.progressLabel}>Customer Choice Index</Text>
             </Flex>
           </Box>
 
           {/* Bank Rankings Card */}
-          <Box mih={343} className={s.card}>
+          <Box mih={343} className={cx(s.card, s.cardTwo)}>
             <Text className={s.cardTitle}>Рейтинг банков</Text>
             <Flex className={s.tabWrapper} mt={12} mb={16}>
               <Button className={cx(s.tabBtn, s.active)}>По индексу</Button>
@@ -176,21 +175,21 @@ export const InteractiveDashboard = () => {
             </Flex>
             <div className={s.cardBody}>
               {bankRankings.map((bank, idx) => (
-                <Flex key={idx} align="center" gap={8} mb={12}>
-                  <Text size="sm" fw={500} c="#0076fe" style={{ minWidth: 60 }}>
-                    {bank.name}
-                  </Text>
+                <Flex key={idx} align="center" gap={8} h={20} mb={12}>
+                  <Text className={s.label}>{bank.name}</Text>
                   <Progress
-                    value={(bank.score / 5) * 100}
+                    value={(Number(bank.score) / 5) * 100}
                     color="#0076fe"
                     style={{ flex: 1 }}
                     radius="xl"
+                    h={9}
+                    classNames={{
+                      root: s.progressRoot,
+                    }}
                   />
-                  <Text size="sm" fw={600} c="#2c333c" style={{ minWidth: 30 }}>
-                    {bank.score}
-                  </Text>
+                  <Text className={s.value}>{bank.score}</Text>
                   <Text size="xs" c="#76777a">
-                    {bank.trend === "up" ? "↑" : "↓"} 0.{idx}
+                    <IconArrow /> 0.{idx}
                   </Text>
                 </Flex>
               ))}
@@ -293,95 +292,75 @@ export const InteractiveDashboard = () => {
           </Box>
 
           {/* Index Criteria Card */}
-          <Box className={s.card}>
+          <Box className={cx(s.card, s.cardFive)}>
             <Text className={s.cardTitle}>Критерии индекса</Text>
             <div className={s.cardBody}>
               {criteriaData.map((item, idx) => (
-                <Flex key={idx} align="center" gap={8} mb={8}>
-                  <Text
-                    size="xs"
-                    c="#535e6b"
-                    style={{ minWidth: 60, fontSize: 11 }}
-                  >
-                    {item.name}
-                  </Text>
+                <Flex key={idx} align="center" gap={8} mb={8} h={20}>
+                  <Text className={s.label}>{item.name}</Text>
                   <Progress
-                    value={(item.value / 5) * 100}
+                    value={(Number(item.value) / 5) * 100}
                     color={item.color}
                     style={{ flex: 1 }}
                     radius="xl"
                     size="sm"
+                    h={8}
+                    classNames={{ root: s.progressRoot }}
                   />
-                  <Box
-                    w={6}
-                    h={6}
-                    style={{ borderRadius: "50%", background: "#0076fe" }}
-                  />
-                  <Text size="xs" fw={600} c="#2c333c" style={{ minWidth: 25 }}>
-                    {item.value}
-                  </Text>
+                  <Text className={s.value}>{item.value}</Text>
                 </Flex>
               ))}
-              <Text size="xs" c="#535e6b" mt={12} lh={1.4}>
-                Вывод: Банк А лидирует в базовом клиентском опыте
-                (Онлайн+Офлайн). Однако его отстают от (Online) и
-                коммуникационных (ТехПод) аспектах обслуживания.
+              <Text className={s.description}>
+                <span>Вывод</span>
+                Банк А лидирует в базовом клиентском опыте (Онлайн+Офлайн).
+                Однако его отстают от (Online) и коммуникационных (ТехПод)
+                аспектах обслуживания.
               </Text>
             </div>
           </Box>
 
           {/* Scatter Chart Card */}
-          <Box className={s.card}>
+          <Box className={s.card} mah={346}>
             <Text className={s.cardTitle}>Совокупный опыт</Text>
-            <ScatterChart
-              style={{
-                width: "100%",
-                maxWidth: "700px",
-                maxHeight: "70vh",
-                aspectRatio: 1.618,
-              }}
-            >
-              <CartesianGrid />
-              <XAxis
-                type="number"
-                dataKey="x"
-                domain={[0, 3]}
-                tick={{ fontSize: 10, fill: "#76777a" }}
-                axisLine={{ stroke: "#d1d5db" }}
-              />
-              <YAxis
-                type="number"
-                dataKey="y"
-                domain={[0, 3]}
-                tick={{ fontSize: 10, fill: "#76777a" }}
-                axisLine={{ stroke: "#d1d5db" }}
-              />
-              <Scatter data={scatterData} fill="#0076fe">
-                {scatterData.map((entry, index) => (
-                  <circle
-                    key={index}
-                    r={entry.z / 5}
-                    fill={
-                      index === 0
-                        ? "#60a5fa"
-                        : index === 1
-                        ? "#a855f7"
-                        : index === 2
-                        ? "#3b82f6"
-                        : "#94a3b8"
-                    }
-                  />
-                ))}
-              </Scatter>
-            </ScatterChart>
-            <Flex justify="space-between" mt={8}>
-              <Text size="xs" c="#76777a">
-                Онлайн опыт
-              </Text>
-              <Text size="xs" c="#76777a">
-                Комм. опыт
-              </Text>
-            </Flex>
+
+            <ResponsiveContainer width="100%" height={250}>
+              <ScatterChart
+                margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
+              >
+                <CartesianGrid stroke="#d1d5db" />
+
+                <XAxis
+                  type="number"
+                  dataKey="x"
+                  domain={[2, 5]}
+                  tick={{ fontSize: 12, fill: "#76777a" }}
+                  axisLine={{ stroke: "#d1d5db" }}
+                  label={{
+                    value: "Онлайн опыт",
+                    position: "bottom",
+                    offset: 10,
+                    style: { fontSize: 12, fill: "#76777a" },
+                  }}
+                />
+
+                <YAxis
+                  type="number"
+                  dataKey="y"
+                  domain={[2, 5]}
+                  tick={{ fontSize: 12, fill: "#76777a" }}
+                  axisLine={{ stroke: "#d1d5db" }}
+                  label={{
+                    value: "Офлайн опыт",
+                    angle: -90,
+                    position: "insideLeft",
+                    offset: 0,
+                    style: { fontSize: 12, fill: "#76777a" },
+                  }}
+                />
+
+                <Scatter data={scatterData} fill="#3b82f6" />
+              </ScatterChart>
+            </ResponsiveContainer>
           </Box>
 
           {/* Radar Chart Card */}

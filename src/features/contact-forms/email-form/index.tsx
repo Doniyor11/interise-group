@@ -126,6 +126,7 @@ export const EmailForm = () => {
                 <>
                   Я ознакомлен и согласен с{" "}
                   <a
+                    rel="noreferrer"
                     target={"_blank"}
                     href={"/Политика_конфединциальности.pdf"}
                   >

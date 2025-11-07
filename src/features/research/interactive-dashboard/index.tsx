@@ -30,13 +30,13 @@ export const InteractiveDashboard = () => {
 
   // Customer Journey Data
   const journeyData = [
-    { name: "Поиск и выбор", bankA: 4.2, product: 4.2, payment: 4.2 },
-    { name: "Покупка", bankA: 4.0, product: 4.0, payment: 4.0 },
-    { name: "Продукт и сайты", bankA: 4.2, product: 4.2, payment: 4.2 },
-    { name: "Оплата", bankA: 4.2, product: 4.2, payment: 4.2 },
-    { name: "Доставка", bankA: 3.9, product: 3.9, payment: 3.9 },
-    { name: "Возврат", bankA: 4.0, product: 4.0, payment: 4.0 },
-    { name: "Консультация", bankA: 4.0, product: 4.0, payment: 4.0 },
+    { name: "Поиск и выбор", bankA: 4.2, product: 4.1, payment: 4.0 },
+    { name: "Покупка", bankA: 4.0, product: 4.05, payment: 4.1 },
+    { name: "Продукт и сайты", bankA: 4.2, product: 4.3, payment: 4.15 },
+    { name: "Оплата", bankA: 4.1, product: 4.25, payment: 4.2 },
+    { name: "Доставка", bankA: 3.9, product: 3.8, payment: 3.85 },
+    { name: "Возврат", bankA: 4.0, product: 4.1, payment: 4.05 },
+    { name: "Консультация", bankA: 4.0, product: 4.05, payment: 4.1 },
   ]
 
   // Bank Rankings Data
@@ -157,9 +157,6 @@ export const InteractiveDashboard = () => {
                 thickness={12}
                 roundCaps
                 sections={[{ value: 80, color: "#0076FE" }]}
-                classNames={{
-                  curve: s.progressCurve,
-                }}
                 label={<Text className={s.progressValue}>4.0</Text>}
               />
               <Text className={s.progressLabel}>Customer Choice Index</Text>
@@ -218,7 +215,7 @@ export const InteractiveDashboard = () => {
         </div>
         <div className={s.rightSide}>
           {/* Customer Journey Line Chart */}
-          <Box className={cx(s.card, s.firstCard)}>
+          <Box className={cx(s.card, s.cardFour)}>
             <Flex justify="space-between" align="center" mb={8}>
               <Text className={s.cardTitle}>Путь клиента</Text>
               <Flex gap={16}>
@@ -270,22 +267,27 @@ export const InteractiveDashboard = () => {
                   type="monotone"
                   dataKey="bankA"
                   stroke="#0076fe"
-                  strokeWidth={2}
-                  dot={{ fill: "#0076fe", r: 4 }}
+                  strokeWidth={4}
+                  dot={{
+                    stroke: "black",
+                    fill: "#0076fe",
+                    r: 5,
+                    strokeWidth: 2,
+                  }}
                 />
                 <Line
                   type="monotone"
                   dataKey="product"
                   stroke="#a855f7"
                   strokeWidth={2}
-                  dot={{ fill: "#a855f7", r: 4 }}
+                  dot={false}
                 />
                 <Line
                   type="monotone"
                   dataKey="payment"
                   stroke="#94a3b8"
                   strokeWidth={2}
-                  dot={{ fill: "#94a3b8", r: 4 }}
+                  dot={false}
                 />
               </LineChart>
             </ResponsiveContainer>
@@ -296,7 +298,7 @@ export const InteractiveDashboard = () => {
             <Text className={s.cardTitle}>Критерии индекса</Text>
             <div className={s.cardBody}>
               {criteriaData.map((item, idx) => (
-                <Flex key={idx} align="center" gap={8} mb={8} h={20}>
+                <Flex key={idx} align="center" gap={8} mb={4} h={20}>
                   <Text className={s.label}>{item.name}</Text>
                   <Progress
                     value={(Number(item.value) / 5) * 100}
@@ -332,7 +334,7 @@ export const InteractiveDashboard = () => {
                 <XAxis
                   type="number"
                   dataKey="x"
-                  domain={[2, 5]}
+                  domain={[0, 3]}
                   tick={{ fontSize: 12, fill: "#76777a" }}
                   axisLine={{ stroke: "#d1d5db" }}
                   label={{
@@ -346,14 +348,15 @@ export const InteractiveDashboard = () => {
                 <YAxis
                   type="number"
                   dataKey="y"
-                  domain={[2, 5]}
+                  domain={[0, 2]}
                   tick={{ fontSize: 12, fill: "#76777a" }}
                   axisLine={{ stroke: "#d1d5db" }}
+                  width={30}
                   label={{
                     value: "Офлайн опыт",
                     angle: -90,
                     position: "insideLeft",
-                    offset: 0,
+                    offset: -13,
                     style: { fontSize: 12, fill: "#76777a" },
                   }}
                 />
@@ -390,29 +393,23 @@ export const InteractiveDashboard = () => {
           </Box>
 
           {/* Sales Effectiveness Card */}
-          <Box className={s.card}>
+          <Box className={cx(s.card, s.cardEight)}>
             <Text className={s.cardTitle}>Эффективность продаж</Text>
             <Flex direction="column" align="center" justify="center" mt={20}>
               <RingProgress
-                size={100}
-                thickness={10}
-                sections={[{ value: 88, color: "#0076fe" }]}
+                size={120}
+                thickness={12}
+                roundCaps
+                sections={[{ value: 44, color: "#0076fe" }]}
                 label={
-                  <Text
-                    ta="center"
-                    size="xl"
-                    fw={700}
-                    c="#0076fe"
-                    style={{ fontSize: 28 }}
-                  >
+                  <Text className={s.progressValue}>
                     4.4
+                    <span>из 5</span>
                   </Text>
                 }
               />
-              <Text size="xs" c="#0076fe" mt={8} fw={600}>
-                Вывод
-              </Text>
-              <Text size="xs" c="#535e6b" mt={4} ta="center" lh={1.3}>
+              <Text className={s.description}>
+                <span>Вывод</span>
                 Высокая эффективность продаж – прямое следствие совокупного
                 опыта. Это доказывает, что инвестиции в клиентский сервис
                 окупаются.
@@ -421,76 +418,59 @@ export const InteractiveDashboard = () => {
           </Box>
 
           {/* Digital Activity Card */}
-          <Box className={cx(s.card, s.lastCard)}>
-            <Text className={s.cardTitle}>Цифровая активность</Text>
-            <Flex gap={16} mt={16}>
-              <Box style={{ flex: 1 }}>
-                <Text size="xs" c="#76777a" mb={8}>
-                  Активных пользователей
+          <Box className={cx(s.card, s.cardNine)}>
+            <Flex gap={22}>
+              <Box w={"100%"}>
+                <Text className={s.cardTitle}>Цифровая активность</Text>
+                <Text className={s.text}>Уникальные пользователи</Text>
+                <Text className={s.activeCount}>
+                  125K <span>/ мес</span>
                 </Text>
-                <Flex align="baseline" gap={4} mb={4}>
-                  <Text size="xl" fw={700} c="#0076fe">
-                    125k
-                  </Text>
-                  <Text size="xs" c="#76777a">
-                    / МЕС
-                  </Text>
-                </Flex>
-                <Text size="xs" c="#535e6b" mb={8}>
-                  (2026 потенциальный клиент)
+                <Text className={cx(s.text, s.sm)}>
+                  1200K потенциальный рынок
                 </Text>
-                <Flex align="center" gap={8}>
-                  <Text size="xs" c="#76777a">
-                    Доля зеленой лишка
-                  </Text>
-                  <Text size="sm" fw={600} c="#2ed573">
-                    10.4%
-                  </Text>
-                </Flex>
+
+                <div className={s.progressWrapper}>
+                  <Flex
+                    mb={4}
+                    w={"100%"}
+                    align={"center"}
+                    justify={"space-between"}
+                  >
+                    <Text className={s.text}>Доля захвата рынка</Text>
+                    <Text className={s.progressValue}>10.4%</Text>
+                  </Flex>
+                  <Progress
+                    size={10}
+                    value={20}
+                    radius={10}
+                    color={"#0076FE"}
+                    className={s.progress}
+                  />
+                </div>
               </Box>
-              <Box style={{ flex: 1 }}>
-                <Flex direction="column" gap={12}>
-                  <Box>
-                    <Flex justify="space-between" mb={4}>
-                      <Text size="xs" c="#76777a">
-                        DAU
-                      </Text>
-                      <Text size="sm" fw={700} c="#0076fe">
-                        32k
-                      </Text>
-                    </Flex>
-                    <Progress
-                      value={65}
-                      color="#0076fe"
-                      radius="xl"
-                      size="sm"
-                    />
-                  </Box>
-                  <Box>
-                    <Flex justify="space-between" mb={4}>
-                      <Text size="xs" c="#76777a">
-                        MAU
-                      </Text>
-                      <Text size="sm" fw={700} c="#a855f7">
-                        48k
-                      </Text>
-                    </Flex>
-                    <Progress
-                      value={45}
-                      color="#a855f7"
-                      radius="xl"
-                      size="sm"
-                    />
-                  </Box>
-                </Flex>
-                <Text size="xs" c="#0076fe" mt={8} fw={600}>
-                  Вывод
+              <Flex w={"100%"} gap={14}>
+                <Text className={s.rightText}>
+                  <span>32k</span>
+                  DAU
                 </Text>
-                <Text size="xs" c="#535e6b" mt={4} lh={1.3}>
-                  Высокая (посещать, всем/активно (DAU/MAU) и EDS) подтверждает
-                  эффективность транзакционного бизнес-модели банка
+                <Text className={s.rightText}>
+                  <span>48k</span>
+                  MAU
                 </Text>
-              </Box>
+              </Flex>
+            </Flex>
+            <Flex mt={16} gap={22}>
+              <Text className={s.description}>
+                <span>Вывод</span>
+                Низкий охват говорит о значительном потенциале роста. Фокус на
+                SEO и SMM может привлечь новую аудиторию.
+              </Text>
+              <Text className={s.description}>
+                <span>Вывод</span>
+                Высокий показатель вовлеченности (DAU/MAU &gt; 65%) подтверждает
+                эффективность транзакционной бизнес-модели банка.
+              </Text>
             </Flex>
           </Box>
         </div>

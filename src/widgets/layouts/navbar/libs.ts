@@ -9,12 +9,12 @@ export const MenuData: MenuItem[] = [
     path: "/about",
   },
   {
-    text: "Направления работы",
-    path: "/#directions",
-  },
-  {
     text: "Кейсы",
     path: "/case",
+  },
+  {
+    text: "Исследования",
+    path: "/research",
   },
   {
     text: "Interise Club",

@@ -8,7 +8,6 @@ import {
 } from "@mantine/core"
 import cx from "clsx"
 import Image from "next/image"
-import { useRouter } from "next/router"
 import React, { useState } from "react"
 
 import { MonthsData } from "@/features/research/research-types/libs.ts"
@@ -22,8 +21,9 @@ import { onLinkClick } from "@/shared/libs/scroll.ts"
 
 import s from "./styles.module.scss"
 
+const cardImages = [ImageOne, ImageTwo, ImageThree]
+
 export const ResearchTypes = () => {
-  const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
   const [selectMonth, setSelectMonth] = useState("1")
   const onResearch = () => {
@@ -72,164 +72,42 @@ export const ResearchTypes = () => {
         </Popover>
       </div>
       <div className={s.cards}>
-        <div className={s.card} onClick={() => router.push("/research/1")}>
-          <Box>
-            <Image src={ImageOne} alt={"image-research"} className={s.image} />
-            <Text className={s.cardTitle}>Индексные исследования</Text>
-            <Text className={s.description}>
-              Customer Choice Index — это комплексная диагностика клиентского
-              опыта, которая вскрывает настоящие причины побед и поражений в
-              борьбе за клиента. Исследование выходит далеко за рамки
-              традиционных оценок качества и фокусируется на критических
-              моментах принятия решений.
-            </Text>
-          </Box>
-          <Button
-            className={s.btn}
-            onClick={(e) => {
-              e.stopPropagation()
-              onResearch()
-            }}
+        {Array.from({ length: 6 }).map((_, i) => (
+          <div
+            key={i}
+            className={s.card}
+            // onClick={() => router.push("/research/1")}
           >
-            Купить
-          </Button>
-        </div>
-        <div className={s.card} onClick={() => router.push("/research/1")}>
-          <Box>
-            <Image src={ImageTwo} alt={"image-research"} className={s.image} />
-            <Text className={s.cardTitle}>
-              Сравнительный анализ стран и индустрий
-            </Text>
-            <Text className={s.description}>
-              Комплексные макроэкономические обзоры и прогнозирование позволяют
-              сравнивать экономики, отрасли и бизнес-среды в разных
-              странах.Такой подход помогает компаниям принимать стратегические
-              решения, видеть перспективные возможности и опережать изменения на
-              рынке, а не реагировать на них постфактум.
-            </Text>
-          </Box>
-          <Button
-            className={s.btn}
-            onClick={(e) => {
-              e.stopPropagation()
-              onResearch()
-            }}
-          >
-            Купить
-          </Button>
-        </div>
-        <div className={s.card} onClick={() => router.push("/research/1")}>
-          <Box>
-            <Image
-              src={ImageThree}
-              alt={"image-research"}
-              className={s.image}
-            />
-            <Text className={s.cardTitle}>Медиа и публикации</Text>
-            <Text className={s.description}>
-              Экспертные статьи в ведущих деловых СМИ, аналитические материалы,
-              видеоканал с участием партнеров и приглашенных лидеров индустрий,
-              а также авторская колонка партнеров и экспертов
-              InteriseGroup.story.
-            </Text>
-          </Box>
-          <Button
-            className={s.btn}
-            onClick={(e) => {
-              e.stopPropagation()
-              onResearch()
-            }}
-          >
-            Купить
-          </Button>
-        </div>
-        <div className={s.card} onClick={() => router.push("/research/1")}>
-          <Box>
-            <Image
-              src={ImageThree}
-              alt={"image-research"}
-              className={s.image}
-            />
-            <Text className={s.cardTitle}>Медиа и публикации</Text>
-            <Text className={s.description}>
-              Экспертные статьи в ведущих деловых СМИ, аналитические материалы,
-              видеоканал с участием партнеров и приглашенных лидеров индустрий,
-              а также авторская колонка партнеров и экспертов
-              InteriseGroup.story.
-            </Text>
-          </Box>
-          <Button
-            className={s.btn}
-            onClick={(e) => {
-              e.stopPropagation()
-              onResearch()
-            }}
-          >
-            Купить
-          </Button>
-          <div className={s.disabledWrapper}>
-            <Text className={s.label}>Планируется релиз</Text>
-            <Text className={s.date}>01.12.2025</Text>
+            <Box>
+              <Image
+                src={cardImages[i] || ImageOne}
+                alt={"image-research"}
+                className={s.image}
+              />
+              <Text className={s.cardTitle}>Индексные исследования</Text>
+              <Text className={s.description}>
+                Customer Choice Index — это комплексная диагностика клиентского
+                опыта, которая вскрывает настоящие причины побед и поражений в
+                борьбе за клиента. Исследование выходит далеко за рамки
+                традиционных оценок качества и фокусируется на критических
+                моментах принятия решений.
+              </Text>
+            </Box>
+            <Button
+              className={s.btn}
+              onClick={(e) => {
+                e.stopPropagation()
+                onResearch()
+              }}
+            >
+              Купить
+            </Button>
+            <div className={s.disabledWrapper}>
+              <Text className={s.label}>Планируется релиз</Text>
+              <Text className={s.date}>01.12.2025</Text>
+            </div>
           </div>
-        </div>
-        <div className={s.card} onClick={() => router.push("/research/1")}>
-          <Box>
-            <Image
-              src={ImageThree}
-              alt={"image-research"}
-              className={s.image}
-            />
-            <Text className={s.cardTitle}>Медиа и публикации</Text>
-            <Text className={s.description}>
-              Экспертные статьи в ведущих деловых СМИ, аналитические материалы,
-              видеоканал с участием партнеров и приглашенных лидеров индустрий,
-              а также авторская колонка партнеров и экспертов
-              InteriseGroup.story.
-            </Text>
-          </Box>
-          <Button
-            className={s.btn}
-            onClick={(e) => {
-              e.stopPropagation()
-              onResearch()
-            }}
-          >
-            Купить
-          </Button>
-          <div className={s.disabledWrapper}>
-            <Text className={s.label}>Планируется релиз</Text>
-            <Text className={s.date}>01.12.2025</Text>
-          </div>
-        </div>
-        <div className={s.card} onClick={() => router.push("/research/1")}>
-          <Box>
-            <Image
-              src={ImageThree}
-              alt={"image-research"}
-              className={s.image}
-            />
-            <Text className={s.cardTitle}>Медиа и публикации</Text>
-            <Text className={s.description}>
-              Экспертные статьи в ведущих деловых СМИ, аналитические материалы,
-              видеоканал с участием партнеров и приглашенных лидеров индустрий,
-              а также авторская колонка партнеров и экспертов
-              InteriseGroup.story.
-            </Text>
-          </Box>
-          <Button
-            className={s.btn}
-            onClick={(e) => {
-              e.stopPropagation()
-              onResearch()
-            }}
-          >
-            Купить
-          </Button>
-          <div className={s.disabledWrapper}>
-            <Text className={s.label}>Планируется релиз</Text>
-            <Text className={s.date}>01.12.2025</Text>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   )

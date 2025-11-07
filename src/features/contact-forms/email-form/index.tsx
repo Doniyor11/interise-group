@@ -36,10 +36,15 @@ export const EmailForm = () => {
   })
 
   const onSubmit = (data: IEmailFormTypes) => {
+    const currentPath = router.asPath // masalan: /research/1
+    const matchedKey = Object.keys(pathMap).find((key) =>
+      currentPath.startsWith(key),
+    )
+
     mutate(
       `<b>📩 Новая заявка с сайта!</b>\n` +
         `<b>🌐 Страница:</b> ${
-          pathMap[router.pathname] ? pathMap[router.pathname] : "Главная"
+          matchedKey ? pathMap[matchedKey] : "Главная"
         }\n` +
         `<b>👤 Имя:</b> ${data.name}\n` +
         `<b>👥 Фамилия:</b> ${data.surname}\n` +

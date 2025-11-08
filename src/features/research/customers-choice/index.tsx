@@ -1,4 +1,5 @@
 import { Box, Flex, Text } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
 import React from "react"
 
@@ -7,6 +8,8 @@ import IconCheck from "@/shared/assets/images/interise-group/icon-check.svg"
 import s from "./styles.module.scss"
 
 export const CustomersChoice = () => {
+  const matches = useMediaQuery("(max-width: 1040px)")
+
   return (
     <>
       <div className={cx(s.sectionWrapper, "container")}>
@@ -25,7 +28,11 @@ export const CustomersChoice = () => {
 
         <div className={s.box}>
           <Text className={s.boxTitle}>Наша методология</Text>
-          <Flex gap={32} justify="space-between">
+          <Flex
+            gap={32}
+            justify="space-between"
+            direction={matches ? "column" : "row"}
+          >
             <div className={s.boxLeft}>
               <div className={s.leftItem}>
                 <IconCheck />

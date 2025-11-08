@@ -1,4 +1,5 @@
 import { Box, Button, Input, Select, Text } from "@mantine/core"
+import cx from "clsx"
 import React from "react"
 import { IMaskInput } from "react-imask"
 
@@ -6,13 +7,13 @@ import s from "./styles.module.scss"
 
 export const SignupEvent = () => {
   return (
-    <div className={"container"}>
+    <div className={cx(s.container, "container")}>
       <div className={s.sectionWrapper}>
         <Box maw={472}>
-          <Text className={s.title}>Запишитесь на мероприятие</Text>
+          <Text className={s.title}>Отправить запрос</Text>
           <Text className={s.subtitle}>
-            Укажите ваши данные для регистрации на мероприятие, в ответ мы
-            пришлём вам письмо с подтверждением.
+            На приглашение практиков и экспертов компании для выступления на
+            вашем событии или проведения стратегической сессии.
           </Text>
           <form className={s.form}>
             <div className={s.inputs}>

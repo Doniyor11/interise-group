@@ -257,3 +257,133 @@
     }
   }
 }
+
+@media screen and (max-width: 1040px) {
+  .sectionWrapper {
+    padding: 0 16px;
+
+    .teamTitle,
+    .teamSubtitle {
+      display: none;
+    }
+  }
+
+  .teamBox {
+    border-radius: 20px;
+  }
+
+  .teamBoxTop {
+    border-radius: 20px;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .teamBoxBottom {
+    padding: 16px !important;
+
+    .teamBoxBottomTitle {
+      font-size: 20px;
+      line-height: 120%;
+      letter-spacing: -0.4px;
+
+      height: auto;
+      background: transparent;
+    }
+
+    .teamBoxBottomSubTitle {
+      font-size: 14px;
+      letter-spacing: -0.28px;
+      margin-top: 15px;
+    }
+  }
+
+  .teamBoxImage {
+    width: 100%;
+    height: 257px;
+    border-radius: 20px;
+
+    img {
+      width: 100%;
+      max-width: 570px;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .teamBoxTitle {
+    width: fit-content;
+    font-size: 24px;
+    letter-spacing: -0.48px;
+
+    margin-bottom: 4px;
+  }
+
+  .socials {
+    svg {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .teamBoxSubTitle {
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .teamBoxText {
+    font-size: 14px;
+    letter-spacing: -0.28px;
+
+    br {
+      display: none;
+    }
+  }
+
+  .mediaBox {
+    padding: 0 16px;
+
+    .teamSubtitle {
+      margin: 12px 0 24px;
+    }
+
+    .cards {
+      flex-direction: column;
+      gap: 16px;
+
+      .card {
+        width: 100%;
+        max-width: 425px;
+
+        .cardTop {
+          height: 215px;
+
+          .image {
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            border-radius: 20px;
+          }
+
+          .links {
+            padding: 10px;
+            opacity: 1;
+            .link {
+              width: 135px;
+              height: 32px;
+              border-radius: 14px;
+              font-size: 12px;
+              line-height: 100%;
+            }
+          }
+        }
+
+        p {
+          font-size: 16px;
+          letter-spacing: -0.32px;
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+}

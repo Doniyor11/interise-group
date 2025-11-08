@@ -74,3 +74,57 @@
     }
   }
 }
+
+@media screen and (max-width: 1040px) {
+  .topSectionWrapper {
+    min-height: 220px;
+    padding-top: 112px;
+    background: url("../../../shared/assets/images/interise-group/image-research-1.png")
+      no-repeat top center fixed;
+    background-size: auto 220px;
+
+    .container {
+      padding: 0 16px;
+
+      .sectionHead {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      h1 {
+        margin-top: 12px;
+        font-size: 32px;
+        line-height: 120%;
+        letter-spacing: -0.64px;
+      }
+    }
+  }
+
+  .sectionWrapper {
+    padding: 31px 16px;
+    background: url("../../../shared/assets/images/interise-group/image-research-6.png")
+      no-repeat center center;
+    background-size: contain;
+
+    .container {
+      .title {
+        font-size: 24px;
+        letter-spacing: -0.48px;
+      }
+
+      .subtitle {
+        font-size: 12px;
+        max-width: 763px;
+
+        br {
+          display: none;
+        }
+      }
+
+      .btn {
+        width: 100%;
+        height: 44px;
+      }
+    }
+  }
+}

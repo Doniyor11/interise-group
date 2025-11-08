@@ -194,7 +194,13 @@ export const Footer = () => {
       </Flex>
 
       <Flex justify={"center"}>
-        <Text c={"#8696A9"} fz={"16px"} fw={"400"} lh={"121.2%"} mt={"60px"}>
+        <Text
+          c={"#8696A9"}
+          fz={"16px"}
+          fw={"400"}
+          lh={"121.2%"}
+          mt={matches ? 20 : 60}
+        >
           InteriseGroup · 2025
         </Text>
       </Flex>

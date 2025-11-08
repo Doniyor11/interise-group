@@ -1,4 +1,5 @@
 import { Center } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
 import Image from "next/image"
 import React from "react"
@@ -11,16 +12,17 @@ import { DataBreadcrumbs } from "./libs.ts"
 import s from "./styles.module.scss"
 
 export const InteriseClubMain = () => {
+  const matches = useMediaQuery("(max-width: 1040px)")
   return (
     <>
       <div className={s.topSectionWrapper}>
         <div className={cx(s.container, "container")}>
           <div className={s.sectionHead}>
             <Breadcrumbs data={DataBreadcrumbs} className={s.breadcrumbs} />
-            <SearchInput />
+            {!matches && <SearchInput />}
           </div>
         </div>
-        <Center>
+        <Center className={s.imageWrapper}>
           <Image
             src={ImageInteriseClub}
             alt={"image-banner"}

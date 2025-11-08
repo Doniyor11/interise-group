@@ -1,4 +1,5 @@
 import { Box, Button, Text } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
 import Image from "next/image"
 import Link from "next/link"
@@ -14,6 +15,8 @@ import ImageFour from "@/shared/assets/images/interise-group/partneruser2.png"
 import s from "./styles.module.scss"
 
 export const EventSection = () => {
+  const matches = useMediaQuery("(max-width: 1040px)")
+
   return (
     <div className={cx(s.sectionWrapper, "container")}>
       <h3>
@@ -32,11 +35,11 @@ export const EventSection = () => {
         <Text className={s.filterBtn}>Сигарные вечера</Text>
       </div>
       <div className={s.cards}>
+        <Text className={s.cardTitle}>Предстоящие мероприятия:</Text>
         <div className={s.card}>
-          <Text className={s.cardTitle}>Предстоящие мероприятия:</Text>
           <div className={s.cardItem}>
             <Image src={ImageOne} alt={"image-event"} className={s.image} />
-            <Box maw={410}>
+            <Box maw={410} p={matches ? "12px" : 0}>
               <Text className={s.itemTitle}>Мероприятие 1</Text>
               <Text className={s.itemText}>
                 Эксперт в стратегии и трансформации, управлении системно
@@ -60,9 +63,6 @@ export const EventSection = () => {
               </Link>
             </Box>
           </div>
-        </div>
-        <div className={s.card}>
-          <Text className={s.cardTitle}>Эксперты в СМИ:</Text>
           <div className={s.cardItem}>
             <Image src={ImageOne} alt={"image-event"} className={s.image} />
             <Box maw={410}>
@@ -105,19 +105,33 @@ export const EventSection = () => {
             концепцией Industry 4.0 (крупнейшие кейсы в РФ на стыке банк+ритейл,
             банк+телеком).
           </Text>
+          {matches && (
+            <div className={s.eventDate}>
+              <Text className={s.date}>
+                <IconCalendar />
+                20 октября
+              </Text>
+              <Text className={s.date}>
+                <IconTimer />в 13:00
+              </Text>
+            </div>
+          )}
           <Button className={s.btn}>Посетить мероприятие</Button>
         </div>
-        <div className={s.eventDate}>
-          <Text className={s.date}>
-            <IconCalendar />
-            20 октября
-          </Text>
-          <Text className={s.date}>
-            <IconTimer />в 13:00
-          </Text>
-        </div>
+        {!matches && (
+          <div className={s.eventDate}>
+            <Text className={s.date}>
+              <IconCalendar />
+              20 октября
+            </Text>
+            <Text className={s.date}>
+              <IconTimer />в 13:00
+            </Text>
+          </div>
+        )}
       </div>
       <div className={s.box}>
+        <Image src={ImageFour} alt={"image-event"} className={s.image} />
         <div className={s.contentWrapper}>
           <Text className={s.label}>Интервью:</Text>
           <Text className={s.title}>
@@ -131,9 +145,47 @@ export const EventSection = () => {
             концепцией Industry 4.0 (крупнейшие кейсы в РФ на стыке банк+ритейл,
             банк+телеком).
           </Text>
-          <Button className={s.btn}>Читать подробнее</Button>
+          <Button className={s.btn}>Посетить мероприятие</Button>
         </div>
-        <Image src={ImageFour} alt={"image-event"} className={s.image} />
+      </div>
+      <div className={s.box}>
+        <Image src={ImageThree} alt={"image-event"} className={s.image} />
+        <div className={s.contentWrapper}>
+          <Text className={s.label}>Мероприятие:</Text>
+          <Text className={s.title}>
+            Демо-день с Дмитрием Вакиным Масштабирование и Go-Global
+          </Text>
+          <Text className={s.description}>
+            Эксперт в стратегии и трансформации, управлении системно значимыми
+            проектами и изменениями. Имеет опыт формирования
+            кросс-индустриальных стратегий и O2O-партнерств в соответствии с
+            концепцией Industry 4.0 (крупнейшие кейсы в РФ на стыке банк+ритейл,
+            банк+телеком).
+          </Text>
+          {matches && (
+            <div className={s.eventDate}>
+              <Text className={s.date}>
+                <IconCalendar />
+                20 октября
+              </Text>
+              <Text className={s.date}>
+                <IconTimer />в 13:00
+              </Text>
+            </div>
+          )}
+          <Button className={s.btn}>Посетить мероприятие</Button>
+        </div>
+        {!matches && (
+          <div className={s.eventDate}>
+            <Text className={s.date}>
+              <IconCalendar />
+              20 октября
+            </Text>
+            <Text className={s.date}>
+              <IconTimer />в 13:00
+            </Text>
+          </div>
+        )}
       </div>
     </div>
   )

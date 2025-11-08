@@ -1,4 +1,5 @@
 import { Box, Button, Flex, Progress, RingProgress, Text } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
 import React, { useState } from "react"
 import {
@@ -26,6 +27,7 @@ import LogoKaspi from "@/shared/assets/images/interise-group/logo-kaspi.svg"
 import s from "./styles.module.scss"
 
 export const InteractiveDashboard = () => {
+  const matches = useMediaQuery("(max-width: 1040px)")
   const [tab, setTab] = useState<"all" | "retail" | "sme">("retail")
 
   // Customer Journey Data
@@ -216,81 +218,83 @@ export const InteractiveDashboard = () => {
         <div className={s.rightSide}>
           {/* Customer Journey Line Chart */}
           <Box className={cx(s.card, s.cardFour)}>
-            <Flex justify="space-between" align="center" mb={8}>
-              <Text className={s.cardTitle}>Путь клиента</Text>
-              <Flex gap={16}>
-                <Flex align="center" gap={4}>
-                  <Box
-                    w={8}
-                    h={8}
-                    style={{ borderRadius: "50%", background: "#0076fe" }}
-                  />
+            <Box w={matches ? 700 : "100%"}>
+              <Flex justify="space-between" align="center" mb={8}>
+                <Text className={s.cardTitle}>Путь клиента</Text>
+                <Flex gap={16}>
+                  <Flex align="center" gap={4}>
+                    <Box
+                      w={8}
+                      h={8}
+                      style={{ borderRadius: "50%", background: "#0076fe" }}
+                    />
+                    <Text size="xs" c="#76777a">
+                      Банк А
+                    </Text>
+                  </Flex>
+                  <Flex align="center" gap={4}>
+                    <Box
+                      w={8}
+                      h={8}
+                      style={{ borderRadius: "50%", background: "#a855f7" }}
+                    />
+                    <Text size="xs" c="#76777a">
+                      Продукт
+                    </Text>
+                  </Flex>
+                  <Flex align="center" gap={4}>
+                    <Box
+                      w={8}
+                      h={8}
+                      style={{ borderRadius: "50%", background: "#94a3b8" }}
+                    />
+                    <Text size="xs" c="#76777a">
+                      Платеж
+                    </Text>
+                  </Flex>
                   <Text size="xs" c="#76777a">
-                    Банк А
+                    Конкуренты
                   </Text>
                 </Flex>
-                <Flex align="center" gap={4}>
-                  <Box
-                    w={8}
-                    h={8}
-                    style={{ borderRadius: "50%", background: "#a855f7" }}
-                  />
-                  <Text size="xs" c="#76777a">
-                    Продукт
-                  </Text>
-                </Flex>
-                <Flex align="center" gap={4}>
-                  <Box
-                    w={8}
-                    h={8}
-                    style={{ borderRadius: "50%", background: "#94a3b8" }}
-                  />
-                  <Text size="xs" c="#76777a">
-                    Платеж
-                  </Text>
-                </Flex>
-                <Text size="xs" c="#76777a">
-                  Конкуренты
-                </Text>
               </Flex>
-            </Flex>
-            <ResponsiveContainer width="100%" height={"95%"}>
-              <LineChart data={journeyData}>
-                <XAxis
-                  dataKey="name"
-                  tick={{ fontSize: 10, fill: "#76777a" }}
-                  axisLine={false}
-                  tickLine={false}
-                />
-                <YAxis hide domain={[3.5, 4.5]} />
-                <Line
-                  type="monotone"
-                  dataKey="bankA"
-                  stroke="#0076fe"
-                  strokeWidth={4}
-                  dot={{
-                    stroke: "black",
-                    fill: "#0076fe",
-                    r: 5,
-                    strokeWidth: 2,
-                  }}
-                />
-                <Line
-                  type="monotone"
-                  dataKey="product"
-                  stroke="#a855f7"
-                  strokeWidth={2}
-                  dot={false}
-                />
-                <Line
-                  type="monotone"
-                  dataKey="payment"
-                  stroke="#94a3b8"
-                  strokeWidth={2}
-                  dot={false}
-                />
-              </LineChart>
-            </ResponsiveContainer>
+              <ResponsiveContainer width="100%" height={matches ? 200 : "95%"}>
+                <LineChart data={journeyData}>
+                  <XAxis
+                    dataKey="name"
+                    tick={{ fontSize: 10, fill: "#76777a" }}
+                    axisLine={false}
+                    tickLine={false}
+                  />
+                  <YAxis hide domain={[3.5, 4.5]} />
+                  <Line
+                    type="monotone"
+                    dataKey="bankA"
+                    stroke="#0076fe"
+                    strokeWidth={4}
+                    dot={{
+                      stroke: "black",
+                      fill: "#0076fe",
+                      r: 5,
+                      strokeWidth: 2,
+                    }}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="product"
+                    stroke="#a855f7"
+                    strokeWidth={2}
+                    dot={false}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="payment"
+                    stroke="#94a3b8"
+                    strokeWidth={2}
+                    dot={false}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </Box>
           </Box>
 
           {/* Index Criteria Card */}
@@ -369,7 +373,7 @@ export const InteractiveDashboard = () => {
           {/* Radar Chart Card */}
           <Box className={s.card}>
             <Text className={s.cardTitle}>Сравнение каналов</Text>
-            <ResponsiveContainer width="100%" height={"100%"}>
+            <ResponsiveContainer width="100%" height={matches ? 300 : "100%"}>
               <RadarChart data={radarData}>
                 <PolarGrid stroke="#d1d5db" />
                 <PolarAngleAxis
@@ -419,59 +423,61 @@ export const InteractiveDashboard = () => {
 
           {/* Digital Activity Card */}
           <Box className={cx(s.card, s.cardNine)}>
-            <Flex gap={22}>
-              <Box w={"100%"}>
-                <Text className={s.cardTitle}>Цифровая активность</Text>
-                <Text className={s.text}>Уникальные пользователи</Text>
-                <Text className={s.activeCount}>
-                  125K <span>/ мес</span>
-                </Text>
-                <Text className={cx(s.text, s.sm)}>
-                  1200K потенциальный рынок
-                </Text>
+            <Box w={matches ? 720 : "100%"}>
+              <Flex gap={22}>
+                <Box w={"100%"}>
+                  <Text className={s.cardTitle}>Цифровая активность</Text>
+                  <Text className={s.text}>Уникальные пользователи</Text>
+                  <Text className={s.activeCount}>
+                    125K <span>/ мес</span>
+                  </Text>
+                  <Text className={cx(s.text, s.sm)}>
+                    1200K потенциальный рынок
+                  </Text>
 
-                <div className={s.progressWrapper}>
-                  <Flex
-                    mb={4}
-                    w={"100%"}
-                    align={"center"}
-                    justify={"space-between"}
-                  >
-                    <Text className={s.text}>Доля захвата рынка</Text>
-                    <Text className={s.progressValue}>10.4%</Text>
-                  </Flex>
-                  <Progress
-                    size={10}
-                    value={20}
-                    radius={10}
-                    color={"#0076FE"}
-                    className={s.progress}
-                  />
-                </div>
-              </Box>
-              <Flex w={"100%"} gap={14}>
-                <Text className={s.rightText}>
-                  <span>32k</span>
-                  DAU
+                  <div className={s.progressWrapper}>
+                    <Flex
+                      mb={4}
+                      w={"100%"}
+                      align={"center"}
+                      justify={"space-between"}
+                    >
+                      <Text className={s.text}>Доля захвата рынка</Text>
+                      <Text className={s.progressValue}>10.4%</Text>
+                    </Flex>
+                    <Progress
+                      size={10}
+                      value={20}
+                      radius={10}
+                      color={"#0076FE"}
+                      className={s.progress}
+                    />
+                  </div>
+                </Box>
+                <Flex w={"100%"} gap={14}>
+                  <Text className={s.rightText}>
+                    <span>32k</span>
+                    DAU
+                  </Text>
+                  <Text className={s.rightText}>
+                    <span>48k</span>
+                    MAU
+                  </Text>
+                </Flex>
+              </Flex>
+              <Flex mt={16} gap={22}>
+                <Text className={s.description}>
+                  <span>Вывод</span>
+                  Низкий охват говорит о значительном потенциале роста. Фокус на
+                  SEO и SMM может привлечь новую аудиторию.
                 </Text>
-                <Text className={s.rightText}>
-                  <span>48k</span>
-                  MAU
+                <Text className={s.description}>
+                  <span>Вывод</span>
+                  Высокий показатель вовлеченности (DAU/MAU &gt; 65%)
+                  подтверждает эффективность транзакционной бизнес-модели банка.
                 </Text>
               </Flex>
-            </Flex>
-            <Flex mt={16} gap={22}>
-              <Text className={s.description}>
-                <span>Вывод</span>
-                Низкий охват говорит о значительном потенциале роста. Фокус на
-                SEO и SMM может привлечь новую аудиторию.
-              </Text>
-              <Text className={s.description}>
-                <span>Вывод</span>
-                Высокий показатель вовлеченности (DAU/MAU &gt; 65%) подтверждает
-                эффективность транзакционной бизнес-модели банка.
-              </Text>
-            </Flex>
+            </Box>
           </Box>
         </div>
       </Box>

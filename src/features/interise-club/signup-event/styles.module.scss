@@ -68,3 +68,46 @@
     }
   }
 }
+
+@media screen and (max-width: 1040px) {
+  .sectionWrapper {
+    height: auto;
+    border-radius: 22px;
+    padding: 16px;
+    margin-bottom: 40px;
+
+    .title {
+      font-size: 24px;
+      letter-spacing: -0.48px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      letter-spacing: -0.28px;
+      margin: 6px 0 27px;
+    }
+
+    .form {
+      .inputs {
+        grid-template-columns: repeat(1, 1fr);
+
+        .select {
+          grid-area: initial;
+        }
+
+        input {
+          height: 36px;
+          border-radius: 8px;
+        }
+      }
+
+      .btn {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+}

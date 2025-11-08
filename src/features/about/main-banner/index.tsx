@@ -1,28 +1,27 @@
-import { Input, Text } from "@mantine/core"
+import { Text } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
 import Image from "next/image"
 import React from "react"
 
 import { DataBreadcrumbs } from "@/features/about/main-banner/libs.ts"
 
-import IconSearch from "@/shared/assets/images/icons/icon-search.svg"
 import ImageAbout from "@/shared/assets/images/interise-group/image-about.png"
+import { SearchInput } from "@/shared/ui"
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs"
 
 import s from "./styles.module.scss"
 
 export const AboutMainBanner = () => {
+  const matches = useMediaQuery("(max-width: 1040px)")
+
   return (
     <>
       <div className={s.topSectionWrapper}>
         <div className={cx(s.container, "container")}>
           <div className={s.sectionHead}>
             <Breadcrumbs data={DataBreadcrumbs} />
-            <Input
-              leftSection={<IconSearch />}
-              className={s.input}
-              placeholder={"Поиск..."}
-            />
+            {!matches && <SearchInput />}
           </div>
           <h1>Кто мы?</h1>
         </div>

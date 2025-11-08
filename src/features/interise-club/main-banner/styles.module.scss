@@ -17,6 +17,7 @@
         a {
           color: #566677 !important;
         }
+
         svg {
           path {
             fill: #566677;
@@ -32,5 +33,48 @@
     height: 203px;
     object-fit: cover;
     margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  .topSectionWrapper {
+    width: 100%;
+    position: relative;
+    padding-top: 120px;
+    min-height: 203px;
+
+    .container {
+      padding: 0 16px;
+      margin-bottom: 25px;
+
+      .sectionHead {
+        .breadcrumbs {
+          position: relative;
+          z-index: 1;
+
+          a {
+            color: #ffffff !important;
+          }
+
+          svg {
+            path {
+              fill: #ffffff;
+            }
+          }
+        }
+      }
+    }
+
+    .imageWrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .image {
+      width: 100%;
+      max-width: 100%;
+    }
   }
 }

@@ -8,17 +8,18 @@ import ImageInteriseClub from "@/shared/assets/images/interise-group/image-inter
 import { SearchInput } from "@/shared/ui"
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs"
 
-import { DataBreadcrumbs } from "./libs.ts"
+import { useBreadcrumbs } from "./libs.ts"
 import s from "./styles.module.scss"
 
 export const InteriseClubMain = () => {
+  const breadcrumbs = useBreadcrumbs()
   const matches = useMediaQuery("(max-width: 1040px)")
   return (
     <>
       <div className={s.topSectionWrapper}>
         <div className={cx(s.container, "container")}>
           <div className={s.sectionHead}>
-            <Breadcrumbs data={DataBreadcrumbs} className={s.breadcrumbs} />
+            <Breadcrumbs data={breadcrumbs} className={s.breadcrumbs} />
             {!matches && <SearchInput />}
           </div>
         </div>

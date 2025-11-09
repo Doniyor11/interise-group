@@ -1,5 +1,6 @@
 import { Box, Button, Flex, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
+import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import React from "react"
@@ -11,6 +12,7 @@ import ImageSlider3 from "@/shared/assets/images/interise-group/makro3.png"
 import s from "./styles.module.scss"
 
 export const MainRecipes = () => {
+  const { t } = useTranslation("common")
   const router = useRouter()
   const matches = useMediaQuery("(max-width: 1040px)")
 
@@ -23,13 +25,10 @@ export const MainRecipes = () => {
         mb={"24px"}
       >
         <Text className={s.researchTitle} ta={"center"}>
-          Исследования и макро-тренды
+          {t("main.research.title")}
         </Text>
         <Text className={s.researchDescription} ta={"center"}>
-          Наши исследования объединяют опыт десятков стран и отраслей, превращая
-          накопленные данные и инсайты в практические решения. Они помогают
-          компаниям видеть картину рынка глубже, чем традиционная аналитика, —
-          понимать мотивы клиентов, динамику изменений и реальные точки роста.
+          {t("main.research.description")}
         </Text>
       </Flex>
       <div className={s.cards}>
@@ -52,7 +51,7 @@ export const MainRecipes = () => {
               fw={"400"}
               component={"p"}
             >
-              Customer Choice Index
+              {t("main.research.card1.title")}
             </Text>
           </Flex>
         </Box>
@@ -75,7 +74,7 @@ export const MainRecipes = () => {
               fw={"400"}
               component={"p"}
             >
-              Сравнительный <br /> анализ стран <br /> и индустрий
+              {t("main.research.card2.title")}
             </Text>
           </Flex>
         </Box>
@@ -98,7 +97,7 @@ export const MainRecipes = () => {
               fw={"400"}
               component={"p"}
             >
-              Маркетинговые исследования
+              {t("main.research.card3.title")}
             </Text>
           </Flex>
         </Box>
@@ -113,7 +112,7 @@ export const MainRecipes = () => {
           mt={"32px"}
           onClick={() => router.push("/research")}
         >
-          Подробнее
+          {t("main.research.more_button")}
         </Button>
       </Flex>
     </div>

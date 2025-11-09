@@ -8,6 +8,7 @@ import {
   Text,
 } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
+import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import React, { FC } from "react"
@@ -28,60 +29,82 @@ import { onLinkClick } from "@/shared/libs/scroll.ts"
 // import { onLinkClick } from "@/shared/libs/scroll.ts"
 import s from "./styles.module.scss"
 
-const IDEAS_DATA = [
+const getIdeasData = (t: any) => [
   {
-    rank: "Топ-3",
-    rankDesc: "компания в стране",
+    rank: t("main.results.card.rank_top3"),
+    rankDesc: t("main.results.card.company_in_country"),
     info: [
-      { icon: Icon1, label: "Страна:", value: "Средняя Азия" },
-      { icon: Icon2, label: "Отрасль:", value: "Финтех" },
+      {
+        icon: Icon1,
+        label: t("main.results.card.country"),
+        value: t("main.results.card.central_asia"),
+      },
+      {
+        icon: Icon2,
+        label: t("main.results.card.industry"),
+        value: t("main.results.card.fintech"),
+      },
     ],
-    description:
-      "Интеграция ведущих банков и запуск крупнейшей трансформации на рынке",
+    description: t("main.results.card1.description"),
     results: [
-      { icon: Image1, text: "Операционная прибыль выросла ×6 за 2 года" },
-      { icon: Image2, text: "Ускорен вывод новых продуктов" },
-      { icon: Image3, text: "500+ сотрудников обучены" },
+      { icon: Image1, text: t("main.results.card1.result1") },
+      { icon: Image2, text: t("main.results.card1.result2") },
+      { icon: Image3, text: t("main.results.card1.result3") },
     ],
   },
   {
-    rank: "Топ-3",
-    rankDesc: "компания в стране",
+    rank: t("main.results.card.rank_top3"),
+    rankDesc: t("main.results.card.company_in_country"),
     info: [
-      { icon: Icon1, label: "Страна:", value: "Закавказье" },
-      { icon: Icon2, label: "Отрасль:", value: "Авиация" },
+      {
+        icon: Icon1,
+        label: t("main.results.card.country"),
+        value: t("main.results.card.transcaucasia"),
+      },
+      {
+        icon: Icon2,
+        label: t("main.results.card.industry"),
+        value: t("main.results.card.aviation"),
+      },
     ],
-    description: "Создание новой </br> национальной авиакомпании </br> с нуля",
+    description: t("main.results.card2.description"),
     results: [
       {
         icon: Image1,
-        text: "Привлечено 210+ млн $ инвестиций, выплачено 14+ млн $ налогов",
+        text: t("main.results.card2.result1"),
       },
       {
         icon: Image2,
-        text: "Национальный перевозик запущен и выполняет регулярные рейсы",
+        text: t("main.results.card2.result2"),
       },
-      { icon: Image3, text: "Создано 800+ рабочих мест" },
+      { icon: Image3, text: t("main.results.card2.result3") },
     ],
   },
   {
-    rank: "Топ-1",
-    rankDesc: "компания </br> в премиальной </br> медицине",
+    rank: t("main.results.card.rank_top1"),
+    rankDesc: t("main.results.card.company_in_medicine"),
     info: [
-      { icon: Icon1, label: "Страна:", value: "Россия" },
-      { icon: Icon2, label: "Отрасль:", value: "Медицина" },
+      {
+        icon: Icon1,
+        label: t("main.results.card.country"),
+        value: t("main.results.card.russia"),
+      },
+      {
+        icon: Icon2,
+        label: t("main.results.card.industry"),
+        value: t("main.results.card.medicine"),
+      },
     ],
-    description:
-      "Стратегия экспансии </br> и развитие премиального </br> медицинского бренда",
+    description: t("main.results.card3.description"),
     results: [
       {
         icon: Image1,
-        text: "Проведён анализ и вывлено 46 инициатив для роста выручки",
+        text: t("main.results.card3.result1"),
       },
-      { icon: Image2, text: "Запущены новые направления и программы развития" },
+      { icon: Image2, text: t("main.results.card3.result2") },
       {
         icon: Image3,
-        text: "Начата международная экспансия, подготовлен пилот в Южной Корее",
+        text: t("main.results.card3.result3"),
       },
     ],
   },
@@ -108,9 +131,10 @@ const IdeaResultItem: FC<{ icon: any; text: string }> = ({ icon, text }) => (
   </Flex>
 )
 
-const IdeaCard: FC<{ data: (typeof IDEAS_DATA)[0]; onClick?: () => void }> = ({
+const IdeaCard: FC<{ data: any; onClick?: () => void; t: any }> = ({
   data,
   onClick,
+  t,
 }) => (
   <Box onClick={onClick} className={s.ideaBox}>
     <Box className={s.ideaBoxTop}>
@@ -120,7 +144,7 @@ const IdeaCard: FC<{ data: (typeof IDEAS_DATA)[0]; onClick?: () => void }> = ({
           <span dangerouslySetInnerHTML={{ __html: data.rankDesc }} />
         </Text>
         <Flex direction="column" gap="6px">
-          {data.info.map((info, i) => (
+          {data.info.map((info: any, i: number) => (
             <IdeaInfoItem key={i} {...info} />
           ))}
         </Flex>
@@ -144,12 +168,11 @@ const IdeaCard: FC<{ data: (typeof IDEAS_DATA)[0]; onClick?: () => void }> = ({
           onClick={(e) => e.stopPropagation()}
           className={s.collapseBtn}
         >
-          Задача:
+          {t("main.results.card.task")}
         </AccordionControl>
         <Accordion.Panel>
           <Text className={s.collapseText}>
-            Провести интеграцию с другим банком и полномасштабная трансформация
-            операционной модели
+            {t("main.results.card.task_text")}
           </Text>
         </Accordion.Panel>
       </Accordion.Item>
@@ -158,22 +181,20 @@ const IdeaCard: FC<{ data: (typeof IDEAS_DATA)[0]; onClick?: () => void }> = ({
           onClick={(e) => e.stopPropagation()}
           className={s.collapseBtn}
         >
-          Решение:
+          {t("main.results.card.solution")}
         </AccordionControl>
         <Accordion.Panel>
           <Text className={s.collapseText}>
-            Разработана и реализована стратегия изменений, запущено в работу 52
-            проекта, сформированы новые подходы к клиентскому опыту, 500+
-            сотрудников прошли обучение
+            {t("main.results.card.solution_text")}
           </Text>
         </Accordion.Panel>
       </Accordion.Item>
     </Accordion>
 
     <Box>
-      <Text className={s.ideaBoxResult}>Результат:</Text>
+      <Text className={s.ideaBoxResult}>{t("main.results.card.result")}</Text>
       <Flex direction={"column"} gap={"12px"}>
-        {data.results.map((result, i) => (
+        {data.results.map((result: any, i: number) => (
           <IdeaResultItem key={i} {...result} />
         ))}
       </Flex>
@@ -182,8 +203,10 @@ const IdeaCard: FC<{ data: (typeof IDEAS_DATA)[0]; onClick?: () => void }> = ({
 )
 
 export const Books: FC = () => {
+  const { t } = useTranslation("common")
   const router = useRouter()
   const matches = useMediaQuery("(max-width: 1040px)")
+  const IDEAS_DATA = getIdeasData(t)
 
   return (
     <div className={s.sectionWrapper}>
@@ -192,16 +215,15 @@ export const Books: FC = () => {
         align={matches ? "flex-start" : "center"}
         gap={"20px"}
       >
-        <Text className={s.ideaTitle}>От идей к результатам</Text>
+        <Text className={s.ideaTitle}>{t("main.results.title")}</Text>
         <Text className={s.ideaDescription} maw={matches ? "100%" : "512px"}>
-          Главный показатель нашей эффективности — реальные результаты: рост
-          выручки, доли рынка и производительности
+          {t("main.results.description")}
         </Text>
       </Flex>
       <Grid gutter={32}>
         {IDEAS_DATA.map((idea, idx) => (
           <Grid.Col span={matches ? 12 : 4} key={idx}>
-            <IdeaCard data={idea} onClick={() => router.push("/case")} />
+            <IdeaCard data={idea} onClick={() => router.push("/case")} t={t} />
           </Grid.Col>
         ))}
       </Grid>
@@ -217,7 +239,7 @@ export const Books: FC = () => {
           lh={"100%"}
           onClick={() => router.push("/case")}
         >
-          Все проекты
+          {t("main.results.all_projects_button")}
         </Button>
       </Flex>
       {/* ----- */}
@@ -226,12 +248,10 @@ export const Books: FC = () => {
         <Grid.Col span={matches ? 12 : 4}>
           <Box h={"100%"}>
             <Text className={s.ideaInfoBoxTitleOne}>
-              Мы работаем спринтами — от быстрой диагностики до комплексного
-              внедрения
+              {t("main.directions.title")}
             </Text>
             <Text className={s.ideaInfoBoxDescriptionOne}>
-              За короткое время формулируем и проверяем гипотезы, усиливаем
-              работающие решения и масштабируем результат
+              {t("main.directions.description")}
             </Text>
           </Box>
         </Grid.Col>
@@ -242,10 +262,11 @@ export const Books: FC = () => {
                 <Image4 />
               </div>
             </Flex>
-            <Text className={s.ideaInfoBoxTitle}>Диагностика</Text>
+            <Text className={s.ideaInfoBoxTitle}>
+              {t("main.directions.diagnostics.title")}
+            </Text>
             <Text className={s.ideaInfoBoxDescription}>
-              Быстрый анализ и диагностика бизнеса: определяем точки роста и
-              создаём дорожную карту дальнейших действий
+              {t("main.directions.diagnostics.description")}
             </Text>
           </Box>
         </Grid.Col>
@@ -256,10 +277,11 @@ export const Books: FC = () => {
                 <Image5 />
               </div>
             </Flex>
-            <Text className={s.ideaInfoBoxTitle}>Стратегия</Text>
+            <Text className={s.ideaInfoBoxTitle}>
+              {t("main.directions.strategy.title")}
+            </Text>
             <Text className={s.ideaInfoBoxDescription}>
-              Формируем стратегию, проверяем гипотезы практикой, усиливаем
-              сильное и убираем лишнее
+              {t("main.directions.strategy.description")}
             </Text>
           </Box>
         </Grid.Col>
@@ -270,10 +292,11 @@ export const Books: FC = () => {
                 <Image6 />
               </div>
             </Flex>
-            <Text className={s.ideaInfoBoxTitle}>Цифровая транформация</Text>
+            <Text className={s.ideaInfoBoxTitle}>
+              {t("main.directions.digital_transformation.title")}
+            </Text>
             <Text className={s.ideaInfoBoxDescription}>
-              Реализуем комплексные трансформации, перестраиваем процессы и
-              добиваемся измеримых результатов
+              {t("main.directions.digital_transformation.description")}
             </Text>
           </Box>
         </Grid.Col>
@@ -284,10 +307,11 @@ export const Books: FC = () => {
                 <Image7 />
               </div>
             </Flex>
-            <Text className={s.ideaInfoBoxTitle}>Инвестирование</Text>
+            <Text className={s.ideaInfoBoxTitle}>
+              {t("main.directions.investment.title")}
+            </Text>
             <Text className={s.ideaInfoBoxDescription}>
-              Готовим бизнес к сделкам и IPO, увеличиваем капитализацию и
-              инвестиционную привлекательность
+              {t("main.directions.investment.description")}
             </Text>
           </Box>
         </Grid.Col>
@@ -298,10 +322,11 @@ export const Books: FC = () => {
                 <Image8 />
               </div>
             </Flex>
-            <Text className={s.ideaInfoBoxTitle}>Выход на новые рынки</Text>
+            <Text className={s.ideaInfoBoxTitle}>
+              {t("main.directions.new_markets.title")}
+            </Text>
             <Text className={s.ideaInfoBoxDescription}>
-              Помогаем компаниям масштабироваться и выходить на международные
-              рынки
+              {t("main.directions.new_markets.description")}
             </Text>
           </Box>
         </Grid.Col>
@@ -318,7 +343,7 @@ export const Books: FC = () => {
           lh={"100%"}
           onClick={() => onLinkClick("contacts")}
         >
-          Связаться с нами
+          {t("main.directions.contact_button")}
         </Button>
       </Flex>
     </div>

@@ -1,5 +1,6 @@
 import { Anchor, Box, Flex, Grid, List, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
+import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
 import React from "react"
 
@@ -13,13 +14,14 @@ import IconTg from "@/shared/assets/images/interise-group/tg 2.svg"
 import s from "./index.module.scss"
 
 export const Contacts = () => {
+  const { t } = useTranslation("common")
   const matchesSmall = useMediaQuery("(max-width: 845px)")
   const matchesIpad = useMediaQuery("(max-width: 1140px)")
   return (
     <div className={s.sectionWrapper}>
       <div className="container">
         <div className={s.box}>
-          <p className={s.teamTitle}>Команда InteriseGroup</p>
+          <p className={s.teamTitle}>{t("contacts.team.title")}</p>
 
           <Grid mb={32}>
             <Grid.Col span={matchesSmall ? 12 : 6}>
@@ -35,23 +37,21 @@ export const Contacts = () => {
                       h={matchesIpad ? "240px" : "280px"}
                     >
                       <Box>
-                        <p className={s.teamBoxTitle}>Дмитрий Вакин</p>
+                        <p className={s.teamBoxTitle}>
+                          {t("contacts.team.dmitry.name")}
+                        </p>
                         <p className={s.teamBoxSubTitle}>
-                          Сооснователь, InteriseGroup
+                          {t("contacts.team.dmitry.position")}
                         </p>
                         <List>
                           <List.Item className={s.teamBoxText}>
-                            Инвестор и совладелец daily- и tech-
-                            <br />
-                            проектов
+                            {t("contacts.team.dmitry.role1")}
                           </List.Item>
                           <List.Item className={s.teamBoxText}>
-                            Член делового совета BRICS
-                            <br /> (Мьянма)
+                            {t("contacts.team.dmitry.role2")}
                           </List.Item>
                           <List.Item className={s.teamBoxText}>
-                            Топ-100 Forbes “30 до 30”(Финансы
-                            <br /> и инвестиции, 2020).
+                            {t("contacts.team.dmitry.role3")}
                           </List.Item>
                         </List>
                       </Box>
@@ -82,21 +82,13 @@ export const Contacts = () => {
                     p={"35px"}
                   >
                     <Text className={s.teamBoxBottomTitle}>
-                      Проектный опыт:
+                      {t("contacts.team.project_experience")}
                     </Text>
                     <Text className={s.teamBoxBottomSubTitle}>
-                      Эксперт по стратегии, трансформации и управлению
-                      изменениями. Более 15 лет опыта в инвестиционной,
-                      банковской и IT-сферах. Реализовал свыше 30 крупных
-                      проектов в России и СНГ, включая крупнейшие интеграции и
-                      программы цифровой трансформации.
+                      {t("contacts.team.dmitry.experience1")}
                     </Text>
                     <Text className={s.teamBoxBottomSubTitle}>
-                      Руководил развитием инноваций в Альфа-Банке, участвовал в
-                      создании инвестиционного фонда группы (€500 млн).
-                      Консультирует компании, входит в советы директоров и
-                      инвестирует в международные консалтинговые и
-                      технологические бизнесы.
+                      {t("contacts.team.dmitry.experience2")}
                     </Text>
                   </Flex>
                 </Flex>
@@ -115,17 +107,18 @@ export const Contacts = () => {
                       h={matchesIpad ? "240px" : "280px"}
                     >
                       <Box>
-                        <p className={s.teamBoxTitle}>Алексей Веретенов</p>
+                        <p className={s.teamBoxTitle}>
+                          {t("contacts.team.alexey.name")}
+                        </p>
                         <p className={s.teamBoxSubTitle}>
-                          Сооснователь, InteriseGroup
+                          {t("about.team.alexey.position")}
                         </p>
                         <List>
                           <List.Item className={s.teamBoxText}>
-                            Управляющий партнер и CEO Interise
+                            {t("contacts.team.alexey.role1")}
                           </List.Item>
                           <List.Item className={s.teamBoxText}>
-                            Инвестор и совладелец daily- <br />и
-                            venture-проектов.
+                            {t("contacts.team.alexey.role2")}
                           </List.Item>
                         </List>
                       </Box>
@@ -154,21 +147,10 @@ export const Contacts = () => {
                     p={"35px"}
                   >
                     <Text className={s.teamBoxBottomTitle}>
-                      Проектный опыт:
+                      {t("contacts.team.project_experience")}
                     </Text>
                     <Text className={s.teamBoxBottomSubTitle}>
-                      Эксперт по стратегии, трансформации и управлению
-                      изменениями. Более 15 лет опыта в инвестиционной,
-                      банковской и IT-сферах. Реализовал свыше 30 крупных
-                      проектов в России и СНГ, включая крупнейшие интеграции и
-                      программы цифровой трансформации.
-                    </Text>
-                    <Text className={s.teamBoxBottomSubTitle}>
-                      Руководил развитием инноваций в Альфа-Банке, участвовал в
-                      создании инвестиционного фонда группы (€500 млн).
-                      Консультирует компании, входит в советы директоров и
-                      инвестирует в международные консалтинговые и
-                      технологические бизнесы.
+                      {t("about.team.alexey.experience")}
                     </Text>
                   </Flex>
                 </Flex>

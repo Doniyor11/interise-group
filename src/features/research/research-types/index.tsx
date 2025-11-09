@@ -7,10 +7,11 @@ import {
   Text,
 } from "@mantine/core"
 import cx from "clsx"
+import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
 import React, { useState } from "react"
 
-import { MonthsData } from "@/features/research/research-types/libs.ts"
+import { getMonthsData } from "@/features/research/research-types/libs.ts"
 
 import IconArrow from "@/shared/assets/images/interise-group/icon-arrow-down-2.svg"
 import IconCalendar from "@/shared/assets/images/interise-group/icon-calendar-2.svg"
@@ -24,6 +25,8 @@ import s from "./styles.module.scss"
 const cardImages = [ImageOne, ImageTwo, ImageThree]
 
 export const ResearchTypes = () => {
+  const { t } = useTranslation("common")
+  const MonthsData = getMonthsData(t)
   const [isOpen, setIsOpen] = useState(false)
   const [selectMonth, setSelectMonth] = useState("1")
   const onResearch = () => {
@@ -31,13 +34,9 @@ export const ResearchTypes = () => {
   }
   return (
     <div className={cx(s.sectionWrapper, "container")}>
-      <Text className={s.title}>
-        Виды <span>исследований:</span>
-      </Text>
+      <Text className={s.title}>{t("research.types.title")}</Text>
       <div className={s.filters}>
-        <Text className={s.text}>
-          Customer Choice Index для Казахстана появится до конца года
-        </Text>
+        <Text className={s.text}>{t("research.types.notice")}</Text>
         <Popover
           radius={10}
           opened={isOpen}
@@ -84,13 +83,11 @@ export const ResearchTypes = () => {
                 alt={"image-research"}
                 className={s.image}
               />
-              <Text className={s.cardTitle}>Индексные исследования</Text>
+              <Text className={s.cardTitle}>
+                {t("research.card.index_research")}
+              </Text>
               <Text className={s.description}>
-                Customer Choice Index — это комплексная диагностика клиентского
-                опыта, которая вскрывает настоящие причины побед и поражений в
-                борьбе за клиента. Исследование выходит далеко за рамки
-                традиционных оценок качества и фокусируется на критических
-                моментах принятия решений.
+                {t("research.card.description")}
               </Text>
             </Box>
             <Button
@@ -100,10 +97,12 @@ export const ResearchTypes = () => {
                 onResearch()
               }}
             >
-              Купить
+              {t("research.card.buy_button")}
             </Button>
             <div className={s.disabledWrapper}>
-              <Text className={s.label}>Планируется релиз</Text>
+              <Text className={s.label}>
+                {t("research.card.release_planned")}
+              </Text>
               <Text className={s.date}>01.12.2025</Text>
             </div>
           </div>

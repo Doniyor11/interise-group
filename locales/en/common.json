@@ -1,0 +1,610 @@
+{
+  "navbar": {
+    "contact_us": "Contact Us",
+    "menu": {
+      "about": "About",
+      "cases": "Cases",
+      "research": "Research",
+      "interise_club": "Interise Club",
+      "contacts": "Contacts"
+    }
+  },
+  "footer": {
+    "write_to_us": "Write to us",
+    "we_will_contact_you": "And we will contact you to discuss your tasks",
+    "menu": {
+      "about": "About",
+      "cases": "Cases",
+      "interise_club": "Interise Club",
+      "work_directions": "Work Directions"
+    },
+    "contact": {
+      "write_to_us": "Write to us:",
+      "pr_and_media": "PR and Media:",
+      "cooperation": "For cooperation inquiries:",
+      "our_office": "Our office:",
+      "address": "Address:",
+      "office_address": "Ostozhenka 37/7 bld.2, Conversation Cafe mansion, 4th floor"
+    },
+    "legal": {
+      "privacy_policy": "Privacy Policy",
+      "user_agreement": "User Agreement",
+      "mailing_consent": "Mailing Consent",
+      "cookies_processing": "Cookies Processing"
+    },
+    "copyright": "InteriseGroup · 2025"
+  },
+  "breadcrumbs": {
+    "home": "Home",
+    "about": "About",
+    "cases": "Cases",
+    "research": "Research",
+    "research_page": "Research Page",
+    "interise_club": "InteriseClub"
+  },
+  "contacts": {
+    "team": {
+      "title": "InteriseGroup Team",
+      "project_experience": "Project experience:",
+      "dmitry": {
+        "name": "Dmitry Vakin",
+        "position": "Co-founder, InteriseGroup",
+        "role1": "Investor and co-owner of daily and tech projects",
+        "role2": "Member of BRICS Business Council (Myanmar)",
+        "role3": "Forbes Top-100 '30 under 30' (Finance and Investment, 2020).",
+        "experience1": "Expert in strategy, transformation and change management. Over 15 years of experience in investment, banking and IT sectors. Implemented over 30 major projects in Russia and CIS, including the largest integrations and digital transformation programs.",
+        "experience2": "Led innovation development at Alfa-Bank, participated in creating the group's investment fund (€500 million). Consults companies, serves on boards of directors and invests in international consulting and technology businesses."
+      },
+      "alexey": {
+        "name": "Alexey Veretenov",
+        "role1": "Managing Partner and CEO Interise",
+        "role2": "Investor and co-owner of daily and venture projects."
+      }
+    }
+  },
+  "cookies": {
+    "title": "Cookie Usage",
+    "description": "We use cookies necessary for the website to function, as well as analytical and marketing cookies. This helps improve the site's functionality and show relevant content. More details in our",
+    "policy_link": "Cookie Policy",
+    "accept_all": "Accept All",
+    "accept_necessary": "Only Necessary"
+  },
+  "main": {
+    "banner": {
+      "title": "Strategies that <br/> change markets",
+      "description": "InteriseGroup is an international consulting group with expertise in strategic development and comprehensive business transformation",
+      "stats": {
+        "clients": "satisfied clients",
+        "result": "implementation result",
+        "projects": "completed projects",
+        "countries": "countries for international expansion"
+      },
+      "contact_button": "Contact"
+    },
+    "experience": {
+      "label": "Experience and Recognition",
+      "title": "InteriseGroup's portfolio includes projects in 31 countries and 15 industries: from IT, finance and retail to manufacturing, telecommunications, FMCG and energy",
+      "subtitle": "Client achievements and industry awards for innovation and business model <br/> transformation confirm the effectiveness of our approach",
+      "request_button": "Submit Request"
+    },
+    "results": {
+      "title": "From Ideas to Results",
+      "description": "The main indicator of our effectiveness is real results: revenue growth, market share and productivity",
+      "card": {
+        "rank_top3": "Top-3",
+        "rank_top1": "Top-1",
+        "company_in_country": "company <br/> in the country",
+        "company_in_medicine": "company in <br/> premium medicine",
+        "country": "Country:",
+        "central_asia": "Central Asia",
+        "transcaucasia": "Transcaucasia",
+        "russia": "Russia",
+        "industry": "Industry:",
+        "fintech": "Fintech",
+        "aviation": "Aviation",
+        "medicine": "Medicine",
+        "task": "Task:",
+        "task_text": "Conduct integration with another bank and full-scale transformation of the operating model",
+        "solution": "Solution:",
+        "solution_text": "Developed and implemented a change strategy, launched 52 projects, formed new approaches to customer experience, trained 500+ employees",
+        "result": "Result:"
+      },
+      "card1": {
+        "description": "Integration of leading banks and launch of the largest transformation in the market",
+        "result1": "Operating profit grew ×6 in 2 years",
+        "result2": "Accelerated launch of new products",
+        "result3": "500+ employees trained"
+      },
+      "card2": {
+        "description": "Creating a new national airline from scratch",
+        "result1": "Attracted 210+ million $ in investments, paid 14+ million $ in taxes",
+        "result2": "National carrier launched and operates regular flights",
+        "result3": "Created 800+ jobs"
+      },
+      "card3": {
+        "description": "Expansion strategy and development of premium medical brand",
+        "result1": "Conducted analysis and identified 46 initiatives for revenue growth",
+        "result2": "Launched new directions and development programs",
+        "result3": "Initiated international expansion, prepared pilot in South Korea"
+      },
+      "all_projects_button": "All Projects"
+    },
+    "directions": {
+      "title": "We work in sprints — from rapid diagnostics to comprehensive implementation",
+      "description": "In a short time, we formulate and test hypotheses, strengthen working solutions and scale results",
+      "diagnostics": {
+        "title": "Diagnostics",
+        "description": "Rapid analysis and business diagnostics: identify growth points and create a roadmap for further actions"
+      },
+      "strategy": {
+        "title": "Strategy",
+        "description": "Form strategy, test hypotheses with practice, strengthen the strong and remove the unnecessary"
+      },
+      "digital_transformation": {
+        "title": "Digital Transformation",
+        "description": "Implement comprehensive transformations, rebuild processes and achieve measurable results"
+      },
+      "investment": {
+        "title": "Investment",
+        "description": "Prepare business for deals and IPO, increase capitalization and investment attractiveness"
+      },
+      "new_markets": {
+        "title": "Enter New Markets",
+        "description": "Help companies scale and enter international markets"
+      },
+      "contact_button": "Contact Us"
+    },
+    "about": {
+      "title": "About InteriseGroup",
+      "description": "We develop and implement strategies and solutions, <br/> that help large businesses and corporations:",
+      "card1": {
+        "title": "Change and form new market rules"
+      },
+      "card2": {
+        "title": "Turn ideas into large-scale transformations"
+      },
+      "card3": {
+        "title": "Achieve sustainable growth and real business results"
+      },
+      "order_strategy_button": "Order Strategy"
+    },
+    "principles": {
+      "title": "We are convinced — the time of simple <br/> consulting has passed",
+      "description1": "InteriseGroup operates on a partnership model: together with clients we analyze the situation, test hypotheses, strengthen working solutions and scale results. Working in dialogue and process transparency accelerates decisions and turns strategy into a real, measurable result",
+      "description2": "Do you share these principles and are looking for partners who work for results? <br/> <br/> We will be happy to discuss your project",
+      "step1": "Open Dialogue",
+      "step2": "Partnership",
+      "step3": "Responsibility for Results",
+      "discuss_button": "Discuss Project"
+    },
+    "club": {
+      "title": "InteriseClub is a platform for communication <br/> and exchange of experience among practitioners",
+      "event_types_label": "Event types:",
+      "events": {
+        "business_brunches": "Business Brunches",
+        "invest_breakfasts": "Investment Breakfasts",
+        "lectures": "Lectures",
+        "demo_days": "Demo Days",
+        "closed_forums": "Closed Forums",
+        "wine_tastings": "Wine Tastings",
+        "round_tables": "Round Tables",
+        "cigar_evenings": "Cigar Evenings"
+      },
+      "description1": "Club members are founders, shareholders, CEOs and top managers from different countries and industries. Practitioners who work for results and form the strategic agenda. Club meetings take place in different countries and create an environment for ideas, solutions and partnerships that influence the future of business",
+      "description2": "Submit an application to participate in closed club events",
+      "join_button": "Join the Club"
+    },
+    "how_we_work": {
+      "title": "How We Work",
+      "subtitle": "We work in sprints — from rapid diagnostics to comprehensive implementation",
+      "description": "In a short time, we formulate and test hypotheses, strengthen working solutions and scale results. This approach provides transparency, saves resources and allows you to quickly see the effect of changes.",
+      "diagnostics": {
+        "title": "Diagnostics",
+        "description": "Quick business overview: data analysis, interviews, express diagnostics and, if necessary, internal audit. Helps to see key problems, growth points and possible solutions, form a clear roadmap for further actions"
+      },
+      "strategy": {
+        "title": "Strategy",
+        "description": "Development of strategies that work in real business. Hypotheses are tested by practice: weak is excluded, strong is scaled. This helps companies strengthen their positions, increase efficiency and enter new markets"
+      },
+      "large_scale_change": {
+        "title": "Large Scale Change",
+        "description": "Implementation of comprehensive transformations: changing business models, processes and structures with a focus on measurable results. Many projects are carried out on a success fee model — the InteriseGroup team is interested in success along with the client. Experience includes integration of major players, restructuring of operating models, launch of dozens of change projects and training of hundreds of employees"
+      },
+      "repackaging": {
+        "title": "Business Repackaging for Sale/Investment",
+        "description": "Preparation of companies for large-scale deals and capital raising: from assessing potential to structuring the deal and preparing for IPO. This increases business value and helps attract strategic investors"
+      },
+      "go_global": {
+        "title": "Go Global",
+        "description": "Supporting companies' entry into new markets: forming a global expansion strategy, adapting products and supporting business launch in new countries. InteriseGroup's experience includes launching businesses from scratch in new countries, preparing for expansion and managing projects in European, CIS and Middle Eastern markets"
+      },
+      "all_projects_button": "All Projects"
+    },
+    "research": {
+      "title": "Research and Macro Trends",
+      "description": "Our research combines the experience of dozens of countries and industries, turning accumulated data and insights into practical solutions. They help companies see the market picture deeper than traditional analytics — understand customer motives, dynamics of change and real growth points.",
+      "card1": {
+        "title": "Customer Choice Index"
+      },
+      "card2": {
+        "title": "Comparative Analysis of Countries and Industries"
+      },
+      "card3": {
+        "title": "Marketing Research"
+      },
+      "more_button": "Learn More"
+    }
+  },
+  "about": {
+    "banner": {
+      "title": "Who are we?",
+      "description": "<span>InteriseGroup</span> is a group of companies assembled by global experts, practitioners and consultants to ensure the implementation of market-winning systemic changes, projects and strategies.",
+      "subtitle": "We operate in 31 countries and cover key regions, including <span> CIS, Europe, MENA, BRICS, USA, Asia and the Middle East. </span>"
+    },
+    "directions": {
+      "title": "In our work, we combine four key areas:",
+      "subtitle": "Work Directions",
+      "digital_transformation": "Digital transformation",
+      "investment": "Investment and financing",
+      "marketing": "Marketing and promotion",
+      "scaling": "Business scaling and international expansion"
+    },
+    "projects": {
+      "title": "InteriseGroup <span>leads projects in dozens of countries and industries</span>, from the financial sector and telecommunications to medicine and real estate.",
+      "description": "We support business at all stages: from express diagnostics and finding growth points to developing strategy, preparing for deals and implementing major changes. <br/> <br/> This approach allows us to comprehensively support companies — from process modernization to bringing products to new markets.",
+      "discuss_button": "Discuss Project"
+    },
+    "asset": {
+      "title": "The InteriseGroup group has <span>a separate asset</span>",
+      "description": "The company specializes in reporting, building and developing dashboards, monitoring and control systems, based on the best world practices.",
+      "order_button": "Order Report"
+    },
+    "team": {
+      "title": "InteriseGroup Team",
+      "subtitle1": "Our team brings together experts and practitioners with real experience in the largest companies in America, Europe, Russia, CIS countries and the Middle East.",
+      "subtitle2": "This unique background helps us develop strategies that work in real business and deliver measurable results.",
+      "project_experience": "Project experience:",
+      "dmitry": {
+        "name": "Dmitry Vakin",
+        "position": "Co-founder, InteriseGroup",
+        "role1": "Investor and co-owner of daily and tech projects",
+        "role2": "Member of BRICS Business Council (Myanmar)",
+        "role3": "Forbes Top-100 '30 under 30' (Finance and Investment, 2020).",
+        "experience": "Expert in strategy, transformation and change management. Over 15 years of experience in investment, banking and IT sectors. Implemented over 30 major projects in Russia and CIS, including the largest integrations and digital transformation programs. Led innovation development at Alfa-Bank, participated in creating the group's investment fund (€500 million). Consults companies, serves on boards of directors and invests in international consulting and technology businesses."
+      },
+      "alexey": {
+        "name": "Alexey Veretenov",
+        "position": "Co-founder, InteriseGroup",
+        "role1": "Managing Partner and CEO Interise",
+        "role2": "Investor and co-owner of daily and venture projects.",
+        "experience": "Expert in transformation, digitalization and growth strategies. 20+ years of experience in 26 countries and 150+ projects — from banking and telecommunications to industry and medicine. Develops strategies focused on implementation and operational efficiency. Worked with leading companies in Europe, USA and Asia, specializes in building customer experience systems and managing business growth."
+      }
+    },
+    "media": {
+      "title": "Media",
+      "subtitle": "Articles and photos from our speeches",
+      "open_article": "Open Article",
+      "article_text": "Integration of leading banks and launch of the largest transformation in the market"
+    }
+  },
+  "case": {
+    "banner": {
+      "title": "<span>From Ideas to Results:</span> <br/> Real Cases",
+      "projects": "projects",
+      "countries": "countries",
+      "industries": "industries",
+      "description": "The effectiveness of our approach is best demonstrated by concrete results <span>— revenue growth, market share and operational efficiency.</span>",
+      "subtitle": "Here are the projects we are proud of, implemented in partnership with strong teams of top players in the Russian and international markets.",
+      "nda_text": "We respect agreements with our clients and carefully comply with non-disclosure obligations, therefore we do not show company and brand names on the site."
+    },
+    "list": {
+      "title": "Cases:",
+      "select_category": "Select category:"
+    },
+    "filter": {
+      "all_industries": "All Industries",
+      "banking": "Banking",
+      "finance": "Finance",
+      "medicine": "Medicine",
+      "retail": "Retail",
+      "investment": "Investment",
+      "aviation": "Aviation",
+      "transport": "Transport"
+    },
+    "card": {
+      "rank_top3": "Top-3",
+      "company_in_country": "company in the country",
+      "country": "Country:",
+      "kazakhstan": "Kazakhstan",
+      "industry": "Industry:",
+      "banking": "Banking",
+      "description": "Integration of leading banks and launch of the largest transformation in the market",
+      "task": "Task:",
+      "task_text": "Conduct integration with another bank and full-scale transformation of the operating model",
+      "solution": "Solution:",
+      "solution_text": "Developed and implemented a change strategy, launched 52 projects, formed new approaches to customer experience, trained 500+ employees",
+      "result": "Result:",
+      "result1": "Operating profit grew ×6 in 2 years",
+      "result2": "Accelerated launch of new products",
+      "result3": "500+ employees trained"
+    },
+    "request_presentation_button": "Request Presentation"
+  },
+  "research": {
+    "banner": {
+      "title": "InteriseGroup conducts <span>comprehensive studies of markets, industries and target audiences</span> — including deep motives and real behavioral triggers.",
+      "description": "We use an individual approach and select tools for the client's specific task. These studies help companies make informed strategic decisions at all stages of development — from finding growth points and testing hypotheses to launching new products and scaling business."
+    },
+    "single_banner": {
+      "title": "<span>See your bank</span> <br/> through your customers' eyes",
+      "subtitle": "The new Customer Choice Index study shows what really happens on the customer journey <br/> — both new and existing. Find out where you're <br/> losing loyalty and how to outpace your competitors.",
+      "demo_button": "Get demo access"
+    },
+    "types": {
+      "title": "Types of <span>research:</span>",
+      "notice": "Customer Choice Index for Kazakhstan will appear by the end of the year"
+    },
+    "months": {
+      "january": "January",
+      "february": "February",
+      "march": "March",
+      "april": "April",
+      "may": "May",
+      "june": "June",
+      "july": "July",
+      "august": "August",
+      "september": "September",
+      "october": "October",
+      "november": "November",
+      "december": "December"
+    },
+    "card": {
+      "index_research": "Index Research",
+      "description": "Customer Choice Index is a comprehensive diagnosis of customer experience that reveals the real reasons for victories and defeats in the fight for the customer. The research goes far beyond traditional quality assessments and focuses on critical decision-making moments.",
+      "buy_button": "Buy",
+      "release_planned": "Release Planned"
+    },
+    "cci": {
+      "title": "What is <span>Customer Choice Index?</span>",
+      "subtitle": "This is a comprehensive study using the 'Mystery Shopper' method, which analyzes the entire customer journey <br/> — from the first internet search to service operations in the branch. We don't just <br/> give scores, we measure key indices that directly influence the customer's decision.",
+      "methodology": {
+        "title": "Our methodology",
+        "item1": {
+          "title": "Complete customer journey",
+          "description": "Our mystery shoppers go through scenarios for both new and existing customers, evaluating acquisition and service processes."
+        },
+        "item2": {
+          "title": "Two detailed scorecards",
+          "description": "We separately evaluate the Online journey (website, app, chats) and Offline journey (call, branch visit)."
+        },
+        "item3": {
+          "title": "Additional indices",
+          "description": "Based on the criteria built into the scorecards, we calculate 4 additional indices that provide a complete understanding of the customer experience."
+        }
+      },
+      "index1": {
+        "title": "Omni",
+        "description": "Seamlessness"
+      },
+      "index2": {
+        "title": "GenAI",
+        "description": "Technological"
+      },
+      "index3": {
+        "title": "Sales",
+        "description": "Sales Effectiveness"
+      },
+      "index4": {
+        "title": "Culture",
+        "description": "Empathy"
+      }
+    },
+    "territories": {
+      "title": "New Territories",
+      "cci": "Customer Choice Index",
+      "uzbekistan": "Now available for a new country: <span>Uzbekistan</span>",
+      "kazakhstan": "Will be available by the end of the year for the country: <span>Kazakhstan</span>"
+    },
+    "why_leaving": {
+      "title": "<span>Why do customers leave</span> without starting to work with you?",
+      "subtitle": "You invest millions in marketing and digital channels, but conversion doesn't grow. The problem <br/> is hidden in customer journey gaps that are impossible to see from the inside.",
+      "barrier1": {
+        "title": "Invisible <span>barriers</span>",
+        "description": "The customer encounters difficulties on the website, in the call center or branch, and you won't even know about it."
+      },
+      "barrier2": {
+        "title": "Gap between <span>Online and Offline</span>",
+        "description": "Perfect digital experience collapses due to an incompetent employee in the branch. And vice versa."
+      },
+      "barrier3": {
+        "title": "Misunderstanding <span>competitors</span>",
+        "description": "You don't know why customers actually choose other banks and what their real advantage is."
+      }
+    },
+    "access": {
+      "title": "<span>What will you get</span> by purchasing access to the research?",
+      "benefit1": {
+        "title": "Clear understanding of weaknesses",
+        "description": "You will know exactly at what stage and in what channel you are losing customers. This will help focus resources on solving key tasks."
+      },
+      "benefit2": {
+        "title": "Competitive advantage",
+        "description": "Competitor data will show their strengths and weaknesses. Use them to differentiate and become a market leader."
+      },
+      "benefit3": {
+        "title": "Conversion and sales growth",
+        "description": "By improving customer experience based on data, you will directly influence the customer's decision to choose your bank."
+      },
+      "benefit4": {
+        "title": "Basic diagnostics",
+        "description": "Our data is a starting point. We not only show 'what's wrong', but also help develop an improvement strategy."
+      },
+      "cta": {
+        "title": "Ready to see your business <span>through the customer's eyes?</span>",
+        "subtitle": "Request a dashboard demonstration and receive a personalized <br/> offer. Find out how Customer Choice Index can become the main <br/> tool for your growth."
+      },
+      "demo_button": "Request Demo"
+    },
+    "scope": {
+      "title": "<span>Research Scale</span>",
+      "subtitle": "We provide data you can trust. The research covers <br/> several markets for the most complete and objective comparison.",
+      "regions": "Regions",
+      "countries": "Countries",
+      "banks": "Banks <span>in each country</span>",
+      "visits": "Mystery visits <span>According to Retail and SME scenarios</span>"
+    },
+    "dashboard": {
+      "title": "All data in one <span>interactive dashboard</span>",
+      "subtitle": "You get not just a report, but a live analysis tool. Below is the main dashboard page. Compare yourself with competitors, find growth points and make decisions based on real data. In the full version, you can study a detailed assessment of each step in the customer journey.",
+      "select_segment": "Select segment",
+      "tab": {
+        "all": "All",
+        "retail": "Retail",
+        "sme": "SME"
+      },
+      "bank_a": "Bank A",
+      "retail_clients": "Retail Clients",
+      "place": "place",
+      "overall_rating": "overall rating",
+      "cci": "Customer Choice Index",
+      "bank_ranking": "Bank Ranking",
+      "by_index": "By Index",
+      "by_components": "By Components",
+      "recommendations": "Recommendations",
+      "rec1": {
+        "title": "Segmentation",
+        "description": "Deepening segmentation and implementing predictive models."
+      },
+      "rec2": {
+        "title": "Customer experience",
+        "description": "Creating a Phygital environment where digital tools enrich the visit."
+      },
+      "rec3": {
+        "title": "Data work",
+        "description": "Transition to proactive service based on GenAI."
+      },
+      "customer_journey": "Customer Journey",
+      "bank_a_label": "Bank A",
+      "product": "Product",
+      "payment": "Payment",
+      "competitors": "Competitors",
+      "index_criteria": "Index Criteria",
+      "online": "Online",
+      "offline": "Offline",
+      "experience": "Experience",
+      "connections": "Connections",
+      "culture": "Culture",
+      "conclusion": "Conclusion",
+      "conclusion1": "Bank A leads in basic customer experience (Online+Offline). However, it lags behind in (Online) and communication (TechSupport) aspects of service.",
+      "total_experience": "Total Experience",
+      "online_experience": "Online Experience",
+      "offline_experience": "Offline Experience",
+      "channel_comparison": "Channel Comparison",
+      "sales_effectiveness": "Sales Effectiveness",
+      "out_of_5": "out of 5",
+      "conclusion2": "High sales effectiveness is a direct result of total experience. This proves that investments in customer service pay off.",
+      "digital_activity": "Digital Activity",
+      "unique_users": "Unique Users",
+      "per_month": "/ month",
+      "potential_market": "potential market",
+      "market_share": "Market Share",
+      "dau": "DAU",
+      "mau": "MAU",
+      "conclusion3": "Low coverage indicates significant growth potential. Focus on SEO and SMM can attract new audiences.",
+      "conclusion4": "High engagement rate (DAU/MAU > 65%) confirms the effectiveness of the bank's transactional business model."
+    }
+  },
+  "club": {
+    "events": {
+      "title": "InteriseClub is <span>a place of attraction</span> <br/> for experts and practitioners. ",
+      "select_event": "Select event:",
+      "business_brunches": "Business Brunches",
+      "invest_breakfasts": "Investment Breakfasts",
+      "lectures": "Lectures",
+      "demo_days": "Demo Days",
+      "closed_forums": "Closed Forums",
+      "wine_tastings": "Wine Tastings",
+      "round_tables": "Round Tables",
+      "cigar_evenings": "Cigar Evenings",
+      "upcoming": "Upcoming events:",
+      "event1": {
+        "title": "Event 1"
+      },
+      "event2": {
+        "title": "Event 2"
+      },
+      "expert_description": "Expert in strategy and transformation, managing systemically significant projects and changes",
+      "more": "Learn more >",
+      "event_label": "Event:",
+      "interview_label": "Interview:",
+      "demo_day_dmitry": "Demo Day with Dmitry Vakin Scaling and Go-Global",
+      "interview_alexey": "Alexey Veretenov visiting Oscar Hartman on digital transformation of banks",
+      "expert_bio": "Expert in strategy and transformation, managing systemically significant projects and changes. Has experience in forming cross-industry strategies and O2O partnerships in accordance with the Industry 4.0 concept (largest cases in Russia at the junction of bank+retail, bank+telecom).",
+      "date_october_20": "October 20",
+      "time_13_00": "at 1:00 PM",
+      "attend_button": "Attend Event"
+    },
+    "signup": {
+      "title": "Send Request",
+      "subtitle": "To invite practitioners and company experts to speak at your event or conduct a strategic session.",
+      "name_placeholder": "Your name",
+      "company_placeholder": "Company",
+      "phone_placeholder": "+7 (000) 000 00 00",
+      "telegram_placeholder": "Your Telegram",
+      "select_event_placeholder": "Select event",
+      "demo_day_option": "Demo Day with Dmitry Vakin Scaling and Go-Global",
+      "submit_button": "Sign Up"
+    }
+  },
+  "forms": {
+    "page": {
+      "home": "Home",
+      "about": "About",
+      "cases": "Cases",
+      "research": "Research"
+    },
+    "name_placeholder": "Your name",
+    "surname_placeholder": "Surname",
+    "phone_placeholder": "+7 (000) 000 00 00",
+    "contact_method_placeholder": "How to contact you",
+    "contact_method": {
+      "telegram": "Telegram",
+      "whatsapp": "WhatsApp",
+      "call": "Call"
+    },
+    "privacy_agreement": "I have read and agree to the data processing terms",
+    "submit_button": "Submit",
+    "presentation": {
+      "title": "Request Presentation",
+      "subtitle": "And we will send you information that will answer all your questions"
+    }
+  },
+  "pages": {
+    "not_found": {
+      "title": "NotFoundPage"
+    },
+    "cookies": {
+      "title": "Cookie Usage Policy",
+      "description": "We use cookies to ensure the website functions correctly, for analytics and personalization.",
+      "types": {
+        "title": "What cookies do we use",
+        "necessary": "Necessary — provide basic functions (sessions, security, navigation).",
+        "analytics": "Analytics — help understand how users interact with the site.",
+        "marketing": "Marketing — used for personalized advertising."
+      },
+      "management": {
+        "title": "How to manage cookies",
+        "description": "You can change or withdraw your consent in browser settings or through the cookie banner."
+      },
+      "contacts": {
+        "title": "Contacts",
+        "description": "If you have questions about our cookie policy, contact us at:"
+      }
+    }
+  },
+  "ui": {
+    "search": {
+      "placeholder": "Search..."
+    }
+  }
+}

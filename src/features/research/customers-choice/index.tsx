@@ -1,6 +1,7 @@
 import { Box, Flex, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
+import useTranslation from "next-translate/useTranslation"
 import React from "react"
 
 import IconCheck from "@/shared/assets/images/interise-group/icon-check.svg"
@@ -8,26 +9,19 @@ import IconCheck from "@/shared/assets/images/interise-group/icon-check.svg"
 import s from "./styles.module.scss"
 
 export const CustomersChoice = () => {
+  const { t } = useTranslation("common")
   const matches = useMediaQuery("(max-width: 1040px)")
 
   return (
     <>
       <div className={cx(s.sectionWrapper, "container")}>
-        <h2>
-          Что такое <span>Customer Choice Index?</span>
-        </h2>
-        <Text className={s.subtitle}>
-          Это комплексное исследование методом «Тайный покупатель», которое
-          анализирует весь путь <br />
-          клиента — от первого поиска в интернете до сервисных операций в
-          отделении. Мы не просто <br />
-          ставим оценки, мы измеряем ключевые индексы, которые напрямую влияют
-          на решение <br />
-          клиента.
-        </Text>
+        <h2>{t("research.cci.title")}</h2>
+        <Text className={s.subtitle}>{t("research.cci.subtitle")}</Text>
 
         <div className={s.box}>
-          <Text className={s.boxTitle}>Наша методология</Text>
+          <Text className={s.boxTitle}>
+            {t("research.cci.methodology.title")}
+          </Text>
           <Flex
             gap={32}
             justify="space-between"
@@ -37,52 +31,69 @@ export const CustomersChoice = () => {
               <div className={s.leftItem}>
                 <IconCheck />
                 <Box>
-                  <Text className={s.itemTitle}>Полный клиентский путь</Text>
+                  <Text className={s.itemTitle}>
+                    {t("research.cci.methodology.item1.title")}
+                  </Text>
                   <Text className={s.itemSubtitle}>
-                    Наши тайные покупатели проходят сценарии как для новых, так
-                    и для действующих клиентов, оценивая процессы привлечения и
-                    обслуживания.
+                    {t("research.cci.methodology.item1.description")}
                   </Text>
                 </Box>
               </div>
               <div className={s.leftItem}>
                 <IconCheck />
                 <Box>
-                  <Text className={s.itemTitle}>Две детальные скор-карты</Text>
+                  <Text className={s.itemTitle}>
+                    {t("research.cci.methodology.item2.title")}
+                  </Text>
                   <Text className={s.itemSubtitle}>
-                    Мы отдельно оцениваем Online-путь (сайт, приложение, чаты) и
-                    Offline-путь (звонок, визит в отделение).
+                    {t("research.cci.methodology.item2.description")}
                   </Text>
                 </Box>
               </div>
               <div className={s.leftItem}>
                 <IconCheck />
                 <Box>
-                  <Text className={s.itemTitle}>Дополнительные индексы</Text>
+                  <Text className={s.itemTitle}>
+                    {t("research.cci.methodology.item3.title")}
+                  </Text>
                   <Text className={s.itemSubtitle}>
-                    На основе критериев встроенных в скор-карты мы рассчитываем
-                    4 дополнительных индекса, которые дают полное понимание
-                    клиентского опыта.
+                    {t("research.cci.methodology.item3.description")}
                   </Text>
                 </Box>
               </div>
             </div>
             <div className={s.boxRight}>
               <div className={s.card}>
-                <Text className={s.cardTitle}>Omni</Text>
-                <Text className={s.cardText}>Бесшовность</Text>
+                <Text className={s.cardTitle}>
+                  {t("research.cci.index1.title")}
+                </Text>
+                <Text className={s.cardText}>
+                  {t("research.cci.index1.description")}
+                </Text>
               </div>
               <div className={s.card}>
-                <Text className={s.cardTitle}>GenAI</Text>
-                <Text className={s.cardText}>Технологичность</Text>
+                <Text className={s.cardTitle}>
+                  {t("research.cci.index2.title")}
+                </Text>
+                <Text className={s.cardText}>
+                  {t("research.cci.index2.description")}
+                </Text>
               </div>
               <div className={s.card}>
-                <Text className={s.cardTitle}>Sales</Text>
-                <Text className={s.cardText}>Эффективность продаж</Text>
+                <Text className={s.cardTitle}>
+                  {t("research.cci.index3.title")}
+                </Text>
+                <Text className={s.cardText}>
+                  {t("research.cci.index3.description")}
+                </Text>
               </div>
               <div className={s.card}>
-                <Text className={s.cardTitle}>Культура</Text>
-                <Text className={s.cardText}>Эмпатия</Text>
+                <Text className={s.cardTitle}>
+                  {t("research.cci.index4.title")}
+                </Text>
+                <Text className={s.cardText}>
+                  {t("research.cci.index4.description")}
+                </Text>
               </div>
             </div>
           </Flex>

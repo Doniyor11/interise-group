@@ -8,6 +8,7 @@ import {
   Select,
   Text,
 } from "@mantine/core"
+import useTranslation from "next-translate/useTranslation"
 import { useRouter } from "next/router"
 import React from "react"
 import { Controller, useForm } from "react-hook-form"
@@ -22,14 +23,15 @@ import Logo from "@/shared/assets/images/interise-group/logo.svg"
 import s from "../styles.module.scss"
 
 export const RequestPresentation = () => {
+  const { t } = useTranslation("common")
   const { requestPresentation, setRequestPresentation } = useContactFormsStore()
   const router = useRouter()
   const pathMap: Record<string, string> = {
-    "/": "Главная",
-    "/main": "Главная",
-    "/about": "О нас",
-    "/case": "Кейсы",
-    "/research": "Исследования",
+    "/": t("forms.page.home"),
+    "/main": t("forms.page.home"),
+    "/about": t("forms.page.about"),
+    "/case": t("forms.page.cases"),
+    "/research": t("forms.page.research"),
   }
   const {
     control,
@@ -53,7 +55,9 @@ export const RequestPresentation = () => {
     mutate(
       `<b>📩 Новая заявка с сайта!</b>\n` +
         `<b>🌐 Страница:</b> ${
-          pathMap[router.pathname] ? pathMap[router.pathname] : "Главная"
+          pathMap[router.pathname]
+            ? pathMap[router.pathname]
+            : t("forms.page.home")
         }\n` +
         `<b>👤 Имя:</b> ${data.name}\n` +
         `<b>👥 Фамилия:</b> ${data.surname}\n` +
@@ -75,10 +79,11 @@ export const RequestPresentation = () => {
       <div className={s.modalWrapper}>
         <Flex className={s.head}>
           <Box maw={372}>
-            <Text className={s.modalTitle}>Запросите презентацию</Text>
+            <Text className={s.modalTitle}>
+              {t("forms.presentation.title")}
+            </Text>
             <Text className={s.modalSubtitle}>
-              И мы пришлем вам информацию которая <br /> ответит на все ваши
-              вопросы
+              {t("forms.presentation.subtitle")}
             </Text>
           </Box>
           <Logo />
@@ -90,7 +95,11 @@ export const RequestPresentation = () => {
               control={control}
               render={({ field }) => (
                 <Input.Wrapper className={s.inputWrapper}>
-                  <Input required placeholder={"Ваше имя"} {...field} />
+                  <Input
+                    required
+                    placeholder={t("forms.name_placeholder")}
+                    {...field}
+                  />
                 </Input.Wrapper>
               )}
             />
@@ -100,7 +109,11 @@ export const RequestPresentation = () => {
               control={control}
               render={({ field }) => (
                 <Input.Wrapper className={s.inputWrapper}>
-                  <Input required placeholder={"Фамилия"} {...field} />
+                  <Input
+                    required
+                    placeholder={t("forms.surname_placeholder")}
+                    {...field}
+                  />
                 </Input.Wrapper>
               )}
             />
@@ -136,9 +149,13 @@ export const RequestPresentation = () => {
                 <Input.Wrapper className={s.inputWrapper}>
                   <Select
                     required
-                    placeholder="Как с вами связаться"
+                    placeholder={t("forms.contact_method_placeholder")}
                     {...field}
-                    data={["Telegram", "What’s App", "Звонок"]}
+                    data={[
+                      t("forms.contact_method.telegram"),
+                      t("forms.contact_method.whatsapp"),
+                      t("forms.contact_method.call"),
+                    ]}
                   />
                 </Input.Wrapper>
               )}
@@ -158,7 +175,7 @@ export const RequestPresentation = () => {
                     label: s.checkboxLabel,
                     input: s.checkboxInput,
                   }}
-                  label="Я ознакомлен и согласен с условиями обработки данных"
+                  label={t("forms.privacy_agreement")}
                   checked={field.value}
                   onChange={(value: any) => field.onChange?.(value)}
                 />
@@ -172,7 +189,7 @@ export const RequestPresentation = () => {
               loading={isPending}
               disabled={!isDirty || !isValid}
             >
-              Отправить
+              {t("forms.submit_button")}
             </Button>
           </Flex>
         </form>

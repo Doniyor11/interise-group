@@ -1,5 +1,6 @@
 import { Badge, Box, Button, Flex, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
+import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import React from "react"
@@ -8,20 +9,22 @@ import ImageBanner from "@/shared/assets/images/interise-group/club.png"
 
 import s from "./styles.module.scss"
 
-const badgeData = [
-  { id: 1, title: "Деловые бранчи" },
-  { id: 2, title: "Инвест-завтраки" },
-  { id: 3, title: "Лекции" },
-  { id: 4, title: "Демо-дни" },
-  { id: 5, title: "Закрытые форумы" },
-  { id: 6, title: "Винные дегустации" },
-  { id: 7, title: "Круглые столы" },
-  { id: 8, title: "Сигарные вечера" },
+const getBadgeData = (t: any) => [
+  { id: 1, title: t("main.club.events.business_brunches") },
+  { id: 2, title: t("main.club.events.invest_breakfasts") },
+  { id: 3, title: t("main.club.events.lectures") },
+  { id: 4, title: t("main.club.events.demo_days") },
+  { id: 5, title: t("main.club.events.closed_forums") },
+  { id: 6, title: t("main.club.events.wine_tastings") },
+  { id: 7, title: t("main.club.events.round_tables") },
+  { id: 8, title: t("main.club.events.cigar_evenings") },
 ]
 
 export const MainGallery = () => {
+  const { t } = useTranslation("common")
   const router = useRouter()
   const matches = useMediaQuery("(max-width: 1040px)")
+  const badgeData = getBadgeData(t)
 
   return (
     <Box pt={matches ? 40 : 100} id={"interise-club"}>
@@ -38,11 +41,10 @@ export const MainGallery = () => {
               c={"#fff"}
               ta={matches ? "left" : "center"}
             >
-              InteriseClub — площадка для общения <br /> и обмена опытом
-              практиков
+              {t("main.club.title")}
             </Text>
             <Text className={s.clubInfoTitle} c={"#8696A9"} mb={"24px"}>
-              Типы мероприятий:
+              {t("main.club.event_types_label")}
             </Text>
             <Flex
               mb={"32px"}
@@ -71,11 +73,7 @@ export const MainGallery = () => {
                 lts={"-0.32px"}
                 mb={"32px"}
               >
-                Участники клуба – основатели, акционеры, CEO и топ-менеджеры из
-                разных стран и индустрий. Практики, которые работают на
-                результат и формируют стратегическую повестку. Встречи клуба
-                проходят в разных странах и создают среду для идей, решений и
-                партнерств, которые влияют на будущее бизнеса
+                {t("main.club.description1")}
               </Text>
 
               <Text
@@ -85,7 +83,7 @@ export const MainGallery = () => {
                 lts={"-0.32px"}
                 mb={"32px"}
               >
-                Подайте заявку на участие в закрытых мероприятиях клуба
+                {t("main.club.description2")}
               </Text>
               <Button
                 radius={8}
@@ -95,7 +93,7 @@ export const MainGallery = () => {
                 w={matches ? "100%" : "fit-content"}
                 onClick={() => router.push("/interise-club")}
               >
-                Вступить в клуб
+                {t("main.club.join_button")}
               </Button>
             </Box>
             <Flex w={matches ? "100%" : "50%"} direction={"column"}>

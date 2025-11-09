@@ -1,16 +1,19 @@
 import { Button, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
+import useTranslation from "next-translate/useTranslation"
 import React from "react"
 
 import { onLinkClick } from "@/shared/libs/scroll.ts"
 import { SearchInput } from "@/shared/ui"
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs"
 
-import { DataBreadcrumbs } from "./libs.ts"
+import { useBreadcrumbs } from "./libs.ts"
 import s from "./styles.module.scss"
 
 export const SingleResearchBanner = () => {
+  const { t } = useTranslation("common")
+  const breadcrumbs = useBreadcrumbs()
   const matches = useMediaQuery("(max-width: 1040px)")
 
   return (
@@ -18,25 +21,28 @@ export const SingleResearchBanner = () => {
       <div className={s.topSectionWrapper}>
         <div className={cx(s.container, "container")}>
           <div className={s.sectionHead}>
-            <Breadcrumbs data={DataBreadcrumbs} />
+            <Breadcrumbs data={breadcrumbs} />
             {!matches && <SearchInput />}
           </div>
-          <h1>Страница исследования</h1>
+          <h1>{t("breadcrumbs.research_page")}</h1>
         </div>
       </div>
       <div className={cx(s.sectionWrapper)}>
         <div className={cx(s.container, "container")}>
-          <Text className={s.title}>
-            Посмотрите на свой банк <br /> <span>глазами ваших клиентов</span>
-          </Text>
-          <Text className={s.subtitle}>
-            Новое исследование Customer Choice Index показывает, что на самом
-            деле происходит на пути <br /> клиентов — как новых, так и
-            существующих. Узнайте, где вы <br /> теряете лояльность и как
-            опередить конкурентов.
-          </Text>
+          <Text
+            className={s.title}
+            dangerouslySetInnerHTML={{
+              __html: t("research.single_banner.title"),
+            }}
+          />
+          <Text
+            className={s.subtitle}
+            dangerouslySetInnerHTML={{
+              __html: t("research.single_banner.subtitle"),
+            }}
+          />
           <Button className={s.btn} onClick={() => onLinkClick("contacts")}>
-            Получить демо-доступ
+            {t("research.single_banner.demo_button")}
           </Button>
         </div>
       </div>

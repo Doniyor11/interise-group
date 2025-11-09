@@ -1,6 +1,7 @@
 import { Box, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
+import useTranslation from "next-translate/useTranslation"
 import React from "react"
 
 import IconBusiness from "@/shared/assets/images/interise-group/icon-business.svg"
@@ -14,6 +15,7 @@ import { DataBreadcrumbs } from "./libs.ts"
 import s from "./styles.module.scss"
 
 export const CaseMainBanner = () => {
+  const { t } = useTranslation("common")
   const matches = useMediaQuery("(max-width: 1040px)")
 
   return (
@@ -24,14 +26,15 @@ export const CaseMainBanner = () => {
             <Breadcrumbs data={DataBreadcrumbs} />
             {!matches && <SearchInput />}
           </div>
-          <h1>Кейсы</h1>
+          <h1>{t("breadcrumbs.cases")}</h1>
         </div>
       </div>
       <div className={cx(s.sectionWrapper, "container")}>
         <div className={s.stats}>
-          <Text className={s.sectionTitle}>
-            <span>От идей к результатам:</span> <br /> реальные кейсы
-          </Text>
+          <Text
+            className={s.sectionTitle}
+            dangerouslySetInnerHTML={{ __html: t("case.banner.title") }}
+          />
           <div className={s.counts}>
             <div className={s.countsItem}>
               <div className={s.icon}>
@@ -41,7 +44,9 @@ export const CaseMainBanner = () => {
                 <Text className={s.count}>
                   <AnimatedNumber value={300} />+
                 </Text>
-                <Text className={s.countLabel}>проектов</Text>
+                <Text className={s.countLabel}>
+                  {t("case.banner.projects")}
+                </Text>
               </Box>
             </div>
             <div className={s.line} />
@@ -53,7 +58,9 @@ export const CaseMainBanner = () => {
                 <Text className={s.count}>
                   <AnimatedNumber value={31} />
                 </Text>
-                <Text className={s.countLabel}>страна</Text>
+                <Text className={s.countLabel}>
+                  {t("case.banner.countries")}
+                </Text>
               </Box>
             </div>
             <div className={s.line} />
@@ -65,33 +72,24 @@ export const CaseMainBanner = () => {
                 <Text className={s.count}>
                   <AnimatedNumber value={15} />
                 </Text>
-                <Text className={s.countLabel}>отраслей</Text>
+                <Text className={s.countLabel}>
+                  {t("case.banner.industries")}
+                </Text>
               </Box>
             </div>
           </div>
         </div>
         <div className={s.box}>
           <div className={s.boxLeft}>
-            <Text className={s.title}>
-              Эффективность нашего подхода лучше всего демонстрируют конкретные
-              результаты{" "}
-              <span>
-                — рост выручки, доли рынка и операционной эффективности.
-              </span>
-            </Text>
-            <Text className={s.text}>
-              Здесь представлены проекты, которыми мы гордимся, реализованные в
-              партнерстве с сильными командами топовых игроков на российском и
-              международном рынках.
-            </Text>
+            <Text
+              className={s.title}
+              dangerouslySetInnerHTML={{ __html: t("case.banner.description") }}
+            />
+            <Text className={s.text}>{t("case.banner.subtitle")}</Text>
           </div>
           <div className={s.boxRight}>
             <IconEyeOff />
-            <Text className={s.text}>
-              Мы уважаем договоренности со своими клиентами и тщательно
-              соблюдаем обязательства о неразглашении информации, потому не
-              показываем названий компаний и брендов на сайте.
-            </Text>
+            <Text className={s.text}>{t("case.banner.nda_text")}</Text>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { Button, Checkbox, Flex, Input, Select } from "@mantine/core"
+import useTranslation from "next-translate/useTranslation"
 import { useRouter } from "next/router"
 import React from "react"
 import { Controller, useForm } from "react-hook-form"
@@ -10,13 +11,14 @@ import { IEmailFormTypes } from "@/features/contact-forms/email-form/types"
 import s from "../styles.module.scss"
 
 export const EmailForm = () => {
+  const { t } = useTranslation("common")
   const router = useRouter()
   const pathMap: Record<string, string> = {
-    "/": "Главная",
-    "/main": "Главная",
-    "/about": "О нас",
-    "/case": "Кейсы",
-    "/research": "Исследования",
+    "/": t("forms.page.home"),
+    "/main": t("forms.page.home"),
+    "/about": t("forms.page.about"),
+    "/case": t("forms.page.cases"),
+    "/research": t("forms.page.research"),
   }
   const {
     control,
@@ -44,7 +46,7 @@ export const EmailForm = () => {
     mutate(
       `<b>📩 Новая заявка с сайта!</b>\n` +
         `<b>🌐 Страница:</b> ${
-          matchedKey ? pathMap[matchedKey] : "Главная"
+          matchedKey ? pathMap[matchedKey] : t("forms.page.home")
         }\n` +
         `<b>👤 Имя:</b> ${data.name}\n` +
         `<b>👥 Фамилия:</b> ${data.surname}\n` +
@@ -61,7 +63,11 @@ export const EmailForm = () => {
           control={control}
           render={({ field }) => (
             <Input.Wrapper className={s.inputWrapper}>
-              <Input required placeholder={"Ваше имя"} {...field} />
+              <Input
+                required
+                placeholder={t("forms.name_placeholder")}
+                {...field}
+              />
             </Input.Wrapper>
           )}
         />
@@ -71,7 +77,11 @@ export const EmailForm = () => {
           control={control}
           render={({ field }) => (
             <Input.Wrapper className={s.inputWrapper}>
-              <Input required placeholder={"Фамилия"} {...field} />
+              <Input
+                required
+                placeholder={t("forms.surname_placeholder")}
+                {...field}
+              />
             </Input.Wrapper>
           )}
         />
@@ -107,9 +117,13 @@ export const EmailForm = () => {
             <Input.Wrapper className={s.inputWrapper}>
               <Select
                 required
-                placeholder="Как с вами связаться"
+                placeholder={t("forms.contact_method_placeholder")}
                 {...field}
-                data={["Telegram", "What’s App", "Звонок"]}
+                data={[
+                  t("forms.contact_method.telegram"),
+                  t("forms.contact_method.whatsapp"),
+                  t("forms.contact_method.call"),
+                ]}
               />
             </Input.Wrapper>
           )}
@@ -127,18 +141,7 @@ export const EmailForm = () => {
                 label: s.checkboxLabel,
                 input: s.checkboxInput,
               }}
-              label={
-                <>
-                  Я ознакомлен и согласен с{" "}
-                  <a
-                    rel="noreferrer"
-                    target={"_blank"}
-                    href={"/Политика_конфединциальности.pdf"}
-                  >
-                    условиями обработки данных
-                  </a>
-                </>
-              }
+              label={t("forms.privacy_agreement")}
               checked={field.value}
               onChange={(value: any) => field.onChange?.(value)}
             />
@@ -154,7 +157,7 @@ export const EmailForm = () => {
         loading={isPending}
         disabled={!isDirty || !isValid}
       >
-        Отправить
+        {t("forms.submit_button")}
       </Button>
     </form>
   )

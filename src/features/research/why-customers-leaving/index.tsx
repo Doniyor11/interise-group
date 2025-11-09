@@ -1,69 +1,86 @@
 import { Text } from "@mantine/core"
 import cx from "clsx"
+import useTranslation from "next-translate/useTranslation"
 import React from "react"
 
 import s from "./styles.module.scss"
 
 export const WhyCustomersLeaving = () => {
+  const { t } = useTranslation("common")
   return (
     <>
       <div className={cx(s.sectionWrapper, s.newTerritories, "container")}>
         <div className={s.box}>
-          <h2>Новые территории</h2>
+          <h2>{t("research.territories.title")}</h2>
 
           <div className={s.cards}>
             <div className={s.card}>
-              <Text className={s.cardText}>Customer Choice Index</Text>
-              <Text className={s.cardTitle}>
-                Стал доступен для новой страны: <br />
-                <span>Узбекистан</span>
+              <Text className={s.cardText}>
+                {t("research.territories.cci")}
               </Text>
+              <Text
+                className={s.cardTitle}
+                dangerouslySetInnerHTML={{
+                  __html: t("research.territories.uzbekistan"),
+                }}
+              />
             </div>
             <div className={s.card}>
-              <Text className={s.cardText}>Customer Choice Index</Text>
-              <Text className={s.cardTitle}>
-                Будет доступен до конца года для страны: <br />
-                <span>Казахстан</span>
+              <Text className={s.cardText}>
+                {t("research.territories.cci")}
               </Text>
+              <Text
+                className={s.cardTitle}
+                dangerouslySetInnerHTML={{
+                  __html: t("research.territories.kazakhstan"),
+                }}
+              />
             </div>
           </div>
         </div>
       </div>
       <div className={cx(s.sectionWrapper, "container")}>
-        <h2>
-          <span>Почему клиенты уходят</span>, так и не начав с вами работать?
-        </h2>
-        <Text className={s.subtitle}>
-          Вы вкладываете миллионы в маркетинг и цифровые каналы, но конверсия не
-          растет. Проблема <br /> скрыта в разрывах клиентского пути, которые
-          невозможно увидеть изнутри.
-        </Text>
+        <h2
+          dangerouslySetInnerHTML={{ __html: t("research.why_leaving.title") }}
+        />
+        <Text
+          className={s.subtitle}
+          dangerouslySetInnerHTML={{
+            __html: t("research.why_leaving.subtitle"),
+          }}
+        />
         <div className={s.cards}>
           <div className={s.card}>
-            <Text className={s.cardTitle}>
-              Невидимые <span>барьеры</span>
-            </Text>
+            <Text
+              className={s.cardTitle}
+              dangerouslySetInnerHTML={{
+                __html: t("research.why_leaving.barrier1.title"),
+              }}
+            />
             <Text className={s.cardText}>
-              Клиент сталкивается с трудностями на сайте, в колл-центре или
-              отделении, и вы об этом даже не узнаете.
+              {t("research.why_leaving.barrier1.description")}
             </Text>
           </div>
           <div className={s.card}>
-            <Text className={s.cardTitle}>
-              Разрыв между <span>Online и Offline</span>
-            </Text>
+            <Text
+              className={s.cardTitle}
+              dangerouslySetInnerHTML={{
+                __html: t("research.why_leaving.barrier2.title"),
+              }}
+            />
             <Text className={s.cardText}>
-              Идеальный цифровой опыт рушится из-за некомпетентного сотрудника в
-              отделении. И наоборот.
+              {t("research.why_leaving.barrier2.description")}
             </Text>
           </div>
           <div className={s.card}>
-            <Text className={s.cardTitle}>
-              Непонимание <span>конкурентов</span>
-            </Text>
+            <Text
+              className={s.cardTitle}
+              dangerouslySetInnerHTML={{
+                __html: t("research.why_leaving.barrier3.title"),
+              }}
+            />
             <Text className={s.cardText}>
-              Вы не знаете, почему клиенты на самом деле выбирают другие банки и
-              в чем их реальное преимущество.
+              {t("research.why_leaving.barrier3.description")}
             </Text>
           </div>
         </div>

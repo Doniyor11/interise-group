@@ -1,6 +1,7 @@
 import { Box, Button, Center, Flex, Grid, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
+import useTranslation from "next-translate/useTranslation"
 import { useRouter } from "next/router"
 import React from "react"
 
@@ -17,6 +18,7 @@ import { onLinkClick } from "@/shared/libs/scroll.ts"
 import s from "./styles.module.scss"
 
 export const ConsultingService = () => {
+  const { t } = useTranslation("common")
   const router = useRouter()
   const matches = useMediaQuery("(max-width: 1040px)")
   const matchesMobile = useMediaQuery("(max-width: 768px)")
@@ -27,12 +29,9 @@ export const ConsultingService = () => {
         <Box className={s.sectionRow}>
           <Flex direction={"column"} h={"100%"} align={"flex-start"} w={"100%"}>
             <Text className={s.titleAbout} mb={"10px"}>
-              Об InteriseGroup
+              {t("main.about.title")}
             </Text>
-            <Text className={s.description}>
-              Мы разрабатываем и внедряем стратегии и решения, которые <br />{" "}
-              помогают крупному бизнесу и корпорациям:
-            </Text>
+            <Text className={s.description}>{t("main.about.description")}</Text>
           </Flex>
           <Grid w={"100%"} gutter={32}>
             <Grid.Col span={matchesMobile ? 12 : 4}>
@@ -45,7 +44,7 @@ export const ConsultingService = () => {
                 </div>
 
                 <Text className={s.aboutBoxTitle}>
-                  Меняться <br /> и формировать новые <br /> правила рынка
+                  {t("main.about.card1.title")}
                 </Text>
               </Box>
             </Grid.Col>
@@ -59,7 +58,7 @@ export const ConsultingService = () => {
                 </div>
 
                 <Text className={s.aboutBoxTitle}>
-                  Превращать идеи <br /> в масштабные <br /> трансформации
+                  {t("main.about.card2.title")}
                 </Text>
               </Box>
             </Grid.Col>
@@ -73,8 +72,7 @@ export const ConsultingService = () => {
                 </div>
 
                 <Text className={s.aboutBoxTitle}>
-                  Достигать устойчивого роста <br /> и реальных
-                  бизнес-результатов
+                  {t("main.about.card3.title")}
                 </Text>
               </Box>
             </Grid.Col>
@@ -91,14 +89,14 @@ export const ConsultingService = () => {
             w={matches ? "100%" : "233px"}
             onClick={() => onLinkClick("contacts")}
           >
-            Заказать стратегию
+            {t("main.about.order_strategy_button")}
           </Button>
         </Box>
       </div>
       {/* Наши принципы */}
       <Box mt={matches ? "60px" : "80px"} className={s.ourWrapper}>
         <Text className={s.aboutBottomTitle} mb={"20px"}>
-          Мы убеждены – время простого <br /> консалтинга прошло
+          {t("main.principles.title")}
         </Text>
         <Flex w={"100%"} gap={"60px"} mb={36}>
           <Text
@@ -110,11 +108,7 @@ export const ConsultingService = () => {
             ta={"left"}
             maw={635}
           >
-            InteriseGroup работает по модели партнерства: вместе с клиентами
-            анализируем ситуацию, проверяем гипотезы, усиливаем работающие
-            решения и масштабируем результат. Работа в диалоге и прозрачность
-            процесса ускоряет решения и превращает стратегию в реальный,
-            измеримый результат
+            {t("main.principles.description1")}
           </Text>
           {!matches && (
             <Box w={"50%"}>
@@ -127,9 +121,7 @@ export const ConsultingService = () => {
                 maw={"450px"}
                 ta={"left"}
               >
-                Разделяете эти принципы и ищете партнеров, работающих на
-                результат? <br /> <br /> <br />
-                Мы будем рады обсудить ваш проект
+                {t("main.principles.description2")}
               </Text>
             </Box>
           )}
@@ -140,9 +132,7 @@ export const ConsultingService = () => {
               <div className={s.icon}>
                 <IconOurStep1 />
               </div>
-              <Text>
-                Открытый <br /> диалог
-              </Text>
+              <Text>{t("main.principles.step1")}</Text>
             </div>
             {!matchesMobile ? (
               <VectorOurStep />
@@ -153,7 +143,7 @@ export const ConsultingService = () => {
               <div className={s.icon}>
                 <IconOurStep2 />
               </div>
-              <Text>Партнёрство</Text>
+              <Text>{t("main.principles.step2")}</Text>
             </div>
             {!matchesMobile ? (
               <VectorOurStep />
@@ -164,9 +154,7 @@ export const ConsultingService = () => {
               <div className={s.icon}>
                 <IconOurStep3 />
               </div>
-              <Text>
-                Ответственность <br /> за результат
-              </Text>
+              <Text>{t("main.principles.step3")}</Text>
             </div>
           </div>
 
@@ -182,8 +170,7 @@ export const ConsultingService = () => {
                 mb={"40px"}
                 ta={"left"}
               >
-                Разделяете эти принципы и ищете партнеров, работающих на
-                результат? Мы будем рады обсудить ваш проект.
+                {t("main.principles.description2")}
               </Text>
             </Box>
           )}
@@ -200,7 +187,7 @@ export const ConsultingService = () => {
             lh={"100%"}
             onClick={() => onLinkClick("contacts")}
           >
-            Обсудить проект
+            {t("main.principles.discuss_button")}
           </Button>
         </Center>
       </Box>

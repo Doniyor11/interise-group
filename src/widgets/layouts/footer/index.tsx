@@ -1,6 +1,7 @@
 import { Anchor, Box, Flex, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
+import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
 import Link from "next/link"
 import React from "react"
@@ -17,6 +18,7 @@ import IconTg from "@/shared/assets/images/interise-group/tg 2.svg"
 import s from "./styles.module.scss"
 
 export const Footer = () => {
+  const { t } = useTranslation("common")
   const matches = useMediaQuery("(max-width: 1040px)")
 
   return (
@@ -30,10 +32,8 @@ export const Footer = () => {
         direction={matches ? "column" : "row"}
       >
         <Box className={s.boxForm}>
-          <Text component="h2">Напишите нам</Text>
-          <Text component="p">
-            И мы свяжемся с вами для обсуждения <br /> ваших задач
-          </Text>
+          <Text component="h2">{t("footer.write_to_us")}</Text>
+          <Text component="p">{t("footer.we_will_contact_you")}</Text>
           <EmailForm />
         </Box>
         <Box className={s.boxFormImage}>
@@ -64,16 +64,16 @@ export const Footer = () => {
             </Flex>
             <Flex direction={"column"} gap="8px">
               <Link href={"/about"} className={cx(s.infoText, s.menu)}>
-                О нас
+                {t("footer.menu.about")}
               </Link>
               <Link href={"/case"} className={cx(s.infoText, s.menu)}>
-                Кейсы
+                {t("footer.menu.cases")}
               </Link>
               <Link href={"/#interise-club"} className={cx(s.infoText, s.menu)}>
-                Interise Club
+                {t("footer.menu.interise_club")}
               </Link>
               <Link href={"/#directions"} className={cx(s.infoText, s.menu)}>
-                Направления работы
+                {t("footer.menu.work_directions")}
               </Link>
             </Flex>
           </Flex>
@@ -99,11 +99,11 @@ export const Footer = () => {
                   mb="24px"
                 >
                   <IconEmail />
-                  Напишите нам:
+                  {t("footer.contact.write_to_us")}
                 </Flex>
                 <Flex direction="column" mb={"16px"}>
                   <Text component="p" className={s.infoText}>
-                    PR и СМИ:
+                    {t("footer.contact.pr_and_media")}
                   </Text>
                   <Anchor
                     className={s.infoText}
@@ -116,7 +116,7 @@ export const Footer = () => {
                 </Flex>
                 <Flex direction="column">
                   <Text component="p" className={s.infoText}>
-                    По вопросам сотрудничества:
+                    {t("footer.contact.cooperation")}
                   </Text>
                   <Anchor
                     className={s.infoText}
@@ -135,28 +135,28 @@ export const Footer = () => {
                 href={"/Политика_конфединциальности.pdf"}
                 className={cx(s.infoText, s.menu)}
               >
-                Политика конфединциальности
+                {t("footer.legal.privacy_policy")}
               </Anchor>
               <Anchor
                 target={"_blank"}
                 href={"/Пользовательское_соглашения.pdf"}
                 className={cx(s.infoText, s.menu)}
               >
-                Пользовательское соглашения
+                {t("footer.legal.user_agreement")}
               </Anchor>
               <Anchor
                 target={"_blank"}
                 href={"/Согласие_на_получение_рассылок.pdf"}
                 className={cx(s.infoText, s.menu)}
               >
-                Согласие на получение рассылок
+                {t("footer.legal.mailing_consent")}
               </Anchor>
               <Anchor
                 target={"_blank"}
                 href={"/Обработка_файлов_Cookies.pdf"}
                 className={cx(s.infoText, s.menu)}
               >
-                Обработка файлов Cookies
+                {t("footer.legal.cookies_processing")}
               </Anchor>
             </Flex>
           </Flex>
@@ -171,14 +171,14 @@ export const Footer = () => {
             <Flex direction="column" gap="18px" justify={"space-between"}>
               <Flex align={"center"} gap={"8px"} className={s.infoTitle}>
                 <IconLocation />
-                Наш офис:
+                {t("footer.contact.our_office")}
               </Flex>
               <Flex direction="column">
                 <Text component="p" className={s.infoText}>
-                  Адрес:
+                  {t("footer.contact.address")}
                 </Text>
                 <Text component="p" className={cx(s.infoText, s.address)}>
-                  Остоженка 37/7 с.2, особняк Conversation Cafe, 4 этаж
+                  {t("footer.contact.office_address")}
                 </Text>
               </Flex>
             </Flex>
@@ -201,7 +201,7 @@ export const Footer = () => {
           lh={"121.2%"}
           mt={matches ? 20 : 60}
         >
-          InteriseGroup · 2025
+          {t("footer.copyright")}
         </Text>
       </Flex>
     </>

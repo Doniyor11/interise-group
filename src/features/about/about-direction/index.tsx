@@ -1,4 +1,5 @@
 import { Box, Button, Text } from "@mantine/core"
+import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
 import React from "react"
 
@@ -12,77 +13,65 @@ import { onLinkClick } from "@/shared/libs/scroll.ts"
 import s from "./styles.module.scss"
 
 export const AboutDirection = () => {
+  const { t } = useTranslation("common")
+
   return (
     <>
       <Box className={"container"}>
         <div className={s.sectionWrapper}>
           <Box className={s.head}>
-            <h3>В своей работе мы объединяем четыре ключевых направления:</h3>
-            <Text>Направления работы</Text>
+            <h3>{t("about.directions.title")}</h3>
+            <Text>{t("about.directions.subtitle")}</Text>
           </Box>
           <div className={s.cards}>
             <div className={s.card}>
               <div className={s.icon}>
                 <IconOne />
               </div>
-              <Text>
-                Цифровую <br /> трансформацию
-              </Text>
+              <Text>{t("about.directions.digital_transformation")}</Text>
             </div>
             <div className={s.card}>
               <div className={s.icon}>
                 <IconTwo />
               </div>
-              <Text>Инвестиции и финансирование</Text>
+              <Text>{t("about.directions.investment")}</Text>
             </div>
             <div className={s.card}>
               <div className={s.icon}>
                 <IconThree />
               </div>
-              <Text>
-                Маркетинг <br /> и продвижение
-              </Text>
+              <Text>{t("about.directions.marketing")}</Text>
             </div>
             <div className={s.card}>
               <div className={s.icon}>
                 <IconFour />
               </div>
-              <Text>Масштабирование бизнеса и международную экспансию</Text>
+              <Text>{t("about.directions.scaling")}</Text>
             </div>
           </div>
         </div>
         <div className={s.box}>
           <Image src={ImageBanner} alt={"image-banner"} className={s.image} />
           <div className={s.boxRight}>
-            <h3>
-              InteriseGroup{" "}
-              <span>ведёт проекты в десятках стран и отраслей</span>, от
-              финансового сектора и телекоммуникаций до медицины и недвижимости.
-            </h3>
-            <Text className={s.text}>
-              Мы сопровождаем бизнес на всех стадиях: от экспресс-диагностики и
-              поиска точек роста до разработки стратегии, подготовки к сделкам и
-              реализации крупных изменений. <br />
-              <br />
-              Такой подход позволяет комплексно поддерживать компании — от
-              модернизации процессов до вывода продуктов на новые рынки.
-            </Text>
+            <h3
+              dangerouslySetInnerHTML={{ __html: t("about.projects.title") }}
+            />
+            <Text
+              className={s.text}
+              dangerouslySetInnerHTML={{
+                __html: t("about.projects.description"),
+              }}
+            />
             <Button className={s.btn} onClick={() => onLinkClick("contacts")}>
-              Обсудить проект
+              {t("about.projects.discuss_button")}
             </Button>
           </div>
         </div>
         <div className={s.bannerWrapper}>
-          <h3>
-            В группе InteriseGroup присутствует <span>отдельный актив</span>
-          </h3>
-          <Text className={s.text}>
-            Компания специализируется на формировании отчетности, построении и
-            разработке dashboard, системах мониторинга и контроля, на базе
-            лучших мировых практик.
-          </Text>
+          <h3 dangerouslySetInnerHTML={{ __html: t("about.asset.title") }} />
+          <Text className={s.text}>{t("about.asset.description")}</Text>
           <Button className={s.btn} onClick={() => onLinkClick("contacts")}>
-            Заказать отчет
+            {t("about.asset.order_button")}
           </Button>
         </div>
       </Box>

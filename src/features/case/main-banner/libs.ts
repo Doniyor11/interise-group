@@ -1,4 +1,4 @@
 export const DataBreadcrumbs = [
-  { title: "Главная", href: "/" },
-  { title: "Кейсы", href: "/case" },
+  { title: "breadcrumbs.home", href: "/" },
+  { title: "breadcrumbs.cases", href: "/case" },
 ]

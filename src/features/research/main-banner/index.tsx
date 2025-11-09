@@ -1,6 +1,7 @@
 import { Box, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
+import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
 import React from "react"
 
@@ -12,6 +13,7 @@ import { DataBreadcrumbs } from "./libs.ts"
 import s from "./styles.module.scss"
 
 export const ResearchMainBanner = () => {
+  const { t } = useTranslation("common")
   const matches = useMediaQuery("(max-width: 1040px)")
 
   return (
@@ -22,25 +24,16 @@ export const ResearchMainBanner = () => {
             <Breadcrumbs data={DataBreadcrumbs} />
             {!matches && <SearchInput />}
           </div>
-          <h1>Исследования</h1>
+          <h1>{t("breadcrumbs.research")}</h1>
         </div>
       </div>
       <div className={cx(s.sectionWrapper, "container")}>
         <Box>
-          <Text className={s.title}>
-            InteriseGroup проводит{" "}
-            <span>
-              комплексные исследования рынков, отраслей и целевых аудиторий
-            </span>{" "}
-            — включая глубинные мотивы и реальные триггеры поведения.
-          </Text>
-          <Text className={s.subtitle}>
-            Мы используем индивидуальный подход и подбираем инструменты под
-            конкретную задачу клиента. Эти исследования помогают компаниям
-            принимать взвешенные стратегические решения на всех этапах развития
-            — от поиска точек роста и тестирования гипотез до вывода новых
-            продуктов и масштабирования бизнеса.
-          </Text>
+          <Text
+            className={s.title}
+            dangerouslySetInnerHTML={{ __html: t("research.banner.title") }}
+          />
+          <Text className={s.subtitle}>{t("research.banner.description")}</Text>
         </Box>
         <Image src={ImageOne} alt={"image-research"} className={s.image} />
       </div>

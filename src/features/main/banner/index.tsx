@@ -1,4 +1,5 @@
 import { Button, Flex, Text } from "@mantine/core"
+import useTranslation from "next-translate/useTranslation"
 import React from "react"
 
 import { onLinkClick } from "@/shared/libs/scroll.ts"
@@ -6,6 +7,8 @@ import { onLinkClick } from "@/shared/libs/scroll.ts"
 import s from "./styles.module.scss"
 
 export const Banner = () => {
+  const { t } = useTranslation("common")
+
   return (
     <>
       <div className={s.sectionWrapper}>
@@ -15,20 +18,14 @@ export const Banner = () => {
           align={"center"}
           maw={"1000px"}
         >
-          <Text className={s.label}>Опыт и признание</Text>
-          <Text className={s.title}>
-            В портфеле InteriseGroup — проекты в 31 странах и 15 отраслях:{" "}
-            <br />
-            от IT, финансов и ритейла до производства, <br /> телекоммуникаций,
-            FMCG и энергетики
-          </Text>
-          <Text className={s.subtitle}>
-            Достижения клиентов и отраслевые награды за инновации и
-            трансформацию бизнес- <br />
-            моделей подтверждают результативность нашего подхода
-          </Text>
+          <Text className={s.label}>{t("main.experience.label")}</Text>
+          <Text className={s.title}>{t("main.experience.title")}</Text>
+          <Text
+            className={s.subtitle}
+            dangerouslySetInnerHTML={{ __html: t("main.experience.subtitle") }}
+          />
           <Button className={s.btn} onClick={() => onLinkClick("contacts")}>
-            Оставить заявку
+            {t("main.experience.request_button")}
           </Button>
         </Flex>
       </div>

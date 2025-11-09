@@ -1,27 +1,27 @@
 export interface MenuItem {
-  text: string
+  key: string
   path: string
 }
 
 export const MenuData: MenuItem[] = [
   {
-    text: "О нас",
+    key: "navbar.menu.about",
     path: "/about",
   },
   {
-    text: "Кейсы",
+    key: "navbar.menu.cases",
     path: "/case",
   },
   {
-    text: "Исследования",
+    key: "navbar.menu.research",
     path: "/research",
   },
   {
-    text: "Interise Club",
+    key: "navbar.menu.interise_club",
     path: "/#interise-club",
   },
   {
-    text: "Контакты",
+    key: "navbar.menu.contacts",
     path: "#contacts",
   },
 ]

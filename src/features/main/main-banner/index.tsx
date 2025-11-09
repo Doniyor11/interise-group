@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
+import useTranslation from "next-translate/useTranslation"
 import React from "react"
 
 import IconArrow from "@/shared/assets/images/interise-group/arrow-up-right.svg"
@@ -10,20 +11,20 @@ import { AnimatedNumber } from "@/shared/ui"
 import s from "./styles.module.scss"
 
 export const MainBanner = () => {
+  const { t } = useTranslation("common")
   const matches = useMediaQuery("(max-width: 1040px)")
 
   return (
     <div className={s.sectionWrapper}>
       <Box className={"container"} w={"100%"}>
         <Box className={s.sectionLeft}>
-          <Text className={s.bannerTitle}>
-            Стратегии, <br className={s.brMobile} /> которые{" "}
-            <br className={s.brDesktop} /> меняют рынки
-          </Text>
+          <Text
+            className={s.bannerTitle}
+            dangerouslySetInnerHTML={{ __html: t("main.banner.title") }}
+          />
           <Box w={"100%"} maw={matches ? "480px" : "514px"}>
             <Text className={s.bannerDescription}>
-              InteriseGroup — международная консалтинговая группа с экспертизой
-              в стратегическом развитии и комплексном преобразовании бизнеса
+              {t("main.banner.description")}
             </Text>
           </Box>
           <Flex className={s.stats}>
@@ -31,9 +32,7 @@ export const MainBanner = () => {
               <Text className={s.counter}>
                 <AnimatedNumber value={115} className={s.number} />
               </Text>
-              <Text className={s.info}>
-                благодарных <br /> клиентов
-              </Text>
+              <Text className={s.info}>{t("main.banner.stats.clients")}</Text>
             </Flex>
             <div className={s.line} />
             <Flex direction={"column"} align={"center"} className={s.item}>
@@ -42,27 +41,21 @@ export const MainBanner = () => {
                 <AnimatedNumber value={3.5} className={s.number} />{" "}
                 <sup>млрд</sup>
               </Text>
-              <Text className={s.info}>
-                результат <br /> внедрения
-              </Text>
+              <Text className={s.info}>{t("main.banner.stats.result")}</Text>
             </Flex>
             <div className={s.line} />
             <Flex direction={"column"} align={"center"} className={s.item}>
               <Text className={s.counter}>
                 <AnimatedNumber value={311} className={s.number} />
               </Text>
-              <Text className={s.info}>
-                завершенных <br /> проектов
-              </Text>
+              <Text className={s.info}>{t("main.banner.stats.projects")}</Text>
             </Flex>
             <div className={s.line} />
             <Flex direction={"column"} align={"center"} className={s.item}>
               <Text className={s.counter}>
                 <AnimatedNumber value={31} className={s.number} />
               </Text>
-              <Text className={s.info}>
-                страна для международной <br /> экспансии
-              </Text>
+              <Text className={s.info}>{t("main.banner.stats.countries")}</Text>
             </Flex>
           </Flex>
           <Flex align={"center"} gap={5} w={matches ? "100%" : "fit-content"}>
@@ -70,7 +63,7 @@ export const MainBanner = () => {
               onClick={() => onLinkClick("contacts")}
               className={cx(s.buttonBanner)}
             >
-              Связаться
+              {t("main.banner.contact_button")}
               <Flex ml={"10px"} className={s.buttonBannerIcon}>
                 <IconArrow />
               </Flex>

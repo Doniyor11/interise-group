@@ -9,6 +9,7 @@ import {
 } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
+import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
 import React from "react"
 
@@ -22,22 +23,16 @@ import IconTg from "@/shared/assets/images/interise-group/tg 2.svg"
 import s from "./styles.module.scss"
 
 export const TeamSection = () => {
+  const { t } = useTranslation("common")
   const matchesSmall = useMediaQuery("(max-width: 845px)")
   const matchesIpad = useMediaQuery("(max-width: 1140px)")
   return (
     <>
       <Box className={cx(s.sectionWrapper, "container")}>
-        <Text className={s.teamTitle}>Команда InteriseGroup</Text>
+        <Text className={s.teamTitle}>{t("about.team.title")}</Text>
         <Flex className={s.teamSubtitle}>
-          <Text>
-            Наша команда объединяет экспертов и практиков с реальным опытом в
-            крупнейших компаниях Америки, Европы, России, стран СНГ и Ближнего
-            Востока.
-          </Text>
-          <Text>
-            Этот уникальный бэкграунд помогает нам разрабатывать стратегии,
-            которые работают в реальном бизнесе и дают измеримый результат.
-          </Text>
+          <Text>{t("about.team.subtitle1")}</Text>
+          <Text>{t("about.team.subtitle2")}</Text>
         </Flex>
         <Flex
           gap={matchesSmall ? 16 : 32}
@@ -55,23 +50,21 @@ export const TeamSection = () => {
                 h={matchesIpad ? "240px" : "280px"}
               >
                 <Box>
-                  <p className={s.teamBoxTitle}>Дмитрий Вакин</p>
+                  <p className={s.teamBoxTitle}>
+                    {t("about.team.dmitry.name")}
+                  </p>
                   <p className={s.teamBoxSubTitle}>
-                    Сооснователь, InteriseGroup
+                    {t("about.team.dmitry.position")}
                   </p>
                   <List>
                     <List.Item className={s.teamBoxText}>
-                      Инвестор и совладелец daily- и tech-
-                      <br />
-                      проектов
+                      {t("about.team.dmitry.role1")}
                     </List.Item>
                     <List.Item className={s.teamBoxText}>
-                      Член делового совета BRICS
-                      <br /> (Мьянма)
+                      {t("about.team.dmitry.role2")}
                     </List.Item>
                     <List.Item className={s.teamBoxText}>
-                      Топ-100 Forbes “30 до 30”(Финансы
-                      <br /> и инвестиции, 2020).
+                      {t("about.team.dmitry.role3")}
                     </List.Item>
                   </List>
                 </Box>
@@ -98,20 +91,11 @@ export const TeamSection = () => {
               <Accordion w={"100%"} unstyled key={"user1"}>
                 <Accordion.Item value="item-1">
                   <AccordionControl className={s.teamBoxBottomTitle}>
-                    Проектный опыт:
+                    {t("about.team.project_experience")}
                   </AccordionControl>
                   <Accordion.Panel>
                     <Text className={s.teamBoxBottomSubTitle}>
-                      Эксперт по стратегии, трансформации и управлению
-                      изменениями. Более 15 лет опыта в инвестиционной,
-                      банковской и IT-сферах. Реализовал свыше 30 крупных
-                      проектов в России и СНГ, включая крупнейшие интеграции и
-                      программы цифровой трансформации. <br /> <br />
-                      Руководил развитием инноваций в Альфа-Банке, участвовал в
-                      создании инвестиционного фонда группы (€500 млн).
-                      Консультирует компании, входит в советы директоров и
-                      инвестирует в международные консалтинговые и
-                      технологические бизнесы.
+                      {t("about.team.dmitry.experience")}
                     </Text>
                   </Accordion.Panel>
                 </Accordion.Item>
@@ -129,16 +113,18 @@ export const TeamSection = () => {
                 h={matchesIpad ? "240px" : "280px"}
               >
                 <Box>
-                  <p className={s.teamBoxTitle}>Алексей Веретенов</p>
+                  <p className={s.teamBoxTitle}>
+                    {t("about.team.alexey.name")}
+                  </p>
                   <p className={s.teamBoxSubTitle}>
-                    Сооснователь, InteriseGroup
+                    {t("about.team.alexey.position")}
                   </p>
                   <List>
                     <List.Item className={s.teamBoxText}>
-                      Управляющий партнер и CEO Interise
+                      {t("about.team.alexey.role1")}
                     </List.Item>
                     <List.Item className={s.teamBoxText}>
-                      Инвестор и совладелец daily- <br />и venture-проектов.
+                      {t("about.team.alexey.role2")}
                     </List.Item>
                   </List>
                 </Box>
@@ -169,18 +155,11 @@ export const TeamSection = () => {
               <Accordion w={"100%"} unstyled key={"user2"}>
                 <Accordion.Item value="item-2">
                   <AccordionControl className={s.teamBoxBottomTitle}>
-                    Проектный опыт:
+                    {t("about.team.project_experience")}
                   </AccordionControl>
                   <Accordion.Panel>
                     <Text className={s.teamBoxBottomSubTitle}>
-                      Эксперт по трансформациям, цифровизации и стратегиям
-                      роста. 20+ лет опыта в 26 странах и 150+ проектах — от
-                      банковского сектора и телекоммуникаций до промышленности и
-                      медицины. <br /> <br />
-                      Разрабатывает стратегии с фокусом на внедрение и
-                      операционную эффективность. Работал с ведущими компаниями
-                      Европы, США и Азии, специализируется на построении систем
-                      клиентского опыта и управлении ростом бизнеса.
+                      {t("about.team.alexey.experience")}
                     </Text>
                   </Accordion.Panel>
                 </Accordion.Item>
@@ -190,10 +169,8 @@ export const TeamSection = () => {
         </Flex>
       </Box>
       <div className={cx(s.mediaBox, "container")}>
-        <Text className={s.teamTitle}>Медиа</Text>
-        <Text className={s.teamSubtitle}>
-          Статьи и фото с наших выступлений
-        </Text>
+        <Text className={s.teamTitle}>{t("about.media.title")}</Text>
+        <Text className={s.teamSubtitle}>{t("about.media.subtitle")}</Text>
 
         <div className={s.cards}>
           <div className={s.card}>
@@ -201,42 +178,39 @@ export const TeamSection = () => {
               <Image src={ImageMedia} alt={"media-image"} className={s.image} />
               <div className={s.links}>
                 <LogoMedia />
-                <Anchor className={s.link}>Открыть статью</Anchor>
+                <Anchor className={s.link}>
+                  {t("about.media.open_article")}
+                </Anchor>
               </div>
             </div>
 
-            <Text>
-              Интеграция ведущих банков и запуск крупнейшей трансформации на
-              рынке
-            </Text>
+            <Text>{t("about.media.article_text")}</Text>
           </div>
           <div className={s.card}>
             <div className={s.cardTop}>
               <Image src={ImageMedia} alt={"media-image"} className={s.image} />
               <div className={s.links}>
                 <LogoMedia />
-                <Anchor className={s.link}>Открыть статью</Anchor>
+                <Anchor className={s.link}>
+                  {t("about.media.open_article")}
+                </Anchor>
               </div>
             </div>
 
-            <Text>
-              Интеграция ведущих банков и запуск крупнейшей трансформации на
-              рынке
-            </Text>
+            <Text>{t("about.media.article_text")}</Text>
           </div>
           <div className={s.card}>
             <div className={s.cardTop}>
               <Image src={ImageMedia} alt={"media-image"} className={s.image} />
               <div className={s.links}>
                 <LogoMedia />
-                <Anchor className={s.link}>Открыть статью</Anchor>
+                <Anchor className={s.link}>
+                  {t("about.media.open_article")}
+                </Anchor>
               </div>
             </div>
 
-            <Text>
-              Интеграция ведущих банков и запуск крупнейшей трансформации на
-              рынке
-            </Text>
+            <Text>{t("about.media.article_text")}</Text>
           </div>
         </div>
       </div>

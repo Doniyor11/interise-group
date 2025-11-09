@@ -1,11 +1,13 @@
 import { Button, Flex, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
+import useTranslation from "next-translate/useTranslation"
 import Link from "next/link"
 import React, { useEffect, useState } from "react"
 
 import s from "./styles.module.scss"
 
 export const CookiesPopup = () => {
+  const { t } = useTranslation("common")
   const matches = useMediaQuery("(max-width: 576px)")
   const [visible, setVisible] = useState(false)
 
@@ -33,17 +35,14 @@ export const CookiesPopup = () => {
   if (!visible) return null
   return (
     <div className={s.card}>
-      <h3>Использование файлов cookie</h3>
+      <h3>{t("cookies.title")}</h3>
       <Text>
-        Мы используем cookie-файлы, необходимые для работы сайта, а также
-        аналитические и маркетинговые cookie. Это помогает улучшать
-        функциональность сайта и показывать релевантный контент. Подробнее — в
-        нашей{" "}
+        {t("cookies.description")}{" "}
         <Link
           href="/cookies-policy"
           style={{ color: "#7c4dff", textDecoration: "underline" }}
         >
-          Политике использования cookie
+          {t("cookies.policy_link")}
         </Link>
         <Flex
           gap={matches ? 8 : 24}
@@ -51,10 +50,10 @@ export const CookiesPopup = () => {
           direction={matches ? "column" : "row"}
         >
           <Button className={s.btn} onClick={acceptAll}>
-            Принять все
+            {t("cookies.accept_all")}
           </Button>
           <Button className={s.btn} onClick={acceptNecessary}>
-            Только необходимые
+            {t("cookies.accept_necessary")}
           </Button>
         </Flex>
       </Text>

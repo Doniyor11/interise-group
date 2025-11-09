@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
+import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
 import React from "react"
 
@@ -13,57 +14,58 @@ import { onLinkClick } from "@/shared/libs/scroll.ts"
 
 import s from "./styles.module.scss"
 
-const boxData = [
+const getBoxData = (t: any) => [
   {
     id: 1,
     icon: Icon1,
     className: s.div1,
-    title: "Диагностика",
-    desc: `Быстрый обзор бизнеса: анализ данных, интервью, экспресс-диагностика и, при необходимости, внутренний аудит. Помогает увидеть ключевые проблемы, точки роста и возможные решения, сформировать ясную дорожную карту дальнейших действий`,
+    title: t("main.how_we_work.diagnostics.title"),
+    desc: t("main.how_we_work.diagnostics.description"),
   },
   {
     id: 2,
     icon: Icon2,
     className: s.div2,
-    title: "Стратегия",
-    desc: `Разработка стратегий, которые работают в реальном бизнесе. Гипотезы проверяются практикой: слабое исключается, сильное масштабируется. Это помогает компаниям укреплять позиции, повышать эффективность и выходить на новые рынки`,
+    title: t("main.how_we_work.strategy.title"),
+    desc: t("main.how_we_work.strategy.description"),
   },
   {
     id: 3,
     icon: Icon3,
     className: s.div3,
-    title: "Large Scale Change",
-    desc: `Реализация комплексных трансформаций: изменение бизнес-моделей, процессов и структур с фокусом на измеримый результат. Многие проекты выполняются по модели success fee — команда InteriseGroup заинтересована в успехе наравне с клиентом. Опыт включает интеграцию крупных игроков, перестройку операционных моделей, запуск десятков проектов изменений и обучение сотен сотрудников`,
+    title: t("main.how_we_work.large_scale_change.title"),
+    desc: t("main.how_we_work.large_scale_change.description"),
   },
   {
     id: 4,
     icon: Icon4,
     className: s.div4,
-    title: "Переупаковка бизнеса для продажи/инвестиций",
-    desc: `Подготовка компаний к масштабным сделкам и привлечению капитала: от оценки потенциала до структурирования сделки и подготовки к IPO. Это повышает стоимость бизнеса и помогает привлечь стратегических инвесторов`,
+    title: t("main.how_we_work.repackaging.title"),
+    desc: t("main.how_we_work.repackaging.description"),
   },
   {
-    id: 4,
+    id: 5,
     icon: Icon5,
     className: s.div5,
-    title: "Go Global",
-    desc: `Сопровождение выхода компаний на новые рынки: формирование стратегии глобальной экспансии, адаптация продуктов и поддержка запуска бизнеса в новых странах. Опыт InteriseGroup включает запуск бизнесов с нуля в новых странах, подготовку к экспансии и управление проектами на рынках Европы, СНГ и Ближнего Востока`,
+    title: t("main.how_we_work.go_global.title"),
+    desc: t("main.how_we_work.go_global.description"),
   },
 ]
 
 export const MainMarkets = () => {
+  const { t } = useTranslation("common")
   const matches = useMediaQuery("(max-width: 1040px)")
+  const boxData = getBoxData(t)
   return (
     <>
       <div className={s.sectionWrapper}>
         <Box className={s.sectionLeft}>
           <Flex gap={""} direction={"column"} w={matches ? "100%" : "50%"}>
             <Text className={"section-title"} mb={"12px"}>
-              Как мы работаем
+              {t("main.how_we_work.title")}
             </Text>
             <Text className={"section-subtitle"}>
-              <span>Мы работаем спринтами</span> — от быстрой диагностики до
-              комплексного внедрения
+              {t("main.how_we_work.subtitle")}
             </Text>
           </Flex>
           <Flex w={matches ? "100%" : "50%"}>
@@ -74,10 +76,7 @@ export const MainMarkets = () => {
               lts={"-0.32px"}
               mt={"15px"}
             >
-              За короткое время формулируем и проверяем гипотезы, усиливаем
-              работающие решения и масштабируем результат. Такой подход даёт
-              прозрачность, экономит ресурсы и позволяет быстро увидеть эффект
-              от изменений.
+              {t("main.how_we_work.description")}
             </Text>
           </Flex>
         </Box>
@@ -128,7 +127,7 @@ export const MainMarkets = () => {
             fw={"400"}
             onClick={() => onLinkClick("contacts")}
           >
-            Все проекты
+            {t("main.how_we_work.all_projects_button")}
           </Button>
         </Flex>
       </div>

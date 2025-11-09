@@ -1,26 +1,26 @@
 export const FilterKeys = [
   {
-    text: "Все отрасли",
+    key: "case.filter.all_industries",
   },
   {
-    text: "Банковская сфера",
+    key: "case.filter.banking",
   },
   {
-    text: "Финансы",
+    key: "case.filter.finance",
   },
   {
-    text: "Медицина",
+    key: "case.filter.medicine",
   },
   {
-    text: "Ритейл",
+    key: "case.filter.retail",
   },
   {
-    text: "Инвестиции",
+    key: "case.filter.investment",
   },
   {
-    text: "Авиация",
+    key: "case.filter.aviation",
   },
   {
-    text: "Транспорт",
+    key: "case.filter.transport",
   },
 ]

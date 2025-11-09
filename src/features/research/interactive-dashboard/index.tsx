@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Progress, RingProgress, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
+import useTranslation from "next-translate/useTranslation"
 import React, { useState } from "react"
 import {
   CartesianGrid,
@@ -27,6 +28,7 @@ import LogoKaspi from "@/shared/assets/images/interise-group/logo-kaspi.svg"
 import s from "./styles.module.scss"
 
 export const InteractiveDashboard = () => {
+  const { t } = useTranslation("common")
   const matches = useMediaQuery("(max-width: 1040px)")
   const [tab, setTab] = useState<"all" | "retail" | "sme">("retail")
 
@@ -52,11 +54,19 @@ export const InteractiveDashboard = () => {
 
   // Index Criteria Data
   const criteriaData = [
-    { name: "Онлайн", value: " 4.3", color: "#ff4757" },
-    { name: "Офлайн", value: " 4.5", color: "#0076fe" },
-    { name: "Опыт", value: " 4.0", color: "#ffa502" },
-    { name: "Связи", value: " 3.6", color: "#2ed573" },
-    { name: "Культура", value: " 3.6", color: "#ff6348" },
+    { name: t("research.dashboard.online"), value: " 4.3", color: "#ff4757" },
+    { name: t("research.dashboard.offline"), value: " 4.5", color: "#0076fe" },
+    {
+      name: t("research.dashboard.experience"),
+      value: " 4.0",
+      color: "#ffa502",
+    },
+    {
+      name: t("research.dashboard.connections"),
+      value: " 3.6",
+      color: "#2ed573",
+    },
+    { name: t("research.dashboard.culture"), value: " 3.6", color: "#ff6348" },
   ]
 
   // Scatter Data for "Совокупный опыт"
@@ -77,54 +87,47 @@ export const InteractiveDashboard = () => {
   // Recommendations
   const recommendations = [
     {
-      title: "Сегментация",
-      description: "Углубление сегментации и внедрение предиктивных моделей.",
+      title: t("research.dashboard.rec1.title"),
+      description: t("research.dashboard.rec1.description"),
       icon: <IconRecommendationsOne />,
     },
     {
-      title: "Клиентский опыт",
-      description:
-        "Создание Phygital-среды, где цифровые инструменты обогащают визит.",
+      title: t("research.dashboard.rec2.title"),
+      description: t("research.dashboard.rec2.description"),
       icon: <IconRecommendationsTwo />,
     },
     {
-      title: "Работа с данными",
-      description: "Переход к проактивному сервису на базе GenAI.",
+      title: t("research.dashboard.rec3.title"),
+      description: t("research.dashboard.rec3.description"),
       icon: <IconRecommendationsThree />,
     },
   ]
 
   return (
     <div className={cx(s.sectionWrapper, "container")}>
-      <h2>
-        Все данные — в одном <span>интерактивном дашборде</span>
-      </h2>
-      <Text className={s.subtitle}>
-        Вы получаете не просто отчет, а живой инструмент для анализа. Ниже
-        представлена главная страница дашборда. Сравнивайте себя с конкурентами,
-        находите точки роста и принимайте решения на основе реальных данных. В
-        полной версии вы сможете изучить детальную оценку каждого шага на
-        клиентском пути.
+      <h2>{t("research.dashboard.title")}</h2>
+      <Text className={s.subtitle}>{t("research.dashboard.subtitle")}</Text>
+      <Text className={s.tabLabel}>
+        {t("research.dashboard.select_segment")}
       </Text>
-      <Text className={s.tabLabel}>Выберите сегмент</Text>
       <Flex className={s.tabWrapper} m={"12px auto 32px"}>
         <Button
           className={cx(s.tabBtn, { [s.active]: tab === "all" })}
           onClick={() => setTab("all")}
         >
-          All
+          {t("research.dashboard.tab.all")}
         </Button>
         <Button
           className={cx(s.tabBtn, { [s.active]: tab === "retail" })}
           onClick={() => setTab("retail")}
         >
-          Retail
+          {t("research.dashboard.tab.retail")}
         </Button>
         <Button
           className={cx(s.tabBtn, { [s.active]: tab === "sme" })}
           onClick={() => setTab("sme")}
         >
-          SME
+          {t("research.dashboard.tab.sme")}
         </Button>
       </Flex>
       <Box className={s.cards}>
@@ -141,16 +144,22 @@ export const InteractiveDashboard = () => {
               <Flex align={"center"}>
                 <LogoKaspi />
                 <Box className={s.bankName}>
-                  <Text className={s.bank}>Банк A</Text>
-                  <Text className={s.text}>Retail Clients</Text>
+                  <Text className={s.bank}>
+                    {t("research.dashboard.bank_a")}
+                  </Text>
+                  <Text className={s.text}>
+                    {t("research.dashboard.retail_clients")}
+                  </Text>
                 </Box>
               </Flex>
 
               <Box className={s.rating}>
                 <Text className={s.number}>
-                  <span>1</span> место
+                  <span>1</span> {t("research.dashboard.place")}
                 </Text>
-                <Text className={s.text}>общий рейтинг</Text>
+                <Text className={s.text}>
+                  {t("research.dashboard.overall_rating")}
+                </Text>
               </Box>
             </Flex>
             <Flex direction="column" align="center" justify="center" mt={20}>
@@ -161,16 +170,24 @@ export const InteractiveDashboard = () => {
                 sections={[{ value: 80, color: "#0076FE" }]}
                 label={<Text className={s.progressValue}>4.0</Text>}
               />
-              <Text className={s.progressLabel}>Customer Choice Index</Text>
+              <Text className={s.progressLabel}>
+                {t("research.dashboard.cci")}
+              </Text>
             </Flex>
           </Box>
 
           {/* Bank Rankings Card */}
           <Box mih={343} className={cx(s.card, s.cardTwo)}>
-            <Text className={s.cardTitle}>Рейтинг банков</Text>
+            <Text className={s.cardTitle}>
+              {t("research.dashboard.bank_ranking")}
+            </Text>
             <Flex className={s.tabWrapper} mt={12} mb={16}>
-              <Button className={cx(s.tabBtn, s.active)}>По индексу</Button>
-              <Button className={s.tabBtn}>По компонентам</Button>
+              <Button className={cx(s.tabBtn, s.active)}>
+                {t("research.dashboard.by_index")}
+              </Button>
+              <Button className={s.tabBtn}>
+                {t("research.dashboard.by_components")}
+              </Button>
             </Flex>
             <div className={s.cardBody}>
               {bankRankings.map((bank, idx) => (
@@ -197,7 +214,9 @@ export const InteractiveDashboard = () => {
 
           {/* Recommendations Card */}
           <Box mih={317} className={s.card}>
-            <Text className={s.cardTitle}>Рекомендации</Text>
+            <Text className={s.cardTitle}>
+              {t("research.dashboard.recommendations")}
+            </Text>
             <div className={s.cardBody}>
               {recommendations.map((rec, idx) => (
                 <Flex key={idx} className={s.recommendations}>
@@ -218,9 +237,11 @@ export const InteractiveDashboard = () => {
         <div className={s.rightSide}>
           {/* Customer Journey Line Chart */}
           <Box className={cx(s.card, s.cardFour)}>
-            <Box w={matches ? 700 : "100%"}>
+            <Box w={matches ? 700 : "100%"} h={"100%"}>
               <Flex justify="space-between" align="center" mb={8}>
-                <Text className={s.cardTitle}>Путь клиента</Text>
+                <Text className={s.cardTitle}>
+                  {t("research.dashboard.customer_journey")}
+                </Text>
                 <Flex gap={16}>
                   <Flex align="center" gap={4}>
                     <Box
@@ -229,7 +250,7 @@ export const InteractiveDashboard = () => {
                       style={{ borderRadius: "50%", background: "#0076fe" }}
                     />
                     <Text size="xs" c="#76777a">
-                      Банк А
+                      {t("research.dashboard.bank_a_label")}
                     </Text>
                   </Flex>
                   <Flex align="center" gap={4}>
@@ -239,7 +260,7 @@ export const InteractiveDashboard = () => {
                       style={{ borderRadius: "50%", background: "#a855f7" }}
                     />
                     <Text size="xs" c="#76777a">
-                      Продукт
+                      {t("research.dashboard.product")}
                     </Text>
                   </Flex>
                   <Flex align="center" gap={4}>
@@ -249,11 +270,11 @@ export const InteractiveDashboard = () => {
                       style={{ borderRadius: "50%", background: "#94a3b8" }}
                     />
                     <Text size="xs" c="#76777a">
-                      Платеж
+                      {t("research.dashboard.payment")}
                     </Text>
                   </Flex>
                   <Text size="xs" c="#76777a">
-                    Конкуренты
+                    {t("research.dashboard.competitors")}
                   </Text>
                 </Flex>
               </Flex>
@@ -299,7 +320,9 @@ export const InteractiveDashboard = () => {
 
           {/* Index Criteria Card */}
           <Box className={cx(s.card, s.cardFive)}>
-            <Text className={s.cardTitle}>Критерии индекса</Text>
+            <Text className={s.cardTitle}>
+              {t("research.dashboard.index_criteria")}
+            </Text>
             <div className={s.cardBody}>
               {criteriaData.map((item, idx) => (
                 <Flex key={idx} align="center" gap={8} mb={4} h={20}>
@@ -317,17 +340,17 @@ export const InteractiveDashboard = () => {
                 </Flex>
               ))}
               <Text className={s.description}>
-                <span>Вывод</span>
-                Банк А лидирует в базовом клиентском опыте (Онлайн+Офлайн).
-                Однако его отстают от (Online) и коммуникационных (ТехПод)
-                аспектах обслуживания.
+                <span>{t("research.dashboard.conclusion")}</span>
+                {t("research.dashboard.conclusion1")}
               </Text>
             </div>
           </Box>
 
           {/* Scatter Chart Card */}
           <Box className={s.card} mah={346}>
-            <Text className={s.cardTitle}>Совокупный опыт</Text>
+            <Text className={s.cardTitle}>
+              {t("research.dashboard.total_experience")}
+            </Text>
 
             <ResponsiveContainer width="100%" height={250}>
               <ScatterChart
@@ -342,7 +365,7 @@ export const InteractiveDashboard = () => {
                   tick={{ fontSize: 12, fill: "#76777a" }}
                   axisLine={{ stroke: "#d1d5db" }}
                   label={{
-                    value: "Онлайн опыт",
+                    value: t("research.dashboard.online_experience"),
                     position: "bottom",
                     offset: 10,
                     style: { fontSize: 12, fill: "#76777a" },
@@ -357,7 +380,7 @@ export const InteractiveDashboard = () => {
                   axisLine={{ stroke: "#d1d5db" }}
                   width={30}
                   label={{
-                    value: "Офлайн опыт",
+                    value: t("research.dashboard.offline_experience"),
                     angle: -90,
                     position: "insideLeft",
                     offset: -13,
@@ -372,7 +395,9 @@ export const InteractiveDashboard = () => {
 
           {/* Radar Chart Card */}
           <Box className={s.card}>
-            <Text className={s.cardTitle}>Сравнение каналов</Text>
+            <Text className={s.cardTitle}>
+              {t("research.dashboard.channel_comparison")}
+            </Text>
             <ResponsiveContainer width="100%" height={matches ? 300 : "100%"}>
               <RadarChart data={radarData}>
                 <PolarGrid stroke="#d1d5db" />
@@ -398,7 +423,9 @@ export const InteractiveDashboard = () => {
 
           {/* Sales Effectiveness Card */}
           <Box className={cx(s.card, s.cardEight)}>
-            <Text className={s.cardTitle}>Эффективность продаж</Text>
+            <Text className={s.cardTitle}>
+              {t("research.dashboard.sales_effectiveness")}
+            </Text>
             <Flex direction="column" align="center" justify="center" mt={20}>
               <RingProgress
                 size={120}
@@ -408,15 +435,13 @@ export const InteractiveDashboard = () => {
                 label={
                   <Text className={s.progressValue}>
                     4.4
-                    <span>из 5</span>
+                    <span>{t("research.dashboard.out_of_5")}</span>
                   </Text>
                 }
               />
               <Text className={s.description}>
-                <span>Вывод</span>
-                Высокая эффективность продаж – прямое следствие совокупного
-                опыта. Это доказывает, что инвестиции в клиентский сервис
-                окупаются.
+                <span>{t("research.dashboard.conclusion")}</span>
+                {t("research.dashboard.conclusion2")}
               </Text>
             </Flex>
           </Box>
@@ -426,13 +451,17 @@ export const InteractiveDashboard = () => {
             <Box w={matches ? 720 : "100%"}>
               <Flex gap={22}>
                 <Box w={"100%"}>
-                  <Text className={s.cardTitle}>Цифровая активность</Text>
-                  <Text className={s.text}>Уникальные пользователи</Text>
+                  <Text className={s.cardTitle}>
+                    {t("research.dashboard.digital_activity")}
+                  </Text>
+                  <Text className={s.text}>
+                    {t("research.dashboard.unique_users")}
+                  </Text>
                   <Text className={s.activeCount}>
-                    125K <span>/ мес</span>
+                    125K <span>{t("research.dashboard.per_month")}</span>
                   </Text>
                   <Text className={cx(s.text, s.sm)}>
-                    1200K потенциальный рынок
+                    {t("research.dashboard.potential_market")}
                   </Text>
 
                   <div className={s.progressWrapper}>
@@ -442,7 +471,9 @@ export const InteractiveDashboard = () => {
                       align={"center"}
                       justify={"space-between"}
                     >
-                      <Text className={s.text}>Доля захвата рынка</Text>
+                      <Text className={s.text}>
+                        {t("research.dashboard.market_share")}
+                      </Text>
                       <Text className={s.progressValue}>10.4%</Text>
                     </Flex>
                     <Progress
@@ -457,24 +488,22 @@ export const InteractiveDashboard = () => {
                 <Flex w={"100%"} gap={14}>
                   <Text className={s.rightText}>
                     <span>32k</span>
-                    DAU
+                    {t("research.dashboard.dau")}
                   </Text>
                   <Text className={s.rightText}>
                     <span>48k</span>
-                    MAU
+                    {t("research.dashboard.mau")}
                   </Text>
                 </Flex>
               </Flex>
               <Flex mt={16} gap={22}>
                 <Text className={s.description}>
-                  <span>Вывод</span>
-                  Низкий охват говорит о значительном потенциале роста. Фокус на
-                  SEO и SMM может привлечь новую аудиторию.
+                  <span>{t("research.dashboard.conclusion")}</span>
+                  {t("research.dashboard.conclusion3")}
                 </Text>
                 <Text className={s.description}>
-                  <span>Вывод</span>
-                  Высокий показатель вовлеченности (DAU/MAU &gt; 65%)
-                  подтверждает эффективность транзакционной бизнес-модели банка.
+                  <span>{t("research.dashboard.conclusion")}</span>
+                  {t("research.dashboard.conclusion4")}
                 </Text>
               </Flex>
             </Box>

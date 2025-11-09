@@ -1,9 +1,11 @@
 import { ActionIcon, Burger, Button, Drawer, Flex, Select } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
+import setLanguage from "next-translate/setLanguage"
+import useTranslation from "next-translate/useTranslation"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 import { MenuData } from "@/widgets/layouts/navbar/libs.ts"
 
@@ -17,8 +19,20 @@ import s from "./styles.module.scss"
 
 export const Navbar = () => {
   const router = useRouter()
+  const { lang, t } = useTranslation("common")
   const [isOpen, setIsOpen] = useState(false)
+  const [isLang, setIsLang] = useState("ru")
+
   const matches = useMediaQuery("(max-width: 1040px)")
+
+  useEffect(() => {
+    const storedLang = localStorage.getItem("lang") || "ru"
+    if (storedLang !== lang) {
+      setLanguage(storedLang)
+    }
+
+    setIsLang(storedLang)
+  }, [lang])
 
   return (
     <>
@@ -26,7 +40,6 @@ export const Navbar = () => {
         <Link href={"/"} className={s.logo}>
           <IconLogo />
         </Link>
-
         <ul className={s.menu}>
           {MenuData?.map((item, index) => {
             const pathName = router.pathname
@@ -37,7 +50,7 @@ export const Navbar = () => {
                   [s.active]: item?.path === pathName,
                 })}
               >
-                <Link href={item?.path}>{item?.text}</Link>
+                <Link href={item?.path}>{t(item?.key)}</Link>
               </li>
             )
           })}
@@ -46,13 +59,20 @@ export const Navbar = () => {
         {!matches && (
           <Flex gap={5} align={"center"}>
             <Select
+              allowDeselect={false}
               className={s.lang}
-              defaultValue={"Ru"}
-              data={["Ru", "Eng"]}
+              defaultValue={"ru"}
+              data={["ru", "en"]}
               leftSection={<IconGlobal />}
               rightSection={<IconLangArrow />}
               classNames={{
                 option: s.selectOption,
+              }}
+              value={isLang}
+              onChange={(e: any) => {
+                setLanguage(e)
+                setIsLang(e)
+                localStorage.setItem("lang", e)
               }}
             />
             <Button
@@ -62,7 +82,7 @@ export const Navbar = () => {
               h={"44px"}
               onClick={() => onLinkClick("contacts")}
             >
-              Связаться с нами
+              {t("navbar.contact_us")}
             </Button>
           </Flex>
         )}
@@ -86,10 +106,21 @@ export const Navbar = () => {
         <div className={s.mobileDrawer}>
           <div className={s.drawerHead}>
             <Select
+              allowDeselect={false}
               className={s.lang}
-              defaultValue={"Uz"}
-              data={["Ru", "Uz"]}
+              defaultValue={"ru"}
+              data={["ru", "en"]}
               leftSection={<IconGlobal />}
+              rightSection={<IconLangArrow />}
+              classNames={{
+                option: s.selectOption,
+              }}
+              value={isLang}
+              onChange={(e: any) => {
+                setLanguage(e)
+                setIsLang(e)
+                localStorage.setItem("lang", e)
+              }}
             />
             <ActionIcon
               variant={"transparent"}
@@ -110,7 +141,7 @@ export const Navbar = () => {
                     setIsOpen(false)
                   }}
                 >
-                  {item?.text}
+                  {t(item?.key)}
                 </Link>
               )
             })}

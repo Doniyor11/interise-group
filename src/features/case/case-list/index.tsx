@@ -8,6 +8,7 @@ import {
   Text,
 } from "@mantine/core"
 import cx from "clsx"
+import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
 import React, { useState } from "react"
 
@@ -26,13 +27,14 @@ import { SearchInput } from "@/shared/ui"
 import s from "./styles.module.scss"
 
 export const CaseList = () => {
+  const { t } = useTranslation("common")
   const { setRequestPresentation } = useContactFormsStore()
   const [category, setCategory] = useState(0)
   return (
     <>
       <div className={cx(s.sectionWrapper, "container")}>
-        <h3>Кейсы:</h3>
-        <Text className={s.label}>Выберите категорию:</Text>
+        <h3>{t("case.list.title")}</h3>
+        <Text className={s.label}>{t("case.list.select_category")}</Text>
         <Flex className={s.filtersWrapper}>
           <div className={s.categories}>
             {FilterKeys?.map((i, index) => (
@@ -41,7 +43,7 @@ export const CaseList = () => {
                 onClick={() => setCategory(index)}
                 className={cx(s.item, { [s.active]: category === index })}
               >
-                {i?.text}
+                {t(i?.key)}
               </Text>
             ))}
           </div>
@@ -53,9 +55,9 @@ export const CaseList = () => {
               <Box className={s.ideaBoxTop}>
                 <Flex gap={"26px"} justify={"space-between"}>
                   <Text className={s.ideaBoxTitle}>
-                    Топ-3
+                    {t("case.card.rank_top3")}
                     <br />
-                    <span>компания в стране</span>
+                    <span>{t("case.card.company_in_country")}</span>
                   </Text>
                   <Flex direction="column" gap="6px">
                     <Flex
@@ -65,8 +67,12 @@ export const CaseList = () => {
                     >
                       <Icon1 />
                       <Flex direction={"column"}>
-                        <Text className={s.ideaBoxCountry}>Страна:</Text>
-                        <Text className={s.ideaBoxCity}>Казахстан</Text>
+                        <Text className={s.ideaBoxCountry}>
+                          {t("case.card.country")}
+                        </Text>
+                        <Text className={s.ideaBoxCity}>
+                          {t("case.card.kazakhstan")}
+                        </Text>
                       </Flex>
                     </Flex>
                     <Flex
@@ -76,15 +82,18 @@ export const CaseList = () => {
                     >
                       <Icon2 />
                       <Flex direction={"column"}>
-                        <Text className={s.ideaBoxCountry}>Отрасль:</Text>
-                        <Text className={s.ideaBoxCity}>Банкинг</Text>
+                        <Text className={s.ideaBoxCountry}>
+                          {t("case.card.industry")}
+                        </Text>
+                        <Text className={s.ideaBoxCity}>
+                          {t("case.card.banking")}
+                        </Text>
                       </Flex>
                     </Flex>
                   </Flex>
                 </Flex>
                 <Text className={s.ideaBoxDescription}>
-                  Интеграция ведущих банков и запуск крупнейшей трансформации на
-                  рынке
+                  {t("case.card.description")}
                 </Text>
               </Box>
 
@@ -97,31 +106,28 @@ export const CaseList = () => {
               >
                 <Accordion.Item value="item-1" className={s.collapseWrapper}>
                   <AccordionControl className={s.collapseBtn}>
-                    Задача:
+                    {t("case.card.task")}
                   </AccordionControl>
                   <Accordion.Panel>
                     <Text className={s.collapseText}>
-                      Провести интеграцию с другим банком и полномасштабная
-                      трансформация операционной модели
+                      {t("case.card.task_text")}
                     </Text>
                   </Accordion.Panel>
                 </Accordion.Item>
                 <Accordion.Item value="item-2" className={s.collapseWrapper}>
                   <AccordionControl className={s.collapseBtn}>
-                    Решение:
+                    {t("case.card.solution")}
                   </AccordionControl>
                   <Accordion.Panel>
                     <Text className={s.collapseText}>
-                      Разработана и реализована стратегия изменений, запущено в
-                      работу 52 проекта, сформированы новые подходы к
-                      клиентскому опыту, 500+ сотрудников прошли обучение
+                      {t("case.card.solution_text")}
                     </Text>
                   </Accordion.Panel>
                 </Accordion.Item>
               </Accordion>
 
               <Box>
-                <Text className={s.ideaBoxResult}>Результат:</Text>
+                <Text className={s.ideaBoxResult}>{t("case.card.result")}</Text>
                 <Flex direction={"column"} gap={"12px"}>
                   <Flex
                     gap={"24px"}
@@ -130,9 +136,7 @@ export const CaseList = () => {
                     className={s.ideaItem}
                   >
                     <Image src={Image1} alt={""} width={44} height={44} />
-                    <Text component={"p"}>
-                      Операционная прибыль выросла ×6 за 2 года
-                    </Text>
+                    <Text component={"p"}>{t("case.card.result1")}</Text>
                   </Flex>
                   <Flex
                     gap={"24px"}
@@ -141,7 +145,7 @@ export const CaseList = () => {
                     className={s.ideaItem}
                   >
                     <Image src={Image2} alt={""} width={44} height={44} />
-                    <Text component={"p"}>Ускорен вывод новых продуктов</Text>
+                    <Text component={"p"}>{t("case.card.result2")}</Text>
                   </Flex>
                   <Flex
                     gap={"24px"}
@@ -150,7 +154,7 @@ export const CaseList = () => {
                     className={s.ideaItem}
                   >
                     <Image src={Image3} alt={""} width={44} height={44} />
-                    <Text component={"p"}>500+ сотрудников обучены</Text>
+                    <Text component={"p"}>{t("case.card.result3")}</Text>
                   </Flex>
                 </Flex>
               </Box>
@@ -162,7 +166,7 @@ export const CaseList = () => {
             className={s.btnRequest}
             onClick={() => setRequestPresentation(true)}
           >
-            Запросить презентацию
+            {t("case.request_presentation_button")}
           </Button>
         </Center>
       </div>

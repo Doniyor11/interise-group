@@ -86,13 +86,11 @@
 .selectOption {
   font-weight: 400;
   font-size: 16px;
+  text-transform: capitalize;
 
   &:hover {
-    border-radius: 5px;
     background: #e1eeff;
     color: #0076fe;
-    font-weight: 400;
-    font-size: 16px;
   }
 }
 

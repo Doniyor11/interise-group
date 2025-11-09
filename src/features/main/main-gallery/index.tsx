@@ -40,9 +40,8 @@ export const MainGallery = () => {
               className={s.clubTitle}
               c={"#fff"}
               ta={matches ? "left" : "center"}
-            >
-              {t("main.club.title")}
-            </Text>
+              dangerouslySetInnerHTML={{ __html: t("main.club.title") }}
+            />
             <Text className={s.clubInfoTitle} c={"#8696A9"} mb={"24px"}>
               {t("main.club.event_types_label")}
             </Text>

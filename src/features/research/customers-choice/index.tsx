@@ -15,8 +15,11 @@ export const CustomersChoice = () => {
   return (
     <>
       <div className={cx(s.sectionWrapper, "container")}>
-        <h2>{t("research.cci.title")}</h2>
-        <Text className={s.subtitle}>{t("research.cci.subtitle")}</Text>
+        <h2 dangerouslySetInnerHTML={{ __html: t("research.cci.title") }} />
+        <Text
+          className={s.subtitle}
+          dangerouslySetInnerHTML={{ __html: t("research.cci.subtitle") }}
+        />
 
         <div className={s.box}>
           <Text className={s.boxTitle}>

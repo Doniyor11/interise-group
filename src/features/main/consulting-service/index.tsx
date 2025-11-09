@@ -31,7 +31,10 @@ export const ConsultingService = () => {
             <Text className={s.titleAbout} mb={"10px"}>
               {t("main.about.title")}
             </Text>
-            <Text className={s.description}>{t("main.about.description")}</Text>
+            <Text
+              className={s.description}
+              dangerouslySetInnerHTML={{ __html: t("main.about.description") }}
+            />
           </Flex>
           <Grid w={"100%"} gutter={32}>
             <Grid.Col span={matchesMobile ? 12 : 4}>
@@ -95,9 +98,11 @@ export const ConsultingService = () => {
       </div>
       {/* Наши принципы */}
       <Box mt={matches ? "60px" : "80px"} className={s.ourWrapper}>
-        <Text className={s.aboutBottomTitle} mb={"20px"}>
-          {t("main.principles.title")}
-        </Text>
+        <Text
+          className={s.aboutBottomTitle}
+          mb={"20px"}
+          dangerouslySetInnerHTML={{ __html: t("main.principles.title") }}
+        />
         <Flex w={"100%"} gap={"60px"} mb={36}>
           <Text
             c={matches ? "#8FB0E1" : "#DBE9F9"}
@@ -120,9 +125,10 @@ export const ConsultingService = () => {
                 fw={400}
                 maw={"450px"}
                 ta={"left"}
-              >
-                {t("main.principles.description2")}
-              </Text>
+                dangerouslySetInnerHTML={{
+                  __html: t("main.principles.description2"),
+                }}
+              />
             </Box>
           )}
         </Flex>

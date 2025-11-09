@@ -34,7 +34,10 @@ export const ResearchTypes = () => {
   }
   return (
     <div className={cx(s.sectionWrapper, "container")}>
-      <Text className={s.title}>{t("research.types.title")}</Text>
+      <Text
+        className={s.title}
+        dangerouslySetInnerHTML={{ __html: t("research.types.title") }}
+      />
       <div className={s.filters}>
         <Text className={s.text}>{t("research.types.notice")}</Text>
         <Popover

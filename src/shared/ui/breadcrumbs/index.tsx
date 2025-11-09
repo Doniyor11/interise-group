@@ -4,6 +4,7 @@ import {
   MantineStyleProps,
 } from "@mantine/core"
 import cx from "clsx"
+import useTranslation from "next-translate/useTranslation"
 import Link from "next/link"
 import React, { FC } from "react"
 
@@ -21,6 +22,7 @@ export const Breadcrumbs: FC<IBreadcrumbsProps> = ({
   className,
   ...props
 }) => {
+  const { t } = useTranslation()
   const items = data.map((item: any, index: number) => (
     <Anchor
       key={index}
@@ -28,7 +30,7 @@ export const Breadcrumbs: FC<IBreadcrumbsProps> = ({
       href={item.href}
       component={Link}
     >
-      {item.title}
+      {t(item.title)}
     </Anchor>
   ))
 

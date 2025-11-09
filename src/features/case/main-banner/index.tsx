@@ -11,11 +11,12 @@ import IconMap from "@/shared/assets/images/interise-group/icon-map.svg"
 import { AnimatedNumber, SearchInput } from "@/shared/ui"
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs"
 
-import { DataBreadcrumbs } from "./libs.ts"
+import { useBreadcrumbs } from "./libs.ts"
 import s from "./styles.module.scss"
 
 export const CaseMainBanner = () => {
   const { t } = useTranslation("common")
+  const breadcrumbs = useBreadcrumbs()
   const matches = useMediaQuery("(max-width: 1040px)")
 
   return (
@@ -23,7 +24,7 @@ export const CaseMainBanner = () => {
       <div className={s.topSectionWrapper}>
         <div className={cx(s.container, "container")}>
           <div className={s.sectionHead}>
-            <Breadcrumbs data={DataBreadcrumbs} />
+            <Breadcrumbs data={breadcrumbs} />
             {!matches && <SearchInput />}
           </div>
           <h1>{t("breadcrumbs.cases")}</h1>

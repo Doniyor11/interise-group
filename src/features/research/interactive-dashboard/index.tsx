@@ -105,7 +105,7 @@ export const InteractiveDashboard = () => {
 
   return (
     <div className={cx(s.sectionWrapper, "container")}>
-      <h2>{t("research.dashboard.title")}</h2>
+      <h2 dangerouslySetInnerHTML={{ __html: t("research.dashboard.title") }} />
       <Text className={s.subtitle}>{t("research.dashboard.subtitle")}</Text>
       <Text className={s.tabLabel}>
         {t("research.dashboard.select_segment")}

@@ -9,11 +9,12 @@ import ImageOne from "@/shared/assets/images/interise-group/image-research-2.png
 import { SearchInput } from "@/shared/ui"
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs"
 
-import { DataBreadcrumbs } from "./libs.ts"
+import { useBreadcrumbs } from "./libs.ts"
 import s from "./styles.module.scss"
 
 export const ResearchMainBanner = () => {
   const { t } = useTranslation("common")
+  const breadcrumbs = useBreadcrumbs()
   const matches = useMediaQuery("(max-width: 1040px)")
 
   return (
@@ -21,7 +22,7 @@ export const ResearchMainBanner = () => {
       <div className={s.topSectionWrapper}>
         <div className={cx(s.container, "container")}>
           <div className={s.sectionHead}>
-            <Breadcrumbs data={DataBreadcrumbs} />
+            <Breadcrumbs data={breadcrumbs} />
             {!matches && <SearchInput />}
           </div>
           <h1>{t("breadcrumbs.research")}</h1>

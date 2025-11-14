@@ -9,6 +9,7 @@ import {
 import cx from "clsx"
 import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
+import { useRouter } from "next/router"
 import React, { useState } from "react"
 
 import { getMonthsData } from "@/features/research/research-types/libs.ts"
@@ -18,7 +19,6 @@ import IconCalendar from "@/shared/assets/images/interise-group/icon-calendar-2.
 import ImageOne from "@/shared/assets/images/interise-group/image-research-3.png"
 import ImageTwo from "@/shared/assets/images/interise-group/image-research-4.png"
 import ImageThree from "@/shared/assets/images/interise-group/image-research-5.png"
-import { onLinkClick } from "@/shared/libs/scroll.ts"
 
 import s from "./styles.module.scss"
 
@@ -26,12 +26,13 @@ const cardImages = [ImageOne, ImageTwo, ImageThree]
 
 export const ResearchTypes = () => {
   const { t } = useTranslation("common")
+  const router = useRouter()
   const MonthsData = getMonthsData(t)
   const [isOpen, setIsOpen] = useState(false)
   const [selectMonth, setSelectMonth] = useState("1")
-  const onResearch = () => {
-    onLinkClick("contacts")
-  }
+  // const onResearch = () => {
+  //   onLinkClick("contacts")
+  // }
   return (
     <div className={cx(s.sectionWrapper, "container")}>
       <Text
@@ -74,7 +75,27 @@ export const ResearchTypes = () => {
         </Popover>
       </div>
       <div className={s.cards}>
-        {Array.from({ length: 6 }).map((_, i) => (
+        <div className={s.card} onClick={() => router.push("/research/1")}>
+          <Box>
+            <Image src={ImageOne} alt={"image-research"} className={s.image} />
+            <Text className={s.cardTitle}>
+              {t("research.card.index_research")}
+            </Text>
+            <Text className={s.description}>
+              {t("research.card.description")}
+            </Text>
+          </Box>
+          {/*<Button*/}
+          {/*  className={s.btn}*/}
+          {/*  onClick={(e) => {*/}
+          {/*    e.stopPropagation()*/}
+          {/*    onResearch()*/}
+          {/*  }}*/}
+          {/*>*/}
+          {/*  {t("research.card.buy_button")}*/}
+          {/*</Button>*/}
+        </div>
+        {Array.from({ length: 5 }).map((_, i) => (
           <div
             key={i}
             className={s.card}
@@ -93,20 +114,20 @@ export const ResearchTypes = () => {
                 {t("research.card.description")}
               </Text>
             </Box>
-            <Button
-              className={s.btn}
-              onClick={(e) => {
-                e.stopPropagation()
-                onResearch()
-              }}
-            >
-              {t("research.card.buy_button")}
-            </Button>
+            {/*<Button*/}
+            {/*  className={s.btn}*/}
+            {/*  onClick={(e) => {*/}
+            {/*    e.stopPropagation()*/}
+            {/*    onResearch()*/}
+            {/*  }}*/}
+            {/*>*/}
+            {/*  {t("research.card.buy_button")}*/}
+            {/*</Button>*/}
             <div className={s.disabledWrapper}>
               <Text className={s.label}>
                 {t("research.card.release_planned")}
               </Text>
-              <Text className={s.date}>01.12.2025</Text>
+              <Text className={s.date}>30.12.25</Text>
             </div>
           </div>
         ))}

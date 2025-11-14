@@ -62,7 +62,7 @@
 
     .card {
       width: 100%;
-      min-height: 495px;
+      min-height: 450px;
       padding: 22px;
       overflow: hidden;
       border-radius: 20px;
@@ -72,6 +72,7 @@
       flex-direction: column;
       justify-content: space-between;
       position: relative;
+      cursor: pointer;
 
       .image {
         width: 100%;

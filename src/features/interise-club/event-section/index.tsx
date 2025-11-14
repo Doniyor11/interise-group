@@ -1,4 +1,4 @@
-import { Box, Button, Text } from "@mantine/core"
+import { Box, Button, Flex, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
 import useTranslation from "next-translate/useTranslation"
@@ -10,8 +10,8 @@ import IconCalendar from "@/shared/assets/images/interise-group/icon-calendar.sv
 import IconTimer from "@/shared/assets/images/interise-group/icon-history.svg"
 import ImageOne from "@/shared/assets/images/interise-group/image-event-1.png"
 import ImageTwo from "@/shared/assets/images/interise-group/image-event-2.png"
+import ImageFour from "@/shared/assets/images/interise-group/image-event-4.png"
 import ImageThree from "@/shared/assets/images/interise-group/partneruser1.png"
-import ImageFour from "@/shared/assets/images/interise-group/partneruser2.png"
 
 import s from "./styles.module.scss"
 
@@ -133,13 +133,52 @@ export const EventSection = () => {
       </div>
       <div className={s.box}>
         <Image src={ImageFour} alt={"image-event"} className={s.image} />
-        <div className={s.contentWrapper}>
-          <Text className={s.label}>{t("club.events.interview_label")}</Text>
-          <Text className={s.title}>{t("club.events.interview_alexey")}</Text>
-          <Text className={s.description}>{t("club.events.expert_bio")}</Text>
-          <Button className={s.btn}>{t("club.events.attend_button")}</Button>
-        </div>
+        <Flex gap={32}>
+          <div className={s.contentWrapper}>
+            <Text className={s.label}>{t("club.events.event_label")}</Text>
+            <Text className={s.title}>
+              {t("club.events.brunch_restaurant")}
+            </Text>
+            <Text className={s.description}>
+              {t("club.events.restaurant_butler")}
+            </Text>
+            {matches && (
+              <div className={s.eventDate}>
+                <Text className={s.date}>
+                  <IconCalendar />
+                  {t("club.events.date_october_20")}
+                </Text>
+                <Text className={s.date}>
+                  <IconTimer />
+                  {t("club.events.time_13_00")}
+                </Text>
+              </div>
+            )}
+            <Button className={s.btn}>{t("club.events.attend_button")}</Button>
+          </div>
+          {!matches && (
+            <div className={s.eventDate}>
+              <Text className={s.date}>
+                <IconCalendar />
+                {t("club.events.date_october_20")}
+              </Text>
+              <Text className={s.date}>
+                <IconTimer />
+                {t("club.events.time_13_00")}
+              </Text>
+            </div>
+          )}
+        </Flex>
       </div>
+      {/*<div className={s.box}>*/}
+      {/*  <Image src={ImageFour} alt={"image-event"} className={s.image} />*/}
+      {/*  <div className={s.contentWrapper}>*/}
+      {/*    <Text className={s.label}>{t("club.events.interview_label")}</Text>*/}
+      {/*    <Text className={s.title}>{t("club.events.interview_alexey")}</Text>*/}
+      {/*    <Text className={s.description}>{t("club.events.expert_bio")}</Text>*/}
+      {/*    <Button className={s.btn}>{t("club.events.attend_button")}</Button>*/}
+      {/*  </div>*/}
+      {/*</div>*/}
       <div className={s.box}>
         <Image src={ImageThree} alt={"image-event"} className={s.image} />
         <div className={s.contentWrapper}>

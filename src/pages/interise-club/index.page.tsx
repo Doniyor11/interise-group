@@ -4,6 +4,8 @@ import React from "react"
 import { Footer } from "@/widgets/layouts/footer"
 
 import {
+  ClubMedia,
+  ClubValues,
   EventSection,
   InteriseClubMain,
   SignupEvent,
@@ -14,7 +16,9 @@ const InteriseClubPage = () => {
     <>
       <InteriseClubMain />
       <EventSection />
+      <ClubValues />
       <SignupEvent />
+      <ClubMedia />
       <Box pb={65} className={"container"}>
         <Footer />
       </Box>

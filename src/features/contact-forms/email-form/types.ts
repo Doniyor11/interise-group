@@ -5,3 +5,10 @@ export interface IEmailFormTypes {
   message: string
   check?: boolean
 }
+export interface IEventFormTypes {
+  name: string
+  company: string
+  phone: string
+  telegram: string
+  event: string
+}

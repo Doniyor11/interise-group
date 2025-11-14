@@ -155,6 +155,10 @@
     gap: 32px;
     margin-bottom: 18px;
 
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
     &:last-child {
       margin-bottom: 0;
     }

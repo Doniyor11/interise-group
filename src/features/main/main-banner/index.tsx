@@ -39,7 +39,7 @@ export const MainBanner = () => {
               <Text className={s.counter}>
                 <sup>$</sup>
                 <AnimatedNumber value={3.5} className={s.number} />{" "}
-                <sup>млрд</sup>
+                <sup>{t("billion")}</sup>
               </Text>
               <Text className={s.info}>{t("main.banner.stats.result")}</Text>
             </Flex>

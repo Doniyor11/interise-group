@@ -77,7 +77,8 @@
         "clients": "satisfied clients",
         "result": "implementation result",
         "projects": "completed projects",
-        "countries": "countries for international expansion"
+        "countries": "countries for international expansion",
+        "billion": "billion"
       },
       "contact_button": "Contact"
     },
@@ -515,6 +516,68 @@
     }
   },
   "club": {
+    "values": {
+      "title": "<span>Company Values</span> InteriseClub",
+      "cards": {
+        "card1": {
+          "title": "Deep Expertise",
+          "text": "We understand industries from the inside — from finance and telecom to medicine and retail."
+        },
+        "card2": {
+          "title": "Global Experience",
+          "text": "Our portfolio includes unique cases and real practice."
+        },
+        "card3": {
+          "title": "New Vision",
+          "text": "We see opportunities where others see limitations."
+        },
+        "card4": {
+          "title": "International Speakers",
+          "text": "We know how to speak about complex things, inspire and launch forward movement."
+        },
+        "card5": {
+          "title": "Innovative Thinking",
+          "text": "We don't follow trends — we create them."
+        }
+      },
+      "experts": {
+        "title": "Topics that <span>experts focus on</span>",
+        "cards": {
+          "card1": {
+            "title": "Digital Era and Leadership",
+            "text": "How to manage companies in conditions of constant technological shifts."
+          },
+          "card2": {
+            "title": "Corporate Culture and Transformation",
+            "text": "How to rebuild mindset, teams and processes for new goals."
+          },
+          "card3": {
+            "title": "Strategy and Change Management",
+            "text": "How to build the company's course in an era of uncertainty."
+          },
+          "card4": {
+            "title": "Customer-Centric Business Model",
+            "text": "Transition from product to experience: how to build business around the customer."
+          },
+          "card5": {
+            "title": "Innovation and Experience Design",
+            "text": "From phygital to Industry 4.0: technologies that change the rules of the game."
+          },
+          "card6": {
+            "title": "Loyalty and Relationship Management",
+            "text": "How to retain customers not with discounts, but with value and emotion."
+          },
+          "card7": {
+            "title": "Cross-Industry Solutions",
+            "text": "Real cases at the intersection of industries: bank+telecom, bank+retail."
+          },
+          "card8": {
+            "title": "Investment and Company Growth",
+            "text": "Venture strategies, corporate funds and technological M&A."
+          }
+        }
+      }
+    },
     "events": {
       "title": "InteriseClub is <span>a place of attraction</span> <br/> for experts and practitioners. ",
       "select_event": "Select event:",
@@ -534,10 +597,12 @@
         "title": "Event 2"
       },
       "expert_description": "Expert in strategy and transformation, managing systemically significant projects and changes",
-      "more": "Learn more >",
+      "more": "Read more >",
       "event_label": "Event:",
       "interview_label": "Interview:",
       "demo_day_dmitry": "Demo Day with Dmitry Vakin Scaling and Go-Global",
+      "brunch_restaurant": "IT Brunch at Butler Restaurant",
+      "restaurant_butler": "At the Butler restaurant, there will be a Sunday brunch where you can communicate with the experts of a group of companies, in a relaxed atmosphere discuss the demands of your business, and share your vision for the development of the industry. We invite managing partners, entrepreneurs, marketing directors in fintech and IT to the event.",
       "interview_alexey": "Alexey Veretenov visiting Oscar Hartman on digital transformation of banks",
       "expert_bio": "Expert in strategy and transformation, managing systemically significant projects and changes. Has experience in forming cross-industry strategies and O2O partnerships in accordance with the Industry 4.0 concept (largest cases in Russia at the junction of bank+retail, bank+telecom).",
       "date_october_20": "October 20",
@@ -546,14 +611,14 @@
     },
     "signup": {
       "title": "Send Request",
-      "subtitle": "To invite practitioners and company experts to speak at your event or conduct a strategic session.",
+      "subtitle": "Please specify your event registration details, we will send you a confirmation email in response.",
       "name_placeholder": "Your name",
       "company_placeholder": "Company",
       "phone_placeholder": "+7 (000) 000 00 00",
       "telegram_placeholder": "Your Telegram",
       "select_event_placeholder": "Select event",
       "demo_day_option": "Demo Day with Dmitry Vakin Scaling and Go-Global",
-      "submit_button": "Sign Up"
+      "submit_button": "Submit"
     }
   },
   "forms": {

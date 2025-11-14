@@ -18,7 +18,7 @@ export const MenuData: MenuItem[] = [
   },
   {
     key: "navbar.menu.interise_club",
-    path: "/#interise-club",
+    path: "/interise-club",
   },
   {
     key: "navbar.menu.contacts",

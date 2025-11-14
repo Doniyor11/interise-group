@@ -22,21 +22,23 @@ export const EventSection = () => {
   return (
     <div className={cx(s.sectionWrapper, "container")}>
       <h3 dangerouslySetInnerHTML={{ __html: t("club.events.title") }} />
-      <Text className={s.subtitle}>{t("club.events.select_event")}</Text>
-      <div className={s.filters}>
-        <Text className={s.filterBtn}>
-          {t("club.events.business_brunches")}
-        </Text>
-        <Text className={s.filterBtn}>
-          {t("club.events.invest_breakfasts")}
-        </Text>
-        <Text className={s.filterBtn}>{t("club.events.lectures")}</Text>
-        <Text className={s.filterBtn}>{t("club.events.demo_days")}</Text>
-        <Text className={s.filterBtn}>{t("club.events.closed_forums")}</Text>
-        <Text className={s.filterBtn}>{t("club.events.wine_tastings")}</Text>
-        <Text className={s.filterBtn}>{t("club.events.round_tables")}</Text>
-        <Text className={s.filterBtn}>{t("club.events.cigar_evenings")}</Text>
-      </div>
+      {/*<Text className={s.subtitle}>{t("club.events.select_event")}</Text>*/}
+
+      <Text className={s.subtitle}>{t("club.events.subtitle")}</Text>
+      {/*<div className={s.filters}>*/}
+      {/*  <Text className={s.filterBtn}>*/}
+      {/*    {t("club.events.business_brunches")}*/}
+      {/*  </Text>*/}
+      {/*  <Text className={s.filterBtn}>*/}
+      {/*    {t("club.events.invest_breakfasts")}*/}
+      {/*  </Text>*/}
+      {/*  <Text className={s.filterBtn}>{t("club.events.lectures")}</Text>*/}
+      {/*  <Text className={s.filterBtn}>{t("club.events.demo_days")}</Text>*/}
+      {/*  <Text className={s.filterBtn}>{t("club.events.closed_forums")}</Text>*/}
+      {/*  <Text className={s.filterBtn}>{t("club.events.wine_tastings")}</Text>*/}
+      {/*  <Text className={s.filterBtn}>{t("club.events.round_tables")}</Text>*/}
+      {/*  <Text className={s.filterBtn}>{t("club.events.cigar_evenings")}</Text>*/}
+      {/*</div>*/}
       <div className={s.cards}>
         <Text className={s.cardTitle}>{t("club.events.upcoming")}</Text>
         <div className={s.card}>

@@ -18,7 +18,7 @@ import IconTg from "@/shared/assets/images/interise-group/tg 2.svg"
 import s from "./styles.module.scss"
 
 export const Footer = () => {
-  const { t } = useTranslation("common")
+  const { t, lang } = useTranslation("common")
   const matches = useMediaQuery("(max-width: 1040px)")
 
   return (
@@ -132,28 +132,44 @@ export const Footer = () => {
             <Flex direction={"column"} gap="8px">
               <Anchor
                 target={"_blank"}
-                href={"/Политика_конфединциальности.pdf"}
+                href={
+                  lang === "en"
+                    ? "/Политика_конфединциальности_en.pdf"
+                    : "/Политика_конфединциальности_ru.pdf"
+                }
                 className={cx(s.infoText, s.menu)}
               >
                 {t("footer.legal.privacy_policy")}
               </Anchor>
               <Anchor
                 target={"_blank"}
-                href={"/Пользовательское_соглашения.pdf"}
+                href={
+                  lang === "en"
+                    ? "/Пользовательское_соглашения_en.pdf"
+                    : "/Пользовательское_соглашения_ru.pdf"
+                }
                 className={cx(s.infoText, s.menu)}
               >
                 {t("footer.legal.user_agreement")}
               </Anchor>
               <Anchor
                 target={"_blank"}
-                href={"/Согласие_на_получение_рассылок.pdf"}
+                href={
+                  lang === "en"
+                    ? "/Согласие_на_получение_рассылок_en.pdf"
+                    : "/Согласие_на_получение_рассылок_ru.pdf"
+                }
                 className={cx(s.infoText, s.menu)}
               >
                 {t("footer.legal.mailing_consent")}
               </Anchor>
               <Anchor
                 target={"_blank"}
-                href={"/Обработка_файлов_Cookies.pdf"}
+                href={
+                  lang === "en"
+                    ? "/Обработка_файлов_Cookies_en.pdf"
+                    : "/Обработка_файлов_Cookies_ru.pdf"
+                }
                 className={cx(s.infoText, s.menu)}
               >
                 {t("footer.legal.cookies_processing")}

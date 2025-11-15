@@ -30,7 +30,9 @@ export const RequestPresentation = () => {
     "/": t("forms.page.home"),
     "/main": t("forms.page.home"),
     "/about": t("forms.page.about"),
-    "/case": t("forms.page.cases"),
+    "/case": `${t("forms.page.cases")} ${t(
+      "forms.presentation.requestPresentation",
+    )}`,
     "/research": t("forms.page.research"),
   }
   const {
@@ -40,7 +42,7 @@ export const RequestPresentation = () => {
     formState: { isDirty, isValid },
   } = useForm<IEmailFormTypes>()
 
-  const { mutate, isPending } = useSendMessageQuery(() => {
+  const onClose = () => {
     reset({
       name: "",
       surname: "",
@@ -49,7 +51,9 @@ export const RequestPresentation = () => {
       check: false,
     })
     setRequestPresentation(false)
-  })
+  }
+
+  const { mutate, isPending } = useSendMessageQuery(() => onClose)
 
   const onSubmit = (data: IEmailFormTypes) => {
     mutate(
@@ -74,7 +78,7 @@ export const RequestPresentation = () => {
       radius={24}
       withCloseButton={false}
       opened={requestPresentation}
-      onClose={() => setRequestPresentation(false)}
+      onClose={onClose}
     >
       <div className={s.modalWrapper}>
         <Flex className={s.head}>

@@ -271,14 +271,14 @@
         "role1": "Investor and co-owner of daily and tech projects",
         "role2": "Member of BRICS Business Council (Myanmar)",
         "role3": "Forbes Top-100 '30 under 30' (Finance and Investment, 2020).",
-        "experience": "Expert in strategy, transformation and change management. Over 15 years of experience in investment, banking and IT sectors. Implemented over 30 major projects in Russia and CIS, including the largest integrations and digital transformation programs. Led innovation development at Alfa-Bank, participated in creating the group's investment fund (€500 million). Consults companies, serves on boards of directors and invests in international consulting and technology businesses."
+        "experience": "Strategy, transformation, and change management expert. Over 15 years of experience in investment, banking, and IT. He implemented more than 30 major projects in Russia and the CIS, including major integration and digital transformation programs. <br/> <br/> Led the development of innovations at Alfa-Bank, participated in the creation of the group's investment fund (€500 million). Advises companies, serves as a board member, and invests in international consulting and technology businesses."
       },
       "alexey": {
         "name": "Alexey Veretenov",
         "position": "Co-founder, InteriseGroup",
         "role1": "Managing Partner and CEO Interise",
         "role2": "Investor and co-owner of daily and venture projects.",
-        "experience": "Expert in transformation, digitalization and growth strategies. 20+ years of experience in 26 countries and 150+ projects — from banking and telecommunications to industry and medicine. Develops strategies focused on implementation and operational efficiency. Worked with leading companies in Europe, USA and Asia, specializes in building customer experience systems and managing business growth."
+        "experience": "Expert on transformations, digitalization, and growth strategies. 20+ years of experience in 26 countries and 150+ projects - from the banking sector and telecommunications to industry and medicine. <br/> <br/> Develops strategies focused on implementation and operational efficiency. He has worked with leading companies in Europe, the USA, and Asia, specializing in building customer experience systems and business growth management."
       }
     },
     "media": {
@@ -360,7 +360,8 @@
       "december": "December"
     },
     "card": {
-      "index_research": "Index Research",
+      "index_research": "Customer Choice Index Uzbekistan",
+      "index_research2": "Customer Choice Index Kazakhstan",
       "description": "Customer Choice Index is a comprehensive diagnosis of customer experience that reveals the real reasons for victories and defeats in the fight for the customer. The research goes far beyond traditional quality assessments and focuses on critical decision-making moments.",
       "buy_button": "Buy",
       "release_planned": "Release Planned"
@@ -617,7 +618,7 @@
       "company_placeholder": "Company",
       "phone_placeholder": "+7 (000) 000 00 00",
       "telegram_placeholder": "Your Telegram",
-      "select_event_placeholder": "Select event",
+      "select_event_placeholder": "Event",
       "demo_day_option": "Demo Day with Dmitry Vakin Scaling and Go-Global",
       "submit_button": "Submit"
     }
@@ -638,10 +639,11 @@
       "whatsapp": "WhatsApp",
       "call": "Call"
     },
-    "privacy_agreement": "I have read and agree to the data processing terms",
+    "privacy_agreement": "I have read and agree to <link>the data processing terms</link>",
     "submit_button": "Submit",
     "presentation": {
       "title": "Request Presentation",
+      "requestPresentation": "(Request a presentation)",
       "subtitle": "And we will send you information that will answer all your questions"
     }
   },

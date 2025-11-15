@@ -1,4 +1,5 @@
 import { Button, Checkbox, Flex, Input, Select } from "@mantine/core"
+import Trans from "next-translate/Trans"
 import useTranslation from "next-translate/useTranslation"
 import { useRouter } from "next/router"
 import React from "react"
@@ -11,7 +12,7 @@ import { IEmailFormTypes } from "@/features/contact-forms/email-form/types"
 import s from "../styles.module.scss"
 
 export const EmailForm = () => {
-  const { t } = useTranslation("common")
+  const { t, lang } = useTranslation("common")
   const router = useRouter()
   const pathMap: Record<string, string> = {
     "/": t("forms.page.home"),
@@ -38,7 +39,7 @@ export const EmailForm = () => {
   })
 
   const onSubmit = (data: IEmailFormTypes) => {
-    const currentPath = router.asPath // masalan: /research/1
+    const currentPath = router.asPath
     const matchedKey = Object.keys(pathMap).find((key) =>
       currentPath.startsWith(key),
     )
@@ -141,7 +142,20 @@ export const EmailForm = () => {
                 label: s.checkboxLabel,
                 input: s.checkboxInput,
               }}
-              label={t("forms.privacy_agreement")}
+              label={
+                <Trans
+                  i18nKey="common:forms.privacy_agreement"
+                  components={{
+                    link: (
+                      <a
+                        href={`/Политика_конфединциальности_${lang}.pdf`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      />
+                    ),
+                  }}
+                />
+              }
               checked={field.value}
               onChange={(value: any) => field.onChange?.(value)}
             />

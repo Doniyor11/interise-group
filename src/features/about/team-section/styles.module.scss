@@ -106,7 +106,8 @@
 }
 
 .teamBoxImage {
-  width: 254px;
+  width: 100%;
+  max-width: 254px;
   height: 284px;
   border-radius: 16px;
   overflow: hidden;
@@ -114,7 +115,7 @@
   img {
     width: 254px;
     height: 284px;
-    object-fit: contain;
+    object-fit: cover;
   }
 }
 

@@ -58,7 +58,16 @@ export const Footer = () => {
             >
               <IconLogo className={s.logo} />
               <Flex gap="18px" className={s.messengers}>
-                <IconLin />
+                <Anchor
+                  h={71}
+                  target={"_blank"}
+                  href={
+                    "https://www.linkedin.com/company/interisegroup?trk=blended-typeahead"
+                  }
+                >
+                  <IconLin />
+                </Anchor>
+
                 <IconTg />
               </Flex>
             </Flex>

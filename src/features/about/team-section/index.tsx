@@ -37,7 +37,7 @@ export const TeamSection = () => {
         <Flex
           gap={matchesSmall ? 16 : 32}
           direction={matchesSmall ? "column" : "row"}
-          align="flex-start"
+          align="stretch"
         >
           <Flex className={s.teamBox}>
             <Flex className={s.teamBoxTop}>
@@ -94,9 +94,12 @@ export const TeamSection = () => {
                     {t("about.team.project_experience")}
                   </AccordionControl>
                   <Accordion.Panel>
-                    <Text className={s.teamBoxBottomSubTitle}>
-                      {t("about.team.dmitry.experience")}
-                    </Text>
+                    <Text
+                      className={s.teamBoxBottomSubTitle}
+                      dangerouslySetInnerHTML={{
+                        __html: t("about.team.dmitry.experience"),
+                      }}
+                    />
                   </Accordion.Panel>
                 </Accordion.Item>
               </Accordion>
@@ -158,9 +161,12 @@ export const TeamSection = () => {
                     {t("about.team.project_experience")}
                   </AccordionControl>
                   <Accordion.Panel>
-                    <Text className={s.teamBoxBottomSubTitle}>
-                      {t("about.team.alexey.experience")}
-                    </Text>
+                    <Text
+                      className={s.teamBoxBottomSubTitle}
+                      dangerouslySetInnerHTML={{
+                        __html: t("about.team.alexey.experience"),
+                      }}
+                    />
                   </Accordion.Panel>
                 </Accordion.Item>
               </Accordion>

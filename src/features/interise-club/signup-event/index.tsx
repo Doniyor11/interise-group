@@ -1,4 +1,4 @@
-import { Box, Button, Input, Select, Text } from "@mantine/core"
+import { Box, Button, Input, Text } from "@mantine/core"
 import cx from "clsx"
 import useTranslation from "next-translate/useTranslation"
 import { useRouter } from "next/router"
@@ -132,16 +132,14 @@ export const SignupEvent = () => {
                 name={"event"}
                 control={control}
                 render={({ field }) => (
-                  <Select
-                    required
-                    className={s.select}
-                    placeholder={t("club.signup.select_event_placeholder")}
-                    data={[
-                      t("club.events.demo_day_dmitry"),
-                      t("club.events.brunch_restaurant"),
-                    ]}
-                    {...field}
-                  />
+                  <Input.Wrapper className={cx(s.inputWrapper, s.event)}>
+                    <Input
+                      required
+                      className={s.input}
+                      placeholder={t("club.signup.select_event_placeholder")}
+                      {...field}
+                    />
+                  </Input.Wrapper>
                 )}
               />
             </div>

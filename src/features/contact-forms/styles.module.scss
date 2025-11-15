@@ -47,12 +47,16 @@
 }
 
 .checkboxRoot {
-  width: 234px;
+  width: 100%;
 }
 
 .checkboxLabel {
   color: #fff !important;
+  p {
+    margin: 0 !important;
+  }
   a {
+    display: block;
     color: #fff !important;
     text-decoration: underline;
   }

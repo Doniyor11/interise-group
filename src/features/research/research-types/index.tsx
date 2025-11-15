@@ -35,12 +35,11 @@ export const ResearchTypes = () => {
   // }
   return (
     <div className={cx(s.sectionWrapper, "container")}>
-      <Text
-        className={s.title}
-        dangerouslySetInnerHTML={{ __html: t("research.types.title") }}
-      />
       <div className={s.filters}>
-        <Text className={s.text}>{t("research.types.notice")}</Text>
+        <Text
+          className={s.title}
+          dangerouslySetInnerHTML={{ __html: t("research.types.title") }}
+        />
         <Popover
           radius={10}
           opened={isOpen}
@@ -85,25 +84,23 @@ export const ResearchTypes = () => {
               {t("research.card.description")}
             </Text>
           </Box>
-          {/*<Button*/}
-          {/*  className={s.btn}*/}
-          {/*  onClick={(e) => {*/}
-          {/*    e.stopPropagation()*/}
-          {/*    onResearch()*/}
-          {/*  }}*/}
-          {/*>*/}
-          {/*  {t("research.card.buy_button")}*/}
-          {/*</Button>*/}
         </div>
-        {Array.from({ length: 5 }).map((_, i) => (
-          <div
-            key={i}
-            className={s.card}
-            // onClick={() => router.push("/research/1")}
-          >
+        <div className={s.card} onClick={() => router.push("/research/1")}>
+          <Box>
+            <Image src={ImageTwo} alt={"image-research"} className={s.image} />
+            <Text className={s.cardTitle}>
+              {t("research.card.index_research2")}
+            </Text>
+            <Text className={s.description}>
+              {t("research.card.description")}
+            </Text>
+          </Box>
+        </div>
+        {Array.from({ length: 4 }).map((_, i) => (
+          <div key={i} className={s.card}>
             <Box>
               <Image
-                src={cardImages[i] || ImageOne}
+                src={cardImages[i] || ImageThree}
                 alt={"image-research"}
                 className={s.image}
               />

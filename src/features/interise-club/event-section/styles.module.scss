@@ -156,7 +156,7 @@
     gap: 32px;
     margin-bottom: 18px;
 
-    &:nth-child(even) {
+    &:nth-child(odd) {
       flex-direction: row-reverse;
     }
 

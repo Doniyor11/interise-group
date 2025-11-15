@@ -172,15 +172,6 @@ export const EventSection = () => {
           )}
         </Flex>
       </div>
-      {/*<div className={s.box}>*/}
-      {/*  <Image src={ImageFour} alt={"image-event"} className={s.image} />*/}
-      {/*  <div className={s.contentWrapper}>*/}
-      {/*    <Text className={s.label}>{t("club.events.interview_label")}</Text>*/}
-      {/*    <Text className={s.title}>{t("club.events.interview_alexey")}</Text>*/}
-      {/*    <Text className={s.description}>{t("club.events.expert_bio")}</Text>*/}
-      {/*    <Button className={s.btn}>{t("club.events.attend_button")}</Button>*/}
-      {/*  </div>*/}
-      {/*</div>*/}
       <div className={s.box}>
         <Image src={ImageThree} alt={"image-event"} className={s.image} />
         <div className={s.contentWrapper}>

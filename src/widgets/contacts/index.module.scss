@@ -27,10 +27,12 @@
 }
 
 .teamBox {
+  width: 100%;
   border-radius: 26px;
   border: 1px solid #d4e4f7;
   background: #d4e8ff;
   overflow: hidden;
+  flex-direction: column;
 }
 
 .teamBoxTop {
@@ -76,7 +78,8 @@
 }
 
 .teamBoxImage {
-  width: 254px;
+  width: 100%;
+  max-width: 254px;
   height: 284px;
   border-radius: 16px;
   overflow: hidden;
@@ -84,7 +87,7 @@
   img {
     width: 254px;
     height: 284px;
-    object-fit: contain;
+    object-fit: cover;
   }
 }
 

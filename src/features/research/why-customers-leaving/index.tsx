@@ -9,36 +9,36 @@ export const WhyCustomersLeaving = () => {
   const { t } = useTranslation("common")
   return (
     <>
-      <div className={cx(s.sectionWrapper, s.newTerritories, "container")}>
-        <div className={s.box}>
-          <h2>{t("research.territories.title")}</h2>
+      {/*<div className={cx(s.sectionWrapper, s.newTerritories, "container")}>*/}
+      {/*  <div className={s.box}>*/}
+      {/*    <h2>{t("research.territories.title")}</h2>*/}
 
-          <div className={s.cards}>
-            <div className={s.card}>
-              <Text className={s.cardText}>
-                {t("research.territories.cci")}
-              </Text>
-              <Text
-                className={s.cardTitle}
-                dangerouslySetInnerHTML={{
-                  __html: t("research.territories.uzbekistan"),
-                }}
-              />
-            </div>
-            <div className={s.card}>
-              <Text className={s.cardText}>
-                {t("research.territories.cci")}
-              </Text>
-              <Text
-                className={s.cardTitle}
-                dangerouslySetInnerHTML={{
-                  __html: t("research.territories.kazakhstan"),
-                }}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      {/*    <div className={s.cards}>*/}
+      {/*      <div className={s.card}>*/}
+      {/*        <Text className={s.cardText}>*/}
+      {/*          {t("research.territories.cci")}*/}
+      {/*        </Text>*/}
+      {/*        <Text*/}
+      {/*          className={s.cardTitle}*/}
+      {/*          dangerouslySetInnerHTML={{*/}
+      {/*            __html: t("research.territories.uzbekistan"),*/}
+      {/*          }}*/}
+      {/*        />*/}
+      {/*      </div>*/}
+      {/*      <div className={s.card}>*/}
+      {/*        <Text className={s.cardText}>*/}
+      {/*          {t("research.territories.cci")}*/}
+      {/*        </Text>*/}
+      {/*        <Text*/}
+      {/*          className={s.cardTitle}*/}
+      {/*          dangerouslySetInnerHTML={{*/}
+      {/*            __html: t("research.territories.kazakhstan"),*/}
+      {/*          }}*/}
+      {/*        />*/}
+      {/*      </div>*/}
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*</div>*/}
       <div className={cx(s.sectionWrapper, "container")}>
         <h2
           dangerouslySetInnerHTML={{ __html: t("research.why_leaving.title") }}

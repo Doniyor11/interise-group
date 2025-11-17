@@ -131,7 +131,7 @@ export const Footer = () => {
                     className={s.infoText}
                     c={"#535E6B"}
                     fz={"24px"}
-                    href={"mailto:request@interisegroup.comcom"}
+                    href={"mailto:request@interisegroup.com"}
                   >
                     request@interisegroup.com
                   </Anchor>

@@ -5,7 +5,7 @@
       "about": "About",
       "cases": "Cases",
       "research": "Research",
-      "interise_club": "Interise Club",
+      "interise_club": "InteriseClub",
       "contacts": "Contacts"
     }
   },
@@ -15,21 +15,21 @@
     "menu": {
       "about": "About",
       "cases": "Cases",
-      "interise_club": "Interise Club",
-      "work_directions": "Work Directions"
+      "interise_club": "InteriseClub",
+      "work_directions": "Areas of Work"
     },
     "contact": {
-      "write_to_us": "Write to us:",
+      "write_to_us": "Write to Us:",
       "pr_and_media": "PR and Media:",
-      "cooperation": "For cooperation inquiries:",
-      "our_office": "Our office:",
+      "cooperation": "For Cooperation:",
+      "our_office": "Our Office:",
       "address": "Address:",
       "office_address": "Ostozhenka 37/7 bld.2, Conversation Cafe mansion, 4th floor"
     },
     "legal": {
       "privacy_policy": "Privacy Policy",
       "user_agreement": "User Agreement",
-      "mailing_consent": "Mailing Consent",
+      "mailing_consent": "Consent to Receive Newsletters",
       "cookies_processing": "Cookies Processing"
     },
     "copyright": "InteriseGroup · 2025"
@@ -52,8 +52,8 @@
         "role1": "Investor and co-owner of daily and tech projects",
         "role2": "Member of BRICS Business Council (Myanmar)",
         "role3": "Forbes Top-100 '30 under 30' (Finance and Investment, 2020).",
-        "experience1": "Expert in strategy, transformation and change management. Over 15 years of experience in investment, banking and IT sectors. Implemented over 30 major projects in Russia and CIS, including the largest integrations and digital transformation programs.",
-        "experience2": "Led innovation development at Alfa-Bank, participated in creating the group's investment fund (€500 million). Consults companies, serves on boards of directors and invests in international consulting and technology businesses."
+        "experience1": "Expert in strategy, transformation and change management. Over 15 years of experience in investment, banking and IT sectors. Dmitry implemented over 30 major projects in Russia and the CIS, including major integration and digital transformation programs.",
+        "experience2": "Dmitry led innovation development at Alfa-Bank and participated in creation of the group's investment fund (€500 million). He consults companies, serves as a board member, and invests in international consulting and technology businesses."
       },
       "alexey": {
         "name": "Alexey Veretenov",
@@ -72,20 +72,20 @@
   "main": {
     "banner": {
       "title": "Strategies that <br/> change markets",
-      "description": "InteriseGroup is an international consulting group with expertise in strategic development and comprehensive business transformation",
+      "description": "InteriseGroup is an international consulting group with expertise in strategic development and comprehensive business transformation.",
       "stats": {
         "clients": "satisfied clients",
-        "result": "implementation result",
+        "result": "result of implementation",
         "projects": "completed projects",
-        "countries": "countries for international expansion",
+        "countries": "countries of international expansion",
         "billion": "billion"
       },
-      "contact_button": "Contact"
+      "contact_button": "Contact Us"
     },
     "experience": {
       "label": "Experience and Recognition",
       "title": "InteriseGroup's portfolio includes projects in 31 countries and 15 industries: from IT, finance and retail to manufacturing, telecommunications, FMCG and energy",
-      "subtitle": "Client achievements and industry awards for innovation and business model <br/> transformation confirm the effectiveness of our approach",
+      "subtitle": "Client achievements and industry awards for innovation and business model <br/> transformation validate the effectiveness of our approach",
       "request_button": "Submit Request"
     },
     "results": {
@@ -105,28 +105,28 @@
         "aviation": "Aviation",
         "medicine": "Medicine",
         "task": "Task:",
-        "task_text": "Conduct integration with another bank and full-scale transformation of the operating model",
+        "task_text": "Conduct integration with another bank and a full-scale transformation of the operating model",
         "solution": "Solution:",
-        "solution_text": "Developed and implemented a change strategy, launched 52 projects, formed new approaches to customer experience, trained 500+ employees",
+        "solution_text": "A change strategy was developed and implemented, 52 projects were launched, new approaches to customer experience were formed, and 500+ employees were trained.",
         "result": "Result:"
       },
       "card1": {
-        "description": "Integration of leading banks and launch of the largest transformation in the market",
+        "description": "Integrating leading banks and launching the largest transformation in the market",
         "result1": "Operating profit grew ×6 in 2 years",
-        "result2": "Accelerated launch of new products",
-        "result3": "500+ employees trained"
+        "result2": "New products launch was accelerated",
+        "result3": "500+ employees were trained"
       },
       "card2": {
         "description": "Creating a new national airline from scratch",
-        "result1": "Attracted 210+ million $ in investments, paid 14+ million $ in taxes",
-        "result2": "National carrier launched and operates regular flights",
-        "result3": "Created 800+ jobs"
+        "result1": "Attracted $210+ million in investments, paid $14+ million in taxes",
+        "result2": "The national carrier was launched for regular flights.",
+        "result3": "800+ jobs was created"
       },
       "card3": {
-        "description": "Expansion strategy and development of premium medical brand",
-        "result1": "Conducted analysis and identified 46 initiatives for revenue growth",
+        "description": "Expansion and development strategy for a premium medical brand",
+        "result1": "Analysis conducted and 46 revenue growth initiatives identified",
         "result2": "Launched new directions and development programs",
-        "result3": "Initiated international expansion, prepared pilot in South Korea"
+        "result3": "International expansion was initiated, pilot was trained in South Korea"
       },
       "all_projects_button": "All Projects"
     },
@@ -151,7 +151,7 @@
       },
       "new_markets": {
         "title": "Enter New Markets",
-        "description": "Help companies scale and enter international markets"
+        "description": "Help companies scale up and enter international markets"
       },
       "contact_button": "Contact Us"
     },
@@ -170,9 +170,9 @@
       "order_strategy_button": "Order Strategy"
     },
     "principles": {
-      "title": "We are convinced — the time of simple <br/> consulting has passed",
-      "description1": "InteriseGroup operates on a partnership model: together with clients we analyze the situation, test hypotheses, strengthen working solutions and scale results. Working in dialogue and process transparency accelerates decisions and turns strategy into a real, measurable result",
-      "description2": "Do you share these principles and are looking for partners who work for results? <br/> <br/> We will be happy to discuss your project",
+      "title": "We are convinced — the time of simple <br/> consulting is over",
+      "description1": "InteriseGroup operates on a partnership model: together with clients we analyze situations, test hypotheses, strengthen effective solutions, and scale results. Dialogue and transparency accelerate decision-making and transform strategy into a real, measurable result.",
+      "description2": "Do you share these principles and are you looking for effective partners? <br/> <br/> We would be happy to discuss your project.",
       "step1": "Open Dialogue",
       "step2": "Partnership",
       "step3": "Responsibility for Results",
@@ -191,33 +191,33 @@
         "round_tables": "Round Tables",
         "cigar_evenings": "Cigar Evenings"
       },
-      "description1": "Club members are founders, shareholders, CEOs and top managers from different countries and industries. Practitioners who work for results and form the strategic agenda. Club meetings take place in different countries and create an environment for ideas, solutions and partnerships that influence the future of business",
-      "description2": "Submit an application to participate in closed club events",
+      "description1": "Club members are founders, shareholders, CEOs and top managers from various countries and industries. Effective practitioners form the strategic agenda. Club meetings take place in different countries and create an environment for ideas, solutions and partnerships that impact the future of business.",
+      "description2": "Apply to participate in the club's private events",
       "join_button": "Join the Club"
     },
     "how_we_work": {
       "title": "How We Work",
       "subtitle": "We work in sprints — from rapid diagnostics to comprehensive implementation",
-      "description": "In a short time, we formulate and test hypotheses, strengthen working solutions and scale results. This approach provides transparency, saves resources and allows you to quickly see the effect of changes.",
+      "description": "In a short time, we formulate and test hypotheses, strengthen effective solutions and scale results. This approach provides transparency, saves resources and allows you to see the effect of changes quickly.",
       "diagnostics": {
         "title": "Diagnostics",
-        "description": "Quick business overview: data analysis, interviews, express diagnostics and, if necessary, internal audit. Helps to see key problems, growth points and possible solutions, form a clear roadmap for further actions"
+        "description": "Quick business overview: data analysis, interviews, express diagnostics and, if necessary, internal audit. Helps to see key problems, growth points and possible solutions, form a clear roadmap for further actions."
       },
       "strategy": {
         "title": "Strategy",
-        "description": "Development of strategies that work in real business. Hypotheses are tested by practice: weak is excluded, strong is scaled. This helps companies strengthen their positions, increase efficiency and enter new markets"
+        "description": "Development of strategies that work in real business. Hypotheses are tested by practice: weak is excluded, strong is scaled. This helps companies strengthen their positions, increase efficiency and expand to new markets."
       },
       "large_scale_change": {
         "title": "Large Scale Change",
-        "description": "Implementation of comprehensive transformations: changing business models, processes and structures with a focus on measurable results. Many projects are carried out on a success fee model — the InteriseGroup team is interested in success along with the client. Experience includes integration of major players, restructuring of operating models, launch of dozens of change projects and training of hundreds of employees"
+        "description": "Implementing comprehensive transformations: changing business models, processes and structures, focusing on measurable results. Many projects are carried out on a success fee model — InteriseGroup team is interested in success along with the client. Experience includes integration of major players, restructuring of operating models, launch of dozens of change projects and training of hundreds of employees."
       },
       "repackaging": {
         "title": "Business Repackaging for Sale/Investment",
-        "description": "Preparation of companies for large-scale deals and capital raising: from assessing potential to structuring the deal and preparing for IPO. This increases business value and helps attract strategic investors"
+        "description": "Preparing companies for major transactions and capital raising: from assessing potential to structuring the deal and preparing for an IPO, to increase business value and help attract strategic investors."
       },
       "go_global": {
         "title": "Go Global",
-        "description": "Supporting companies' entry into new markets: forming a global expansion strategy, adapting products and supporting business launch in new countries. InteriseGroup's experience includes launching businesses from scratch in new countries, preparing for expansion and managing projects in European, CIS and Middle Eastern markets"
+        "description": "Supporting companies' entry into new markets: developing a global expansion strategy, adapting products and supporting business launch in new countries. InteriseGroup's experience includes launching business from scratch in new countries, preparing for expansion and managing projects in European, CIS and Middle Eastern markets."
       },
       "all_projects_button": "All Projects"
     },
@@ -244,7 +244,7 @@
     },
     "directions": {
       "title": "In our work, we combine four key areas:",
-      "subtitle": "Work Directions",
+      "subtitle": "Areas of Work",
       "digital_transformation": "Digital transformation",
       "investment": "Investment and financing",
       "marketing": "Marketing and promotion",
@@ -252,7 +252,7 @@
     },
     "projects": {
       "title": "InteriseGroup <span>leads projects in dozens of countries and industries</span>, from the financial sector and telecommunications to medicine and real estate.",
-      "description": "We support business at all stages: from express diagnostics and finding growth points to developing strategy, preparing for deals and implementing major changes. <br/> <br/> This approach allows us to comprehensively support companies — from process modernization to bringing products to new markets.",
+      "description": "We support business at all stages: from express diagnostics and finding growth points to developing strategy, preparing for deals and implementing major changes. <br/> <br/> This approach allows us to support companies comprehensively — from process modernization to bringing products to new markets.",
       "discuss_button": "Discuss Project"
     },
     "asset": {
@@ -271,21 +271,21 @@
         "role1": "Investor and co-owner of daily and tech projects",
         "role2": "Member of BRICS Business Council (Myanmar)",
         "role3": "Forbes Top-100 '30 under 30' (Finance and Investment, 2020).",
-        "experience": "Strategy, transformation, and change management expert. Over 15 years of experience in investment, banking, and IT. He implemented more than 30 major projects in Russia and the CIS, including major integration and digital transformation programs. <br/> <br/> Led the development of innovations at Alfa-Bank, participated in the creation of the group's investment fund (€500 million). Advises companies, serves as a board member, and invests in international consulting and technology businesses."
+        "experience": "Strategy, transformation, and change management expert. Over 15 years of experience in investment, banking, and IT. He implemented more than 30 major projects in Russia and the CIS, including major integration and digital transformation programs. <br/> <br/> Dmitry led innovation development at Alfa-Bank, participated in creation of the group's investment fund (€500 million). He consults companies, serves as a board member, and invests in international consulting and technology businesses."
       },
       "alexey": {
         "name": "Alexey Veretenov",
         "position": "Co-founder, InteriseGroup",
         "role1": "Managing Partner and CEO Interise",
-        "role2": "Investor and co-owner of daily and venture projects.",
-        "experience": "Expert on transformations, digitalization, and growth strategies. 20+ years of experience in 26 countries and 150+ projects - from the banking sector and telecommunications to industry and medicine. <br/> <br/> Develops strategies focused on implementation and operational efficiency. He has worked with leading companies in Europe, the USA, and Asia, specializing in building customer experience systems and business growth management."
+        "role2": "Investor and co-owner of daily and venture projects",
+        "experience": "Expert in transformation, digitalization, and growth strategies. 20+ years of experience in 26 countries and 150+ projects - from the banking sector and telecommunications to manufacturing and medicine. <br/> <br/> Alexey develops strategies focused on implementation and operational efficiency. He worked with leading companies in Europe, the USA, and Asia, specializing in building customer experience systems and business growth management."
       }
     },
     "media": {
       "title": "Media",
       "subtitle": "Articles and photos from our speeches",
       "open_article": "Open Article",
-      "article_text": "Integration of leading banks and launch of the largest transformation in the market"
+      "article_text": "Integrating leading banks and launching the largest transformation in the market"
     }
   },
   "case": {
@@ -295,8 +295,8 @@
       "countries": "countries",
       "industries": "industries",
       "description": "The effectiveness of our approach is best demonstrated by concrete results <span>— revenue growth, market share and operational efficiency.</span>",
-      "subtitle": "Here are the projects we are proud of, implemented in partnership with strong teams of top players in the Russian and international markets.",
-      "nda_text": "We respect agreements with our clients and carefully comply with non-disclosure obligations, therefore we do not show company and brand names on the site."
+      "subtitle": "Here are the projects we are proud of, implemented in partnership with strong teams of top players in Russian and international markets.",
+      "nda_text": "We respect our clients agreements and carefully comply with non-disclosure obligations, therefore we do not list company and brand names on the site."
     },
     "list": {
       "title": "Cases:",
@@ -326,15 +326,15 @@
       "solution_text": "Developed and implemented a change strategy, launched 52 projects, formed new approaches to customer experience, trained 500+ employees",
       "result": "Result:",
       "result1": "Operating profit grew ×6 in 2 years",
-      "result2": "Accelerated launch of new products",
-      "result3": "500+ employees trained"
+      "result2": "New products launch was accelerated",
+      "result3": "500+ employees were trained"
     },
     "request_presentation_button": "Request Presentation"
   },
   "research": {
     "banner": {
       "title": "InteriseGroup conducts <span>comprehensive studies of markets, industries and target audiences</span> — including deep motives and real behavioral triggers.",
-      "description": "We use an individual approach and select tools for the client's specific task. These studies help companies make informed strategic decisions at all stages of development — from finding growth points and testing hypotheses to launching new products and scaling business."
+      "description": "We use an individual approach and select tools for the client's specific task. These studies enable companies to make informed strategic decisions at all stages of development — from identifying growth opportunities and testing hypotheses to launching new products and scaling business."
     },
     "single_banner": {
       "title": "<span>See your bank</span> <br/> through your customers' eyes",
@@ -409,10 +409,10 @@
     },
     "why_leaving": {
       "title": "<span>Why do customers leave</span> without starting to work with you?",
-      "subtitle": "You invest millions in marketing and digital channels, but conversion doesn't grow. The problem <br/> is hidden in customer journey gaps that are impossible to see from the inside.",
+      "subtitle": "You invest millions in marketing and digital channels, but conversion doesn't grow. The problem <br/> is hidden in customer journey gaps that you cannot see from the inside.",
       "barrier1": {
         "title": "Invisible <span>barriers</span>",
-        "description": "The customer encounters difficulties on the website, in the call center or branch, and you won't even know about it."
+        "description": "The customer encounters difficulties on the website, in the call center or branch, and you do not even know about it."
       },
       "barrier2": {
         "title": "Gap between <span>Online and Offline</span>",
@@ -439,7 +439,7 @@
       },
       "benefit4": {
         "title": "Basic diagnostics",
-        "description": "Our data is a starting point. We not only show 'what's wrong', but also help develop an improvement strategy."
+        "description": "Our data is a starting point. We do not only show, what is wrong, but also help develop an improvement strategy."
       },
       "cta": {
         "title": "Ready to see your business <span>through the <br/> customer's eyes?</span>",
@@ -504,7 +504,7 @@
       "channel_comparison": "Channel Comparison",
       "sales_effectiveness": "Sales Effectiveness",
       "out_of_5": "out of 5",
-      "conclusion2": "High sales effectiveness is a direct result of total experience. This proves that investments in customer service pay off.",
+      "conclusion2": "High sales effectiveness is a direct result of total experience. It proves that investments in customer service pay off.",
       "digital_activity": "Digital Activity",
       "unique_users": "Unique Users",
       "per_month": "/ month",
@@ -554,7 +554,7 @@
           },
           "card3": {
             "title": "Strategy and Change Management",
-            "text": "How to build the company's course in an era of uncertainty."
+            "text": "How to build the company's course in the era of uncertainty."
           },
           "card4": {
             "title": "Customer-Centric Business Model",
@@ -562,7 +562,7 @@
           },
           "card5": {
             "title": "Innovation and Experience Design",
-            "text": "From phygital to Industry 4.0: technologies that change the rules of the game."
+            "text": "From Phygital to Industry 4.0: technologies that change the rules of the game."
           },
           "card6": {
             "title": "Loyalty and Relationship Management",
@@ -604,8 +604,8 @@
       "interview_label": "Interview:",
       "demo_day_dmitry": "Demo Day with Dmitry Vakin Scaling and Go-Global",
       "brunch_restaurant": "IT Brunch at Butler Restaurant",
-      "restaurant_butler": "At the Butler restaurant, there will be a Sunday brunch where you can communicate with the experts of a group of companies, in a relaxed atmosphere discuss the demands of your business, and share your vision for the development of the industry. We invite managing partners, entrepreneurs, marketing directors in fintech and IT to the event.",
-      "interview_alexey": "Alexey Veretenov visiting Oscar Hartman on digital transformation of banks",
+      "restaurant_butler": "Sunday brunch will take place in Butler Restaurant, where you can communicate with the experts from the group of companies, discuss the demands of your business, and share your vision for the development of the industry in a relaxed atmosphere. We invite managing partners, entrepreneurs, marketing directors in fintech and IT.",
+      "interview_alexey": "Alexey Veretenov visits Oscar Hartman, discussing the digital transformation of banks",
       "expert_bio": "Expert in strategy and transformation, managing systemically significant projects and changes. Has experience in forming cross-industry strategies and O2O partnerships in accordance with the Industry 4.0 concept (largest cases in Russia at the junction of bank+retail, bank+telecom).",
       "date_october_20": "October 20",
       "time_13_00": "at 1:00 PM",
@@ -644,7 +644,7 @@
     "presentation": {
       "title": "Request Presentation",
       "requestPresentation": "(Request a presentation)",
-      "subtitle": "And we will send you information that will answer all your questions"
+      "subtitle": "And we will send you information where answer all your questions"
     }
   },
   "pages": {
@@ -666,7 +666,7 @@
       },
       "contacts": {
         "title": "Contacts",
-        "description": "If you have questions about our cookie policy, contact us at:"
+        "description": "If you have questions about our cookie policy, feel free to contact us through:"
       }
     }
   },

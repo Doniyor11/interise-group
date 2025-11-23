@@ -116,8 +116,8 @@ export const MediaSection = () => {
       <Text className={s.teamSubtitle}>{t("about.media.subtitle")}</Text>
 
       <div className={s.cards}>
-        {data?.map((item: IGetMedia) => (
-          <div className={s.card}>
+        {data?.map((item: IGetMedia, i: number) => (
+          <div key={i} className={s.card}>
             <div className={s.cardTop}>
               <Image
                 src={item?.image}

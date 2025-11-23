@@ -48,6 +48,7 @@ export const ResearchTypes = () => {
 
           <MonthPickerInput
             locale={lang}
+            // @ts-ignore
             placeholder={t("ui.placeholderDate")}
             value={selectMonth}
             className={s.filterBtn}

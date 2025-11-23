@@ -44,8 +44,8 @@ export const TeamSection = () => {
           direction={matchesSmall ? "column" : "row"}
           align="flex-start"
         >
-          {data?.map((item: IGetOurTeam) => (
-            <Flex className={s.teamBox}>
+          {data?.map((item: IGetOurTeam, i: number) => (
+            <Flex key={i} className={s.teamBox}>
               <Flex className={s.teamBoxTop}>
                 <Box className={s.teamBoxImage}>
                   <Image

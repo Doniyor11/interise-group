@@ -8,6 +8,7 @@ import {
   Select,
   Text,
 } from "@mantine/core"
+import Trans from "next-translate/Trans"
 import useTranslation from "next-translate/useTranslation"
 import { useRouter } from "next/router"
 import React from "react"
@@ -23,7 +24,7 @@ import Logo from "@/shared/assets/images/interise-group/logo.svg"
 import s from "../styles.module.scss"
 
 export const RequestPresentation = () => {
-  const { t } = useTranslation("common")
+  const { t, lang } = useTranslation("common")
   const { requestPresentation, setRequestPresentation } = useContactFormsStore()
   const router = useRouter()
   const pathMap: Record<string, string> = {
@@ -179,12 +180,26 @@ export const RequestPresentation = () => {
                     label: s.checkboxLabel,
                     input: s.checkboxInput,
                   }}
-                  label={t("forms.privacy_agreement")}
+                  label={
+                    <Trans
+                      i18nKey="common:forms.privacy_agreement"
+                      components={{
+                        link: (
+                          <a
+                            href={`/Политика_конфединциальности_${lang}.pdf`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          />
+                        ),
+                      }}
+                    />
+                  }
                   checked={field.value}
                   onChange={(value: any) => field.onChange?.(value)}
                 />
               )}
             />
+
             <Button
               h={44}
               w={233}

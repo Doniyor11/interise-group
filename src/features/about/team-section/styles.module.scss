@@ -91,6 +91,7 @@
   }
 
   .teamBoxBottomSubTitle {
+    background: none;
     color: #798b9e;
     font-size: 16px;
     font-style: normal;
@@ -134,6 +135,24 @@
     text-align: left;
     font-size: 24px;
     letter-spacing: -0.48px;
+  }
+}
+.list {
+  background: none;
+}
+.list li {
+  color: #798b9e;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px !important;
+  letter-spacing: -0.32px;
+  @media screen and (max-width: 1140px) {
+    text-align: left;
+    font-size: 14px;
+    br {
+      display: none;
+    }
   }
 }
 

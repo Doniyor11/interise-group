@@ -1,134 +1,138 @@
-import {
-  Box,
-  Button,
-  Popover,
-  PopoverDropdown,
-  PopoverTarget,
-  Text,
-} from "@mantine/core"
+import { Box, Button, Loader, Text } from "@mantine/core"
+import { MonthPickerInput } from "@mantine/dates"
 import cx from "clsx"
+import dayjs from "dayjs"
+import "dayjs/locale/en"
+import "dayjs/locale/ru"
 import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
 import { useRouter } from "next/router"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
-import { getMonthsData } from "@/features/research/research-types/libs.ts"
+import { ResearchForm } from "@/features/contact-forms"
+import { useContactFormsStore } from "@/features/contact-forms/model"
 
+import { useGetResearchesQuery } from "@/entities/research/query.ts"
+import { IGetResearches } from "@/entities/research/types.ts"
+
+import IconClear from "@/shared/assets/images/icons/icon-close.svg"
 import IconArrow from "@/shared/assets/images/interise-group/icon-arrow-down-2.svg"
 import IconCalendar from "@/shared/assets/images/interise-group/icon-calendar-2.svg"
-import ImageOne from "@/shared/assets/images/interise-group/image-research-3.png"
-import ImageTwo from "@/shared/assets/images/interise-group/image-research-4.png"
-import ImageThree from "@/shared/assets/images/interise-group/image-research-5.png"
 
 import s from "./styles.module.scss"
 
-const cardImages = [ImageOne, ImageTwo, ImageThree]
-
 export const ResearchTypes = () => {
-  const { t } = useTranslation("common")
+  const { t, lang } = useTranslation("common")
   const router = useRouter()
-  const MonthsData = getMonthsData(t)
-  const [isOpen, setIsOpen] = useState(false)
-  const [selectMonth, setSelectMonth] = useState("1")
-  // const onResearch = () => {
-  //   onLinkClick("contacts")
-  // }
+  const { setResearchForm } = useContactFormsStore()
+
+  const [selectMonth, setSelectMonth] = useState<Date | null>(null)
+  const { data, isLoading } = useGetResearchesQuery({
+    lang,
+    month: selectMonth ? dayjs(selectMonth).format("MM") : undefined,
+    year: selectMonth ? dayjs(selectMonth).format("YYYY") : undefined,
+  })
+
+  useEffect(() => {
+    dayjs.locale(lang)
+  }, [lang])
+
   return (
-    <div className={cx(s.sectionWrapper, "container")}>
-      <div className={s.filters}>
-        <Text
-          className={s.title}
-          dangerouslySetInnerHTML={{ __html: t("research.types.title") }}
-        />
-        <Popover
-          radius={10}
-          opened={isOpen}
-          onClose={() => setIsOpen(false)}
-          position={"bottom-end"}
-        >
-          <PopoverTarget>
-            <Text className={s.filterBtn} onClick={() => setIsOpen(!isOpen)}>
-              <IconCalendar />
-              {MonthsData[Number(selectMonth) - 1]?.month}
-              <IconArrow />
-            </Text>
-          </PopoverTarget>
-          <PopoverDropdown>
-            <div className={s.monthsWrapper}>
-              {MonthsData?.map((item, index) => (
-                <Button
-                  key={index}
-                  className={cx(s.month, {
-                    [s.active]: selectMonth === item?.key,
-                  })}
-                  onClick={() => {
-                    setSelectMonth(item?.key)
-                    setIsOpen(false)
-                  }}
-                >
-                  {item?.month}
-                </Button>
-              ))}
-            </div>
-          </PopoverDropdown>
-        </Popover>
-      </div>
-      <div className={s.cards}>
-        <div className={s.card} onClick={() => router.push("/research/1")}>
-          <Box>
-            <Image src={ImageOne} alt={"image-research"} className={s.image} />
-            <Text className={s.cardTitle}>
-              {t("research.card.index_research")}
-            </Text>
-            <Text className={s.description}>
-              {t("research.card.description")}
-            </Text>
-          </Box>
+    <>
+      <div className={cx(s.sectionWrapper, "container")}>
+        <div className={s.filters}>
+          <Text
+            className={s.title}
+            dangerouslySetInnerHTML={{ __html: t("research.types.title") }}
+          />
+
+          <MonthPickerInput
+            locale={lang}
+            placeholder={t("ui.placeholderDate")}
+            value={selectMonth}
+            className={s.filterBtn}
+            valueFormat={"MMMM"}
+            onChange={setSelectMonth as any}
+            leftSection={<IconCalendar />}
+            rightSection={
+              selectMonth ? (
+                <IconClear
+                  className={s.clear}
+                  onClick={() => setSelectMonth(null)}
+                />
+              ) : (
+                <IconArrow />
+              )
+            }
+            popoverProps={{
+              position: "bottom-end",
+            }}
+          />
         </div>
-        <div className={s.card} onClick={() => router.push("/research/1")}>
-          <Box>
-            <Image src={ImageTwo} alt={"image-research"} className={s.image} />
-            <Text className={s.cardTitle}>
-              {t("research.card.index_research2")}
-            </Text>
-            <Text className={s.description}>
-              {t("research.card.description")}
-            </Text>
-          </Box>
-        </div>
-        {Array.from({ length: 4 }).map((_, i) => (
-          <div key={i} className={s.card}>
-            <Box>
-              <Image
-                src={cardImages[i] || ImageThree}
-                alt={"image-research"}
-                className={s.image}
-              />
-              <Text className={s.cardTitle}>
-                {t("research.card.index_research")}
+        <div className={s.cards}>
+          {isLoading ? (
+            <div className={s.loaderWrapper}>
+              <Loader size="lg" />
+              <Text className={s.loadingText}>
+                {t("research.types.loading")}
               </Text>
-              <Text className={s.description}>
-                {t("research.card.description")}
-              </Text>
-            </Box>
-            {/*<Button*/}
-            {/*  className={s.btn}*/}
-            {/*  onClick={(e) => {*/}
-            {/*    e.stopPropagation()*/}
-            {/*    onResearch()*/}
-            {/*  }}*/}
-            {/*>*/}
-            {/*  {t("research.card.buy_button")}*/}
-            {/*</Button>*/}
-            <div className={s.disabledWrapper}>
-              <Text className={s.label}>
-                {t("research.card.release_planned")}
-              </Text>
-              <Text className={s.date}>30.12.25</Text>
             </div>
-          </div>
-        ))}
+          ) : data && data.length > 0 ? (
+            data.map((item: IGetResearches, i: number) => (
+              <div
+                key={i}
+                className={s.card}
+                onClick={
+                  !item?.disabled && item?.link
+                    ? () => router.push(item.link!)
+                    : undefined
+                }
+              >
+                <Box>
+                  <Image
+                    src={item?.image}
+                    alt={item?.title}
+                    className={s.image}
+                    width={370}
+                    height={152}
+                    unoptimized
+                  />
+                  <Text className={s.cardTitle}>{item?.title}</Text>
+                  <Text className={s.description}>{item?.description}</Text>
+                </Box>
+                {!item?.disabled && !item?.link && (
+                  <Button
+                    className={s.btn}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      setResearchForm(item?.title)
+                    }}
+                  >
+                    {t("research.card.buy_button")}
+                  </Button>
+                )}
+                {item?.disabled && (
+                  <div className={s.disabledWrapper}>
+                    <Text className={s.label}>
+                      {t("research.card.release_planned")}
+                    </Text>
+                    <Text className={s.date}>
+                      {dayjs(item?.disable_date).format("DD.MM.YY")}
+                    </Text>
+                  </div>
+                )}
+              </div>
+            ))
+          ) : (
+            <div className={s.emptyState}>
+              <Text className={s.emptyText}>
+                {t("research.types.no_results")}
+              </Text>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+      <ResearchForm />
+    </>
   )
 }

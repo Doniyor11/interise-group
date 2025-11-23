@@ -5,6 +5,7 @@ import { IContactFormsStore, IInitialState } from "./types.ts"
 
 const initialState: IInitialState = {
   requestPresentation: false,
+  researchForm: null,
 }
 
 export const useContactFormsStore = create<IContactFormsStore>()(
@@ -12,6 +13,9 @@ export const useContactFormsStore = create<IContactFormsStore>()(
     ...initialState,
     setRequestPresentation: (e) => {
       set({ requestPresentation: e })
+    },
+    setResearchForm: (e) => {
+      set({ researchForm: e })
     },
   })),
 )

@@ -5,16 +5,24 @@ import {
   Button,
   Center,
   Flex,
+  Skeleton,
   Text,
 } from "@mantine/core"
+import { useDebouncedValue } from "@mantine/hooks"
+import MarkdownPreview from "@uiw/react-markdown-preview"
 import cx from "clsx"
 import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
 import React, { useState } from "react"
 
-import { FilterKeys } from "@/features/case/case-list/libs.ts"
 import { RequestPresentation } from "@/features/contact-forms"
 import { useContactFormsStore } from "@/features/contact-forms/model"
+
+import {
+  useCaseCategoriesQuery,
+  useGetCasesQuery,
+} from "@/entities/cases/query.ts"
+import { ICategory, IGetCases } from "@/entities/cases/types.ts"
 
 import Icon1 from "@/shared/assets/images/interise-group/geo-alt.svg"
 import Icon2 from "@/shared/assets/images/interise-group/graph-up.svg"
@@ -26,10 +34,24 @@ import { SearchInput } from "@/shared/ui"
 
 import s from "./styles.module.scss"
 
+const ResultsIcons = [Image1, Image2, Image3]
+
 export const CaseList = () => {
-  const { t } = useTranslation("common")
+  const { t, lang } = useTranslation("common")
   const { setRequestPresentation } = useContactFormsStore()
   const [category, setCategory] = useState(0)
+  const [search, setSearch] = useState("")
+
+  const [debounced] = useDebouncedValue(search, 200)
+
+  const { data: categories, isLoading: CategoryLoading } =
+    useCaseCategoriesQuery()
+  const { data, isLoading } = useGetCasesQuery({
+    lang,
+    category: category === 0 ? undefined : category,
+    search: debounced === "" ? undefined : debounced,
+  })
+
   return (
     <>
       <div className={cx(s.sectionWrapper, "container")}>
@@ -37,129 +59,159 @@ export const CaseList = () => {
         <Text className={s.label}>{t("case.list.select_category")}</Text>
         <Flex className={s.filtersWrapper}>
           <div className={s.categories}>
-            {FilterKeys?.map((i, index) => (
-              <Text
-                key={index}
-                onClick={() => setCategory(index)}
-                className={cx(s.item, { [s.active]: category === index })}
-              >
-                {t(i?.key)}
-              </Text>
-            ))}
+            {!CategoryLoading ? (
+              <>
+                <Text
+                  onClick={() => setCategory(0)}
+                  className={cx(s.item, { [s.active]: category === 0 })}
+                >
+                  {t("case.filter.all_industries")}
+                </Text>
+                {categories?.map((i: ICategory, idx: number) => (
+                  <Text
+                    key={idx}
+                    onClick={() => setCategory(i?.id)}
+                    className={cx(s.item, { [s.active]: category === i?.id })}
+                  >
+                    {t(i?.name)}
+                  </Text>
+                ))}
+              </>
+            ) : (
+              <>
+                <Skeleton width={110} height={41} radius={35} />
+                <Skeleton width={140} height={41} radius={35} />
+                <Skeleton width={120} height={41} radius={35} />
+                <Skeleton width={130} height={41} radius={35} />
+              </>
+            )}
           </div>
-          <SearchInput />
+          <SearchInput
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
         </Flex>
         <div className={s.cards}>
-          {Array.from({ length: 6 }).map((_, i) => (
-            <Box className={s.ideaBox} key={i}>
-              <Box className={s.ideaBoxTop}>
-                <Flex gap={"26px"} justify={"space-between"}>
-                  <Text className={s.ideaBoxTitle}>
-                    {t("case.card.rank_top3")}
-                    <br />
-                    <span>{t("case.card.company_in_country")}</span>
+          {!isLoading ? (
+            <>
+              {data && data.length > 0 ? (
+                data.map((i: IGetCases, idx: number) => (
+                  <Box className={s.ideaBox} key={idx}>
+                    <Box className={s.ideaBoxTop}>
+                      <Flex gap={"26px"} justify={"space-between"}>
+                        <MarkdownPreview
+                          source={i?.companyRank}
+                          className={s.ideaBoxTitle}
+                        />
+                        <Flex direction="column" gap="6px">
+                          <Flex
+                            className={s.ideaBoxInfoCountry}
+                            gap={"12px"}
+                            align={"center"}
+                          >
+                            <Icon1 />
+                            <Flex direction={"column"}>
+                              <Text className={s.ideaBoxCountry}>
+                                {t("case.card.country")}
+                              </Text>
+                              <Text className={s.ideaBoxCity}>
+                                {i?.country}
+                              </Text>
+                            </Flex>
+                          </Flex>
+                          <Flex
+                            className={s.ideaBoxInfoCountry}
+                            gap={"12px"}
+                            align={"center"}
+                          >
+                            <Icon2 />
+                            <Flex direction={"column"}>
+                              <Text className={s.ideaBoxCountry}>
+                                {t("case.card.industry")}
+                              </Text>
+                              <Text className={s.ideaBoxCity}>
+                                {i?.industry}
+                              </Text>
+                            </Flex>
+                          </Flex>
+                        </Flex>
+                      </Flex>
+                      <Text className={s.ideaBoxDescription}>{i?.title}</Text>
+                    </Box>
+
+                    <Accordion
+                      w={"100%"}
+                      unstyled
+                      key={idx}
+                      chevron={<IconArrow />}
+                      multiple={false}
+                    >
+                      <Accordion.Item
+                        value="item-1"
+                        className={s.collapseWrapper}
+                      >
+                        <AccordionControl className={s.collapseBtn}>
+                          {t("case.card.task")}
+                        </AccordionControl>
+                        <Accordion.Panel>
+                          <Text className={s.collapseText}>{i?.task}</Text>
+                        </Accordion.Panel>
+                      </Accordion.Item>
+                      <Accordion.Item
+                        value="item-2"
+                        className={s.collapseWrapper}
+                      >
+                        <AccordionControl className={s.collapseBtn}>
+                          {t("case.card.solution")}
+                        </AccordionControl>
+                        <Accordion.Panel>
+                          <Text className={s.collapseText}>{i?.solution}</Text>
+                        </Accordion.Panel>
+                      </Accordion.Item>
+                    </Accordion>
+
+                    <Box>
+                      <Text className={s.ideaBoxResult}>
+                        {t("case.card.result")}
+                      </Text>
+                      <Flex direction={"column"} gap={"12px"}>
+                        {i?.results?.map((r, rIdx) => (
+                          <Flex
+                            key={rIdx}
+                            gap={"24px"}
+                            align={"center"}
+                            p={"13px 18px"}
+                            className={s.ideaItem}
+                          >
+                            <Image
+                              src={ResultsIcons[rIdx] || Image1}
+                              alt={r?.text}
+                              width={44}
+                              height={44}
+                              unoptimized
+                            />
+                            <Text component={"p"}>{r?.text}</Text>
+                          </Flex>
+                        ))}
+                      </Flex>
+                    </Box>
+                  </Box>
+                ))
+              ) : (
+                <Center w="100%" py={40}>
+                  <Text size="lg" c="dimmed">
+                    {t("case.list.no_results")}
                   </Text>
-                  <Flex direction="column" gap="6px">
-                    <Flex
-                      className={s.ideaBoxInfoCountry}
-                      gap={"12px"}
-                      align={"center"}
-                    >
-                      <Icon1 />
-                      <Flex direction={"column"}>
-                        <Text className={s.ideaBoxCountry}>
-                          {t("case.card.country")}
-                        </Text>
-                        <Text className={s.ideaBoxCity}>
-                          {t("case.card.kazakhstan")}
-                        </Text>
-                      </Flex>
-                    </Flex>
-                    <Flex
-                      className={s.ideaBoxInfoCountry}
-                      gap={"12px"}
-                      align={"center"}
-                    >
-                      <Icon2 />
-                      <Flex direction={"column"}>
-                        <Text className={s.ideaBoxCountry}>
-                          {t("case.card.industry")}
-                        </Text>
-                        <Text className={s.ideaBoxCity}>
-                          {t("case.card.banking")}
-                        </Text>
-                      </Flex>
-                    </Flex>
-                  </Flex>
-                </Flex>
-                <Text className={s.ideaBoxDescription}>
-                  {t("case.card.description")}
-                </Text>
-              </Box>
-
-              <Accordion
-                w={"100%"}
-                unstyled
-                key={i}
-                chevron={<IconArrow />}
-                multiple={false}
-              >
-                <Accordion.Item value="item-1" className={s.collapseWrapper}>
-                  <AccordionControl className={s.collapseBtn}>
-                    {t("case.card.task")}
-                  </AccordionControl>
-                  <Accordion.Panel>
-                    <Text className={s.collapseText}>
-                      {t("case.card.task_text")}
-                    </Text>
-                  </Accordion.Panel>
-                </Accordion.Item>
-                <Accordion.Item value="item-2" className={s.collapseWrapper}>
-                  <AccordionControl className={s.collapseBtn}>
-                    {t("case.card.solution")}
-                  </AccordionControl>
-                  <Accordion.Panel>
-                    <Text className={s.collapseText}>
-                      {t("case.card.solution_text")}
-                    </Text>
-                  </Accordion.Panel>
-                </Accordion.Item>
-              </Accordion>
-
-              <Box>
-                <Text className={s.ideaBoxResult}>{t("case.card.result")}</Text>
-                <Flex direction={"column"} gap={"12px"}>
-                  <Flex
-                    gap={"24px"}
-                    align={"center"}
-                    p={"13px 18px"}
-                    className={s.ideaItem}
-                  >
-                    <Image src={Image1} alt={""} width={44} height={44} />
-                    <Text component={"p"}>{t("case.card.result1")}</Text>
-                  </Flex>
-                  <Flex
-                    gap={"24px"}
-                    align={"center"}
-                    p={"13px 18px"}
-                    className={s.ideaItem}
-                  >
-                    <Image src={Image2} alt={""} width={44} height={44} />
-                    <Text component={"p"}>{t("case.card.result2")}</Text>
-                  </Flex>
-                  <Flex
-                    gap={"24px"}
-                    align={"center"}
-                    p={"13px 18px"}
-                    className={s.ideaItem}
-                  >
-                    <Image src={Image3} alt={""} width={44} height={44} />
-                    <Text component={"p"}>{t("case.card.result3")}</Text>
-                  </Flex>
-                </Flex>
-              </Box>
-            </Box>
-          ))}
+                </Center>
+              )}
+            </>
+          ) : (
+            <>
+              <Skeleton width={"100%"} height={690} radius={24} />
+              <Skeleton width={"100%"} height={690} radius={24} />
+              <Skeleton width={"100%"} height={690} radius={24} />
+            </>
+          )}
         </div>
         <Center mt={24}>
           <Button

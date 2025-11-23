@@ -1,210 +1,110 @@
-import { Box, Button, Flex, Text } from "@mantine/core"
+import { Box, Button, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
+import dayjs from "dayjs"
+import "dayjs/locale/en"
+import "dayjs/locale/ru"
 import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
 import Link from "next/link"
 import React from "react"
 
+import {
+  useGetEventsQuery,
+  useGetUpcomingEventsQuery,
+} from "@/entities/events/query.ts"
+import { IGetEvents, IGetUpcomingEvents } from "@/entities/events/types.ts"
+
 import IconCalendar from "@/shared/assets/images/interise-group/icon-calendar.svg"
 import IconTimer from "@/shared/assets/images/interise-group/icon-history.svg"
-import ImageOne from "@/shared/assets/images/interise-group/image-event-1.png"
-import ImageTwo from "@/shared/assets/images/interise-group/image-event-2.png"
-import ImageFour from "@/shared/assets/images/interise-group/image-event-4.png"
-import ImageThree from "@/shared/assets/images/interise-group/partneruser1.png"
+import { onLinkClick } from "@/shared/libs/scroll.ts"
 
 import s from "./styles.module.scss"
 
 export const EventSection = () => {
-  const { t } = useTranslation("common")
+  const { t, lang } = useTranslation("common")
   const matches = useMediaQuery("(max-width: 1040px)")
+
+  const { data: events } = useGetEventsQuery()
+  const { data: upcomingEvents } = useGetUpcomingEventsQuery()
+
+  const timeFormat = lang === "en" ? "hh:mm A" : "HH:mm"
+
+  if (events?.length === 0 || upcomingEvents?.length === 0) return null
 
   return (
     <div className={cx(s.sectionWrapper, "container")}>
       <h3 dangerouslySetInnerHTML={{ __html: t("club.events.title") }} />
-      {/*<Text className={s.subtitle}>{t("club.events.select_event")}</Text>*/}
-
       <Text className={s.subtitle}>{t("club.events.subtitle")}</Text>
-      {/*<div className={s.filters}>*/}
-      {/*  <Text className={s.filterBtn}>*/}
-      {/*    {t("club.events.business_brunches")}*/}
-      {/*  </Text>*/}
-      {/*  <Text className={s.filterBtn}>*/}
-      {/*    {t("club.events.invest_breakfasts")}*/}
-      {/*  </Text>*/}
-      {/*  <Text className={s.filterBtn}>{t("club.events.lectures")}</Text>*/}
-      {/*  <Text className={s.filterBtn}>{t("club.events.demo_days")}</Text>*/}
-      {/*  <Text className={s.filterBtn}>{t("club.events.closed_forums")}</Text>*/}
-      {/*  <Text className={s.filterBtn}>{t("club.events.wine_tastings")}</Text>*/}
-      {/*  <Text className={s.filterBtn}>{t("club.events.round_tables")}</Text>*/}
-      {/*  <Text className={s.filterBtn}>{t("club.events.cigar_evenings")}</Text>*/}
-      {/*</div>*/}
       <div className={s.cards}>
         <Text className={s.cardTitle}>{t("club.events.upcoming")}</Text>
         <div className={s.card}>
-          <div className={s.cardItem}>
-            <Image src={ImageOne} alt={"image-event"} className={s.image} />
-            <Box maw={410} p={matches ? "12px" : 0}>
-              <Text className={s.itemTitle}>
-                {t("club.events.event1.title")}
-              </Text>
-              <Text className={s.itemText}>
-                {t("club.events.expert_description")}
-              </Text>
-              <Link href={"/"} className={s.itemLink}>
-                {t("club.events.more")}
-              </Link>
-            </Box>
-          </div>
-          <div className={s.cardItem}>
-            <Image src={ImageTwo} alt={"image-event"} className={s.image} />
-            <Box maw={410}>
-              <Text className={s.itemTitle}>
-                {t("club.events.event2.title")}
-              </Text>
-              <Text className={s.itemText}>
-                {t("club.events.expert_description")}
-              </Text>
-              <Link href={"/"} className={s.itemLink}>
-                {t("club.events.more")}
-              </Link>
-            </Box>
-          </div>
-          <div className={s.cardItem}>
-            <Image src={ImageOne} alt={"image-event"} className={s.image} />
-            <Box maw={410}>
-              <Text className={s.itemTitle}>
-                {t("club.events.event1.title")}
-              </Text>
-              <Text className={s.itemText}>
-                {t("club.events.expert_description")}
-              </Text>
-              <Link href={"/"} className={s.itemLink}>
-                {t("club.events.more")}
-              </Link>
-            </Box>
-          </div>
-          <div className={s.cardItem}>
-            <Image src={ImageTwo} alt={"image-event"} className={s.image} />
-            <Box maw={410}>
-              <Text className={s.itemTitle}>
-                {t("club.events.event2.title")}
-              </Text>
-              <Text className={s.itemText}>
-                {t("club.events.expert_description")}
-              </Text>
-              <Link href={"/"} className={s.itemLink}>
-                {t("club.events.more")}
-              </Link>
-            </Box>
-          </div>
-        </div>
-      </div>
-      <div className={s.box}>
-        <Image src={ImageThree} alt={"image-event"} className={s.image} />
-        <div className={s.contentWrapper}>
-          <Text className={s.label}>{t("club.events.event_label")}</Text>
-          <Text className={s.title}>{t("club.events.demo_day_dmitry")}</Text>
-          <Text className={s.description}>{t("club.events.expert_bio")}</Text>
-          {matches && (
-            <div className={s.eventDate}>
-              <Text className={s.date}>
-                <IconCalendar />
-                {t("club.events.date_october_20")}
-              </Text>
-              <Text className={s.date}>
-                <IconTimer />
-                {t("club.events.time_13_00")}
-              </Text>
+          {events?.map((item: IGetEvents, i: number) => (
+            <div key={i} className={s.cardItem}>
+              <Image
+                width={154}
+                height={152}
+                src={item?.image}
+                alt={item?.title}
+                className={s.image}
+                unoptimized
+              />
+              <Box maw={410} p={matches ? "12px" : 0}>
+                <Text className={s.itemTitle}>{item?.title}</Text>
+                <Text className={s.itemText}>{item?.description}</Text>
+                <Link href={item?.url} className={s.itemLink}>
+                  {t("club.events.more")}
+                </Link>
+              </Box>
             </div>
-          )}
-          <Button className={s.btn}>{t("club.events.attend_button")}</Button>
+          ))}
         </div>
-        {!matches && (
-          <div className={s.eventDate}>
-            <Text className={s.date}>
-              <IconCalendar />
-              {t("club.events.date_october_20")}
-            </Text>
-            <Text className={s.date}>
-              <IconTimer />
-              {t("club.events.time_13_00")}
-            </Text>
-          </div>
-        )}
       </div>
-      <div className={s.box}>
-        <Image src={ImageFour} alt={"image-event"} className={s.image} />
-        <Flex gap={32}>
+
+      {upcomingEvents?.map((item: IGetUpcomingEvents, i: number) => (
+        <div key={i} className={s.box}>
+          <Image
+            width={390}
+            height={268}
+            unoptimized
+            src={item?.image}
+            alt={item?.title}
+            className={s.image}
+          />
           <div className={s.contentWrapper}>
-            <Text className={s.label}>{t("club.events.event_label")}</Text>
-            <Text className={s.title}>
-              {t("club.events.brunch_restaurant")}
-            </Text>
-            <Text className={s.description}>
-              {t("club.events.restaurant_butler")}
-            </Text>
+            <Text className={s.label}>{item?.label}</Text>
+            <Text className={s.title}>{item?.title}</Text>
+            <Text className={s.description}>{item?.description}</Text>
             {matches && (
               <div className={s.eventDate}>
                 <Text className={s.date}>
                   <IconCalendar />
-                  {t("club.events.date_october_20")}
+                  {dayjs(item?.date).format("DD MMMM")}
                 </Text>
                 <Text className={s.date}>
                   <IconTimer />
-                  {t("club.events.time_13_00")}
+                  {t("club.events.time") + dayjs(item?.date).format(timeFormat)}
                 </Text>
               </div>
             )}
-            <Button className={s.btn}>{t("club.events.attend_button")}</Button>
+            <Button className={s.btn} onClick={() => onLinkClick("eventForm")}>
+              {t("club.events.attend_button")}
+            </Button>
           </div>
           {!matches && (
             <div className={s.eventDate}>
               <Text className={s.date}>
                 <IconCalendar />
-                {t("club.events.date_october_20")}
+                {dayjs(item?.date).format("DD MMMM")}
               </Text>
               <Text className={s.date}>
                 <IconTimer />
-                {t("club.events.time_13_00")}
+                {t("club.events.time") + dayjs(item?.date).format(timeFormat)}
               </Text>
             </div>
           )}
-        </Flex>
-      </div>
-      <div className={s.box}>
-        <Image src={ImageThree} alt={"image-event"} className={s.image} />
-        <div className={s.contentWrapper}>
-          <Text className={s.label}>{t("club.events.event_label")}</Text>
-          <Text className={s.title}>{t("club.events.demo_day_dmitry")}</Text>
-          <Text className={s.description}>{t("club.events.expert_bio")}</Text>
-          {matches && (
-            <div className={s.eventDate}>
-              <Text className={s.date}>
-                <IconCalendar />
-                {t("club.events.date_october_20")}
-              </Text>
-              <Text className={s.date}>
-                <IconTimer />
-                {t("club.events.time_13_00")}
-              </Text>
-            </div>
-          )}
-          <Button className={s.btn}>{t("club.events.attend_button")}</Button>
         </div>
-        {!matches && (
-          <div className={s.eventDate}>
-            <Text className={s.date}>
-              <IconCalendar />
-              {t("club.events.date_october_20")}
-            </Text>
-            <Text className={s.date}>
-              <IconTimer />
-              {t("club.events.time_13_00")}
-            </Text>
-          </div>
-        )}
-      </div>
+      ))}
     </div>
   )
 }

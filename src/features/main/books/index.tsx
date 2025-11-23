@@ -8,10 +8,16 @@ import {
   Text,
 } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
+import MarkdownPreview from "@uiw/react-markdown-preview"
 import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import React, { FC } from "react"
+
+import { useGetCasesQuery } from "@/entities/cases/query.ts"
+import { IGetCases } from "@/entities/cases/types.ts"
+import { useGetMainSprintsQuery } from "@/entities/main/query.ts"
+import { IMainSprints } from "@/entities/main/types.ts"
 
 import Icon1 from "@/shared/assets/images/interise-group/geo-alt.svg"
 import Icon2 from "@/shared/assets/images/interise-group/graph-up.svg"
@@ -19,119 +25,13 @@ import IconArrow from "@/shared/assets/images/interise-group/icon-arrow-down.svg
 import Image1 from "@/shared/assets/images/interise-group/idea-1.png"
 import Image2 from "@/shared/assets/images/interise-group/idea-2.png"
 import Image3 from "@/shared/assets/images/interise-group/idea-3.png"
-import Image4 from "@/shared/assets/images/interise-group/idea-4.svg"
-import Image5 from "@/shared/assets/images/interise-group/idea-5.svg"
-import Image6 from "@/shared/assets/images/interise-group/idea-6.svg"
-import Image7 from "@/shared/assets/images/interise-group/idea-7.svg"
-import Image8 from "@/shared/assets/images/interise-group/idea-8.svg"
 import { onLinkClick } from "@/shared/libs/scroll.ts"
 
-// import { onLinkClick } from "@/shared/libs/scroll.ts"
 import s from "./styles.module.scss"
 
-const getIdeasData = (t: any) => [
-  {
-    rank: t("main.results.card.rank_top3"),
-    rankDesc: t("main.results.card.company_in_country"),
-    info: [
-      {
-        icon: Icon1,
-        label: t("main.results.card.country"),
-        value: t("main.results.card.central_asia"),
-      },
-      {
-        icon: Icon2,
-        label: t("main.results.card.industry"),
-        value: t("main.results.card.fintech"),
-      },
-    ],
-    description: t("main.results.card1.description"),
-    results: [
-      { icon: Image1, text: t("main.results.card1.result1") },
-      { icon: Image2, text: t("main.results.card1.result2") },
-      { icon: Image3, text: t("main.results.card1.result3") },
-    ],
-  },
-  {
-    rank: t("main.results.card.rank_top3"),
-    rankDesc: t("main.results.card.company_in_country"),
-    info: [
-      {
-        icon: Icon1,
-        label: t("main.results.card.country"),
-        value: t("main.results.card.transcaucasia"),
-      },
-      {
-        icon: Icon2,
-        label: t("main.results.card.industry"),
-        value: t("main.results.card.aviation"),
-      },
-    ],
-    description: t("main.results.card2.description"),
-    results: [
-      {
-        icon: Image1,
-        text: t("main.results.card2.result1"),
-      },
-      {
-        icon: Image2,
-        text: t("main.results.card2.result2"),
-      },
-      { icon: Image3, text: t("main.results.card2.result3") },
-    ],
-  },
-  {
-    rank: t("main.results.card.rank_top1"),
-    rankDesc: t("main.results.card.company_in_medicine"),
-    info: [
-      {
-        icon: Icon1,
-        label: t("main.results.card.country"),
-        value: t("main.results.card.russia"),
-      },
-      {
-        icon: Icon2,
-        label: t("main.results.card.industry"),
-        value: t("main.results.card.medicine"),
-      },
-    ],
-    description: t("main.results.card3.description"),
-    results: [
-      {
-        icon: Image1,
-        text: t("main.results.card3.result1"),
-      },
-      { icon: Image2, text: t("main.results.card3.result2") },
-      {
-        icon: Image3,
-        text: t("main.results.card3.result3"),
-      },
-    ],
-  },
-]
+const ResultIcons = [Image1, Image2, Image3]
 
-const IdeaInfoItem: FC<{ icon: any; label: string; value: string }> = ({
-  icon: Icon,
-  label,
-  value,
-}) => (
-  <Flex className={s.ideaBoxInfoCountry} gap={"12px"} align={"center"}>
-    <Icon />
-    <Flex direction={"column"}>
-      <Text className={s.ideaBoxCountry}>{label}</Text>
-      {value && <Text className={s.ideaBoxCity}>{value}</Text>}
-    </Flex>
-  </Flex>
-)
-
-const IdeaResultItem: FC<{ icon: any; text: string }> = ({ icon, text }) => (
-  <Flex gap={"24px"} align={"center"} p={"13px 18px"} className={s.ideaItem}>
-    <Image src={icon} alt={""} width={44} height={44} />
-    <Text component={"p"}>{text}</Text>
-  </Flex>
-)
-
-const IdeaCard: FC<{ data: any; onClick?: () => void; t: any }> = ({
+const IdeaCard: FC<{ data: IGetCases; onClick?: () => void; t: any }> = ({
   data,
   onClick,
   t,
@@ -139,19 +39,36 @@ const IdeaCard: FC<{ data: any; onClick?: () => void; t: any }> = ({
   <Box onClick={onClick} className={s.ideaBox}>
     <Box className={s.ideaBoxTop}>
       <Flex gap={"26px"} justify={"space-between"}>
-        <Text className={s.ideaBoxTitle}>
-          {data.rank} <br />
-          <span dangerouslySetInnerHTML={{ __html: data.rankDesc }} />
-        </Text>
+        <MarkdownPreview source={data.companyRank} className={s.ideaBoxTitle} />
+
         <Flex direction="column" gap="6px">
-          {data.info.map((info: any, i: number) => (
-            <IdeaInfoItem key={i} {...info} />
-          ))}
+          <Flex className={s.ideaBoxInfoCountry} gap={"12px"} align={"center"}>
+            <Icon1 />
+            <Flex direction={"column"}>
+              <Text className={s.ideaBoxCountry}>
+                {t("main.results.card.country")}
+              </Text>
+              {data?.country && (
+                <Text className={s.ideaBoxCity}>{data?.country}</Text>
+              )}
+            </Flex>
+          </Flex>
+          <Flex className={s.ideaBoxInfoCountry} gap={"12px"} align={"center"}>
+            <Icon2 />
+            <Flex direction={"column"}>
+              <Text className={s.ideaBoxCountry}>
+                {t("main.results.card.industry")}
+              </Text>
+              {data?.industry && (
+                <Text className={s.ideaBoxCity}>{data?.industry}</Text>
+              )}
+            </Flex>
+          </Flex>
         </Flex>
       </Flex>
       <Text
         className={s.ideaBoxDescription}
-        dangerouslySetInnerHTML={{ __html: data.description }}
+        dangerouslySetInnerHTML={{ __html: data.title }}
       />
     </Box>
 
@@ -194,8 +111,23 @@ const IdeaCard: FC<{ data: any; onClick?: () => void; t: any }> = ({
     <Box>
       <Text className={s.ideaBoxResult}>{t("main.results.card.result")}</Text>
       <Flex direction={"column"} gap={"12px"}>
-        {data.results.map((result: any, i: number) => (
-          <IdeaResultItem key={i} {...result} />
+        {data.results.map((result, i: number) => (
+          <Flex
+            key={i}
+            gap={"24px"}
+            align={"center"}
+            p={"13px 18px"}
+            className={s.ideaItem}
+          >
+            <Image
+              src={ResultIcons[i] || Image3}
+              alt={""}
+              width={44}
+              height={44}
+              unoptimized
+            />
+            <Text component={"p"}>{result?.text}</Text>
+          </Flex>
         ))}
       </Flex>
     </Box>
@@ -203,11 +135,15 @@ const IdeaCard: FC<{ data: any; onClick?: () => void; t: any }> = ({
 )
 
 export const Books: FC = () => {
-  const { t } = useTranslation("common")
+  const { t, lang } = useTranslation("common")
   const router = useRouter()
   const matches = useMediaQuery("(max-width: 1040px)")
-  const IDEAS_DATA = getIdeasData(t)
 
+  const { data } = useGetCasesQuery({
+    lang: lang,
+    for_main: true,
+  })
+  if (data?.length === 0) return null
   return (
     <div className={s.sectionWrapper}>
       <Flex
@@ -221,9 +157,9 @@ export const Books: FC = () => {
         </Text>
       </Flex>
       <Grid gutter={32}>
-        {IDEAS_DATA.map((idea, idx) => (
+        {data?.map((i: IGetCases, idx: number) => (
           <Grid.Col span={matches ? 12 : 4} key={idx}>
-            <IdeaCard data={idea} onClick={() => router.push("/case")} t={t} />
+            <IdeaCard data={i} onClick={() => router.push("/case")} t={t} />
           </Grid.Col>
         ))}
       </Grid>
@@ -243,93 +179,48 @@ export const Books: FC = () => {
         </Button>
       </Flex>
       {/* ----- */}
+      <MainSprints />
+    </div>
+  )
+}
 
+export const MainSprints = () => {
+  const { t } = useTranslation("common")
+  const matches = useMediaQuery("(max-width: 1040px)")
+  const { data, isLoading } = useGetMainSprintsQuery()
+  if (isLoading) return null
+  return (
+    <>
       <Grid gutter={"32px"} pt={"100px"} id={"directions"}>
         <Grid.Col span={matches ? 12 : 4}>
           <Box h={"100%"}>
-            <Text className={s.ideaInfoBoxTitleOne}>
-              {t("main.directions.title")}
-            </Text>
+            <Text className={s.ideaInfoBoxTitleOne}>{data?.title}</Text>
             <Text className={s.ideaInfoBoxDescriptionOne}>
-              {t("main.directions.description")}
+              {data?.description}
             </Text>
           </Box>
         </Grid.Col>
-        <Grid.Col span={matches ? 12 : 4}>
-          <Box className={s.ideaInfoBox}>
-            <Flex justify={"flex-end"} mb={"45px"}>
-              <div className={s.icon}>
-                <Image4 />
-              </div>
-            </Flex>
-            <Text className={s.ideaInfoBoxTitle}>
-              {t("main.directions.diagnostics.title")}
-            </Text>
-            <Text className={s.ideaInfoBoxDescription}>
-              {t("main.directions.diagnostics.description")}
-            </Text>
-          </Box>
-        </Grid.Col>
-        <Grid.Col span={matches ? 12 : 4}>
-          <Box className={s.ideaInfoBox}>
-            <Flex justify={"flex-end"} mb={"45px"}>
-              <div className={s.icon}>
-                <Image5 />
-              </div>
-            </Flex>
-            <Text className={s.ideaInfoBoxTitle}>
-              {t("main.directions.strategy.title")}
-            </Text>
-            <Text className={s.ideaInfoBoxDescription}>
-              {t("main.directions.strategy.description")}
-            </Text>
-          </Box>
-        </Grid.Col>
-        <Grid.Col span={matches ? 12 : 4}>
-          <Box className={s.ideaInfoBox}>
-            <Flex justify={"flex-end"} mb={"45px"}>
-              <div className={s.icon}>
-                <Image6 />
-              </div>
-            </Flex>
-            <Text className={s.ideaInfoBoxTitle}>
-              {t("main.directions.digital_transformation.title")}
-            </Text>
-            <Text className={s.ideaInfoBoxDescription}>
-              {t("main.directions.digital_transformation.description")}
-            </Text>
-          </Box>
-        </Grid.Col>
-        <Grid.Col span={matches ? 12 : 4}>
-          <Box className={s.ideaInfoBox}>
-            <Flex justify={"flex-end"} mb={"45px"}>
-              <div className={s.icon}>
-                <Image7 />
-              </div>
-            </Flex>
-            <Text className={s.ideaInfoBoxTitle}>
-              {t("main.directions.investment.title")}
-            </Text>
-            <Text className={s.ideaInfoBoxDescription}>
-              {t("main.directions.investment.description")}
-            </Text>
-          </Box>
-        </Grid.Col>
-        <Grid.Col span={matches ? 12 : 4}>
-          <Box className={s.ideaInfoBox}>
-            <Flex justify={"flex-end"} mb={"45px"}>
-              <div className={s.icon}>
-                <Image8 />
-              </div>
-            </Flex>
-            <Text className={s.ideaInfoBoxTitle}>
-              {t("main.directions.new_markets.title")}
-            </Text>
-            <Text className={s.ideaInfoBoxDescription}>
-              {t("main.directions.new_markets.description")}
-            </Text>
-          </Box>
-        </Grid.Col>
+        {data?.sprints?.map((item: IMainSprints, i: number) => (
+          <Grid.Col span={matches ? 12 : 4} key={i}>
+            <Box className={s.ideaInfoBox}>
+              <Flex justify={"flex-end"} mb={"45px"}>
+                <div className={s.icon}>
+                  <Image
+                    src={item?.image}
+                    alt={item?.title}
+                    width={30}
+                    height={30}
+                    unoptimized
+                  />
+                </div>
+              </Flex>
+              <Text className={s.ideaInfoBoxTitle}>{item?.title}</Text>
+              <Text className={s.ideaInfoBoxDescription}>
+                {item?.description}
+              </Text>
+            </Box>
+          </Grid.Col>
+        ))}
       </Grid>
       <Flex justify={"center"} mt={"24px"}>
         <Button
@@ -346,6 +237,6 @@ export const Books: FC = () => {
           {t("main.directions.contact_button")}
         </Button>
       </Flex>
-    </div>
+    </>
   )
 }

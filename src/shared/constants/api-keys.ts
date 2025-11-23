@@ -1,5 +1,10 @@
 export enum apiKeys {
-  users = "users",
-  articles = "articles",
-  postUser = "users",
+  mainSprints = "main-sprints",
+  cases = "cases",
+  ourTeam = "our-team",
+  media = "media",
+  events = "events",
+  upcomingEvents = "upcoming-events",
+  caseCategories = "case-categories",
+  research = "research",
 }

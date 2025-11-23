@@ -57,7 +57,7 @@ export const SignupEvent = () => {
     )
   }
   return (
-    <div className={cx(s.container, "container")}>
+    <div className={cx(s.container, "container")} id={"eventForm"}>
       <div className={s.sectionWrapper}>
         <Box maw={472}>
           <Text className={s.title}>{t("club.signup.title")}</Text>

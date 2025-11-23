@@ -64,6 +64,7 @@
   }
 
   .teamBoxBottomSubTitle {
+    background: none;
     color: #798b9e;
     font-size: 16px;
     font-style: normal;
@@ -131,6 +132,15 @@
   }
 }
 
+.list {
+  background: none !important;
+
+  ul {
+    padding-left: 18px;
+  }
+}
+
+.list li,
 .teamBoxText {
   color: #798b9e;
   font-size: 16px;

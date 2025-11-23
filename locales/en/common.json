@@ -300,7 +300,8 @@
     },
     "list": {
       "title": "Cases:",
-      "select_category": "Select category:"
+      "select_category": "Select category:",
+      "no_results": "No cases found. Try changing the filter or search query."
     },
     "filter": {
       "all_industries": "All Industries",
@@ -343,7 +344,9 @@
     },
     "types": {
       "title": "Types of <span>research:</span>",
-      "notice": "Customer Choice Index for Kazakhstan will appear by the end of the year"
+      "notice": "Customer Choice Index for Kazakhstan will appear by the end of the year",
+      "no_results": "No research found for the selected period",
+      "loading": "Loading research..."
     },
     "months": {
       "january": "January",
@@ -608,7 +611,7 @@
       "interview_alexey": "Alexey Veretenov visits Oscar Hartman, discussing the digital transformation of banks",
       "expert_bio": "Expert in strategy and transformation, managing systemically significant projects and changes. Has experience in forming cross-industry strategies and O2O partnerships in accordance with the Industry 4.0 concept (largest cases in Russia at the junction of bank+retail, bank+telecom).",
       "date_october_20": "October 20",
-      "time_13_00": "at 1:00 PM",
+      "time": "at ",
       "attend_button": "Attend Event"
     },
     "signup": {
@@ -645,6 +648,17 @@
       "title": "Request Presentation",
       "requestPresentation": "(Request a presentation)",
       "subtitle": "And we will send you information where answer all your questions"
+    },
+    "research_form": {
+      "label": "Research Application:",
+      "subtitle": "Leave a request and we will contact you to clarify all the details of the research!",
+      "success_title": "Thank you!",
+      "success_subtitle": "We will contact you shortly.",
+      "telegram": {
+        "title": "📩 Research Application:",
+        "name": "👤 Name:",
+        "phone": "📞 Phone:"
+      }
     }
   },
   "pages": {
@@ -671,6 +685,7 @@
     }
   },
   "ui": {
+    "placeholderDate": "Pick date",
     "search": {
       "placeholder": "Search..."
     }

@@ -4,7 +4,6 @@ import { EnvKeys } from "@/shared/constants/env"
 import { IResponseData } from "@/shared/types/response-data"
 
 const clientApi = axios.create({
-  //* use .env file for safety purposes, constant is used as an example
   baseURL: EnvKeys.NEXT_HOST,
 })
 

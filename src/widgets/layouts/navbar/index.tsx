@@ -1,6 +1,9 @@
 import { ActionIcon, Burger, Button, Drawer, Flex, Select } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
+import dayjs from "dayjs"
+import "dayjs/locale/en"
+import "dayjs/locale/ru"
 import setLanguage from "next-translate/setLanguage"
 import useTranslation from "next-translate/useTranslation"
 import Link from "next/link"
@@ -33,6 +36,10 @@ export const Navbar = () => {
 
     setIsLang(storedLang)
   }, [lang])
+
+  useEffect(() => {
+    dayjs.locale(isLang)
+  }, [isLang])
 
   return (
     <>
@@ -73,6 +80,7 @@ export const Navbar = () => {
                 setLanguage(e)
                 setIsLang(e)
                 localStorage.setItem("lang", e)
+                dayjs.locale(e)
               }}
             />
             <Button
@@ -120,6 +128,7 @@ export const Navbar = () => {
                 setLanguage(e)
                 setIsLang(e)
                 localStorage.setItem("lang", e)
+                dayjs.locale(e)
               }}
             />
             <ActionIcon

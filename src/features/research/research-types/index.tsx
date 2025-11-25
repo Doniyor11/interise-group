@@ -1,4 +1,4 @@
-import { Box, Button, Loader, Text } from "@mantine/core"
+import { Box, Loader, Text } from "@mantine/core"
 import { MonthPickerInput } from "@mantine/dates"
 import cx from "clsx"
 import dayjs from "dayjs"
@@ -86,7 +86,7 @@ export const ResearchTypes = () => {
                 onClick={
                   !item?.disabled && item?.link
                     ? () => router.push(item.link!)
-                    : undefined
+                    : () => setResearchForm(item?.title)
                 }
               >
                 <Box>
@@ -101,17 +101,6 @@ export const ResearchTypes = () => {
                   <Text className={s.cardTitle}>{item?.title}</Text>
                   <Text className={s.description}>{item?.description}</Text>
                 </Box>
-                {!item?.disabled && !item?.link && (
-                  <Button
-                    className={s.btn}
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      setResearchForm(item?.title)
-                    }}
-                  >
-                    {t("research.card.buy_button")}
-                  </Button>
-                )}
                 {item?.disabled && (
                   <div className={s.disabledWrapper}>
                     <Text className={s.label}>

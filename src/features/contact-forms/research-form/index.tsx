@@ -1,4 +1,5 @@
 import { Box, Button, Checkbox, Flex, Input, Modal, Text } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import Trans from "next-translate/Trans"
 import useTranslation from "next-translate/useTranslation"
 import React from "react"
@@ -15,6 +16,8 @@ import s from "../styles.module.scss"
 
 export const ResearchForm = () => {
   const { t, lang } = useTranslation("common")
+  const matches = useMediaQuery("(max-width: 720px)")
+
   const { researchForm, setResearchForm } = useContactFormsStore()
   const {
     control,
@@ -76,7 +79,7 @@ export const ResearchForm = () => {
             <Logo />
           </Flex>
           <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
-            <Flex gap={12}>
+            <Flex gap={12} direction={matches ? "column" : "row"}>
               <Controller
                 name={"name"}
                 control={control}

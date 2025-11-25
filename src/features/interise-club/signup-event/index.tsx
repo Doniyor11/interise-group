@@ -1,7 +1,6 @@
 import { Box, Button, Input, Text } from "@mantine/core"
 import cx from "clsx"
 import useTranslation from "next-translate/useTranslation"
-import { useRouter } from "next/router"
 import React from "react"
 import { Controller, useForm } from "react-hook-form"
 import { IMaskInput } from "react-imask"
@@ -13,14 +12,7 @@ import s from "./styles.module.scss"
 
 export const SignupEvent = () => {
   const { t } = useTranslation("common")
-  const router = useRouter()
-  const pathMap: Record<string, string> = {
-    "/": t("forms.page.home"),
-    "/main": t("forms.page.home"),
-    "/about": t("forms.page.about"),
-    "/case": t("forms.page.cases"),
-    "/research": t("forms.page.research"),
-  }
+
   const {
     control,
     handleSubmit,
@@ -34,26 +26,19 @@ export const SignupEvent = () => {
       company: "",
       phone: "",
       telegram: "",
-      event: null as any,
+      event: "",
     })
   })
 
   const onSubmit = (data: IEventFormTypes) => {
-    const currentPath = router.asPath
-    const matchedKey = Object.keys(pathMap).find((key) =>
-      currentPath.startsWith(key),
-    )
-
     mutate(
-      `<b>📩 Новая заявка с сайта!</b>\n` +
-        `<b>🌐 Страница:</b> ${
-          matchedKey ? pathMap[matchedKey] : t("forms.page.home")
-        }\n` +
+      `<b>📩 Новая заявка с сайта!</b>\n\n` +
+        `<b>🌐 Страница:</b> Interise Club\n` +
         `<b>👤 Имя:</b> ${data.name}\n` +
         `<b>🏢 Компания:</b> ${data.company}\n` +
         `<b>📞 Телефон:</b> ${data.phone}\n` +
         `<b>💬 Telegram:</b> ${data.telegram}\n` +
-        `<b>📅 Способ связи:</b> ${data.event}\n`,
+        `<b>📅 Мероприятие:</b> ${data.event}\n`,
     )
   }
   return (

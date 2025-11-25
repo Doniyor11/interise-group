@@ -15,12 +15,14 @@ export const EmailForm = () => {
   const { t, lang } = useTranslation("common")
   const router = useRouter()
   const pathMap: Record<string, string> = {
-    "/": t("forms.page.home"),
-    "/main": t("forms.page.home"),
+    "/research": t("forms.page.research"),
+    "/interise-club": "Interise Club",
     "/about": t("forms.page.about"),
     "/case": t("forms.page.cases"),
-    "/research": t("forms.page.research"),
+    "/main": t("forms.page.home"),
+    "/": t("forms.page.home"),
   }
+
   const {
     control,
     handleSubmit,
@@ -32,7 +34,7 @@ export const EmailForm = () => {
     reset({
       name: "",
       surname: "",
-      message: "",
+      message: null as any,
       phone: "",
       check: false,
     })
@@ -40,15 +42,16 @@ export const EmailForm = () => {
 
   const onSubmit = (data: IEmailFormTypes) => {
     const currentPath = router.asPath
-    const matchedKey = Object.keys(pathMap).find((key) =>
-      currentPath.startsWith(key),
-    )
+
+    const matchedKey = Object.keys(pathMap)
+      .sort((a, b) => b.length - a.length)
+      .find((key) => currentPath.startsWith(key))
+
+    const pageText = matchedKey ? pathMap[matchedKey] : t("forms.page.home")
 
     mutate(
-      `<b>📩 Новая заявка с сайта!</b>\n` +
-        `<b>🌐 Страница:</b> ${
-          matchedKey ? pathMap[matchedKey] : t("forms.page.home")
-        }\n` +
+      `<b>📩 Новая заявка с сайта!</b>\n\n` +
+        `<b>🌐 Страница:</b> ${pageText}\n` +
         `<b>👤 Имя:</b> ${data.name}\n` +
         `<b>👥 Фамилия:</b> ${data.surname}\n` +
         `<b>📞 Телефон:</b> ${data.phone}\n` +

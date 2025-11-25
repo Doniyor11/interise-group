@@ -29,7 +29,7 @@
     "clsx": "2.0.0",
     "dayjs": "^1.11.19",
     "embla-carousel-autoplay": "7",
-    "embla-carousel-react": "7",
+    "embla-carousel-react": "^7.1.0",
     "next": "14.0.1",
     "next-translate": "^2.6.2",
     "next-translate-plugin": "^2.6.2",

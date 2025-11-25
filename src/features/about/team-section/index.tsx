@@ -1,3 +1,5 @@
+import { Carousel } from "@mantine/carousel"
+import "@mantine/carousel/styles.css"
 import {
   Accordion,
   AccordionControl,
@@ -115,30 +117,40 @@ export const MediaSection = () => {
       <Text className={s.teamTitle}>{t("about.media.title")}</Text>
       <Text className={s.teamSubtitle}>{t("about.media.subtitle")}</Text>
 
-      <div className={s.cards}>
+      <Carousel
+        loop
+        align="start"
+        slideGap={16}
+        height={"auto"}
+        withControls={false}
+        slidesToScroll={data?.length >= 3 ? 3 : 1}
+        slideSize="33.333333%"
+      >
         {data?.map((item: IGetMedia, i: number) => (
-          <div key={i} className={s.card}>
-            <div className={s.cardTop}>
-              <Image
-                src={item?.image}
-                alt={item?.text}
-                className={s.image}
-                width={275}
-                height={275}
-                unoptimized
-              />
-              <div className={s.links}>
-                <LogoMedia />
-                <Anchor className={s.link} href={item?.url} target={"_blank"}>
-                  {t("about.media.open_article")}
-                </Anchor>
+          <Carousel.Slide key={i}>
+            <div className={s.card}>
+              <div className={s.cardTop}>
+                <Image
+                  src={item?.image}
+                  alt={item?.text}
+                  className={s.image}
+                  width={275}
+                  height={275}
+                  unoptimized
+                />
+                <div className={s.links}>
+                  <LogoMedia />
+                  <Anchor className={s.link} href={item?.url} target={"_blank"}>
+                    {t("about.media.open_article")}
+                  </Anchor>
+                </div>
               </div>
-            </div>
 
-            <Text>{item?.text}</Text>
-          </div>
+              <Text>{item?.text}</Text>
+            </div>
+          </Carousel.Slide>
         ))}
-      </div>
+      </Carousel>
     </div>
   )
 }

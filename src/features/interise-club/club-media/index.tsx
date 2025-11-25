@@ -21,48 +21,56 @@ export const ClubMedia = () => {
           alt={"media-image"}
           className={s.image}
           width={391}
+          height={293}
         />
         <Image
           src={ImageTwo}
           alt={"media-image"}
           className={s.image}
           width={233}
+          height={175}
         />
         <Image
           src={ImageThree}
           alt={"media-image"}
           className={s.image}
           width={391}
+          height={293}
         />
         <Image
           src={ImageFour}
           alt={"media-image"}
           className={s.image}
           width={235}
+          height={176}
         />
         <Image
           src={ImageOne}
           alt={"media-image"}
           className={s.image}
           width={391}
+          height={293}
         />
         <Image
           src={ImageTwo}
           alt={"media-image"}
           className={s.image}
           width={233}
+          height={175}
         />
         <Image
           src={ImageThree}
           alt={"media-image"}
           className={s.image}
           width={391}
+          height={293}
         />
         <Image
           src={ImageFour}
           alt={"media-image"}
           className={s.image}
           width={235}
+          height={176}
         />
       </div>
       <div className={cx(s.boxImages, s.rightToLeft)}>
@@ -71,48 +79,56 @@ export const ClubMedia = () => {
           alt={"media-image"}
           className={s.image}
           width={391}
+          height={293}
         />
         <Image
           src={ImageTwo}
           alt={"media-image"}
           className={s.image}
           width={233}
+          height={175}
         />
         <Image
           src={ImageThree}
           alt={"media-image"}
           className={s.image}
           width={391}
+          height={293}
         />
         <Image
           src={ImageFour}
           alt={"media-image"}
           className={s.image}
           width={235}
+          height={176}
         />
         <Image
           src={ImageOne}
           alt={"media-image"}
           className={s.image}
           width={391}
+          height={293}
         />
         <Image
           src={ImageTwo}
           alt={"media-image"}
           className={s.image}
           width={233}
+          height={175}
         />
         <Image
           src={ImageThree}
           alt={"media-image"}
           className={s.image}
           width={391}
+          height={293}
         />
         <Image
           src={ImageFour}
           alt={"media-image"}
           className={s.image}
           width={235}
+          height={176}
         />
       </div>
     </div>

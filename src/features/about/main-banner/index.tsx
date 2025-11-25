@@ -1,5 +1,4 @@
 import { Text } from "@mantine/core"
-import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
 import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
@@ -8,7 +7,6 @@ import React from "react"
 import { useBreadcrumbs } from "@/features/about/main-banner/libs.ts"
 
 import ImageAbout from "@/shared/assets/images/interise-group/image-about.png"
-import { SearchInput } from "@/shared/ui"
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs"
 
 import s from "./styles.module.scss"
@@ -16,7 +14,6 @@ import s from "./styles.module.scss"
 export const AboutMainBanner = () => {
   const { t } = useTranslation("common")
   const breadcrumbs = useBreadcrumbs()
-  const matches = useMediaQuery("(max-width: 1040px)")
 
   return (
     <>
@@ -24,7 +21,6 @@ export const AboutMainBanner = () => {
         <div className={cx(s.container, "container")}>
           <div className={s.sectionHead}>
             <Breadcrumbs data={breadcrumbs} />
-            {!matches && <SearchInput />}
           </div>
           <h1>{t("about.banner.title")}</h1>
         </div>

@@ -1,5 +1,4 @@
 import { Box, Text } from "@mantine/core"
-import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
 import useTranslation from "next-translate/useTranslation"
 import React from "react"
@@ -8,7 +7,7 @@ import IconBusiness from "@/shared/assets/images/interise-group/icon-business.sv
 import IconDocument from "@/shared/assets/images/interise-group/icon-document.svg"
 import IconEyeOff from "@/shared/assets/images/interise-group/icon-eye-off.svg"
 import IconMap from "@/shared/assets/images/interise-group/icon-map.svg"
-import { AnimatedNumber, SearchInput } from "@/shared/ui"
+import { AnimatedNumber } from "@/shared/ui"
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs"
 
 import { useBreadcrumbs } from "./libs.ts"
@@ -17,7 +16,6 @@ import s from "./styles.module.scss"
 export const CaseMainBanner = () => {
   const { t } = useTranslation("common")
   const breadcrumbs = useBreadcrumbs()
-  const matches = useMediaQuery("(max-width: 1040px)")
 
   return (
     <>
@@ -25,7 +23,6 @@ export const CaseMainBanner = () => {
         <div className={cx(s.container, "container")}>
           <div className={s.sectionHead}>
             <Breadcrumbs data={breadcrumbs} />
-            {!matches && <SearchInput />}
           </div>
           <h1>{t("breadcrumbs.cases")}</h1>
         </div>

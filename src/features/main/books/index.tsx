@@ -88,9 +88,7 @@ const IdeaCard: FC<{ data: IGetCases; onClick?: () => void; t: any }> = ({
           {t("main.results.card.task")}
         </AccordionControl>
         <Accordion.Panel>
-          <Text className={s.collapseText}>
-            {t("main.results.card.task_text")}
-          </Text>
+          <Text className={s.collapseText}>{data?.task}</Text>
         </Accordion.Panel>
       </Accordion.Item>
       <Accordion.Item value="item-2" className={s.collapseWrapper}>
@@ -101,9 +99,7 @@ const IdeaCard: FC<{ data: IGetCases; onClick?: () => void; t: any }> = ({
           {t("main.results.card.solution")}
         </AccordionControl>
         <Accordion.Panel>
-          <Text className={s.collapseText}>
-            {t("main.results.card.solution_text")}
-          </Text>
+          <Text className={s.collapseText}>{data?.solution}</Text>
         </Accordion.Panel>
       </Accordion.Item>
     </Accordion>
@@ -124,7 +120,6 @@ const IdeaCard: FC<{ data: IGetCases; onClick?: () => void; t: any }> = ({
               alt={""}
               width={44}
               height={44}
-              unoptimized
             />
             <Text component={"p"}>{result?.text}</Text>
           </Flex>

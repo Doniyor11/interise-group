@@ -1,12 +1,10 @@
 import { Box, Text } from "@mantine/core"
-import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
 import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
 import React from "react"
 
 import ImageOne from "@/shared/assets/images/interise-group/image-research-2.png"
-import { SearchInput } from "@/shared/ui"
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs"
 
 import { useBreadcrumbs } from "./libs.ts"
@@ -15,7 +13,6 @@ import s from "./styles.module.scss"
 export const ResearchMainBanner = () => {
   const { t } = useTranslation("common")
   const breadcrumbs = useBreadcrumbs()
-  const matches = useMediaQuery("(max-width: 1040px)")
 
   return (
     <>
@@ -23,7 +20,6 @@ export const ResearchMainBanner = () => {
         <div className={cx(s.container, "container")}>
           <div className={s.sectionHead}>
             <Breadcrumbs data={breadcrumbs} />
-            {!matches && <SearchInput />}
           </div>
           <h1>{t("breadcrumbs.research")}</h1>
         </div>

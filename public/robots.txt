@@ -1,0 +1,32 @@
+# robots.txt for InteriseGroup
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow crawling of private or sensitive areas (if any)
+# Disallow: /api/
+# Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://interisegroup.com/sitemap.xml
+
+# Crawl-delay (optional, adjust based on server capacity)
+# Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# Block bad bots (optional)
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10

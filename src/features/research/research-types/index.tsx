@@ -83,11 +83,15 @@ export const ResearchTypes = () => {
               <div
                 key={i}
                 className={s.card}
-                onClick={
-                  !item?.disabled && item?.link
-                    ? () => router.push(item.link!)
-                    : () => setResearchForm(item?.title)
-                }
+                onClick={() => {
+                  if (item?.disabled) return
+
+                  if (item?.link) {
+                    router.push(item.link)
+                  } else {
+                    setResearchForm(item?.title)
+                  }
+                }}
               >
                 <Box>
                   <Image
@@ -96,7 +100,6 @@ export const ResearchTypes = () => {
                     className={s.image}
                     width={370}
                     height={152}
-                    unoptimized
                   />
                   <Text className={s.cardTitle}>{item?.title}</Text>
                   <Text className={s.description}>{item?.description}</Text>

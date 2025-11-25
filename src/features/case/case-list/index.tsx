@@ -188,7 +188,6 @@ export const CaseList = () => {
                               alt={r?.text}
                               width={44}
                               height={44}
-                              unoptimized
                             />
                             <Text component={"p"}>{r?.text}</Text>
                           </Flex>

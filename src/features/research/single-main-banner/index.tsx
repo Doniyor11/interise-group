@@ -1,11 +1,9 @@
 import { Button, Text } from "@mantine/core"
-import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
 import useTranslation from "next-translate/useTranslation"
 import React from "react"
 
 import { onLinkClick } from "@/shared/libs/scroll.ts"
-import { SearchInput } from "@/shared/ui"
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs"
 
 import { useBreadcrumbs } from "./libs.ts"
@@ -14,7 +12,6 @@ import s from "./styles.module.scss"
 export const SingleResearchBanner = () => {
   const { t } = useTranslation("common")
   const breadcrumbs = useBreadcrumbs()
-  const matches = useMediaQuery("(max-width: 1040px)")
 
   return (
     <>
@@ -22,7 +19,6 @@ export const SingleResearchBanner = () => {
         <div className={cx(s.container, "container")}>
           <div className={s.sectionHead}>
             <Breadcrumbs data={breadcrumbs} />
-            {!matches && <SearchInput />}
           </div>
           <h1>{t("breadcrumbs.research_page")}</h1>
         </div>

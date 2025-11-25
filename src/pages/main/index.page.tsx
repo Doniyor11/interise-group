@@ -1,4 +1,4 @@
-import Head from "next/head"
+import useTranslation from "next-translate/useTranslation"
 
 import { Contacts } from "@/widgets"
 
@@ -11,12 +11,33 @@ import {
   MainRecipes,
 } from "@/features/main"
 
+import { SEOHead } from "@/shared/components/seo-head"
+import {
+  generateOrganizationSchema,
+  generateWebPageSchema,
+} from "@/shared/utils/structured-data"
+
 const HomePage = () => {
+  const { t, lang } = useTranslation("seo")
+
+  const structuredData = [
+    generateOrganizationSchema(lang),
+    generateWebPageSchema(
+      t("main.title"),
+      t("main.description"),
+      `/${lang}/main`,
+    ),
+  ]
+
   return (
     <>
-      <Head>
-        <title>Inrerise Group</title>
-      </Head>
+      <SEOHead
+        titleKey="main.title"
+        descriptionKey="main.description"
+        keywordsKey="main.keywords"
+        ogType="website"
+        structuredData={structuredData}
+      />
       <MainBanner />
       <main className={"container"}>
         <ConsultingService />

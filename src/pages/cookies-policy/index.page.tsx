@@ -1,11 +1,31 @@
 import { Box } from "@mantine/core"
+import useTranslation from "next-translate/useTranslation"
 import React from "react"
 
 import { Footer } from "@/widgets/layouts/footer"
 
+import { SEOHead } from "@/shared/components/seo-head"
+import { generateWebPageSchema } from "@/shared/utils/structured-data"
+
 export default function CookiesPolicyPage() {
+  const { t, lang } = useTranslation("seo")
+
+  const structuredData = generateWebPageSchema(
+    t("cookies_policy.title"),
+    t("cookies_policy.description"),
+    `/${lang}/cookies-policy`,
+  )
+
   return (
     <>
+      <SEOHead
+        titleKey="cookies_policy.title"
+        descriptionKey="cookies_policy.description"
+        keywordsKey="cookies_policy.keywords"
+        ogType="website"
+        noindex={true}
+        structuredData={structuredData}
+      />
       <Box p={"150px 64px 100px"} className={"container"}>
         <h1>Политика использования файлов cookie</h1>
         <p>

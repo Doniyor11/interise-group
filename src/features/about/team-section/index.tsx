@@ -55,7 +55,6 @@ export const TeamSection = () => {
                     alt={item?.name}
                     width={254}
                     height={284}
-                    unoptimized
                   />
                 </Box>
                 <Flex direction={"column"} justify={"space-between"} gap={12}>
@@ -136,7 +135,6 @@ export const MediaSection = () => {
                   className={s.image}
                   width={275}
                   height={275}
-                  unoptimized
                 />
                 <div className={s.links}>
                   <LogoMedia />

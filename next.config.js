@@ -6,6 +6,20 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, "src")],
   },
+  experimental: {
+    esmExternals: "loose",
+  },
+  transpilePackages: ["@uiw/react-markdown-preview", "react-markdown"],
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "yfcxgyholyjtwudzsbbf.supabase.co",
+        port: "",
+        pathname: "/storage/**",
+      },
+    ],
+  },
   webpack: (config) => {
     config.resolve.alias["@"] = path.join(__dirname, "src", "app")
     config.module.rules.push({

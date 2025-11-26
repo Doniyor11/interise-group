@@ -1,5 +1,4 @@
 import { Box, Loader, Text } from "@mantine/core"
-import { MonthPickerInput } from "@mantine/dates"
 import cx from "clsx"
 import dayjs from "dayjs"
 import "dayjs/locale/en"
@@ -15,10 +14,9 @@ import { useContactFormsStore } from "@/features/contact-forms/model"
 import { useGetResearchesQuery } from "@/entities/research/query.ts"
 import { IGetResearches } from "@/entities/research/types.ts"
 
-import IconClear from "@/shared/assets/images/icons/icon-close.svg"
-import IconArrow from "@/shared/assets/images/interise-group/icon-arrow-down-2.svg"
-import IconCalendar from "@/shared/assets/images/interise-group/icon-calendar-2.svg"
-
+// import IconClear from "@/shared/assets/images/icons/icon-close.svg"
+// import IconArrow from "@/shared/assets/images/interise-group/icon-arrow-down-2.svg"
+// import IconCalendar from "@/shared/assets/images/interise-group/icon-calendar-2.svg"
 import s from "./styles.module.scss"
 
 export const ResearchTypes = () => {
@@ -26,7 +24,7 @@ export const ResearchTypes = () => {
   const router = useRouter()
   const { setResearchForm } = useContactFormsStore()
 
-  const [selectMonth, setSelectMonth] = useState<Date | null>(null)
+  const [selectMonth, _] = useState<Date | null>(null)
   const { data, isLoading } = useGetResearchesQuery({
     lang,
     month: selectMonth ? dayjs(selectMonth).format("MM") : undefined,
@@ -46,29 +44,29 @@ export const ResearchTypes = () => {
             dangerouslySetInnerHTML={{ __html: t("research.types.title") }}
           />
 
-          <MonthPickerInput
-            locale={lang}
-            // @ts-ignore
-            placeholder={t("ui.placeholderDate")}
-            value={selectMonth}
-            className={s.filterBtn}
-            valueFormat={"MMMM"}
-            onChange={setSelectMonth as any}
-            leftSection={<IconCalendar />}
-            rightSection={
-              selectMonth ? (
-                <IconClear
-                  className={s.clear}
-                  onClick={() => setSelectMonth(null)}
-                />
-              ) : (
-                <IconArrow />
-              )
-            }
-            popoverProps={{
-              position: "bottom-end",
-            }}
-          />
+          {/*<MonthPickerInput*/}
+          {/*  locale={lang}*/}
+          {/*  // @ts-ignore*/}
+          {/*  placeholder={t("ui.placeholderDate")}*/}
+          {/*  value={selectMonth}*/}
+          {/*  className={s.filterBtn}*/}
+          {/*  valueFormat={"MMMM"}*/}
+          {/*  onChange={setSelectMonth as any}*/}
+          {/*  leftSection={<IconCalendar />}*/}
+          {/*  rightSection={*/}
+          {/*    selectMonth ? (*/}
+          {/*      <IconClear*/}
+          {/*        className={s.clear}*/}
+          {/*        onClick={() => setSelectMonth(null)}*/}
+          {/*      />*/}
+          {/*    ) : (*/}
+          {/*      <IconArrow />*/}
+          {/*    )*/}
+          {/*  }*/}
+          {/*  popoverProps={{*/}
+          {/*    position: "bottom-end",*/}
+          {/*  }}*/}
+          {/*/>*/}
         </div>
         <div className={s.cards}>
           {isLoading ? (

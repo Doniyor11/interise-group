@@ -31,6 +31,7 @@ export const MainGallery = () => {
       <div className={s.sectionWrapper}>
         <div className={"container"}>
           <Flex
+            data-aos="zoom-in"
             direction={"column"}
             justify={"center"}
             align={matches ? "flex-start" : "center"}
@@ -64,7 +65,7 @@ export const MainGallery = () => {
             direction={matches ? "column-reverse" : "row"}
             p={matches ? "0" : "0"}
           >
-            <Box w={matches ? "100%" : "50%"}>
+            <Box data-aos="fade-right" w={matches ? "100%" : "50%"}>
               <Text
                 fz={"16px"}
                 c={"#798B9E"}
@@ -95,7 +96,11 @@ export const MainGallery = () => {
                 {t("main.club.join_button")}
               </Button>
             </Box>
-            <Flex w={matches ? "100%" : "50%"} direction={"column"}>
+            <Flex
+              data-aos="fade-left"
+              w={matches ? "100%" : "50%"}
+              direction={"column"}
+            >
               <Box className={s.clubImage}>
                 <Image
                   src={ImageBanner}

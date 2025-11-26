@@ -36,7 +36,7 @@ const IdeaCard: FC<{ data: IGetCases; onClick?: () => void; t: any }> = ({
   onClick,
   t,
 }) => (
-  <Box onClick={onClick} className={s.ideaBox}>
+  <Box data-aos="zoom-in" onClick={onClick} className={s.ideaBox}>
     <Box className={s.ideaBoxTop}>
       <Flex gap={"26px"} justify={"space-between"}>
         <MarkdownPreview source={data.companyRank} className={s.ideaBoxTitle} />
@@ -188,7 +188,7 @@ export const MainSprints = () => {
     <>
       <Grid gutter={"32px"} pt={"100px"} id={"directions"}>
         <Grid.Col span={matches ? 12 : 4}>
-          <Box h={"100%"}>
+          <Box h={"100%"} data-aos="fade-down-right">
             <Text className={s.ideaInfoBoxTitleOne}>{data?.title}</Text>
             <Text className={s.ideaInfoBoxDescriptionOne}>
               {data?.description}
@@ -197,7 +197,7 @@ export const MainSprints = () => {
         </Grid.Col>
         {data?.sprints?.map((item: IMainSprints, i: number) => (
           <Grid.Col span={matches ? 12 : 4} key={i}>
-            <Box className={s.ideaInfoBox}>
+            <Box data-aos="zoom-in" className={s.ideaInfoBox}>
               <Flex justify={"flex-end"} mb={"45px"}>
                 <div className={s.icon}>
                   <Image

@@ -1,6 +1,7 @@
 @import "src/shared/styles/font-mixins";
 
 .sectionWrapper {
+  overflow: hidden;
   position: relative;
   background: url("../../../shared/assets/images/interise-group/club-bg.png")
     no-repeat center;

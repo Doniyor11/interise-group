@@ -1,5 +1,6 @@
 import { Loader } from "@mantine/core"
-import React, { ReactNode } from "react"
+import AOS from "aos"
+import React, { ReactNode, useEffect } from "react"
 
 import { CookiesPopup } from "@/widgets"
 import { Navbar } from "@/widgets/layouts/navbar"
@@ -9,6 +10,12 @@ interface ILayout {
 }
 
 export const Layout = ({ children }: ILayout) => {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+    })
+  }, [])
   return (
     <>
       <Navbar />

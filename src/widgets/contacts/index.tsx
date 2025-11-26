@@ -1,5 +1,4 @@
 import { Anchor, Box, Flex, Text } from "@mantine/core"
-import { useMediaQuery } from "@mantine/hooks"
 import MarkdownPreview from "@uiw/react-markdown-preview"
 import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
@@ -17,7 +16,6 @@ import s from "./index.module.scss"
 
 export const Contacts = () => {
   const { t } = useTranslation("common")
-  const matchesIpad = useMediaQuery("(max-width: 1140px)")
 
   const { data } = useGetOurTeamQuery()
 
@@ -30,7 +28,7 @@ export const Contacts = () => {
           <p className={s.teamTitle}>{t("contacts.team.title")}</p>
           <Flex gap={12} mb={32} align={"stretch"}>
             {data?.map((item: IGetOurTeam, i: number) => (
-              <Flex key={i} className={s.teamBox}>
+              <Flex data-aos="zoom-in" key={i} className={s.teamBox}>
                 <Flex className={s.teamBoxTop}>
                   <Box className={s.teamBoxImage}>
                     <Image
@@ -44,7 +42,7 @@ export const Contacts = () => {
                   <Flex
                     direction={"column"}
                     justify={"space-between"}
-                    h={matchesIpad ? "240px" : "280px"}
+                    mih={340}
                   >
                     <Box>
                       <p className={s.teamBoxTitle}>{item?.name}</p>
@@ -54,7 +52,7 @@ export const Contacts = () => {
                         className={s.list}
                       />
                     </Box>
-                    <Flex gap={"8px"} className={s.socials}>
+                    <Flex mt={12} gap={"8px"} className={s.socials}>
                       <Anchor
                         h={50}
                         href={item?.telegram_url}

@@ -19,15 +19,20 @@ export const MainBanner = () => {
       <Box className={"container"} w={"100%"}>
         <Box className={s.sectionLeft}>
           <Text
+            data-aos="zoom-in-up"
             className={s.bannerTitle}
             dangerouslySetInnerHTML={{ __html: t("main.banner.title") }}
           />
-          <Box w={"100%"} maw={matches ? "480px" : "514px"}>
+          <Box
+            data-aos="zoom-in-up"
+            w={"100%"}
+            maw={matches ? "480px" : "514px"}
+          >
             <Text className={s.bannerDescription}>
               {t("main.banner.description")}
             </Text>
           </Box>
-          <Flex className={s.stats}>
+          <Flex className={s.stats} data-aos="zoom-in-up">
             <Flex direction={"column"} align={"center"} className={s.item}>
               <Text className={s.counter}>
                 <AnimatedNumber value={115} className={s.number} />
@@ -37,9 +42,9 @@ export const MainBanner = () => {
             <div className={s.line} />
             <Flex direction={"column"} align={"center"} className={s.item}>
               <Text className={s.counter}>
-                <sup>$</sup>
+                <b>$</b>
                 <AnimatedNumber value={3.5} className={s.number} />{" "}
-                <sup>{t("main.banner.stats.billion")}</sup>
+                <b>{t("main.banner.stats.billion")}</b>
               </Text>
               <Text className={s.info}>{t("main.banner.stats.result")}</Text>
             </Flex>
@@ -58,7 +63,12 @@ export const MainBanner = () => {
               <Text className={s.info}>{t("main.banner.stats.countries")}</Text>
             </Flex>
           </Flex>
-          <Flex align={"center"} gap={5} w={matches ? "100%" : "fit-content"}>
+          <Flex
+            data-aos="zoom-in-up"
+            align={"center"}
+            gap={5}
+            w={matches ? "100%" : "fit-content"}
+          >
             <Button
               onClick={() => onLinkClick("contacts")}
               className={cx(s.buttonBanner)}

@@ -39,6 +39,7 @@ export const ConsultingService = () => {
           <Grid w={"100%"} gutter={32}>
             <Grid.Col span={matchesMobile ? 12 : 4}>
               <Box
+                data-aos="fade-right"
                 onClick={() => router.push("/about")}
                 className={cx(s.aboutBox, s.one)}
               >
@@ -53,6 +54,7 @@ export const ConsultingService = () => {
             </Grid.Col>
             <Grid.Col span={matchesMobile ? 12 : 4}>
               <Box
+                data-aos="fade-up"
                 onClick={() => router.push("/about")}
                 className={cx(s.aboutBox, s.two)}
               >
@@ -67,6 +69,7 @@ export const ConsultingService = () => {
             </Grid.Col>
             <Grid.Col span={matchesMobile ? 12 : 4}>
               <Box
+                data-aos="fade-left"
                 onClick={() => router.push("/about")}
                 className={cx(s.aboutBox, s.three)}
               >
@@ -97,7 +100,11 @@ export const ConsultingService = () => {
         </Box>
       </div>
       {/* Наши принципы */}
-      <Box mt={matches ? "60px" : "80px"} className={s.ourWrapper}>
+      <Box
+        data-aos="fade-up"
+        mt={matches ? "60px" : "80px"}
+        className={s.ourWrapper}
+      >
         <Text
           className={s.aboutBottomTitle}
           mb={"20px"}

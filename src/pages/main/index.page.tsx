@@ -1,3 +1,4 @@
+import { Box } from "@mantine/core"
 import useTranslation from "next-translate/useTranslation"
 
 import { Contacts } from "@/widgets"
@@ -39,18 +40,26 @@ const HomePage = () => {
         structuredData={structuredData}
       />
       <MainBanner />
-      <main className={"container"}>
-        <ConsultingService />
-      </main>
-      <Banner />
-      <main className={"container"}>
-        <Books />
-      </main>
-      <MainGallery />
-      <main className={"container"}>
-        <MainRecipes />
-      </main>
-      <Contacts />
+      <Box
+        bg={"#fff"}
+        style={{
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
+        <main className={"container"}>
+          <ConsultingService />
+        </main>
+        <Banner />
+        <main className={"container"}>
+          <Books />
+        </main>
+        <MainGallery />
+        <main className={"container"}>
+          <MainRecipes />
+        </main>
+        <Contacts />
+      </Box>
     </>
   )
 }

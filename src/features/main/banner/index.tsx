@@ -17,6 +17,7 @@ export const Banner = () => {
           justify={"center"}
           align={"center"}
           maw={"1000px"}
+          data-aos="zoom-in"
         >
           <Text className={s.label}>{t("main.experience.label")}</Text>
           <Text className={s.title}>{t("main.experience.title")}</Text>

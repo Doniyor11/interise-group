@@ -24,11 +24,13 @@ export const EmailForm = () => {
   }
 
   const {
+    reset,
     control,
     handleSubmit,
-    reset,
     formState: { isDirty, isValid },
-  } = useForm<IEmailFormTypes>()
+  } = useForm<IEmailFormTypes>({
+    mode: "onChange",
+  })
 
   const { mutate, isPending } = useSendMessageQuery(() => {
     reset({
@@ -39,7 +41,6 @@ export const EmailForm = () => {
       check: false,
     })
   })
-
   const onSubmit = (data: IEmailFormTypes) => {
     const currentPath = router.asPath
 
@@ -65,6 +66,7 @@ export const EmailForm = () => {
         <Controller
           name={"name"}
           control={control}
+          rules={{ required: true }}
           render={({ field }) => (
             <Input.Wrapper className={s.inputWrapper}>
               <Input
@@ -79,6 +81,7 @@ export const EmailForm = () => {
         <Controller
           name={"surname"}
           control={control}
+          rules={{ required: true }}
           render={({ field }) => (
             <Input.Wrapper className={s.inputWrapper}>
               <Input
@@ -93,6 +96,7 @@ export const EmailForm = () => {
         <Controller
           name={"phone"}
           control={control}
+          rules={{ required: true }}
           render={({ field }) => (
             <Input.Wrapper className={s.inputWrapper}>
               <Input
@@ -117,6 +121,7 @@ export const EmailForm = () => {
         <Controller
           name={"message"}
           control={control}
+          rules={{ required: true }}
           render={({ field }) => (
             <Input.Wrapper className={s.inputWrapper}>
               <Select
@@ -136,6 +141,7 @@ export const EmailForm = () => {
         <Controller
           name={"check"}
           control={control}
+          rules={{ required: true }}
           render={({ field }) => (
             <Checkbox
               required

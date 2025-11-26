@@ -31,18 +31,18 @@ export const Footer = () => {
         align={"stretch"}
         direction={matches ? "column" : "row"}
       >
-        <Box className={s.boxForm}>
+        <Box className={s.boxForm} data-aos="fade-right">
           <Text component="h2">{t("footer.write_to_us")}</Text>
           <Text component="p">{t("footer.we_will_contact_you")}</Text>
           <EmailForm />
         </Box>
-        <Box className={s.boxFormImage}>
+        <Box className={s.boxFormImage} data-aos="fade-left">
           <Image src={Imaga1} alt="Imaga1" width={751} height={331} />
         </Box>
       </Flex>
 
       <Flex gap="30px" align="stretch" direction={matches ? "column" : "row"}>
-        <Box className={s.mapLeft}>
+        <Box data-aos="fade-right" className={s.mapLeft}>
           {/* 1 */}
           <Flex
             direction={"column"}
@@ -209,7 +209,7 @@ export const Footer = () => {
             </Flex>
           </Flex>
         </Box>
-        <Box className={s.mapRight}>
+        <Box data-aos="fade-left" className={s.mapRight}>
           <iframe
             src="https://yandex.com/map-widget/v1/?um=constructor%3A42c9af928a64586089fec4baa8e2113d4c45085dfbda73f148aca3da4fddc4a3&amp;source=constructor"
             width="100%"

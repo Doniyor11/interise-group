@@ -54,7 +54,7 @@ export const CaseMainBanner = () => {
               </div>
               <Box>
                 <Text className={s.count}>
-                  <AnimatedNumber value={30} />
+                  <AnimatedNumber value={31} />
                 </Text>
                 <Text className={s.countLabel}>
                   {t("case.banner.countries")}

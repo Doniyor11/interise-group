@@ -16,6 +16,7 @@
   transform: translateX(-50%);
   max-width: calc(1440px - 128px);
   margin: 0 auto;
+  animation: navbarBounce 1s ease-in-out;
 
   .logo {
     color: #111827;
@@ -61,6 +62,21 @@
   }
   @media screen and (max-width: 992px) {
     max-width: calc(100% - 32px);
+  }
+}
+
+@keyframes navbarBounce {
+  0% {
+    top: -2%;
+    opacity: 0;
+  }
+  50% {
+    top: 4%;
+    opacity: 1;
+  }
+  100% {
+    top: 2%;
+    opacity: 1;
   }
 }
 

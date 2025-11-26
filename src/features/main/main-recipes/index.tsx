@@ -19,6 +19,7 @@ export const MainRecipes = () => {
   return (
     <div className={s.sectionWrapper}>
       <Flex
+        data-aos="zoom-in"
         direction={"column"}
         align={matches ? "flex-start" : "center"}
         gap={"20px"}
@@ -32,7 +33,7 @@ export const MainRecipes = () => {
         </Text>
       </Flex>
       <div className={s.cards}>
-        <Box className={s.card}>
+        <Box data-aos="fade-right" className={s.card}>
           <Box className={s.cardImageBox}>
             <Image
               className={s.image}
@@ -55,7 +56,7 @@ export const MainRecipes = () => {
             </Text>
           </Flex>
         </Box>
-        <Box className={s.card}>
+        <Box data-aos="fade-up" className={s.card}>
           <Box className={s.cardImageBox}>
             <Image
               className={s.image}
@@ -78,7 +79,7 @@ export const MainRecipes = () => {
             </Text>
           </Flex>
         </Box>
-        <Box className={s.card}>
+        <Box data-aos="fade-left" className={s.card}>
           <Box className={s.cardImageBox}>
             <Image
               className={s.image}

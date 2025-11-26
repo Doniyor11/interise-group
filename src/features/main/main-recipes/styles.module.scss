@@ -1,6 +1,7 @@
 @import "src/shared/styles/font-mixins";
 
 .sectionWrapper {
+  overflow: hidden;
   margin-top: 78px;
   padding: 78px 0 0;
   @media screen and (max-width: 1040px) {

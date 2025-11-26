@@ -27,11 +27,13 @@ export const RequestPresentation = () => {
   const { requestPresentation, setRequestPresentation } = useContactFormsStore()
 
   const {
+    reset,
     control,
     handleSubmit,
-    reset,
     formState: { isDirty, isValid },
-  } = useForm<IEmailFormTypes>()
+  } = useForm<IEmailFormTypes>({
+    mode: "onChange",
+  })
 
   const onClose = () => {
     reset({
@@ -97,6 +99,7 @@ export const RequestPresentation = () => {
               <Controller
                 name={"name"}
                 control={control}
+                rules={{ required: true }}
                 render={({ field }) => (
                   <Input.Wrapper className={s.inputWrapper}>
                     <Input
@@ -111,6 +114,7 @@ export const RequestPresentation = () => {
               <Controller
                 name={"surname"}
                 control={control}
+                rules={{ required: true }}
                 render={({ field }) => (
                   <Input.Wrapper className={s.inputWrapper}>
                     <Input
@@ -125,6 +129,7 @@ export const RequestPresentation = () => {
               <Controller
                 name={"phone"}
                 control={control}
+                rules={{ required: true }}
                 render={({ field }) => (
                   <Input.Wrapper className={s.inputWrapper}>
                     <Input
@@ -149,6 +154,7 @@ export const RequestPresentation = () => {
               <Controller
                 name={"message"}
                 control={control}
+                rules={{ required: true }}
                 render={({ field }) => (
                   <Input.Wrapper className={s.inputWrapper}>
                     <Select
@@ -169,6 +175,7 @@ export const RequestPresentation = () => {
               <Controller
                 name={"check"}
                 control={control}
+                rules={{ required: true }}
                 render={({ field }) => (
                   <Checkbox
                     size={"md"}

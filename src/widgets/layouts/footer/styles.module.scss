@@ -1,3 +1,7 @@
+.footerWrapper {
+  overflow: hidden;
+}
+
 .boxForm {
   border-radius: 24px;
   background: linear-gradient(0deg, #0076fe 0%, #0076fe 100%), #f2f8ff;
@@ -73,6 +77,7 @@
 
   .messengers {
     @media screen and (max-width: 1040px) {
+      justify-content: flex-end;
       svg {
         width: 44px;
         height: 44px;

@@ -11,12 +11,16 @@ export const ScopeResearch = () => {
   const { t } = useTranslation("common")
   return (
     <div className={cx(s.sectionWrapper, "container")}>
-      <h2 dangerouslySetInnerHTML={{ __html: t("research.scope.title") }} />
+      <h2
+        data-aos="zoom-in-up"
+        dangerouslySetInnerHTML={{ __html: t("research.scope.title") }}
+      />
       <Text
+        data-aos="zoom-in-up"
         className={s.subtitle}
         dangerouslySetInnerHTML={{ __html: t("research.scope.subtitle") }}
       />
-      <Box className={s.box}>
+      <Box className={s.box} data-aos="fade-up">
         <div className={s.statsWrapper}>
           <div className={s.statsCard}>
             <Text>

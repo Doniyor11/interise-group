@@ -644,6 +644,13 @@
     },
     "privacy_agreement": "Я ознакомлен и согласен с <link>условиями обработки данных</link>",
     "submit_button": "Отправить",
+    "validation": {
+      "name_required": "Имя обязательно для заполнения",
+      "surname_required": "Фамилия обязательна для заполнения",
+      "phone_required": "Номер телефона обязателен для заполнения",
+      "contact_method_required": "Выберите способ связи",
+      "privacy_required": "Необходимо согласие с политикой конфиденциальности"
+    },
     "presentation": {
       "title": "Запросите презентацию",
       "requestPresentation": "(Запрос презентации)",

@@ -1,80 +1,44 @@
 .topSectionWrapper {
   width: 100%;
-  background: #ffffff;
   min-height: 333px;
   padding-top: 123px;
 
+  background: url("../../../shared/assets/images/interise-group/image-interise-club.png")
+    no-repeat top center fixed;
+  background-size: 120% 333px;
   .container {
     padding: 0 65px;
     margin-bottom: 25px;
 
-    .sectionHead {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      .breadcrumbs {
-        a {
-          color: #566677 !important;
-        }
-
-        svg {
-          path {
-            fill: #566677;
-          }
-        }
-      }
+    h1 {
+      margin-top: 40px;
+      color: #fff;
+      font-size: 64px;
+      font-weight: 400;
+      line-height: 64px;
+      letter-spacing: -1.28px;
     }
-  }
-
-  .image {
-    width: 100%;
-    max-width: 1440px;
-    height: 203px;
-    object-fit: cover;
-    margin: 0 auto;
   }
 }
 
 @media screen and (max-width: 1040px) {
   .topSectionWrapper {
-    width: 100%;
-    position: relative;
-    padding-top: 120px;
-    min-height: 203px;
+    min-height: 220px;
+    padding-top: 100px;
+    background: url("../../../shared/assets/images/interise-group/image-interise-club.png")
+      no-repeat top center fixed;
+    background-size: auto 220px;
 
     .container {
       padding: 0 16px;
       margin-bottom: 25px;
 
-      .sectionHead {
-        .breadcrumbs {
-          position: relative;
-          z-index: 1;
-
-          a {
-            color: #ffffff !important;
-          }
-
-          svg {
-            path {
-              fill: #ffffff;
-            }
-          }
-        }
+      h1 {
+        margin-top: 12px;
+        font-size: 32px;
+        line-height: 120%;
+        letter-spacing: -0.64px;
       }
-    }
-
-    .imageWrapper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 0;
-    }
-
-    .image {
-      width: 100%;
-      max-width: 100%;
     }
   }
 }

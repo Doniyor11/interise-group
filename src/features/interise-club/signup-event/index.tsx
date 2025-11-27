@@ -43,7 +43,7 @@ export const SignupEvent = () => {
   }
   return (
     <div className={cx(s.container, "container")} id={"eventForm"}>
-      <div className={s.sectionWrapper}>
+      <div data-aos="fade-up" className={s.sectionWrapper}>
         <Box maw={472}>
           <Text className={s.title}>{t("club.signup.title")}</Text>
           <Text className={s.subtitle}>{t("club.signup.subtitle")}</Text>

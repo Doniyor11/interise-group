@@ -38,8 +38,8 @@ export const TeamSection = () => {
       <Box className={cx(s.sectionWrapper, "container")}>
         <Text className={s.teamTitle}>{t("about.team.title")}</Text>
         <Flex className={s.teamSubtitle}>
-          <Text>{t("about.team.subtitle1")}</Text>
-          <Text>{t("about.team.subtitle2")}</Text>
+          <Text data-aos="fade-right">{t("about.team.subtitle1")}</Text>
+          <Text data-aos="fade-left">{t("about.team.subtitle2")}</Text>
         </Flex>
         <Flex
           gap={matchesSmall ? 16 : 32}
@@ -47,7 +47,7 @@ export const TeamSection = () => {
           align="flex-start"
         >
           {data?.map((item: IGetOurTeam, i: number) => (
-            <Flex key={i} className={s.teamBox}>
+            <Flex key={i} data-aos="zoom-in-up" className={s.teamBox}>
               <Flex className={s.teamBoxTop}>
                 <Box className={s.teamBoxImage}>
                   <Image
@@ -127,7 +127,7 @@ export const MediaSection = () => {
       >
         {data?.map((item: IGetMedia, i: number) => (
           <Carousel.Slide key={i}>
-            <div className={s.card}>
+            <div data-aos="zoom-in-up" className={s.card}>
               <div className={s.cardTop}>
                 <Image
                   src={item?.image}

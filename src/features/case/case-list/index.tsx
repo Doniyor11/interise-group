@@ -96,7 +96,7 @@ export const CaseList = () => {
             <>
               {data && data.length > 0 ? (
                 data.map((i: IGetCases, idx: number) => (
-                  <Box className={s.ideaBox} key={idx}>
+                  <Box className={s.ideaBox} key={idx} data-aos="zoom-in-up">
                     <Box className={s.ideaBoxTop}>
                       <Flex gap={"26px"} justify={"space-between"}>
                         <MarkdownPreview

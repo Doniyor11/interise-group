@@ -105,12 +105,17 @@ export const InteractiveDashboard = () => {
 
   return (
     <div className={cx(s.sectionWrapper, "container")}>
-      <h2 dangerouslySetInnerHTML={{ __html: t("research.dashboard.title") }} />
-      <Text className={s.subtitle}>{t("research.dashboard.subtitle")}</Text>
-      <Text className={s.tabLabel}>
+      <h2
+        data-aos="zoom-in-up"
+        dangerouslySetInnerHTML={{ __html: t("research.dashboard.title") }}
+      />
+      <Text data-aos="zoom-in-up" className={s.subtitle}>
+        {t("research.dashboard.subtitle")}
+      </Text>
+      <Text data-aos="zoom-in-up" className={s.tabLabel}>
         {t("research.dashboard.select_segment")}
       </Text>
-      <Flex className={s.tabWrapper} m={"12px auto 32px"}>
+      <Flex data-aos="zoom-in-up" className={s.tabWrapper} m={"12px auto 32px"}>
         <Button
           className={cx(s.tabBtn, { [s.active]: tab === "all" })}
           onClick={() => setTab("all")}
@@ -133,7 +138,11 @@ export const InteractiveDashboard = () => {
       <Box className={s.cards}>
         <div className={s.leftSide}>
           {/* Customer Choice Index Card */}
-          <Box mih={220} className={cx(s.card, s.cardOne)}>
+          <Box
+            data-aos="zoom-in-up"
+            mih={220}
+            className={cx(s.card, s.cardOne)}
+          >
             <Flex
               align="center"
               gap={12}
@@ -177,7 +186,11 @@ export const InteractiveDashboard = () => {
           </Box>
 
           {/* Bank Rankings Card */}
-          <Box mih={343} className={cx(s.card, s.cardTwo)}>
+          <Box
+            data-aos="zoom-in-up"
+            mih={343}
+            className={cx(s.card, s.cardTwo)}
+          >
             <Text className={s.cardTitle}>
               {t("research.dashboard.bank_ranking")}
             </Text>
@@ -213,7 +226,7 @@ export const InteractiveDashboard = () => {
           </Box>
 
           {/* Recommendations Card */}
-          <Box mih={317} className={s.card}>
+          <Box data-aos="zoom-in-up" mih={317} className={s.card}>
             <Text className={s.cardTitle}>
               {t("research.dashboard.recommendations")}
             </Text>
@@ -236,7 +249,7 @@ export const InteractiveDashboard = () => {
         </div>
         <div className={s.rightSide}>
           {/* Customer Journey Line Chart */}
-          <Box className={cx(s.card, s.cardFour)}>
+          <Box data-aos="zoom-in-up" className={cx(s.card, s.cardFour)}>
             <Box w={matches ? 700 : "100%"} h={"100%"}>
               <Flex justify="space-between" align="center" mb={8}>
                 <Text className={s.cardTitle}>
@@ -319,7 +332,7 @@ export const InteractiveDashboard = () => {
           </Box>
 
           {/* Index Criteria Card */}
-          <Box className={cx(s.card, s.cardFive)}>
+          <Box data-aos="zoom-in-up" className={cx(s.card, s.cardFive)}>
             <Text className={s.cardTitle}>
               {t("research.dashboard.index_criteria")}
             </Text>
@@ -347,7 +360,7 @@ export const InteractiveDashboard = () => {
           </Box>
 
           {/* Scatter Chart Card */}
-          <Box className={s.card} mah={346}>
+          <Box data-aos="zoom-in-up" className={s.card} mah={346}>
             <Text className={s.cardTitle}>
               {t("research.dashboard.total_experience")}
             </Text>
@@ -394,7 +407,7 @@ export const InteractiveDashboard = () => {
           </Box>
 
           {/* Radar Chart Card */}
-          <Box className={s.card}>
+          <Box data-aos="zoom-in-up" className={s.card}>
             <Text className={s.cardTitle}>
               {t("research.dashboard.channel_comparison")}
             </Text>
@@ -422,7 +435,7 @@ export const InteractiveDashboard = () => {
           </Box>
 
           {/* Sales Effectiveness Card */}
-          <Box className={cx(s.card, s.cardEight)}>
+          <Box data-aos="zoom-in-up" className={cx(s.card, s.cardEight)}>
             <Text className={s.cardTitle}>
               {t("research.dashboard.sales_effectiveness")}
             </Text>
@@ -447,7 +460,7 @@ export const InteractiveDashboard = () => {
           </Box>
 
           {/* Digital Activity Card */}
-          <Box className={cx(s.card, s.cardNine)}>
+          <Box data-aos="zoom-in-up" className={cx(s.card, s.cardNine)}>
             <Box w={matches ? 720 : "100%"}>
               <Flex gap={22}>
                 <Box w={"100%"}>

@@ -20,14 +20,12 @@ export const CaseMainBanner = () => {
   return (
     <>
       <div className={s.topSectionWrapper}>
-        <div className={cx(s.container, "container")}>
-          <div className={s.sectionHead}>
-            <Breadcrumbs data={breadcrumbs} />
-          </div>
+        <div data-aos="zoom-in-up" className={cx(s.container, "container")}>
+          <Breadcrumbs data={breadcrumbs} />
           <h1>{t("breadcrumbs.cases")}</h1>
         </div>
       </div>
-      <div className={cx(s.sectionWrapper, "container")}>
+      <div data-aos="fade-up" className={cx(s.sectionWrapper, "container")}>
         <div className={s.stats}>
           <Text
             className={s.sectionTitle}

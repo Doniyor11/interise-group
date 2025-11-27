@@ -24,25 +24,25 @@ export const AboutDirection = () => {
             <Text>{t("about.directions.subtitle")}</Text>
           </Box>
           <div className={s.cards}>
-            <div className={s.card}>
+            <div data-aos="zoom-in-up" className={s.card}>
               <div className={s.icon}>
                 <IconOne />
               </div>
               <Text>{t("about.directions.digital_transformation")}</Text>
             </div>
-            <div className={s.card}>
+            <div data-aos="zoom-in-up" className={s.card}>
               <div className={s.icon}>
                 <IconTwo />
               </div>
               <Text>{t("about.directions.investment")}</Text>
             </div>
-            <div className={s.card}>
+            <div data-aos="zoom-in-up" className={s.card}>
               <div className={s.icon}>
                 <IconThree />
               </div>
               <Text>{t("about.directions.marketing")}</Text>
             </div>
-            <div className={s.card}>
+            <div data-aos="zoom-in-up" className={s.card}>
               <div className={s.icon}>
                 <IconFour />
               </div>
@@ -51,8 +51,13 @@ export const AboutDirection = () => {
           </div>
         </div>
         <div className={s.box}>
-          <Image src={ImageBanner} alt={"image-banner"} className={s.image} />
-          <div className={s.boxRight}>
+          <Image
+            data-aos="fade-right"
+            src={ImageBanner}
+            alt={"image-banner"}
+            className={s.image}
+          />
+          <div data-aos="fade-left" className={s.boxRight}>
             <h3
               dangerouslySetInnerHTML={{ __html: t("about.projects.title") }}
             />
@@ -67,7 +72,7 @@ export const AboutDirection = () => {
             </Button>
           </div>
         </div>
-        <div className={s.bannerWrapper}>
+        <div data-aos="fade-up" className={s.bannerWrapper}>
           <h3 dangerouslySetInnerHTML={{ __html: t("about.asset.title") }} />
           <Text className={s.text}>{t("about.asset.description")}</Text>
           <Button className={s.btn} onClick={() => onLinkClick("contacts")}>

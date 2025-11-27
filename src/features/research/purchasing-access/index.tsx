@@ -13,11 +13,12 @@ export const PurchasingAccess = () => {
     <>
       <div className={cx(s.sectionWrapper, "container")}>
         <h2
+          data-aos="zoom-in-up"
           className={s.title}
           dangerouslySetInnerHTML={{ __html: t("research.access.title") }}
         />
         <div className={s.cards}>
-          <div className={s.card}>
+          <div data-aos="zoom-in-up" className={s.card}>
             <Text className={s.cardTitle}>
               {t("research.access.benefit1.title")}
             </Text>
@@ -25,7 +26,7 @@ export const PurchasingAccess = () => {
               {t("research.access.benefit1.description")}
             </Text>
           </div>
-          <div className={s.card}>
+          <div data-aos="zoom-in-up" className={s.card}>
             <Text className={s.cardTitle}>
               {t("research.access.benefit2.title")}
             </Text>
@@ -33,7 +34,7 @@ export const PurchasingAccess = () => {
               {t("research.access.benefit2.description")}
             </Text>
           </div>
-          <div className={s.card}>
+          <div data-aos="zoom-in-up" className={s.card}>
             <Text className={s.cardTitle}>
               {t("research.access.benefit3.title")}
             </Text>
@@ -41,7 +42,7 @@ export const PurchasingAccess = () => {
               {t("research.access.benefit3.description")}
             </Text>
           </div>
-          <div className={s.card}>
+          <div data-aos="zoom-in-up" className={s.card}>
             <Text className={s.cardTitle}>
               {t("research.access.benefit4.title")}
             </Text>
@@ -51,7 +52,7 @@ export const PurchasingAccess = () => {
           </div>
         </div>
 
-        <Box className={s.box}>
+        <Box data-aos="fade-up" className={s.box}>
           <Box>
             <Text
               className={s.title}

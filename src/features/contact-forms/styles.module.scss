@@ -2,6 +2,13 @@
   .inputWrapper {
     width: 49%;
 
+    p {
+      margin: 2px 0 0;
+      font-size: 14px;
+      line-height: 14px;
+      color: #fd5555;
+    }
+
     input {
       height: 40px;
       border-radius: 8px;

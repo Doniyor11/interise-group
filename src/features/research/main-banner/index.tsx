@@ -17,22 +17,25 @@ export const ResearchMainBanner = () => {
   return (
     <>
       <div className={s.topSectionWrapper}>
-        <div className={cx(s.container, "container")}>
-          <div className={s.sectionHead}>
-            <Breadcrumbs data={breadcrumbs} />
-          </div>
+        <div data-aos="zoom-in-up" className={cx(s.container, "container")}>
+          <Breadcrumbs data={breadcrumbs} />
           <h1>{t("breadcrumbs.research")}</h1>
         </div>
       </div>
       <div className={cx(s.sectionWrapper, "container")}>
-        <Box>
+        <Box data-aos="fade-right">
           <Text
             className={s.title}
             dangerouslySetInnerHTML={{ __html: t("research.banner.title") }}
           />
           <Text className={s.subtitle}>{t("research.banner.description")}</Text>
         </Box>
-        <Image src={ImageOne} alt={"image-research"} className={s.image} />
+        <Image
+          src={ImageOne}
+          alt={"image-research"}
+          className={s.image}
+          data-aos="fade-left"
+        />
       </div>
     </>
   )

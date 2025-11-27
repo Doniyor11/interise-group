@@ -80,6 +80,7 @@ export const ResearchTypes = () => {
             data.map((item: IGetResearches, i: number) => (
               <div
                 key={i}
+                data-aos="zoom-in-up"
                 className={s.card}
                 onClick={() => {
                   if (item?.disabled) return

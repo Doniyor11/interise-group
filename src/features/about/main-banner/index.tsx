@@ -18,7 +18,7 @@ export const AboutMainBanner = () => {
   return (
     <>
       <div className={s.topSectionWrapper}>
-        <div className={cx(s.container, "container")}>
+        <div data-aos="zoom-in-up" className={cx(s.container, "container")}>
           <div className={s.sectionHead}>
             <Breadcrumbs data={breadcrumbs} />
           </div>
@@ -28,13 +28,20 @@ export const AboutMainBanner = () => {
       <div className={cx(s.sectionWrapper, "container")}>
         <div className={s.head}>
           <Text
+            data-aos="fade-right"
             dangerouslySetInnerHTML={{ __html: t("about.banner.description") }}
           />
           <h3
+            data-aos="fade-left"
             dangerouslySetInnerHTML={{ __html: t("about.banner.subtitle") }}
           />
         </div>
-        <Image src={ImageAbout} alt={"about-image"} className={s.image} />
+        <Image
+          data-aos="fade-up"
+          src={ImageAbout}
+          alt={"about-image"}
+          className={s.image}
+        />
       </div>
     </>
   )

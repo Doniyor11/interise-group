@@ -1,9 +1,6 @@
-import { Center } from "@mantine/core"
 import cx from "clsx"
-import Image from "next/image"
 import React from "react"
 
-import ImageInteriseClub from "@/shared/assets/images/interise-group/image-interise-club.png"
 import { Breadcrumbs } from "@/shared/ui/breadcrumbs"
 
 import { useBreadcrumbs } from "./libs.ts"
@@ -14,18 +11,10 @@ export const InteriseClubMain = () => {
   return (
     <>
       <div className={s.topSectionWrapper}>
-        <div className={cx(s.container, "container")}>
-          <div className={s.sectionHead}>
-            <Breadcrumbs data={breadcrumbs} className={s.breadcrumbs} />
-          </div>
+        <div data-aos="zoom-in-up" className={cx(s.container, "container")}>
+          <Breadcrumbs data={breadcrumbs} />
+          <h1>Interise Club</h1>
         </div>
-        <Center className={s.imageWrapper}>
-          <Image
-            src={ImageInteriseClub}
-            alt={"image-banner"}
-            className={s.image}
-          />
-        </Center>
       </div>
     </>
   )

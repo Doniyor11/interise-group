@@ -21,7 +21,7 @@ export const ClubValues = () => {
           dangerouslySetInnerHTML={{ __html: t("club.values.title") }}
         />
         <div className={s.cards}>
-          <div className={s.card}>
+          <div data-aos="zoom-in-up" className={s.card}>
             <Flex align="center" gap={12}>
               <div className={s.icon}>
                 <IconOne />
@@ -34,7 +34,7 @@ export const ClubValues = () => {
               {t("club.values.cards.card1.text")}
             </Text>
           </div>
-          <div className={s.card}>
+          <div data-aos="zoom-in-up" className={s.card}>
             <Flex align="center" gap={12}>
               <div className={s.icon}>
                 <IconTwo />
@@ -47,7 +47,7 @@ export const ClubValues = () => {
               {t("club.values.cards.card2.text")}
             </Text>
           </div>
-          <div className={s.card}>
+          <div data-aos="zoom-in-up" className={s.card}>
             <Flex align="center" gap={12}>
               <div className={s.icon}>
                 <IconThree />
@@ -60,7 +60,7 @@ export const ClubValues = () => {
               {t("club.values.cards.card3.text")}
             </Text>
           </div>
-          <div className={s.card}>
+          <div data-aos="zoom-in-up" className={s.card}>
             <Flex align="center" gap={12}>
               <div className={s.icon}>
                 <IconFour />
@@ -73,7 +73,7 @@ export const ClubValues = () => {
               {t("club.values.cards.card4.text")}
             </Text>
           </div>
-          <div className={s.card}>
+          <div data-aos="zoom-in-up" className={s.card}>
             <Flex align="center" gap={12}>
               <div className={s.icon}>
                 <IconFive />
@@ -94,7 +94,7 @@ export const ClubValues = () => {
           dangerouslySetInnerHTML={{ __html: t("club.values.experts.title") }}
         />
         <div className={s.cards}>
-          <div className={s.card}>
+          <div data-aos="zoom-in-up" className={s.card}>
             <Flex gap={12}>
               <div className={s.point} />
               <Text className={s.cardTitle}>
@@ -105,7 +105,7 @@ export const ClubValues = () => {
               {t("club.values.experts.cards.card1.text")}
             </Text>
           </div>
-          <div className={s.card}>
+          <div data-aos="zoom-in-up" className={s.card}>
             <Flex gap={12}>
               <div className={s.point} />
               <Text className={s.cardTitle}>
@@ -116,7 +116,7 @@ export const ClubValues = () => {
               {t("club.values.experts.cards.card2.text")}
             </Text>
           </div>
-          <div className={s.card}>
+          <div data-aos="zoom-in-up" className={s.card}>
             <Flex gap={12}>
               <div className={s.point} />
               <Text className={s.cardTitle}>
@@ -127,7 +127,7 @@ export const ClubValues = () => {
               {t("club.values.experts.cards.card3.text")}
             </Text>
           </div>
-          <div className={s.card}>
+          <div data-aos="zoom-in-up" className={s.card}>
             <Flex gap={12}>
               <div className={s.point} />
               <Text className={s.cardTitle}>
@@ -138,7 +138,7 @@ export const ClubValues = () => {
               {t("club.values.experts.cards.card4.text")}
             </Text>
           </div>
-          <div className={s.card}>
+          <div data-aos="zoom-in-up" className={s.card}>
             <Flex gap={12}>
               <div className={s.point} />
               <Text className={s.cardTitle}>
@@ -149,7 +149,7 @@ export const ClubValues = () => {
               {t("club.values.experts.cards.card5.text")}
             </Text>
           </div>
-          <div className={s.card}>
+          <div data-aos="zoom-in-up" className={s.card}>
             <Flex gap={12}>
               <div className={s.point} />
               <Text className={s.cardTitle}>
@@ -160,7 +160,7 @@ export const ClubValues = () => {
               {t("club.values.experts.cards.card6.text")}
             </Text>
           </div>
-          <div className={s.card}>
+          <div data-aos="zoom-in-up" className={s.card}>
             <Flex gap={12}>
               <div className={s.point} />
               <Text className={s.cardTitle}>
@@ -171,7 +171,7 @@ export const ClubValues = () => {
               {t("club.values.experts.cards.card7.text")}
             </Text>
           </div>
-          <div className={s.card}>
+          <div data-aos="zoom-in-up" className={s.card}>
             <Flex gap={12}>
               <div className={s.point} />
               <Text className={s.cardTitle}>

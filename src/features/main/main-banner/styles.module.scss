@@ -146,11 +146,21 @@
     width: 100%;
     padding: 8px;
     gap: 8px;
-    margin-bottom: 160px;
-    max-width: 570px;
+    margin-bottom: 16px;
+    max-width: 100%;
     background: rgba(111, 166, 255, 0.1);
     backdrop-filter: blur(15px) saturate(150%);
     -webkit-backdrop-filter: blur(15px) saturate(150%);
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 16px;
+    height: auto;
+
+    .line {
+      display: none;
+    }
   }
 }
 
@@ -193,16 +203,12 @@
 
   @media screen and (max-width: 1040px) {
     span {
-      background: linear-gradient(299deg, #0076fe 33.43%, #0076fe 88.06%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 20px;
+      font-size: 40px;
       font-weight: 500;
-      line-height: 20px;
+      line-height: 32px;
     }
     b {
-      font-size: 8px;
+      font-size: 12px;
     }
   }
 }
@@ -217,7 +223,7 @@
   letter-spacing: -0.32px;
   margin-top: 4px;
   @media screen and (max-width: 1040px) {
-    font-size: 8px;
+    font-size: 15px;
     letter-spacing: -0.16px;
   }
 }

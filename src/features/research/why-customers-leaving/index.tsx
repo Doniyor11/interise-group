@@ -41,16 +41,18 @@ export const WhyCustomersLeaving = () => {
       {/*</div>*/}
       <div className={cx(s.sectionWrapper, "container")}>
         <h2
+          data-aos="zoom-in-up"
           dangerouslySetInnerHTML={{ __html: t("research.why_leaving.title") }}
         />
         <Text
+          data-aos="zoom-in-up"
           className={s.subtitle}
           dangerouslySetInnerHTML={{
             __html: t("research.why_leaving.subtitle"),
           }}
         />
         <div className={s.cards}>
-          <div className={s.card}>
+          <div data-aos="zoom-in-up" className={s.card}>
             <Text
               className={s.cardTitle}
               dangerouslySetInnerHTML={{
@@ -61,7 +63,7 @@ export const WhyCustomersLeaving = () => {
               {t("research.why_leaving.barrier1.description")}
             </Text>
           </div>
-          <div className={s.card}>
+          <div data-aos="zoom-in-up" className={s.card}>
             <Text
               className={s.cardTitle}
               dangerouslySetInnerHTML={{
@@ -72,7 +74,7 @@ export const WhyCustomersLeaving = () => {
               {t("research.why_leaving.barrier2.description")}
             </Text>
           </div>
-          <div className={s.card}>
+          <div data-aos="zoom-in-up" className={s.card}>
             <Text
               className={s.cardTitle}
               dangerouslySetInnerHTML={{

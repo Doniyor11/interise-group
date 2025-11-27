@@ -644,6 +644,13 @@
     },
     "privacy_agreement": "I have read and agree to <link>the data processing terms</link>",
     "submit_button": "Submit",
+    "validation": {
+      "name_required": "Name is required",
+      "surname_required": "Surname is required",
+      "phone_required": "Phone number is required",
+      "contact_method_required": "Please select a contact method",
+      "privacy_required": "You must agree to the privacy policy"
+    },
     "presentation": {
       "title": "Request Presentation",
       "requestPresentation": "(Request a presentation)",

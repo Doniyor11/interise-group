@@ -17,4 +17,5 @@ export interface IGetUpcomingEvents {
   image: string
   created_at: string
   updated_at: string
+  location: string
 }

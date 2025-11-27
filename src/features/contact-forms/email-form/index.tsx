@@ -1,3 +1,5 @@
+import * as yup from "yup"
+import { yupResolver } from "@hookform/resolvers/yup"
 import { Button, Checkbox, Flex, Input, Select } from "@mantine/core"
 import Trans from "next-translate/Trans"
 import useTranslation from "next-translate/useTranslation"
@@ -23,20 +25,31 @@ export const EmailForm = () => {
     "/": t("forms.page.home"),
   }
 
+  const emailFormSchema = yup.object().shape({
+    name: yup.string().required(t("forms.validation.name_required")),
+    surname: yup.string().required(t("forms.validation.surname_required")),
+    phone: yup.string().required(t("forms.validation.phone_required")),
+    message: yup
+      .string()
+      .required(t("forms.validation.contact_method_required")),
+    check: yup.boolean().oneOf([true], t("forms.validation.privacy_required")),
+  })
+
   const {
     reset,
     control,
     handleSubmit,
-    formState: { isDirty, isValid },
-  } = useForm<IEmailFormTypes>({
-    mode: "onChange",
+    formState: { isDirty },
+  } = useForm<any>({
+    mode: "onSubmit",
+    resolver: yupResolver(emailFormSchema),
   })
 
   const { mutate, isPending } = useSendMessageQuery(() => {
     reset({
       name: "",
       surname: "",
-      message: null as any,
+      message: "",
       phone: "",
       check: false,
     })
@@ -66,14 +79,12 @@ export const EmailForm = () => {
         <Controller
           name={"name"}
           control={control}
-          rules={{ required: true }}
-          render={({ field }) => (
-            <Input.Wrapper className={s.inputWrapper}>
-              <Input
-                required
-                placeholder={t("forms.name_placeholder")}
-                {...field}
-              />
+          render={({ field, fieldState }) => (
+            <Input.Wrapper
+              className={s.inputWrapper}
+              error={fieldState.error?.message}
+            >
+              <Input placeholder={t("forms.name_placeholder")} {...field} />
             </Input.Wrapper>
           )}
         />
@@ -81,14 +92,12 @@ export const EmailForm = () => {
         <Controller
           name={"surname"}
           control={control}
-          rules={{ required: true }}
-          render={({ field }) => (
-            <Input.Wrapper className={s.inputWrapper}>
-              <Input
-                required
-                placeholder={t("forms.surname_placeholder")}
-                {...field}
-              />
+          render={({ field, fieldState }) => (
+            <Input.Wrapper
+              className={s.inputWrapper}
+              error={fieldState.error?.message}
+            >
+              <Input placeholder={t("forms.surname_placeholder")} {...field} />
             </Input.Wrapper>
           )}
         />
@@ -96,11 +105,12 @@ export const EmailForm = () => {
         <Controller
           name={"phone"}
           control={control}
-          rules={{ required: true }}
-          render={({ field }) => (
-            <Input.Wrapper className={s.inputWrapper}>
+          render={({ field, fieldState }) => (
+            <Input.Wrapper
+              className={s.inputWrapper}
+              error={fieldState.error?.message}
+            >
               <Input
-                required
                 inputMode="tel"
                 autoComplete="off"
                 value={field.value}
@@ -121,11 +131,12 @@ export const EmailForm = () => {
         <Controller
           name={"message"}
           control={control}
-          rules={{ required: true }}
-          render={({ field }) => (
-            <Input.Wrapper className={s.inputWrapper}>
+          render={({ field, fieldState }) => (
+            <Input.Wrapper
+              className={s.inputWrapper}
+              error={fieldState.error?.message}
+            >
               <Select
-                required
                 placeholder={t("forms.contact_method_placeholder")}
                 {...field}
                 data={[
@@ -141,10 +152,8 @@ export const EmailForm = () => {
         <Controller
           name={"check"}
           control={control}
-          rules={{ required: true }}
-          render={({ field }) => (
+          render={({ field, fieldState }) => (
             <Checkbox
-              required
               m={"20px 0 16px"}
               classNames={{
                 root: s.checkboxRoot,
@@ -167,6 +176,7 @@ export const EmailForm = () => {
               }
               checked={field.value}
               onChange={(value: any) => field.onChange?.(value)}
+              error={fieldState.error?.message}
             />
           )}
         />
@@ -178,7 +188,7 @@ export const EmailForm = () => {
         type={"submit"}
         className={"btn-filled__black"}
         loading={isPending}
-        disabled={!isDirty || !isValid}
+        disabled={!isDirty}
       >
         {t("forms.submit_button")}
       </Button>

@@ -1,4 +1,5 @@
 import { Anchor, Box, Flex, Text } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import MarkdownPreview from "@uiw/react-markdown-preview"
 import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
@@ -16,6 +17,7 @@ import s from "./index.module.scss"
 
 export const Contacts = () => {
   const { t } = useTranslation("common")
+  const matches = useMediaQuery("(max-width: 780px)")
 
   const { data } = useGetOurTeamQuery()
 
@@ -26,7 +28,12 @@ export const Contacts = () => {
       <div className="container">
         <div className={s.box}>
           <p className={s.teamTitle}>{t("contacts.team.title")}</p>
-          <Flex gap={12} mb={32} align={"stretch"}>
+          <Flex
+            gap={12}
+            mb={32}
+            align={"stretch"}
+            direction={matches ? "column" : "row"}
+          >
             {data?.map((item: IGetOurTeam, i: number) => (
               <Flex data-aos="zoom-in" key={i} className={s.teamBox}>
                 <Flex className={s.teamBoxTop}>
@@ -42,7 +49,7 @@ export const Contacts = () => {
                   <Flex
                     direction={"column"}
                     justify={"space-between"}
-                    mih={340}
+                    mih={matches ? "auto" : 340}
                   >
                     <Box>
                       <p className={s.teamBoxTitle}>{item?.name}</p>
@@ -74,7 +81,7 @@ export const Contacts = () => {
                   direction={"column"}
                   className={s.teamBoxBottom}
                   gap={"15px"}
-                  p={"35px"}
+                  p={matches ? 16 : 34}
                 >
                   <Text className={s.teamBoxBottomTitle}>
                     {t("contacts.team.project_experience")}

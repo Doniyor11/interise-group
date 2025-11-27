@@ -107,8 +107,8 @@ export const TeamSection = () => {
 
 export const MediaSection = () => {
   const { t } = useTranslation("common")
+  const matches = useMediaQuery("(max-width: 570px)")
   const { data } = useGetMediaQuery()
-
   if (data?.length === 0) return null
 
   return (
@@ -122,8 +122,8 @@ export const MediaSection = () => {
         slideGap={16}
         height={"auto"}
         withControls={false}
-        slidesToScroll={data?.length >= 3 ? 3 : 1}
-        slideSize="33.333333%"
+        slidesToScroll={!matches ? (data?.length >= 3 ? 3 : 1) : 1}
+        slideSize={matches ? "100%" : "33.333333%"}
       >
         {data?.map((item: IGetMedia, i: number) => (
           <Carousel.Slide key={i}>

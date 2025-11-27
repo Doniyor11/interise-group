@@ -295,6 +295,10 @@
       gap: 12px;
       margin-bottom: 12px;
 
+      &:nth-child(odd) {
+        flex-direction: column;
+      }
+
       &:nth-child(even) {
         margin-bottom: 12px;
       }

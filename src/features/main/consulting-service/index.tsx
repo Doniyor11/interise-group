@@ -182,9 +182,8 @@ export const ConsultingService = () => {
                 maw={"450px"}
                 mb={"40px"}
                 ta={"left"}
-              >
-                {t("main.principles.description2")}
-              </Text>
+                dangerouslySetInnerHTML={{__html:t("main.principles.description2")}}
+              />
             </Box>
           )}
         </Box>

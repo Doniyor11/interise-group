@@ -1,11 +1,8 @@
 import { Badge, Box, Button, Flex, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import useTranslation from "next-translate/useTranslation"
-import Image from "next/image"
 import { useRouter } from "next/router"
 import React from "react"
-
-import ImageBanner from "@/shared/assets/images/interise-group/club.png"
 
 import s from "./styles.module.scss"
 
@@ -102,12 +99,18 @@ export const MainGallery = () => {
               direction={"column"}
             >
               <Box className={s.clubImage}>
-                <Image
-                  src={ImageBanner}
-                  alt={"Interise Club"}
-                  width={640}
-                  height={203}
-                />
+                <video
+                  width="640"
+                  height="203"
+                  muted
+                  autoPlay
+                  loop
+                  playsInline
+                  preload="none"
+                >
+                  <source src="/banner.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </Box>
             </Flex>
           </Flex>

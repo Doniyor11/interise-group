@@ -24,7 +24,7 @@
     gap: 50px;
     background: #0e101f
       url("../../../shared/assets/images/interise-group/hero-bg-mobile.png")
-      no-repeat top;
+      no-repeat top left;
     background-size: contain;
   }
 }
@@ -209,6 +209,10 @@
     }
     b {
       font-size: 12px;
+
+      &:nth-child(1) {
+        font-size: 16px;
+      }
     }
   }
 }

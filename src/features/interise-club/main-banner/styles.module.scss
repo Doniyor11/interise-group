@@ -2,11 +2,11 @@
   width: 100%;
   min-height: 333px;
   padding-top: 123px;
+  position: relative;
 
-  background: url("../../../shared/assets/images/interise-group/image-interise-club.png")
-    no-repeat top center fixed;
-  background-size: 120% 333px;
   .container {
+    position: relative;
+    z-index: 1;
     padding: 0 65px;
     margin-bottom: 25px;
 
@@ -19,15 +19,21 @@
       letter-spacing: -1.28px;
     }
   }
+
+  .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 333px;
+    object-fit: cover;
+  }
 }
 
 @media screen and (max-width: 1040px) {
   .topSectionWrapper {
     min-height: 220px;
     padding-top: 100px;
-    background: url("../../../shared/assets/images/interise-group/image-interise-club.png")
-      no-repeat top center fixed;
-    background-size: auto 220px;
 
     .container {
       padding: 0 16px;
@@ -39,6 +45,9 @@
         line-height: 120%;
         letter-spacing: -0.64px;
       }
+    }
+    .video {
+      height: 220px;
     }
   }
 }

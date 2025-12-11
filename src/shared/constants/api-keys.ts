@@ -7,4 +7,5 @@ export enum apiKeys {
   upcomingEvents = "upcoming-events",
   caseCategories = "case-categories",
   research = "research",
+  clubBanner = "club-banner",
 }

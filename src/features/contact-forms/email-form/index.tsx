@@ -18,7 +18,7 @@ export const EmailForm = () => {
   const router = useRouter()
   const pathMap: Record<string, string> = {
     "/research": t("forms.page.research"),
-    "/interise-club": "Interise Club",
+    "/interise-club": "InteriseClub",
     "/about": t("forms.page.about"),
     "/case": t("forms.page.cases"),
     "/main": t("forms.page.home"),

@@ -1,5 +1,5 @@
 export { InteriseClubMain } from "./main-banner"
 export { EventSection } from "./event-section"
 export { SignupEvent } from "./signup-event"
-export { ClubValues } from "./club-values"
+export { ClubValues } from "./club-values/ui"
 export { ClubMedia } from "./club-media"

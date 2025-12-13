@@ -36,7 +36,7 @@ export const InteriseClubMain = () => {
       <div className={s.topSectionWrapper}>
         <div data-aos="zoom-in-up" className={cx(s.container, "container")}>
           <Breadcrumbs data={breadcrumbs} />
-          <h1>Interise Club</h1>
+          <h1>InteriseClub</h1>
         </div>
         {isVideo ? (
           <video
@@ -53,7 +53,7 @@ export const InteriseClubMain = () => {
             Your browser does not support the video tag.
           </video>
         ) : (
-          <img src={data?.url} alt="Interise Club Banner" className={s.video} />
+          <img src={data?.url} alt="InteriseClub Banner" className={s.video} />
         )}
       </div>
     </>

@@ -8,4 +8,8 @@ export enum apiKeys {
   caseCategories = "case-categories",
   research = "research",
   clubBanner = "club-banner",
+  companyValues = "company-values",
+  expertsFocusing = "experts-focusing",
+  clubImages = "club-images",
+  mediaImages = "media-images",
 }

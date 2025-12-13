@@ -5,7 +5,7 @@
       "about": "О нас",
       "cases": "Кейсы",
       "research": "Исследования",
-      "interise_club": "Interise Club",
+      "interise_club": "InteriseClub",
       "contacts": "Контакты"
     }
   },
@@ -15,7 +15,7 @@
     "menu": {
       "about": "О нас",
       "cases": "Кейсы",
-      "interise_club": "Interise Club",
+      "interise_club": "InteriseClub",
       "work_directions": "Направления работы"
     },
     "contact": {
@@ -455,7 +455,7 @@
       "subtitle": "Мы предоставляем данные, которым можно доверять. Исследование охватывает <br/> несколько рынков для наиболее полного и объективного сравнения.",
       "regions": "Региона",
       "countries": "Стран",
-      "banks": "Банко <span>в каждой стране</span>",
+      "banks": "Банков <span>в каждой стране</span>",
       "visits": "Тайных визитов <span>По сценариям Retail и SME</span>"
     },
     "dashboard": {
@@ -521,7 +521,7 @@
   },
   "club": {
     "values": {
-      "title": "<span>Ценности компании</span> InteriseClub",
+      "title": "<span>Ценности</span> InteriseClub",
       "cards": {
         "card1": {
           "title": "Глубокая экспертиза",

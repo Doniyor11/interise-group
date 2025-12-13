@@ -1,136 +1,82 @@
-import { Text } from "@mantine/core"
+import { Box, Text } from "@mantine/core"
 import cx from "clsx"
 import Image from "next/image"
 import React from "react"
 
-import ImageFour from "@/shared/assets/images/interise-group/image-event-1.png"
-import ImageTwo from "@/shared/assets/images/interise-group/image-event-2.png"
-import ImageOne from "@/shared/assets/images/interise-group/image-media.png"
-import ImageThree from "@/shared/assets/images/interise-group/partneruser1.png"
+import { useGetMediaImagesQuery } from "@/entities/club-images/query.ts"
+import { IMediaImages } from "@/entities/club-images/types.ts"
 
 import s from "./styles.module.scss"
+
+const getRandomWidth = () => Math.floor(Math.random() * (400 - 200 + 1)) + 200
 
 export const ClubMedia = () => {
   return (
     <div className={cx(s.sectionWrapper, "container")}>
       <h3>Медиа</h3>
       <Text>Фотографии с наших мероприятий</Text>
-      <div className={cx(s.boxImages, s.leftToRight)}>
-        <Image
-          src={ImageOne}
-          alt={"media-image"}
-          className={s.image}
-          width={391}
-          height={293}
-        />
-        <Image
-          src={ImageTwo}
-          alt={"media-image"}
-          className={s.image}
-          width={233}
-          height={175}
-        />
-        <Image
-          src={ImageThree}
-          alt={"media-image"}
-          className={s.image}
-          width={391}
-          height={293}
-        />
-        <Image
-          src={ImageFour}
-          alt={"media-image"}
-          className={s.image}
-          width={235}
-          height={176}
-        />
-        <Image
-          src={ImageOne}
-          alt={"media-image"}
-          className={s.image}
-          width={391}
-          height={293}
-        />
-        <Image
-          src={ImageTwo}
-          alt={"media-image"}
-          className={s.image}
-          width={233}
-          height={175}
-        />
-        <Image
-          src={ImageThree}
-          alt={"media-image"}
-          className={s.image}
-          width={391}
-          height={293}
-        />
-        <Image
-          src={ImageFour}
-          alt={"media-image"}
-          className={s.image}
-          width={235}
-          height={176}
-        />
-      </div>
-      <div className={cx(s.boxImages, s.rightToLeft)}>
-        <Image
-          src={ImageOne}
-          alt={"media-image"}
-          className={s.image}
-          width={391}
-          height={293}
-        />
-        <Image
-          src={ImageTwo}
-          alt={"media-image"}
-          className={s.image}
-          width={233}
-          height={175}
-        />
-        <Image
-          src={ImageThree}
-          alt={"media-image"}
-          className={s.image}
-          width={391}
-          height={293}
-        />
-        <Image
-          src={ImageFour}
-          alt={"media-image"}
-          className={s.image}
-          width={235}
-          height={176}
-        />
-        <Image
-          src={ImageOne}
-          alt={"media-image"}
-          className={s.image}
-          width={391}
-          height={293}
-        />
-        <Image
-          src={ImageTwo}
-          alt={"media-image"}
-          className={s.image}
-          width={233}
-          height={175}
-        />
-        <Image
-          src={ImageThree}
-          alt={"media-image"}
-          className={s.image}
-          width={391}
-          height={293}
-        />
-        <Image
-          src={ImageFour}
-          alt={"media-image"}
-          className={s.image}
-          width={235}
-          height={176}
-        />
-      </div>
+      <BoxOne />
+      <BoxTwo />
     </div>
+  )
+}
+
+export const BoxOne = () => {
+  const { data } = useGetMediaImagesQuery({
+    section: "line1",
+  })
+
+  const shouldAnimate = (data?.length ?? 0) >= 5
+
+  return (
+    <div
+      className={cx(s.boxImages, {
+        [s.leftToRight]: shouldAnimate,
+      })}
+    >
+      {data?.map((item: IMediaImages, i: number) => {
+        const randomWidth = getRandomWidth()
+        return (
+          <Image
+            key={i}
+            src={item?.url}
+            alt={item?.name}
+            className={s.image}
+            width={randomWidth}
+            height={293}
+          />
+        )
+      })}
+    </div>
+  )
+}
+export const BoxTwo = () => {
+  const { data } = useGetMediaImagesQuery({
+    section: "line2",
+  })
+
+  const shouldAnimate = (data?.length ?? 0) >= 5
+
+  return (
+    <Box
+      mt={20}
+      className={cx(s.boxImages, {
+        [s.rightToLeft]: shouldAnimate,
+      })}
+    >
+      {data?.map((item: IMediaImages, i: number) => {
+        const randomWidth = getRandomWidth()
+        return (
+          <Image
+            key={i}
+            src={item?.url}
+            alt={item?.name}
+            className={s.image}
+            width={randomWidth}
+            height={293}
+          />
+        )
+      })}
+    </Box>
   )
 }

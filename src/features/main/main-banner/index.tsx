@@ -46,8 +46,8 @@ export const MainBanner = () => {
                 <AnimatedNumber
                   value={3.5}
                   className={s.number}
-                  duration={1000}
-                />{" "}
+                  duration={500}
+                />
                 <b>{t("main.banner.stats.billion")}</b>
               </Text>
               <Text className={s.info}>{t("main.banner.stats.result")}</Text>

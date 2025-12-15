@@ -292,6 +292,10 @@
 }
 
 @media screen and (max-width: 1040px) {
+  .sectionWrapper,
+  .mediaBox {
+    margin-bottom: 20px;
+  }
   .sectionWrapper {
     padding: 0 16px;
 

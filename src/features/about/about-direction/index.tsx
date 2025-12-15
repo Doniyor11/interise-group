@@ -21,7 +21,7 @@ export const AboutDirection = () => {
         <div className={s.sectionWrapper}>
           <Box className={s.head}>
             <h3>{t("about.directions.title")}</h3>
-            <Text>{t("about.directions.subtitle")}</Text>
+            {/*<Text>{t("about.directions.subtitle")}</Text>*/}
           </Box>
           <div className={s.cards}>
             <div data-aos="zoom-in-up" className={s.card}>

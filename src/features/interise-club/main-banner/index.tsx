@@ -1,5 +1,5 @@
 import cx from "clsx"
-import React, { useEffect, useMemo, useRef } from "react"
+import React, { useMemo, useRef } from "react"
 
 import { useGetClubBannerQuery } from "@/entities/club-banner/query.ts"
 
@@ -20,16 +20,16 @@ export const InteriseClubMain = () => {
   const { data } = useGetClubBannerQuery()
   const videoRef = useRef<HTMLVideoElement>(null)
 
-  const isVideo = useMemo(() => isVideoUrl(data?.url), [data?.url])
+  const handleCanPlay = () => {
+    const video = videoRef.current
+    if (!video) return
 
-  useEffect(() => {
-    if (isVideo && data?.url && videoRef.current) {
-      videoRef.current.load()
-      videoRef.current.play().catch((error) => {
-        console.log("Video autoplay failed:", error)
-      })
-    }
-  }, [data?.url, isVideo])
+    video.muted = true
+
+    video.play().catch(() => {})
+  }
+
+  const isVideo = useMemo(() => isVideoUrl(data?.url), [data?.url])
 
   return (
     <>
@@ -40,17 +40,16 @@ export const InteriseClubMain = () => {
         </div>
         {isVideo ? (
           <video
+            ref={videoRef}
             loop
             muted
-            autoPlay
             playsInline
             preload="auto"
-            ref={videoRef}
-            className={s.video}
             poster={ImagePoster.src}
+            className={s.video}
+            onCanPlay={handleCanPlay}
           >
             <source src={data?.url} type="video/mp4" />
-            Your browser does not support the video tag.
           </video>
         ) : (
           <img src={data?.url} alt="InteriseClub Banner" className={s.video} />

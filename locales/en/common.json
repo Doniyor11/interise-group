@@ -500,7 +500,7 @@
       "connections": "Connections",
       "culture": "Culture",
       "conclusion": "Conclusion",
-      "conclusion1": "Bank A leads in basic customer experience (Online+Offline). However, it lags behind in (Online) and communication (TechSupport) aspects of service.",
+      "conclusion1": "Significant obstacles have been identified. The main growth zone is online and offline channels",
       "total_experience": "Total Experience",
       "online_experience": "Online Experience",
       "offline_experience": "Offline Experience",
@@ -516,7 +516,22 @@
       "dau": "DAU",
       "mau": "MAU",
       "conclusion3": "Low coverage indicates significant growth potential. Focus on SEO and SMM can attract new audiences.",
-      "conclusion4": "High engagement rate (DAU/MAU > 65%) confirms the effectiveness of the bank's transactional business model."
+      "conclusion4": "High engagement rate (DAU/MAU > 65%) confirms the effectiveness of the bank's transactional business model.",
+      "radar_online_application": "Online Application",
+      "radar_product_site": "Website Product",
+      "radar_contact_center": "Contact Center",
+      "journey_search_selection": "Search and Selection",
+      "journey_purchase": "Purchase",
+      "journey_product_sites": "Product and Sites",
+      "journey_payment": "Payment",
+      "journey_delivery": "Delivery",
+      "journey_return": "Return",
+      "journey_consultation": "Consultation",
+      "bank_a": "Bank A",
+      "bank_b": "Bank B",
+      "bank_c": "Bank C",
+      "bank_d": "Bank D",
+      "bank_e": "Bank E"
     }
   },
   "club": {

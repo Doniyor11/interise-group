@@ -1,4 +1,5 @@
 import { Box, Text } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
 import Image from "next/image"
 import React from "react"
@@ -22,11 +23,12 @@ export const ClubMedia = () => {
 }
 
 export const BoxOne = () => {
+  const matches = useMediaQuery("(max-width: 700px)")
   const { data } = useGetMediaImagesQuery({
     section: "line1",
   })
 
-  const shouldAnimate = (data?.length ?? 0) >= 5
+  const shouldAnimate = (data?.length ?? 0) >= (matches ? 2 : 5)
 
   return (
     <div
@@ -51,11 +53,12 @@ export const BoxOne = () => {
   )
 }
 export const BoxTwo = () => {
+  const matches = useMediaQuery("(max-width: 700px)")
   const { data } = useGetMediaImagesQuery({
     section: "line2",
   })
 
-  const shouldAnimate = (data?.length ?? 0) >= 5
+  const shouldAnimate = (data?.length ?? 0) >= (matches ? 2 : 5)
 
   return (
     <Box

@@ -217,6 +217,9 @@
   @media screen and (max-width: 1040px) {
     color: #8fb0e1;
     margin: 12px 0 32px 0;
+    br {
+      display: none;
+    }
   }
 }
 

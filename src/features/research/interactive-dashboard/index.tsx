@@ -34,22 +34,57 @@ export const InteractiveDashboard = () => {
 
   // Customer Journey Data
   const journeyData = [
-    { name: "Поиск и выбор", bankA: 4.2, product: 4.1, payment: 4.0 },
-    { name: "Покупка", bankA: 4.0, product: 4.05, payment: 4.1 },
-    { name: "Продукт и сайты", bankA: 4.2, product: 4.3, payment: 4.15 },
-    { name: "Оплата", bankA: 4.1, product: 4.25, payment: 4.2 },
-    { name: "Доставка", bankA: 3.9, product: 3.8, payment: 3.85 },
-    { name: "Возврат", bankA: 4.0, product: 4.1, payment: 4.05 },
-    { name: "Консультация", bankA: 4.0, product: 4.05, payment: 4.1 },
+    {
+      name: t("research.dashboard.journey_search_selection"),
+      bankA: 4.2,
+      product: 4.1,
+      payment: 4.0,
+    },
+    {
+      name: t("research.dashboard.journey_purchase"),
+      bankA: 4.0,
+      product: 4.05,
+      payment: 4.1,
+    },
+    {
+      name: t("research.dashboard.journey_product_sites"),
+      bankA: 4.2,
+      product: 4.3,
+      payment: 4.15,
+    },
+    {
+      name: t("research.dashboard.journey_payment"),
+      bankA: 4.1,
+      product: 4.25,
+      payment: 4.2,
+    },
+    {
+      name: t("research.dashboard.journey_delivery"),
+      bankA: 3.9,
+      product: 3.8,
+      payment: 3.85,
+    },
+    {
+      name: t("research.dashboard.journey_return"),
+      bankA: 4.0,
+      product: 4.1,
+      payment: 4.05,
+    },
+    {
+      name: t("research.dashboard.journey_consultation"),
+      bankA: 4.0,
+      product: 4.05,
+      payment: 4.1,
+    },
   ]
 
   // Bank Rankings Data
   const bankRankings = [
-    { name: "Банк A", score: "4.0" },
-    { name: "Банк B", score: "3.8" },
-    { name: "Банк C", score: "3.6" },
-    { name: "Банк D", score: "3.4" },
-    { name: "Банк E", score: "3.1" },
+    { name: t("research.dashboard.bank_a"), score: "4.0" },
+    { name: t("research.dashboard.bank_b"), score: "3.8" },
+    { name: t("research.dashboard.bank_c"), score: "3.6" },
+    { name: t("research.dashboard.bank_d"), score: "3.4" },
+    { name: t("research.dashboard.bank_e"), score: "3.1" },
   ]
 
   // Index Criteria Data
@@ -79,9 +114,21 @@ export const InteractiveDashboard = () => {
 
   // Radar Chart Data
   const radarData = [
-    { subject: "Онлайн-заявка", A: 4.5, fullMark: 5 },
-    { subject: "Продукт сайта", A: 4.2, fullMark: 5 },
-    { subject: "Онлайн-связь", A: 4.0, fullMark: 5 },
+    {
+      subject: t("research.dashboard.radar_online_application"),
+      A: 4.5,
+      fullMark: 5,
+    },
+    {
+      subject: t("research.dashboard.radar_product_site"),
+      A: 4.2,
+      fullMark: 5,
+    },
+    {
+      subject: t("research.dashboard.radar_contact_center"),
+      A: 4.0,
+      fullMark: 5,
+    },
   ]
 
   // Recommendations
@@ -414,17 +461,16 @@ export const InteractiveDashboard = () => {
             <ResponsiveContainer width="100%" height={matches ? 300 : "100%"}>
               <RadarChart data={radarData}>
                 <PolarGrid stroke="#d1d5db" />
-                <PolarAngleAxis
-                  dataKey="subject"
-                  tick={{ fontSize: 9, fill: "#76777a" }}
-                />
+
+                <PolarAngleAxis dataKey="subject" tick={<CustomAngleTick />} />
+
                 <PolarRadiusAxis
                   domain={[0, 5]}
                   tick={false}
                   axisLine={false}
                 />
+
                 <Radar
-                  name="Score"
                   dataKey="A"
                   stroke="#0076fe"
                   fill="#60a5fa"
@@ -524,5 +570,22 @@ export const InteractiveDashboard = () => {
         </div>
       </Box>
     </div>
+  )
+}
+
+const CustomAngleTick = (props: any) => {
+  const { x, y, payload } = props
+  const isBottom = payload.index === 1 || payload.index === 2
+
+  return (
+    <text
+      x={x}
+      y={isBottom ? y + 10 : y}
+      textAnchor="middle"
+      fontSize={9}
+      fill="#76777a"
+    >
+      {payload.value}
+    </text>
   )
 }

@@ -123,7 +123,7 @@ export const MediaSection = () => {
         height={"auto"}
         withControls={false}
         slidesToScroll={!matches ? (data?.length >= 3 ? 3 : 1) : 1}
-        slideSize={matches ? "100%" : "33.333333%"}
+        slideSize={matches ? "88%" : "33.333333%"}
       >
         {data?.map((item: IGetMedia, i: number) => (
           <Carousel.Slide key={i}>

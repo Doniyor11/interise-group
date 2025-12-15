@@ -43,6 +43,38 @@
   }
 }
 
+@media screen and (max-width: 570px) {
+  .sectionWrapper {
+    overflow: hidden;
+    width: 100%;
+
+    h3 {
+      font-size: 20px;
+      letter-spacing: -0.4px;
+    }
+
+    p {
+      font-size: 14px;
+      margin: 6px 0 12px;
+    }
+
+    .boxImages {
+      gap: 12px;
+      &.leftToRight {
+        animation: scrollLeft 8s linear infinite;
+      }
+
+      &.rightToLeft {
+        animation: scrollRight 8s linear infinite;
+      }
+      .image {
+        height: 200px;
+        border-radius: 18px;
+      }
+    }
+  }
+}
+
 @keyframes scrollLeft {
   0% {
     transform: translateX(0);

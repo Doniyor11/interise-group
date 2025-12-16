@@ -105,11 +105,10 @@ export const ResearchTypes = () => {
                 </Box>
                 {item?.disabled && (
                   <div className={s.disabledWrapper}>
-                    <Text className={s.label}>
-                      {t("research.card.release_planned")}
-                    </Text>
                     <Text className={s.date}>
-                      {dayjs(item?.disable_date).format("DD.MM.YY")}
+                      {t("research.research_released") +
+                        " " +
+                        dayjs(item?.disable_date).format("YYYY")}
                     </Text>
                   </div>
                 )}

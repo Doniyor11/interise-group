@@ -96,7 +96,7 @@
         "rank_top1": "Top-1",
         "company_in_country": "company <br/> in the country",
         "company_in_medicine": "company in <br/> premium medicine",
-        "country": "Country:",
+        "country": "Region:",
         "central_asia": "Central Asia",
         "transcaucasia": "Transcaucasia",
         "russia": "Russia",
@@ -316,7 +316,7 @@
     "card": {
       "rank_top3": "Top-3",
       "company_in_country": "company in the country",
-      "country": "Country:",
+      "country": "Region:",
       "kazakhstan": "Kazakhstan",
       "industry": "Industry:",
       "banking": "Banking",
@@ -333,6 +333,7 @@
     "request_presentation_button": "Request Presentation"
   },
   "research": {
+    "research_released": "Released in",
     "banner": {
       "title": "InteriseGroup conducts <span>comprehensive studies of markets, industries and target audiences</span> — including deep motives and real behavioral triggers.",
       "description": "We use an individual approach and select tools for the client's specific task. These studies enable companies to make informed strategic decisions at all stages of development — from identifying growth opportunities and testing hypotheses to launching new products and scaling business."

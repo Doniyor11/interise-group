@@ -9,7 +9,7 @@ interface AnimatedNumberProps {
 
 export const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
   value,
-  duration = 3000,
+  duration = 1000,
   className,
   symbols,
 }) => {

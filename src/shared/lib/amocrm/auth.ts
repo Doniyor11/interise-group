@@ -28,9 +28,7 @@ async function getCurrentRefreshToken(): Promise<string> {
 
   // Fallback to environment variable (for initial setup)
   if (ENV_REFRESH_TOKEN) {
-    console.log(
-      "[amoCRM Auth] Using refresh token from .env.local (fallback)",
-    )
+    console.log("[amoCRM Auth] Using refresh token from .env.local (fallback)")
     console.log(
       "[amoCRM Auth] ⚠️ Consider running the SQL migration to store tokens in Supabase",
     )

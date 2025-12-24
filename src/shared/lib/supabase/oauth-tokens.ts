@@ -65,9 +65,7 @@ export async function getRefreshToken(): Promise<string | null> {
 /**
  * Save new refresh token to database
  */
-export async function saveRefreshToken(
-  refreshToken: string,
-): Promise<boolean> {
+export async function saveRefreshToken(refreshToken: string): Promise<boolean> {
   return await updateOAuthTokens({ refresh_token: refreshToken })
 }
 

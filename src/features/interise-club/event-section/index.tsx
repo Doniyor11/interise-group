@@ -1,5 +1,6 @@
 import { Box, Button, Flex, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
+import MarkdownPreview from "@uiw/react-markdown-preview"
 import cx from "clsx"
 import dayjs from "dayjs"
 import "dayjs/locale/en"
@@ -21,7 +22,6 @@ import IconLocation from "@/shared/assets/images/interise-group/location-outline
 import { onLinkClick } from "@/shared/libs/scroll.ts"
 
 import s from "./styles.module.scss"
-import MarkdownPreview from "@uiw/react-markdown-preview"
 
 export const EventSection = () => {
   const { t, lang } = useTranslation("common")

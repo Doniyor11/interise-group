@@ -55,9 +55,7 @@ export const RequestPresentation = () => {
 
   const onSubmit = (data: IEmailFormTypes) => {
     const pageText =
-      t("forms.page.cases") +
-      " " +
-      t("forms.presentation.requestPresentation")
+      t("forms.page.cases") + " " + t("forms.presentation.requestPresentation")
 
     mutate({
       message:

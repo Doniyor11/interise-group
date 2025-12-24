@@ -1,4 +1,5 @@
 import { Box, Button, Input, Text } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
 import useTranslation from "next-translate/useTranslation"
 import React from "react"
@@ -11,7 +12,6 @@ import { IEventFormTypes } from "@/features/contact-forms/email-form/types.ts"
 import { useGetClubImagesQuery } from "@/entities/club-images/query.ts"
 
 import s from "./styles.module.scss"
-import { useMediaQuery } from "@mantine/hooks"
 
 export const SignupEvent = () => {
   const { t, lang } = useTranslation("common")
@@ -65,7 +65,7 @@ export const SignupEvent = () => {
         data-aos="fade-up"
         className={s.sectionWrapper}
         style={{
-          backgroundSize: matchesSmall ? 'contain' : "cover",
+          backgroundSize: matchesSmall ? "contain" : "cover",
           background: data
             ? `#0076FE url('${data[0]?.url}') no-repeat right center`
             : "#0076FE",

@@ -1,9 +1,12 @@
-import type { NextApiRequest, NextApiResponse } from "next"
 import * as yup from "yup"
+import type { NextApiRequest, NextApiResponse } from "next"
 
 import { amoCRMClient } from "@/shared/api/amocrm-client"
 import { getAccessToken } from "@/shared/lib/amocrm/auth"
-import { mapToAmoCRMContact, mapToAmoCRMLead } from "@/shared/lib/amocrm/mappers"
+import {
+  mapToAmoCRMContact,
+  mapToAmoCRMLead,
+} from "@/shared/lib/amocrm/mappers"
 import {
   AmoCRMContactResponse,
   AmoCRMLeadResponse,

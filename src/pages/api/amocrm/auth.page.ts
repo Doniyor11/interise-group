@@ -16,7 +16,9 @@ export default async function handler(
       return res.status(500).json({ error: "OAuth credentials not configured" })
     }
 
-    const authUrl = `https://www.amocrm.ru/oauth?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&state=amocrm_auth`
+    const authUrl = `https://www.amocrm.ru/oauth?client_id=${clientId}&redirect_uri=${encodeURIComponent(
+      redirectUri,
+    )}&state=amocrm_auth`
 
     return res.status(200).json({
       message:
@@ -38,7 +40,9 @@ export default async function handler(
     console.log("Access Token:", tokens.access_token)
     console.log("Refresh Token:", tokens.refresh_token)
     console.log("Expires In:", tokens.expires_in, "seconds")
-    console.log("\nCopy the refresh token above and add it to your .env.local file:")
+    console.log(
+      "\nCopy the refresh token above and add it to your .env.local file:",
+    )
     console.log(`AMOCRM_REFRESH_TOKEN=${tokens.refresh_token}`)
     console.log("===========================\n")
 

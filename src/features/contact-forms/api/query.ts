@@ -1,8 +1,9 @@
 import { useMutation } from "@tanstack/react-query"
 import { toast } from "react-toastify"
 
-import { sendMessageBot } from "@/features/contact-forms/api/index.ts"
 import { sendToAmoCRM } from "@/features/contact-forms/api/amocrm"
+import { sendMessageBot } from "@/features/contact-forms/api/index.ts"
+
 import { SubmitParams } from "@/shared/lib/amocrm/types"
 
 export const useSendMessageQuery = (onSuccess: () => void) => {

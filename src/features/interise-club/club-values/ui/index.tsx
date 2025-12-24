@@ -1,5 +1,6 @@
 import { Center, Flex, Skeleton, Text } from "@mantine/core"
 import useTranslation from "next-translate/useTranslation"
+import Image from "next/image"
 import React from "react"
 
 import {
@@ -10,8 +11,6 @@ import {
   ICompanyValues,
   IExpertsFocusing,
 } from "@/features/interise-club/club-values/api/types.ts"
-
-import IconOne from "@/shared/assets/images/interise-group/icon-value-1.svg"
 
 import s from "./styles.module.scss"
 
@@ -41,7 +40,12 @@ export const ClubValues = () => {
               <div key={i} data-aos="zoom-in-up" className={s.card}>
                 <Flex align="center" gap={12}>
                   <div className={s.icon}>
-                    <IconOne />
+                    <Image
+                      src={item?.icon}
+                      alt={item?.title}
+                      width={40}
+                      height={40}
+                    />
                   </div>
                   <Text className={s.cardTitle}>{item?.title}</Text>
                 </Flex>

@@ -8,9 +8,9 @@ export const getEventsApi = async (lang: string) => {
   return response?.data?.data
 }
 
-export const getUpcomingEventsApi = async (lang: string) => {
+export const getUpcomingEventsApi = async (lang: string, type: string) => {
   const response = await clientApi.get(apiKeys.upcomingEvents, {
-    params: { lang },
+    params: { lang, type },
   })
   return response?.data?.data
 }

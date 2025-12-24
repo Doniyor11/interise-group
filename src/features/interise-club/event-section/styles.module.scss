@@ -20,7 +20,7 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 121.2%;
-    margin: 17px auto;
+    margin: 17px auto 70px;
     max-width: 700px;
   }
 
@@ -66,86 +66,16 @@
     }
   }
 
-  .cards {
-    margin: 70px 0 48px;
-    padding: 32px;
-    width: 100%;
-    border-radius: 24px;
-    border: 1px solid #d4e4f7;
-    background: #f2f8ff;
-
-    .cardTitle {
-      color: #566677;
-      font-size: 32px;
-      font-weight: 400;
-      line-height: 120%;
-      letter-spacing: -0.64px;
-      margin-bottom: 38px;
-    }
-
-    .card {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: auto;
-      grid-column-gap: 64px;
-      grid-row-gap: 20px;
-
-      .cardItem {
-        display: flex;
-        align-items: center;
-        gap: 28px;
-        margin-bottom: 20px;
-        background: #ffffff;
-        border-radius: 12px;
-        overflow: hidden;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-
-        .image {
-          width: 154px;
-          height: 152px;
-          border-radius: 12px;
-          object-fit: cover;
-        }
-
-        .itemTitle,
-        .itemText {
-          color: #566677;
-          font-weight: 400;
-          line-height: 120%;
-        }
-
-        .itemTitle {
-          font-size: 20px;
-          letter-spacing: -0.4px;
-        }
-
-        .itemText {
-          max-width: 348px;
-          font-size: 16px;
-          letter-spacing: -0.32px;
-
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 3;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          margin: 4px 0 12px;
-        }
-
-        .itemLink {
-          color: #0076fe;
-          font-size: 16px;
-          font-weight: 400;
-          line-height: 121.2%;
-        }
-      }
-    }
+  .boxTitle {
+    color: #566677;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.64px;
   }
 
   .box {
+    margin: 24px 0 36px;
     padding: 30px 24px;
     width: 100%;
     border-radius: 24px;
@@ -154,15 +84,14 @@
     display: flex;
     justify-content: space-between;
     gap: 32px;
-    margin-bottom: 18px;
 
     &:nth-child(odd) {
       flex-direction: row-reverse;
     }
 
-    &:last-child {
-      margin-bottom: 0;
-    }
+    //&:last-child {
+    //  margin-bottom: 0;
+    //}
 
     .image {
       width: 390px;
@@ -239,7 +168,7 @@
 
     .subtitle {
       font-size: 14px;
-      margin: 12px 0;
+      margin: 12px 0 20px;
     }
 
     .filters {
@@ -290,18 +219,18 @@
       }
     }
 
+    .boxTitle {
+      font-size: 24px;
+      line-height: 26px;
+    }
+
     .box {
       padding: 16px;
       flex-direction: column;
       gap: 12px;
-      margin-bottom: 12px;
 
       &:nth-child(odd) {
         flex-direction: column;
-      }
-
-      &:nth-child(even) {
-        margin-bottom: 12px;
       }
 
       .image {

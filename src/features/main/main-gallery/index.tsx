@@ -8,13 +8,12 @@ import s from "./styles.module.scss"
 
 const getBadgeData = (t: any) => [
   { id: 1, title: t("main.club.events.business_brunches") },
-  { id: 2, title: t("main.club.events.invest_breakfasts") },
-  { id: 3, title: t("main.club.events.lectures") },
-  { id: 4, title: t("main.club.events.demo_days") },
-  { id: 5, title: t("main.club.events.closed_forums") },
-  { id: 6, title: t("main.club.events.wine_tastings") },
-  { id: 7, title: t("main.club.events.round_tables") },
-  { id: 8, title: t("main.club.events.cigar_evenings") },
+  { id: 2, title: t("main.club.events.demo_days") },
+  { id: 3, title: t("main.club.events.closed_forums") },
+  { id: 4, title: t("main.club.events.lectures") },
+  { id: 5, title: t("main.club.events.round_tables") },
+  { id: 6, title: t("main.club.events.invest_breakfasts") },
+  { id: 7, title: t("main.club.events.wine_tastings") },
 ]
 
 export const MainGallery = () => {

@@ -18,4 +18,5 @@ export interface IGetUpcomingEvents {
   created_at: string
   updated_at: string
   location: string
+  disable_button: boolean
 }

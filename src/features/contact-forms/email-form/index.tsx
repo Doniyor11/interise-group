@@ -49,7 +49,7 @@ export const EmailForm = () => {
     reset({
       name: "",
       surname: "",
-      message: "",
+      message: null,
       phone: "",
       check: false,
     })

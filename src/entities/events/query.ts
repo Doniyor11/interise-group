@@ -14,11 +14,11 @@ export const useGetEventsQuery = () => {
   })
 }
 
-export const useGetUpcomingEventsQuery = () => {
+export const useGetUpcomingEventsQuery = (type: string) => {
   const { lang } = useTranslation()
   return useQuery({
-    queryFn: () => getUpcomingEventsApi(lang),
-    queryKey: [apiKeys.upcomingEvents, lang],
+    queryFn: () => getUpcomingEventsApi(lang, type),
+    queryKey: [apiKeys.upcomingEvents, lang, type],
     select: (data) => data,
   })
 }

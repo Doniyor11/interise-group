@@ -182,14 +182,13 @@
       "title": "InteriseClub is a platform for communication <br/> and exchange of experience among practitioners",
       "event_types_label": "Event types:",
       "events": {
-        "business_brunches": "Business Brunches",
+        "business_brunches": "Closed Business Forums",
+        "demo_days": "Strategic Sessions",
+        "closed_forums": "Foresight Sessions",
+        "lectures": "Webinars",
+        "round_tables": "Team Offsite Sessions",
         "invest_breakfasts": "Investment Breakfasts",
-        "lectures": "Lectures",
-        "demo_days": "Demo Days",
-        "closed_forums": "Closed Forums",
-        "wine_tastings": "Wine Tastings",
-        "round_tables": "Round Tables",
-        "cigar_evenings": "Cigar Evenings"
+        "wine_tastings": "Wine Evenings"
       },
       "description1": "Club members are founders, shareholders, CEOs and top managers from various countries and industries. Effective practitioners form the strategic agenda. Club meetings take place in different countries and create an environment for ideas, solutions and partnerships that impact the future of business.",
       "description2": "Apply to participate in the club's private events",
@@ -611,6 +610,8 @@
       "round_tables": "Round Tables",
       "cigar_evenings": "Cigar Evenings",
       "upcoming": "Upcoming events:",
+      "upcoming_events": "Upcoming Events",
+      "past_events": "Past Events",
       "event1": {
         "title": "Event 1"
       },

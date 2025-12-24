@@ -42,7 +42,9 @@ export default async function handler(
   const allGood = envStatus.warnings.length === 0
 
   return res.status(allGood ? 200 : 500).json({
-    status: allGood ? "✅ All environment variables set" : "❌ Missing variables",
+    status: allGood
+      ? "✅ All environment variables set"
+      : "❌ Missing variables",
     ...envStatus,
   })
 }

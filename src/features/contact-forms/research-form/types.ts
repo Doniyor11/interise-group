@@ -1,5 +1,5 @@
 export interface IResearchForm {
   name: string
-  phone?: string
+  phone: string
   check?: boolean
 }

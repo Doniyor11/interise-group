@@ -41,8 +41,8 @@ const InteriseClubPage = () => {
       />
       <InteriseClubMain />
       <EventSection />
-      <ClubValues />
       <SignupEvent />
+      <ClubValues />
       <ClubMedia />
       <Box pb={65} className={"container"}>
         <Footer />

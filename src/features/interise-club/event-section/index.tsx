@@ -21,6 +21,7 @@ import IconLocation from "@/shared/assets/images/interise-group/location-outline
 import { onLinkClick } from "@/shared/libs/scroll.ts"
 
 import s from "./styles.module.scss"
+import MarkdownPreview from "@uiw/react-markdown-preview"
 
 export const EventSection = () => {
   const { t, lang } = useTranslation("common")
@@ -81,7 +82,10 @@ export const EventSection = () => {
             <div className={s.contentWrapper}>
               <Text className={s.label}>{item?.label}</Text>
               <Text className={s.title}>{item?.title}</Text>
-              <Text className={s.description}>{item?.description}</Text>
+              <MarkdownPreview
+                className={s.description}
+                source={item?.description}
+              />
               {matches && (
                 <div className={s.eventDate}>
                   <Text className={s.date}>

@@ -8,7 +8,7 @@ import React from "react"
 import { Controller, useForm } from "react-hook-form"
 import { IMaskInput } from "react-imask"
 
-import { useSendMessageQuery } from "@/features/contact-forms/api/query"
+import { useSubmitFormQuery } from "@/features/contact-forms/api/query"
 import { IEmailFormTypes } from "@/features/contact-forms/email-form/types"
 
 import s from "../styles.module.scss"
@@ -45,7 +45,7 @@ export const EmailForm = () => {
     resolver: yupResolver(emailFormSchema),
   })
 
-  const { mutate, isPending } = useSendMessageQuery(() => {
+  const { mutate, isPending } = useSubmitFormQuery(() => {
     reset({
       name: "",
       surname: "",
@@ -63,14 +63,22 @@ export const EmailForm = () => {
 
     const pageText = matchedKey ? pathMap[matchedKey] : t("forms.page.home")
 
-    mutate(
-      `<b>📩 Новая заявка с сайта!</b>\n\n` +
+    mutate({
+      message:
+        `<b>📩 Новая заявка с сайта!</b>\n\n` +
         `<b>🌐 Страница:</b> ${pageText}\n` +
         `<b>👤 Имя:</b> ${data.name}\n` +
         `<b>👥 Фамилия:</b> ${data.surname}\n` +
         `<b>📞 Телефон:</b> ${data.phone}\n` +
         `<b>💬 Способ связи:</b> ${data.message}\n`,
-    )
+      formData: {
+        name: data.name,
+        surname: data.surname,
+        phone: data.phone,
+        contactMethod: data.message,
+        source: pageText,
+      },
+    })
   }
 
   return (

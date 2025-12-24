@@ -14,7 +14,7 @@ import React from "react"
 import { Controller, useForm } from "react-hook-form"
 import { IMaskInput } from "react-imask"
 
-import { useSendMessageQuery } from "@/features/contact-forms/api/query"
+import { useSubmitFormQuery } from "@/features/contact-forms/api/query"
 import { IEmailFormTypes } from "@/features/contact-forms/email-form/types"
 import { useContactFormsStore } from "@/features/contact-forms/model"
 
@@ -51,21 +51,30 @@ export const RequestPresentation = () => {
     isPending,
     isSuccess,
     reset: queryReset,
-  } = useSendMessageQuery(() => onClose)
+  } = useSubmitFormQuery(() => onClose)
 
   const onSubmit = (data: IEmailFormTypes) => {
-    mutate(
-      `<b>📩 Новая заявка с сайта!</b>\n\n` +
-        `<b>🌐 Страница:</b> ${
-          t("forms.page.cases") +
-          " " +
-          t("forms.presentation.requestPresentation")
-        }\n` +
+    const pageText =
+      t("forms.page.cases") +
+      " " +
+      t("forms.presentation.requestPresentation")
+
+    mutate({
+      message:
+        `<b>📩 Новая заявка с сайта!</b>\n\n` +
+        `<b>🌐 Страница:</b> ${pageText}\n` +
         `<b>👤 Имя:</b> ${data.name}\n` +
         `<b>👥 Фамилия:</b> ${data.surname}\n` +
         `<b>📞 Телефон:</b> ${data.phone}\n` +
         `<b>💬 Способ связи:</b> ${data.message}\n`,
-    )
+      formData: {
+        name: data.name,
+        surname: data.surname,
+        phone: data.phone,
+        contactMethod: data.message,
+        source: pageText,
+      },
+    })
   }
 
   return (

@@ -6,7 +6,7 @@ import React from "react"
 import { Controller, useForm } from "react-hook-form"
 import { IMaskInput } from "react-imask"
 
-import { useSendMessageQuery } from "@/features/contact-forms/api/query"
+import { useSubmitFormQuery } from "@/features/contact-forms/api/query"
 import { useContactFormsStore } from "@/features/contact-forms/model"
 import { IResearchForm } from "@/features/contact-forms/research-form/types.ts"
 
@@ -39,15 +39,21 @@ export const ResearchForm = () => {
     isPending,
     isSuccess,
     reset: resetQuery,
-  } = useSendMessageQuery(() => onClose)
+  } = useSubmitFormQuery(() => onClose)
 
   const onSubmit = (data: IResearchForm) => {
-    mutate(
-      `<b>${t("forms.research_form.telegram.title")}</b>\n` +
+    mutate({
+      message:
+        `<b>${t("forms.research_form.telegram.title")}</b>\n` +
         `<b>${researchForm}</b>\n` +
         `<b>${t("forms.research_form.telegram.name")}</b> ${data.name}\n` +
         `<b>${t("forms.research_form.telegram.phone")}</b> ${data.phone}\n`,
-    )
+      formData: {
+        name: data.name,
+        phone: data.phone,
+        source: researchForm || t("forms.page.research"),
+      },
+    })
   }
 
   return (

@@ -111,6 +111,7 @@
         rgba(0, 0, 255, 0) 80%,
         rgba(0, 0, 255, 0) 0
       );
+      background-size: cover !important;
 
       .box {
         width: 100%;
@@ -120,8 +121,11 @@
       .form {
         .inputs {
           grid-template-columns: repeat(1, 1fr);
+          .event {
+            grid-area: auto;
+          }
 
-          .select {
+            .select {
             grid-area: initial;
           }
 

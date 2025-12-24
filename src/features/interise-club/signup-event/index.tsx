@@ -5,16 +5,17 @@ import React from "react"
 import { Controller, useForm } from "react-hook-form"
 import { IMaskInput } from "react-imask"
 
-import { useSendMessageQuery } from "@/features/contact-forms/api/query.ts"
+import { useSubmitFormQuery } from "@/features/contact-forms/api/query.ts"
 import { IEventFormTypes } from "@/features/contact-forms/email-form/types.ts"
 
 import { useGetClubImagesQuery } from "@/entities/club-images/query.ts"
 
 import s from "./styles.module.scss"
+import { useMediaQuery } from "@mantine/hooks"
 
 export const SignupEvent = () => {
   const { t, lang } = useTranslation("common")
-
+  const matchesSmall = useMediaQuery("(max-width: 845px)")
   const {
     control,
     handleSubmit,
@@ -22,7 +23,7 @@ export const SignupEvent = () => {
     formState: { isDirty, isValid },
   } = useForm<IEventFormTypes>()
 
-  const { mutate, isPending } = useSendMessageQuery(() => {
+  const { mutate, isPending } = useSubmitFormQuery(() => {
     reset({
       name: "",
       company: "",
@@ -33,15 +34,24 @@ export const SignupEvent = () => {
   })
 
   const onSubmit = (data: IEventFormTypes) => {
-    mutate(
-      `<b>📩 Новая заявка с сайта!</b>\n\n` +
+    mutate({
+      message:
+        `<b>📩 Новая заявка с сайта!</b>\n\n` +
         `<b>🌐 Страница:</b> InteriseClub\n` +
         `<b>👤 Имя:</b> ${data.name}\n` +
         `<b>🏢 Компания:</b> ${data.company}\n` +
         `<b>📞 Телефон:</b> ${data.phone}\n` +
         `<b>💬 Telegram:</b> ${data.telegram}\n` +
         `<b>📅 Мероприятие:</b> ${data.event}\n`,
-    )
+      formData: {
+        name: data.name,
+        phone: data.phone,
+        company: data.company,
+        telegram: data.telegram,
+        event: data.event,
+        source: "InteriseClub",
+      },
+    })
   }
 
   const { data } = useGetClubImagesQuery({
@@ -55,6 +65,7 @@ export const SignupEvent = () => {
         data-aos="fade-up"
         className={s.sectionWrapper}
         style={{
+          backgroundSize: matchesSmall ? 'contain' : "cover",
           background: data
             ? `#0076FE url('${data[0]?.url}') no-repeat right center`
             : "#0076FE",

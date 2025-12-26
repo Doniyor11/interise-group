@@ -63,7 +63,7 @@ export const Footer = () => {
                     h={71}
                     target={"_blank"}
                     href={
-                      "https://www.linkedin.com/company/interisegroup?trk=blended-typeahead"
+                      "https://www.linkedin.com/company/interise-group"
                     }
                   >
                     <IconLin />

@@ -62,9 +62,7 @@ export const Footer = () => {
                   <Anchor
                     h={71}
                     target={"_blank"}
-                    href={
-                      "https://www.linkedin.com/company/interise-group"
-                    }
+                    href={"https://www.linkedin.com/company/interise-group"}
                   >
                     <IconLin />
                   </Anchor>

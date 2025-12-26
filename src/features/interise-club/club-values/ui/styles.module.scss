@@ -16,10 +16,20 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
-    grid-gap: 32px;
+    grid-gap: 24px;
     margin-top: 40px;
 
     .card {
+      padding: 12px;
+      border-radius: 12px;
+      cursor: default;
+      border: 1px solid #d4e4f7;
+      background: radial-gradient(
+        170% 440% at 36% 20%,
+        #f2f8ff 19.19%,
+        #0076fe 100%
+      );
+
       .icon {
         width: 60px;
         height: 60px;

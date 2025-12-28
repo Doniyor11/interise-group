@@ -4,6 +4,7 @@ export interface IEmailFormTypes {
   phone: string
   message: string
   check: boolean
+  newsletterConsent?: boolean
 }
 export interface IEventFormTypes {
   name: string

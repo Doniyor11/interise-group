@@ -33,6 +33,7 @@ export const EmailForm = () => {
       .string()
       .required(t("forms.validation.contact_method_required")),
     check: yup.boolean().oneOf([true], t("forms.validation.privacy_required")),
+    newsletterConsent: yup.boolean(),
   })
 
   const {
@@ -52,6 +53,7 @@ export const EmailForm = () => {
       message: null,
       phone: "",
       check: false,
+      newsletterConsent: false,
     })
   })
   const onSubmit = (data: IEmailFormTypes) => {
@@ -185,6 +187,37 @@ export const EmailForm = () => {
               checked={field.value}
               onChange={(value: any) => field.onChange?.(value)}
               error={fieldState.error?.message}
+            />
+          )}
+        />
+
+        <Controller
+          name={"newsletterConsent"}
+          control={control}
+          render={({ field }) => (
+            <Checkbox
+              m={"0 0 16px"}
+              classNames={{
+                root: s.checkboxRoot,
+                label: s.checkboxLabel,
+                input: s.checkboxInput,
+              }}
+              label={
+                <Trans
+                  i18nKey="common:forms.newsletter_consent"
+                  components={{
+                    link: (
+                      <a
+                        href={`/Согласие_на_получение_рассылок_${lang}.pdf`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      />
+                    ),
+                  }}
+                />
+              }
+              checked={field.value}
+              onChange={(value: any) => field.onChange?.(value)}
             />
           )}
         />

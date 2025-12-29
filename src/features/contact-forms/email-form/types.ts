@@ -12,4 +12,6 @@ export interface IEventFormTypes {
   phone: string
   telegram: string
   event: string
+  check: boolean
+  newsletterConsent?: boolean
 }

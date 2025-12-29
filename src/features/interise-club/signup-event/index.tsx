@@ -1,6 +1,9 @@
-import { Box, Button, Input, Text } from "@mantine/core"
+import * as yup from "yup"
+import { yupResolver } from "@hookform/resolvers/yup"
+import { Box, Button, Checkbox, Input, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
+import Trans from "next-translate/Trans"
 import useTranslation from "next-translate/useTranslation"
 import React from "react"
 import { Controller, useForm } from "react-hook-form"
@@ -16,12 +19,26 @@ import s from "./styles.module.scss"
 export const SignupEvent = () => {
   const { t, lang } = useTranslation("common")
   const matchesSmall = useMediaQuery("(max-width: 845px)")
+
+  const eventFormSchema = yup.object().shape({
+    name: yup.string().required(t("forms.validation.name_required")),
+    company: yup.string().required(t("forms.validation.company_required")),
+    phone: yup.string().required(t("forms.validation.phone_required")),
+    telegram: yup.string().required(t("forms.validation.telegram_required")),
+    event: yup.string().required(t("forms.validation.event_required")),
+    check: yup.boolean().oneOf([true], t("forms.validation.privacy_required")),
+    newsletterConsent: yup.boolean().default(false),
+  })
+
   const {
     control,
     handleSubmit,
     reset,
     formState: { isDirty, isValid },
-  } = useForm<IEventFormTypes>()
+  } = useForm<any>({
+    mode: "onSubmit",
+    resolver: yupResolver(eventFormSchema),
+  })
 
   const { mutate, isPending } = useSubmitFormQuery(() => {
     reset({
@@ -30,6 +47,8 @@ export const SignupEvent = () => {
       phone: "",
       telegram: "",
       event: "",
+      check: false,
+      newsletterConsent: false,
     })
   })
 
@@ -65,7 +84,7 @@ export const SignupEvent = () => {
         data-aos="fade-up"
         className={s.sectionWrapper}
         style={{
-          backgroundSize: matchesSmall ? "contain" : "cover",
+          backgroundSize: matchesSmall ? "cover" : "60% 470px",
           background: data
             ? `#0076FE url('${data[0]?.url}') no-repeat right center`
             : "#0076FE",
@@ -156,6 +175,70 @@ export const SignupEvent = () => {
                   )}
                 />
               </div>
+
+              <Controller
+                name={"check"}
+                control={control}
+                render={({ field, fieldState }) => (
+                  <Checkbox
+                    m={"20px 0 16px"}
+                    classNames={{
+                      root: s.checkboxRoot,
+                      label: s.checkboxLabel,
+                      input: s.checkboxInput,
+                    }}
+                    label={
+                      <Trans
+                        i18nKey="common:forms.privacy_agreement"
+                        components={{
+                          link: (
+                            <a
+                              href={`/Политика_конфединциальности_${lang}.pdf`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            />
+                          ),
+                        }}
+                      />
+                    }
+                    checked={field.value}
+                    onChange={(value: any) => field.onChange?.(value)}
+                    error={fieldState.error?.message}
+                  />
+                )}
+              />
+
+              <Controller
+                name={"newsletterConsent"}
+                control={control}
+                render={({ field }) => (
+                  <Checkbox
+                    m={"0 0 16px"}
+                    classNames={{
+                      root: s.checkboxRoot,
+                      label: s.checkboxLabel,
+                      input: s.checkboxInput,
+                    }}
+                    label={
+                      <Trans
+                        i18nKey="common:forms.newsletter_consent"
+                        components={{
+                          link: (
+                            <a
+                              href={`/Согласие_на_получение_рассылок_${lang}.pdf`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            />
+                          ),
+                        }}
+                      />
+                    }
+                    checked={field.value}
+                    onChange={(value: any) => field.onChange?.(value)}
+                  />
+                )}
+              />
+
               <Button
                 type={"submit"}
                 className={s.btn}

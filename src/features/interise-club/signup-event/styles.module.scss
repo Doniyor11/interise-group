@@ -5,6 +5,7 @@
   margin-bottom: 80px;
   overflow: hidden;
   background-size: 60% 470px !important;
+
   p {
     color: #fff;
     font-weight: 400;
@@ -27,10 +28,10 @@
     padding: 17px 34px;
     max-width: 60%;
     background: linear-gradient(
-      90deg,
-      #0076fe 90%,
-      rgba(0, 0, 255, 0) 100%,
-      rgba(0, 0, 255, 0) 0
+                    90deg,
+                    #0076fe 90%,
+                    rgba(0, 0, 255, 0) 100%,
+                    rgba(0, 0, 255, 0) 0
     );
 
     .box {
@@ -100,15 +101,13 @@
 
       .checkboxInput {
         border: 1px solid #e1e1e2;
-        box-shadow:
-          0 0.5px 0 0 rgba(26, 26, 26, 0.08),
-          0 1px 3px 0 rgba(26, 26, 26, 0.08);
+        box-shadow: 0 0.5px 0 0 rgba(26, 26, 26, 0.08),
+        0 1px 3px 0 rgba(26, 26, 26, 0.08);
 
         &:checked {
           background: #0076fe;
-          box-shadow:
-            0 0.5px 0 0 rgba(26, 26, 26, 0.08),
-            0 1px 3px 0 rgba(26, 26, 26, 0.08);
+          box-shadow: 0 0.5px 0 0 rgba(26, 26, 26, 0.08),
+          0 1px 3px 0 rgba(26, 26, 26, 0.08);
         }
       }
     }
@@ -121,6 +120,7 @@
     border-radius: 22px;
     margin-bottom: 40px;
     background-size: cover !important;
+
     .title {
       font-size: 24px;
       letter-spacing: -0.48px;
@@ -136,10 +136,10 @@
       padding: 16px;
       max-width: 100%;
       background: linear-gradient(
-        90deg,
-        #0076fe 60%,
-        rgba(0, 0, 255, 0) 80%,
-        rgba(0, 0, 255, 0) 0
+                      90deg,
+                      #0076fe 60%,
+                      rgba(0, 0, 255, 0) 80%,
+                      rgba(0, 0, 255, 0) 0
       );
       background-size: cover !important;
 
@@ -151,6 +151,7 @@
       .form {
         .inputs {
           grid-template-columns: repeat(1, 1fr);
+
           .event {
             grid-area: auto;
           }

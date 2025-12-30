@@ -1,5 +1,12 @@
 import { AmoCRMContact, AmoCRMLead, FormSubmissionData } from "./types"
 
+// Newsletter Pipeline Constants
+const NEWSLETTER_PIPELINE_ID = 10443234
+
+// Newsletter Status IDs
+const NEWSLETTER_STATUS_AGREED = 82494246 // "СОГЛАСЕН" status ID
+const NEWSLETTER_STATUS_NOT_AGREED = 82494250 // "НЕ СОГЛАСЕН" status ID
+
 export function normalizePhoneNumber(phone: string): string {
   return phone.replace(/[\s\(\)\-]/g, "")
 }
@@ -93,6 +100,39 @@ export function mapToAmoCRMLead(
     price: 0,
     pipeline_id: 8205458,
     status_id: 82417030,
+  }
+
+  if (contactId) {
+    lead._embedded = {
+      contacts: [{ id: contactId }],
+    }
+  }
+
+  return lead
+}
+
+export function mapToNewsletterLead(
+  formData: FormSubmissionData,
+  contactId?: number,
+): AmoCRMLead | null {
+  // Only create newsletter lead if newsletterConsent field exists
+  if (formData.newsletterConsent === undefined) {
+    return null
+  }
+
+  const fullName = formData.surname
+    ? `${formData.name} ${formData.surname}`
+    : formData.name
+
+  const statusId = formData.newsletterConsent
+    ? NEWSLETTER_STATUS_AGREED
+    : NEWSLETTER_STATUS_NOT_AGREED
+
+  const lead: AmoCRMLead = {
+    name: `Newsletter - ${fullName}`,
+    price: 0,
+    pipeline_id: NEWSLETTER_PIPELINE_ID,
+    status_id: statusId,
   }
 
   if (contactId) {

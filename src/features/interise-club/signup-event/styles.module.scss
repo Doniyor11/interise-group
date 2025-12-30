@@ -2,10 +2,9 @@
   width: 100%;
   //height: 365px;
   border-radius: 24px;
-  background-size: cover;
   margin-bottom: 80px;
   overflow: hidden;
-
+  background-size: 60% 470px !important;
   p {
     color: #fff;
     font-weight: 400;
@@ -121,7 +120,7 @@
     height: auto;
     border-radius: 22px;
     margin-bottom: 40px;
-
+    background-size: cover !important;
     .title {
       font-size: 24px;
       letter-spacing: -0.48px;

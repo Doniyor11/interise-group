@@ -72,13 +72,17 @@ export const EmailForm = () => {
         `<b>👤 Имя:</b> ${data.name}\n` +
         `<b>👥 Фамилия:</b> ${data.surname}\n` +
         `<b>📞 Телефон:</b> ${data.phone}\n` +
-        `<b>💬 Способ связи:</b> ${data.message}\n`,
+        `<b>💬 Способ связи:</b> ${data.message}\n` +
+        `<b>📧 Согласие на рассылку:</b> ${
+          data.newsletterConsent ? "Да" : "Нет"
+        }\n`,
       formData: {
         name: data.name,
         surname: data.surname,
         phone: data.phone,
         contactMethod: data.message,
         source: pageText,
+        newsletterConsent: data.newsletterConsent,
       },
     })
   }

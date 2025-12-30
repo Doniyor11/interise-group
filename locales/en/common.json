@@ -641,6 +641,10 @@
       "select_event_placeholder": "Event",
       "demo_day_option": "Demo Day with Dmitry Vakin Scaling and Go-Global",
       "submit_button": "Submit"
+    },
+    "media": {
+      "title": "Media",
+      "subtitle": "Photos from our events"
     }
   },
   "forms": {

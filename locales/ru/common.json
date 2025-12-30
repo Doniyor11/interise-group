@@ -641,6 +641,10 @@
       "select_event_placeholder": "Мероприятие",
       "demo_day_option": "Демо-день с Дмитрием Вакиным Масштабирование и Go-Global",
       "submit_button": "Записаться"
+    },
+    "media": {
+      "title": "Медиа",
+      "subtitle": "Фотографии с наших мероприятий"
     }
   },
   "forms": {

@@ -1,6 +1,7 @@
 import { Box, Modal, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
+import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
 import React, { useMemo, useState } from "react"
 
@@ -12,12 +13,13 @@ import s from "./styles.module.scss"
 const getRandomWidth = () => Math.floor(Math.random() * (400 - 200 + 1)) + 200
 
 export const ClubMedia = () => {
+  const { t } = useTranslation("common")
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
   return (
     <div className={cx(s.sectionWrapper, "container")}>
-      <h3>Медиа</h3>
-      <Text>Фотографии с наших мероприятий</Text>
+      <h3>{t("club.media.title")}</h3>
+      <Text>{t("club.media.subtitle")}</Text>
       <BoxOne onImageClick={setSelectedImage} />
       <BoxTwo onImageClick={setSelectedImage} />
 

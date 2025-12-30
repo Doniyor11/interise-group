@@ -6,6 +6,7 @@ import { getAccessToken } from "@/shared/lib/amocrm/auth"
 import {
   mapToAmoCRMContact,
   mapToAmoCRMLead,
+  mapToNewsletterLead,
 } from "@/shared/lib/amocrm/mappers"
 import {
   AmoCRMContactResponse,
@@ -39,7 +40,7 @@ function isRetriableError(error: any): boolean {
 async function createContactAndLead(
   formData: FormSubmissionData,
   retries = 0,
-): Promise<{ contactId: number; leadId: number }> {
+): Promise<{ contactId: number; leadId: number; newsletterLeadId?: number }> {
   try {
     const accessToken = await getAccessToken()
 
@@ -73,7 +74,38 @@ async function createContactAndLead(
     const leadId = leadResponse.data._embedded.leads[0].id
     console.log("[amoCRM] Lead created", { leadId })
 
-    return { contactId, leadId }
+    // Create newsletter lead if newsletterConsent field exists
+    let newsletterLeadId: number | undefined
+    const newsletterLead = mapToNewsletterLead(formData, contactId)
+
+    if (newsletterLead) {
+      try {
+        const newsletterLeadResponse =
+          await amoCRMClient.post<AmoCRMLeadResponse>(
+            "/leads",
+            [newsletterLead],
+            {
+              headers: {
+                Authorization: `Bearer ${accessToken}`,
+              },
+            },
+          )
+
+        newsletterLeadId = newsletterLeadResponse.data._embedded.leads[0].id
+        console.log("[amoCRM] Newsletter lead created", {
+          newsletterLeadId,
+          consent: formData.newsletterConsent ? "СОГЛАСЕН" : "НЕ СОГЛАСЕН",
+        })
+      } catch (newsletterError: any) {
+        // Log newsletter lead error but don't fail the whole request
+        console.error("[amoCRM] Newsletter lead creation failed", {
+          error: newsletterError.message,
+          status: newsletterError.response?.status,
+        })
+      }
+    }
+
+    return { contactId, leadId, newsletterLeadId }
   } catch (error: any) {
     console.error("[amoCRM] Error", {
       error: error.message,
@@ -109,6 +141,7 @@ export default async function handler(
       success: true,
       contactId: result.contactId,
       leadId: result.leadId,
+      newsletterLeadId: result.newsletterLeadId,
     })
   } catch (error: any) {
     console.error("[amoCRM Submission Error]", error)

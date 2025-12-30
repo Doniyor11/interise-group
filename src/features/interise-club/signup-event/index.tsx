@@ -1,7 +1,6 @@
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { Box, Button, Checkbox, Input, Text } from "@mantine/core"
-import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
 import Trans from "next-translate/Trans"
 import useTranslation from "next-translate/useTranslation"
@@ -18,7 +17,6 @@ import s from "./styles.module.scss"
 
 export const SignupEvent = () => {
   const { t, lang } = useTranslation("common")
-  const matchesSmall = useMediaQuery("(max-width: 845px)")
 
   const eventFormSchema = yup.object().shape({
     name: yup.string().required(t("forms.validation.name_required")),
@@ -61,7 +59,10 @@ export const SignupEvent = () => {
         `<b>🏢 Компания:</b> ${data.company}\n` +
         `<b>📞 Телефон:</b> ${data.phone}\n` +
         `<b>💬 Telegram:</b> ${data.telegram}\n` +
-        `<b>📅 Мероприятие:</b> ${data.event}\n`,
+        `<b>📅 Мероприятие:</b> ${data.event}\n` +
+        `<b>📧 Согласие на рассылку:</b> ${
+          data.newsletterConsent ? "Да" : "Нет"
+        }\n`,
       formData: {
         name: data.name,
         phone: data.phone,
@@ -69,6 +70,7 @@ export const SignupEvent = () => {
         telegram: data.telegram,
         event: data.event,
         source: "InteriseClub",
+        newsletterConsent: data.newsletterConsent,
       },
     })
   }
@@ -84,7 +86,6 @@ export const SignupEvent = () => {
         data-aos="fade-up"
         className={s.sectionWrapper}
         style={{
-          backgroundSize: matchesSmall ? "cover" : "60% 470px",
           background: data
             ? `#0076FE url('${data[0]?.url}') no-repeat right center`
             : "#0076FE",

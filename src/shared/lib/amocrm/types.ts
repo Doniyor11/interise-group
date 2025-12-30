@@ -55,6 +55,7 @@ export interface FormSubmissionData {
   telegram?: string
   event?: string
   source: string
+  newsletterConsent?: boolean
 }
 
 export interface SubmitParams {

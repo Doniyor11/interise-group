@@ -145,8 +145,8 @@ export const Footer = () => {
                   target={"_blank"}
                   href={
                     lang === "en"
-                      ? "/Политика_конфединциальности_en.pdf"
-                      : "/Политика_конфединциальности_ru.pdf"
+                      ? "/Политика_конфиденциальности_en.pdf"
+                      : "/Политика_конфиденциальности_ru.pdf"
                   }
                   className={cx(s.infoText, s.menu)}
                 >

@@ -229,7 +229,7 @@ export const Footer = () => {
             lh={"121.2%"}
             mt={matches ? 20 : 60}
           >
-            InteriseGroup · 2025 - {dayjs(new Date()).format("YYYY")}
+            © InteriseGroup · 2025 - {dayjs(new Date()).format("YYYY")}
           </Text>
         </Flex>
       </div>

@@ -58,7 +58,7 @@ export const MainBanner = () => {
             <div className={s.line} />
             <Flex direction={"column"} align={"center"} className={s.item}>
               <Text className={s.counter}>
-                <AnimatedNumber value={31} className={s.number} />
+                <AnimatedNumber value={35} className={s.number} />
               </Text>
               <Text className={s.info}>{t("main.banner.stats.countries")}</Text>
             </Flex>

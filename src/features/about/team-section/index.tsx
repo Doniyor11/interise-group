@@ -121,7 +121,7 @@ export const MediaSection = () => {
         align="start"
         slideGap={16}
         height={"auto"}
-        withControls={false}
+        controlSize={32}
         slidesToScroll={!matches ? (data?.length >= 3 ? 3 : 1) : 1}
         slideSize={matches ? "88%" : "33.333333%"}
       >

@@ -78,6 +78,9 @@ export const Footer = () => {
                 <Link href={"/case"} className={cx(s.infoText, s.menu)}>
                   {t("footer.menu.cases")}
                 </Link>
+                <Link href={"/research"} className={cx(s.infoText, s.menu)}>
+                  {t("navbar.menu.research")}
+                </Link>
                 <Link
                   href={"/#interise-club"}
                   className={cx(s.infoText, s.menu)}
@@ -229,7 +232,7 @@ export const Footer = () => {
             lh={"121.2%"}
             mt={matches ? 20 : 60}
           >
-            © InteriseGroup · 2025 - {dayjs(new Date()).format("YYYY")}
+            © InteriseGroup · {dayjs(new Date()).format("YYYY")}
           </Text>
         </Flex>
       </div>

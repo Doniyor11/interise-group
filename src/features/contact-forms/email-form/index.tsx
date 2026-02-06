@@ -180,7 +180,7 @@ export const EmailForm = () => {
                   components={{
                     link: (
                       <a
-                        href={`/Политика_конфединциальности_${lang}.pdf`}
+                        href={`/Политика_конфиденциальности_${lang}.pdf`}
                         target="_blank"
                         rel="noopener noreferrer"
                       />

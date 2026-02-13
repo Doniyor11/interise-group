@@ -144,7 +144,11 @@ export const ResearchForm = () => {
                         components={{
                           link: (
                             <a
-                              href={`/Политика_конфединциальности_${lang}.pdf`}
+                              href={
+                                lang === "en"
+                                  ? "/Privacy_Policy.pdf"
+                                  : "/Политика_конфиденциальности.pdf"
+                              }
                               target="_blank"
                               rel="noopener noreferrer"
                             />

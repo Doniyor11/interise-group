@@ -180,7 +180,11 @@ export const EmailForm = () => {
                   components={{
                     link: (
                       <a
-                        href={`/Политика_конфиденциальности_${lang}.pdf`}
+                        href={
+                          lang === "en"
+                            ? "/Privacy_Policy.pdf"
+                            : "/Политика_конфиденциальности.pdf"
+                        }
                         target="_blank"
                         rel="noopener noreferrer"
                       />
@@ -212,7 +216,11 @@ export const EmailForm = () => {
                   components={{
                     link: (
                       <a
-                        href={`/Согласие_на_получение_рассылок_${lang}.pdf`}
+                        href={
+                          lang === "en"
+                            ? "/Consent_to_Receive_Newsletters.pdf"
+                            : "/Согласие_на_получение_рассылок.pdf"
+                        }
                         target="_blank"
                         rel="noopener noreferrer"
                       />

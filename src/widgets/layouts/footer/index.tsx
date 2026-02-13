@@ -67,8 +67,9 @@ export const Footer = () => {
                   >
                     <IconLin />
                   </Anchor>
-
-                  <IconTg />
+                  <Anchor h={71} target={"_blank"} href={"https://t.me/Di_VC"}>
+                    <IconTg />
+                  </Anchor>
                 </Flex>
               </Flex>
               <Flex direction={"column"} gap="8px">
@@ -82,7 +83,7 @@ export const Footer = () => {
                   {t("navbar.menu.research")}
                 </Link>
                 <Link
-                  href={"/#interise-club"}
+                  href={"/interise-club"}
                   className={cx(s.infoText, s.menu)}
                 >
                   {t("footer.menu.interise_club")}
@@ -149,8 +150,8 @@ export const Footer = () => {
                   target={"_blank"}
                   href={
                     lang === "en"
-                      ? "/Политика_конфиденциальности_en.pdf"
-                      : "/Политика_конфиденциальности_ru.pdf"
+                      ? "/Privacy_Policy.pdf"
+                      : "/Политика_конфиденциальности.pdf"
                   }
                   className={cx(s.infoText, s.menu)}
                 >
@@ -160,8 +161,8 @@ export const Footer = () => {
                   target={"_blank"}
                   href={
                     lang === "en"
-                      ? "/Пользовательское_соглашения_en.pdf"
-                      : "/Пользовательское_соглашения_ru.pdf"
+                      ? "/User_Agreement.pdf"
+                      : "/Пользовательское_соглашения.pdf"
                   }
                   className={cx(s.infoText, s.menu)}
                 >
@@ -171,8 +172,8 @@ export const Footer = () => {
                   target={"_blank"}
                   href={
                     lang === "en"
-                      ? "/Согласие_на_получение_рассылок_en.pdf"
-                      : "/Согласие_на_получение_рассылок_ru.pdf"
+                      ? "/Consent_to_Receive_Newsletters.pdf"
+                      : "/Согласие_на_получение_рассылок.pdf"
                   }
                   className={cx(s.infoText, s.menu)}
                 >
@@ -182,8 +183,8 @@ export const Footer = () => {
                   target={"_blank"}
                   href={
                     lang === "en"
-                      ? "/Обработка_файлов_Cookies_en.pdf"
-                      : "/Обработка_файлов_Cookies_ru.pdf"
+                      ? "/Cookies_Processing.pdf"
+                      : "/Обработка_файлов_Cookies.pdf"
                   }
                   className={cx(s.infoText, s.menu)}
                 >

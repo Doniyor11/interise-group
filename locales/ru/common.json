@@ -634,7 +634,7 @@
     "signup": {
       "title": "Отправить запрос",
       "subtitle": "Укажите ваши данные для регистрации на мероприятие, в ответ мы пришлём вам письмо с подтверждением.",
-      "name_placeholder": "Ваше имя",
+      "name_placeholder": "Имя",
       "company_placeholder": "Компания",
       "phone_placeholder": "+7 (000) 000 00 00",
       "telegram_placeholder": "Ваш Telegram",
@@ -654,7 +654,7 @@
       "cases": "Кейсы",
       "research": "Исследования"
     },
-    "name_placeholder": "Ваше имя",
+    "name_placeholder": "Имя",
     "surname_placeholder": "Фамилия",
     "phone_placeholder": "+7 (000) 000 00 00",
     "contact_method_placeholder": "Как с вами связаться",

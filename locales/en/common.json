@@ -634,7 +634,7 @@
     "signup": {
       "title": "Send Request",
       "subtitle": "Please specify your event registration details, we will send you a confirmation email in response.",
-      "name_placeholder": "Your name",
+      "name_placeholder": "Name",
       "company_placeholder": "Company",
       "phone_placeholder": "+7 (000) 000 00 00",
       "telegram_placeholder": "Your Telegram",
@@ -654,7 +654,7 @@
       "cases": "Cases",
       "research": "Research"
     },
-    "name_placeholder": "Your name",
+    "name_placeholder": "Name",
     "surname_placeholder": "Surname",
     "phone_placeholder": "+7 (000) 000 00 00",
     "contact_method_placeholder": "How to contact you",

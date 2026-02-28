@@ -22,6 +22,6 @@ export const MenuData: MenuItem[] = [
   },
   {
     key: "navbar.menu.contacts",
-    path: "#contacts",
+    path: "/#contacts",
   },
 ]

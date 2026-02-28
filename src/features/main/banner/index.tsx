@@ -1,8 +1,6 @@
-import { Button, Flex, Text } from "@mantine/core"
+import { Flex, Text } from "@mantine/core"
 import useTranslation from "next-translate/useTranslation"
 import React from "react"
-
-import { onLinkClick } from "@/shared/libs/scroll.ts"
 
 import s from "./styles.module.scss"
 
@@ -25,9 +23,9 @@ export const Banner = () => {
             className={s.subtitle}
             dangerouslySetInnerHTML={{ __html: t("main.experience.subtitle") }}
           />
-          <Button className={s.btn} onClick={() => onLinkClick("contacts")}>
-            {t("main.experience.request_button")}
-          </Button>
+          {/*<Button className={s.btn} onClick={() => onLinkClick("contacts")}>*/}
+          {/*  {t("main.experience.request_button")}*/}
+          {/*</Button>*/}
         </Flex>
       </div>
     </>

@@ -71,8 +71,8 @@
   },
   "main": {
     "banner": {
-      "title": "Strategies that <br/> change markets",
-      "description": "InteriseGroup is an international consulting group with expertise in strategic development and comprehensive business transformation.",
+      "title": "Business growth. Entering new markets. <br/> Real changes",
+      "description": "We develop and implement strategies that yield measurable results - in revenue, efficiency, and market position.",
       "stats": {
         "clients": "satisfied clients",
         "result": "result of implementation",
@@ -83,50 +83,20 @@
       "contact_button": "Contact Us"
     },
     "experience": {
-      "label": "Experience and Recognition",
-      "title": "InteriseGroup's portfolio includes projects in 35 countries and 15 industries: from IT, finance and retail to manufacturing, telecommunications, FMCG and energy",
-      "subtitle": "Client achievements and industry awards for innovation and business model <br/> transformation validate the effectiveness of our approach",
+      "label": "International experience in various industries",
+      "title": "We work with companies in IT, finance, retail, manufacturing, telecommunications, FMCG, and energy sectors. We consider the specifics of the industry and the market to find solutions that truly work in a particular business.",
+      "subtitle": "This experience allows for faster launching of changes and reducing risks in scaling and entering new markets.",
       "request_button": "Submit Request"
     },
     "results": {
       "title": "From Ideas to Results",
-      "description": "The main indicator of our effectiveness is real results: revenue growth, market share and productivity",
+      "description": "Examples of projects where solutions were brought to real business outcomes",
       "card": {
-        "rank_top3": "Top-3",
-        "rank_top1": "Top-1",
-        "company_in_country": "company <br/> in the country",
-        "company_in_medicine": "company in <br/> premium medicine",
         "country": "Region:",
-        "central_asia": "Central Asia",
-        "transcaucasia": "Transcaucasia",
-        "russia": "Russia",
         "industry": "Industry:",
-        "fintech": "Fintech",
-        "aviation": "Aviation",
-        "medicine": "Medicine",
         "task": "Task:",
-        "task_text": "Conduct integration with another bank and a full-scale transformation of the operating model",
         "solution": "Solution:",
-        "solution_text": "A change strategy was developed and implemented, 52 projects were launched, new approaches to customer experience were formed, and 500+ employees were trained.",
         "result": "Result:"
-      },
-      "card1": {
-        "description": "Integrating leading banks and launching the largest transformation in the market",
-        "result1": "Operating profit grew ×6 in 2 years",
-        "result2": "New products launch was accelerated",
-        "result3": "500+ employees were trained"
-      },
-      "card2": {
-        "description": "Creating a new national airline from scratch",
-        "result1": "Attracted $210+ million in investments, paid $14+ million in taxes",
-        "result2": "The national carrier was launched for regular flights.",
-        "result3": "800+ jobs was created"
-      },
-      "card3": {
-        "description": "Expansion and development strategy for a premium medical brand",
-        "result1": "Analysis conducted and 46 revenue growth initiatives identified",
-        "result2": "Launched new directions and development programs",
-        "result3": "International expansion was initiated, pilot was trained in South Korea"
       },
       "all_projects_button": "All Projects"
     },
@@ -159,23 +129,23 @@
       "title": "About InteriseGroup",
       "description": "We develop and implement strategies and solutions, <br/> that help large businesses and corporations:",
       "card1": {
-        "title": "Change and form new market rules"
+        "title": "We identify key growth drivers and points where you lose potential"
       },
       "card2": {
-        "title": "Turn ideas into large-scale transformations"
+        "title": "We implement solutions together with the team and bring them to real work"
       },
       "card3": {
-        "title": "Achieve sustainable growth and real business results"
+        "title": "We fix the effect in indicators: revenue, efficiency, scaling"
       },
       "order_strategy_button": "Order Strategy"
     },
     "principles": {
-      "title": "We are convinced — the time of simple <br/> consulting is over",
-      "description1": "InteriseGroup operates on a partnership model: together with clients we analyze situations, test hypotheses, strengthen effective solutions, and scale results. Dialogue and transparency accelerate decision-making and transform strategy into a real, measurable result.",
+      "title": "The time of classical <br/> consulting is over.",
+      "description1": "We don't limit ourselves to recommendations - we work as part of the client team, participating in decision-making and implementing changes. This approach allows us to rely on practical experience and bring the strategy to a measurable result.",
       "description2": "Do you share these principles and are you looking for effective partners? <br/> <br/> We would be happy to discuss your project.",
-      "step1": "Open Dialogue",
-      "step2": "Partnership",
-      "step3": "Responsibility for Results",
+      "step1": "Practitioners' examination",
+      "step2": "Client team integration",
+      "step3": "Common goals and results with the business",
       "discuss_button": "Discuss Project"
     },
     "club": {

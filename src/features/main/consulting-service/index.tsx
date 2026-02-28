@@ -1,4 +1,4 @@
-import { Box, Button, Center, Flex, Grid, Text } from "@mantine/core"
+import { Box, Flex, Grid, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
 import useTranslation from "next-translate/useTranslation"
@@ -13,7 +13,6 @@ import IconOurStep2 from "@/shared/assets/images/interise-group/icon-our-step-2.
 import IconOurStep3 from "@/shared/assets/images/interise-group/icon-our-step-3.svg"
 import VectorOurStepMobile from "@/shared/assets/images/interise-group/vector-our-step-mb.svg"
 import VectorOurStep from "@/shared/assets/images/interise-group/vector-our-step.svg"
-import { onLinkClick } from "@/shared/libs/scroll.ts"
 
 import s from "./styles.module.scss"
 
@@ -83,20 +82,20 @@ export const ConsultingService = () => {
               </Box>
             </Grid.Col>
           </Grid>
-          <Button
-            bg={"#0076FE"}
-            color={"#FFF"}
-            radius={8}
-            h={"44px"}
-            fz={"16px"}
-            fw={400}
-            lh={"100%"}
-            mt={matches ? "31px" : "40px"}
-            w={matches ? "100%" : "233px"}
-            onClick={() => onLinkClick("contacts")}
-          >
-            {t("main.about.order_strategy_button")}
-          </Button>
+          {/*<Button*/}
+          {/*  bg={"#0076FE"}*/}
+          {/*  color={"#FFF"}*/}
+          {/*  radius={8}*/}
+          {/*  h={"44px"}*/}
+          {/*  fz={"16px"}*/}
+          {/*  fw={400}*/}
+          {/*  lh={"100%"}*/}
+          {/*  mt={matches ? "31px" : "40px"}*/}
+          {/*  w={matches ? "100%" : "233px"}*/}
+          {/*  onClick={() => onLinkClick("contacts")}*/}
+          {/*>*/}
+          {/*  {t("main.about.order_strategy_button")}*/}
+          {/*</Button>*/}
         </Box>
       </div>
       {/* Наши принципы */}
@@ -189,21 +188,21 @@ export const ConsultingService = () => {
             </Box>
           )}
         </Box>
-        <Center>
-          <Button
-            bg={"#0076FE"}
-            color={"#FFF"}
-            radius={8}
-            h={"44px"}
-            w={matches ? "100%" : "233px"}
-            fz={"16px"}
-            fw={400}
-            lh={"100%"}
-            onClick={() => onLinkClick("contacts")}
-          >
-            {t("main.principles.discuss_button")}
-          </Button>
-        </Center>
+        {/*<Center>*/}
+        {/*  <Button*/}
+        {/*    bg={"#0076FE"}*/}
+        {/*    color={"#FFF"}*/}
+        {/*    radius={8}*/}
+        {/*    h={"44px"}*/}
+        {/*    w={matches ? "100%" : "233px"}*/}
+        {/*    fz={"16px"}*/}
+        {/*    fw={400}*/}
+        {/*    lh={"100%"}*/}
+        {/*    onClick={() => onLinkClick("contacts")}*/}
+        {/*  >*/}
+        {/*    {t("main.principles.discuss_button")}*/}
+        {/*  </Button>*/}
+        {/*</Center>*/}
       </Box>
     </>
   )

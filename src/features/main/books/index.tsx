@@ -25,7 +25,6 @@ import IconArrow from "@/shared/assets/images/interise-group/icon-arrow-down.svg
 import Image1 from "@/shared/assets/images/interise-group/idea-1.png"
 import Image2 from "@/shared/assets/images/interise-group/idea-2.png"
 import Image3 from "@/shared/assets/images/interise-group/idea-3.png"
-import { onLinkClick } from "@/shared/libs/scroll.ts"
 
 import s from "./styles.module.scss"
 
@@ -180,7 +179,6 @@ export const Books: FC = () => {
 }
 
 export const MainSprints = () => {
-  const { t } = useTranslation("common")
   const matches = useMediaQuery("(max-width: 1040px)")
   const { data, isLoading } = useGetMainSprintsQuery()
   if (isLoading) return null
@@ -217,21 +215,21 @@ export const MainSprints = () => {
           </Grid.Col>
         ))}
       </Grid>
-      <Flex justify={"center"} mt={"24px"}>
-        <Button
-          bg={"#0076FE"}
-          color={"#FFF"}
-          radius={8}
-          h={"44px"}
-          w={matches ? "100%" : "233px"}
-          fz={"16px"}
-          fw={400}
-          lh={"100%"}
-          onClick={() => onLinkClick("contacts")}
-        >
-          {t("main.directions.contact_button")}
-        </Button>
-      </Flex>
+      {/*<Flex justify={"center"} mt={"24px"}>*/}
+      {/*  <Button*/}
+      {/*    bg={"#0076FE"}*/}
+      {/*    color={"#FFF"}*/}
+      {/*    radius={8}*/}
+      {/*    h={"44px"}*/}
+      {/*    w={matches ? "100%" : "233px"}*/}
+      {/*    fz={"16px"}*/}
+      {/*    fw={400}*/}
+      {/*    lh={"100%"}*/}
+      {/*    onClick={() => onLinkClick("contacts")}*/}
+      {/*  >*/}
+      {/*    {t("main.directions.contact_button")}*/}
+      {/*  </Button>*/}
+      {/*</Flex>*/}
     </>
   )
 }

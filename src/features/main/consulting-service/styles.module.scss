@@ -56,10 +56,11 @@
     .card {
       width: 100%;
       max-width: 172px;
-      height: 184px;
+      height: 195px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       gap: 18px;
       padding: 24px 16px;
       border-radius: 12px;
@@ -111,6 +112,7 @@
       .icon {
         width: 72px;
         height: 72px;
+        min-height: 72px;
         border-radius: 8px;
         background: #0f448c;
         display: flex;
@@ -273,13 +275,13 @@
 
 .aboutBoxTitle {
   color: #fff;
-  font-size: 24px;
+  font-size: 22px;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
   letter-spacing: -0.48px;
   @media screen and (max-width: 768px) {
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: -0.4px;
   }
 }

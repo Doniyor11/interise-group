@@ -16,6 +16,7 @@ import IconClose from "@/shared/assets/images/icons/icon-close.svg"
 import IconLangArrow from "@/shared/assets/images/interise-group/lang-arrow.svg"
 import IconGlobal from "@/shared/assets/images/interise-group/language.svg"
 import IconLogo from "@/shared/assets/images/interise-group/logo.svg"
+import IconLogoRu from "@/shared/assets/images/interise-group/logo_ru.svg"
 import { onLinkClick } from "@/shared/libs/scroll.ts"
 
 import s from "./styles.module.scss"
@@ -45,7 +46,7 @@ export const Navbar = () => {
     <>
       <div className={cx(s.navbarWrapper)}>
         <Link href={"/"} className={s.logo}>
-          <IconLogo />
+          {lang === "ru" ? <IconLogoRu /> : <IconLogo />}
         </Link>
         <ul className={s.menu}>
           {MenuData?.map((item, index) => {

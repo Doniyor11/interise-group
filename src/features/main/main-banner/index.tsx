@@ -1,11 +1,8 @@
-import { Box, Button, Flex, Text } from "@mantine/core"
+import { Box, Flex, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
-import cx from "clsx"
 import useTranslation from "next-translate/useTranslation"
 import React from "react"
 
-import IconArrow from "@/shared/assets/images/interise-group/arrow-up-right.svg"
-import { onLinkClick } from "@/shared/libs/scroll.ts"
 import { AnimatedNumber } from "@/shared/ui"
 
 import s from "./styles.module.scss"
@@ -63,22 +60,22 @@ export const MainBanner = () => {
               <Text className={s.info}>{t("main.banner.stats.countries")}</Text>
             </Flex>
           </Flex>
-          <Flex
-            data-aos="zoom-in-up"
-            align={"center"}
-            gap={5}
-            w={matches ? "100%" : "fit-content"}
-          >
-            <Button
-              onClick={() => onLinkClick("contacts")}
-              className={cx(s.buttonBanner)}
-            >
-              {t("main.banner.contact_button")}
-              <Flex ml={"10px"} className={s.buttonBannerIcon}>
-                <IconArrow />
-              </Flex>
-            </Button>
-          </Flex>
+          {/*<Flex*/}
+          {/*  data-aos="zoom-in-up"*/}
+          {/*  align={"center"}*/}
+          {/*  gap={5}*/}
+          {/*  w={matches ? "100%" : "fit-content"}*/}
+          {/*>*/}
+          {/*  <Button*/}
+          {/*    onClick={() => onLinkClick("contacts")}*/}
+          {/*    className={cx(s.buttonBanner)}*/}
+          {/*  >*/}
+          {/*    {t("main.banner.contact_button")}*/}
+          {/*    <Flex ml={"10px"} className={s.buttonBannerIcon}>*/}
+          {/*      <IconArrow />*/}
+          {/*    </Flex>*/}
+          {/*  </Button>*/}
+          {/*</Flex>*/}
         </Box>
       </Box>
     </div>

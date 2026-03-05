@@ -208,16 +208,20 @@
   "about": {
     "banner": {
       "title": "Who are we?",
-      "description": "<span>InteriseGroup</span> is a group of companies assembled by global experts, practitioners and consultants to ensure the implementation of market-winning systemic changes, projects and strategies.",
-      "subtitle": "We operate in 35 countries and cover key regions, including <span> CIS, Europe, MENA, BRICS, USA, Asia and the Middle East. </span>"
+      "description": "<span>InteriseGroup</span> is a group of companies created by practitioners with many years of experience working with large businesses. We help companies not just develop strategies, but implement changes and bring them to results.",
+      "subtitle": "We operate in 35 countries and key regions: <span> CIS, Europe, MENA, BRICS, USA, Asia and the Middle East. </span> The portfolio includes projects in various sectors: from finance and telecommunications to medicine and industry."
     },
     "directions": {
-      "title": "In our work, we combine four key areas:",
+      "title": "What tasks are we working with?",
       "subtitle": "Areas of Work",
-      "digital_transformation": "Digital transformation",
-      "investment": "Investment and financing",
-      "marketing": "Marketing and promotion",
-      "scaling": "Business scaling and international expansion"
+      "cardTitle1": "Business Transformation",
+      "cardSubtitle1": "Reorganizing processes and implementing changes for growth goals",
+      "cardTitle2": "Investments and Transactions",
+      "cardSubtitle2": "We prepare businesses for attracting investments and support transactions",
+      "cardTitle3": "Marketing and Development",
+      "cardSubtitle3": "Strengthening market positions and finding new growth points",
+      "cardTitle4": "Scaling and New Markets",
+      "cardSubtitle4": "We help you reach new segments and geographies"
     },
     "projects": {
       "title": "InteriseGroup <span>leads projects in dozens of countries and industries</span>, from the financial sector and telecommunications to medicine and real estate.",

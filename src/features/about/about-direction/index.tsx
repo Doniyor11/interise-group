@@ -28,25 +28,53 @@ export const AboutDirection = () => {
               <div className={s.icon}>
                 <IconOne />
               </div>
-              <Text>{t("about.directions.digital_transformation")}</Text>
+              <Box>
+                <Text className={s.cardTitle}>
+                  {t("about.directions.cardTitle1")}
+                </Text>
+                <Text className={s.cardSubtitle}>
+                  {t("about.directions.cardSubtitle1")}
+                </Text>
+              </Box>
             </div>
             <div data-aos="zoom-in-up" className={s.card}>
               <div className={s.icon}>
                 <IconTwo />
               </div>
-              <Text>{t("about.directions.investment")}</Text>
+              <Box>
+                <Text className={s.cardTitle}>
+                  {t("about.directions.cardTitle2")}
+                </Text>
+                <Text className={s.cardSubtitle}>
+                  {t("about.directions.cardSubtitle2")}
+                </Text>
+              </Box>
             </div>
             <div data-aos="zoom-in-up" className={s.card}>
               <div className={s.icon}>
                 <IconThree />
               </div>
-              <Text>{t("about.directions.marketing")}</Text>
+              <Box>
+                <Text className={s.cardTitle}>
+                  {t("about.directions.cardTitle3")}
+                </Text>
+                <Text className={s.cardSubtitle}>
+                  {t("about.directions.cardSubtitle3")}
+                </Text>
+              </Box>
             </div>
             <div data-aos="zoom-in-up" className={s.card}>
               <div className={s.icon}>
                 <IconFour />
               </div>
-              <Text>{t("about.directions.scaling")}</Text>
+              <Box>
+                <Text className={s.cardTitle}>
+                  {t("about.directions.cardTitle4")}
+                </Text>
+                <Text className={s.cardSubtitle}>
+                  {t("about.directions.cardSubtitle4")}
+                </Text>
+              </Box>
             </div>
           </div>
         </div>

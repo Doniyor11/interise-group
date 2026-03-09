@@ -71,7 +71,6 @@ export const Navbar = () => {
               className={s.lang}
               defaultValue={"ru"}
               data={["ru", "en"]}
-              leftSection={<IconGlobal />}
               rightSection={<IconLangArrow />}
               classNames={{
                 option: s.selectOption,

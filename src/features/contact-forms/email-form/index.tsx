@@ -27,7 +27,6 @@ export const EmailForm = () => {
 
   const emailFormSchema = yup.object().shape({
     name: yup.string().required(t("forms.validation.name_required")),
-    surname: yup.string().required(t("forms.validation.surname_required")),
     phone: yup.string().required(t("forms.validation.phone_required")),
     message: yup
       .string()
@@ -70,7 +69,7 @@ export const EmailForm = () => {
         `<b>📩 Новая заявка с сайта!</b>\n\n` +
         `<b>🌐 Страница:</b> ${pageText}\n` +
         `<b>👤 Имя:</b> ${data.name}\n` +
-        `<b>👥 Фамилия:</b> ${data.surname}\n` +
+        `<b>👥 Фамилия:</b> ${data.surname || "-"}\n` +
         `<b>📞 Телефон:</b> ${data.phone}\n` +
         `<b>💬 Способ связи:</b> ${data.message}\n` +
         `<b>📧 Согласие на рассылку:</b> ${

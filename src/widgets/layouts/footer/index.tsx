@@ -13,6 +13,7 @@ import IconLogo from "@/shared/assets/images/interise-group/footer_logo.svg"
 import Imaga1 from "@/shared/assets/images/interise-group/formbg.png"
 import IconLin from "@/shared/assets/images/interise-group/linkedin.svg"
 import IconLocation from "@/shared/assets/images/interise-group/location-outline.svg"
+import IconLogoRu from "@/shared/assets/images/interise-group/logo_ru.svg"
 import IconEmail from "@/shared/assets/images/interise-group/mail-outline.svg"
 import IconTg from "@/shared/assets/images/interise-group/tg 2.svg"
 
@@ -58,7 +59,11 @@ export const Footer = () => {
                 align={matches ? "center" : "flex-end"}
                 mb="20px"
               >
-                <IconLogo className={s.logo} />
+                {lang === "ru" ? (
+                  <IconLogoRu className={s.logo} />
+                ) : (
+                  <IconLogo className={s.logo} />
+                )}
                 <Flex gap="18px" className={s.messengers}>
                   <Anchor
                     h={71}

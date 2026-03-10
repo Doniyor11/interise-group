@@ -170,7 +170,6 @@ export const RequestPresentation = () => {
                       {...field}
                       data={[
                         t("forms.contact_method.telegram"),
-                        t("forms.contact_method.whatsapp"),
                         t("forms.contact_method.call"),
                       ]}
                     />

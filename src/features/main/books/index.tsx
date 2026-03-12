@@ -14,13 +14,14 @@ import Image from "next/image"
 import { useRouter } from "next/router"
 import React, { FC } from "react"
 
+import { getCaseIndustryIcons } from "@/pages/case/libs.tsx"
+
 import { useGetCasesQuery } from "@/entities/cases/query.ts"
 import { IGetCases } from "@/entities/cases/types.ts"
 import { useGetMainSprintsQuery } from "@/entities/main/query.ts"
 import { IMainSprints } from "@/entities/main/types.ts"
 
 import Icon1 from "@/shared/assets/images/interise-group/geo-alt.svg"
-import Icon2 from "@/shared/assets/images/interise-group/graph-up.svg"
 import IconArrow from "@/shared/assets/images/interise-group/icon-arrow-down.svg"
 import Image1 from "@/shared/assets/images/interise-group/idea-1.png"
 import Image2 from "@/shared/assets/images/interise-group/idea-2.png"
@@ -53,7 +54,7 @@ const IdeaCard: FC<{ data: IGetCases; onClick?: () => void; t: any }> = ({
             </Flex>
           </Flex>
           <Flex className={s.ideaBoxInfoCountry} gap={"12px"} align={"center"}>
-            <Icon2 />
+            {getCaseIndustryIcons(data?.industry)}
             <Flex direction={"column"}>
               <Text className={s.ideaBoxCountry}>
                 {t("main.results.card.industry")}

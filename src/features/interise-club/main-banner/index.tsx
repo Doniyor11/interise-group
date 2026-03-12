@@ -1,4 +1,5 @@
 import cx from "clsx"
+import useTranslation from "next-translate/useTranslation"
 import React, { useMemo, useRef } from "react"
 
 import { useGetClubBannerQuery } from "@/entities/club-banner/query.ts"
@@ -16,6 +17,7 @@ const isVideoUrl = (url: string | undefined): boolean => {
 }
 
 export const InteriseClubMain = () => {
+  const { lang } = useTranslation()
   const breadcrumbs = useBreadcrumbs()
   const { data } = useGetClubBannerQuery()
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -36,7 +38,7 @@ export const InteriseClubMain = () => {
       <div className={s.topSectionWrapper}>
         <div data-aos="zoom-in-up" className={cx(s.container, "container")}>
           <Breadcrumbs data={breadcrumbs} />
-          <h1>InteriseClub</h1>
+          {lang === "ru" ? <h1>ИнтерайзКлуб</h1> : <h1>InteriseClub</h1>}
         </div>
         {isVideo ? (
           <video

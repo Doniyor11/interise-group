@@ -10,7 +10,7 @@ import { useBreadcrumbs } from "./libs.ts"
 import s from "./styles.module.scss"
 
 export const SingleResearchBanner = () => {
-  const { t } = useTranslation("common")
+  const { t, lang } = useTranslation("common")
   const breadcrumbs = useBreadcrumbs()
 
   return (
@@ -18,7 +18,11 @@ export const SingleResearchBanner = () => {
       <div className={s.topSectionWrapper}>
         <div data-aos="zoom-in-up" className={cx(s.container, "container")}>
           <Breadcrumbs data={breadcrumbs} />
-          <h1>Customer Choice Index</h1>
+          {lang === "ru" ? (
+            <h1>Индекс Пользовательского Выбора</h1>
+          ) : (
+            <h1>Customer Choice Index</h1>
+          )}
         </div>
       </div>
       <div className={cx(s.sectionWrapper)}>

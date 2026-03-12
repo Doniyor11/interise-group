@@ -15,6 +15,8 @@ import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
 import React, { useState } from "react"
 
+import { getCaseIndustryIcons } from "@/pages/case/libs.tsx"
+
 import { RequestPresentation } from "@/features/contact-forms"
 import { useContactFormsStore } from "@/features/contact-forms/model"
 
@@ -25,7 +27,6 @@ import {
 import { ICategory, IGetCases } from "@/entities/cases/types.ts"
 
 import Icon1 from "@/shared/assets/images/interise-group/geo-alt.svg"
-import Icon2 from "@/shared/assets/images/interise-group/graph-up.svg"
 import IconArrow from "@/shared/assets/images/interise-group/icon-arrow-down.svg"
 import Image1 from "@/shared/assets/images/interise-group/idea-1.png"
 import Image2 from "@/shared/assets/images/interise-group/idea-2.png"
@@ -124,7 +125,7 @@ export const CaseList = () => {
                             gap={"12px"}
                             align={"center"}
                           >
-                            <Icon2 />
+                            {getCaseIndustryIcons(i?.industry)}
                             <Flex direction={"column"}>
                               <Text className={s.ideaBoxCountry}>
                                 {t("case.card.industry")}

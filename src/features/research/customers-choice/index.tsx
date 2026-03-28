@@ -31,6 +31,7 @@ export const CustomersChoice = () => {
           </Text>
           <Flex
             gap={32}
+            align="flex-start"
             justify="space-between"
             direction={matches ? "column" : "row"}
           >

@@ -26,7 +26,7 @@ export const ConsultingService = () => {
     <>
       <div className={s.sectionWrapper} id={"navbar1"}>
         <Box className={s.sectionRow}>
-          <Flex direction={"column"} h={"100%"} align={"flex-start"} w={"100%"}>
+          <Flex direction={"column"} h={"100%"} align={"center"} w={"100%"}>
             <Text className={s.titleAbout} mb={"10px"}>
               {t("main.about.title")}
             </Text>

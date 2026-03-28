@@ -9,7 +9,6 @@ import s from "./styles.module.scss"
 const getBadgeData = (t: any) => [
   { id: 1, title: t("main.club.events.business_brunches") },
   { id: 2, title: t("main.club.events.demo_days") },
-  { id: 3, title: t("main.club.events.closed_forums") },
   { id: 4, title: t("main.club.events.lectures") },
   { id: 5, title: t("main.club.events.round_tables") },
   { id: 6, title: t("main.club.events.invest_breakfasts") },

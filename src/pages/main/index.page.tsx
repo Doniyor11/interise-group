@@ -39,26 +39,28 @@ const HomePage = () => {
         ogType="website"
         structuredData={structuredData}
       />
-      <MainBanner />
-      <Box
-        bg={"#fff"}
-        style={{
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
-        <main className={"container"}>
-          <ConsultingService />
-        </main>
-        <Banner />
-        <main className={"container"}>
-          <Books />
-        </main>
-        <MainGallery />
-        <main className={"container"}>
-          <MainRecipes />
-        </main>
-        <Contacts />
+      <Box maw={1920} m={"0 auto"}>
+        <MainBanner />
+        <Box
+          bg={"#fff"}
+          style={{
+            position: "relative",
+            zIndex: 1,
+          }}
+        >
+          <main className={"container"}>
+            <ConsultingService />
+          </main>
+          <Banner />
+          <main className={"container"}>
+            <Books />
+          </main>
+          <MainGallery />
+          <main className={"container"}>
+            <MainRecipes />
+          </main>
+          <Contacts />
+        </Box>
       </Box>
     </>
   )

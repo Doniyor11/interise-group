@@ -19,7 +19,7 @@ export const SingleResearchBanner = () => {
         <div data-aos="zoom-in-up" className={cx(s.container, "container")}>
           <Breadcrumbs data={breadcrumbs} />
           {lang === "ru" ? (
-            <h1>Индекс Пользовательского Выбора</h1>
+            <h1>Индекс Клиентского Выбора</h1>
           ) : (
             <h1>Customer Choice Index</h1>
           )}

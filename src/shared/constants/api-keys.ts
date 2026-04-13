@@ -2,6 +2,7 @@ export enum apiKeys {
   mainSprints = "main-sprints",
   cases = "cases",
   ourTeam = "our-team",
+  partners = "partners",
   media = "media",
   events = "events",
   upcomingEvents = "upcoming-events",

@@ -5,7 +5,12 @@ import React from "react"
 
 import { Footer } from "@/widgets/layouts/footer"
 
-import { AboutDirection, AboutMainBanner, TeamSection } from "@/features/about"
+import {
+  AboutDirection,
+  AboutMainBanner,
+  Partners,
+  TeamSection,
+} from "@/features/about"
 
 import { SEOHead } from "@/shared/components/seo-head"
 import {
@@ -37,6 +42,7 @@ const AboutPage = () => {
       />
       <AboutMainBanner />
       <AboutDirection />
+      <Partners />
       <TeamSection />
       <Box p={matches ? "0 16px 60px" : "0 64px 65px"} className={"container"}>
         <Footer />

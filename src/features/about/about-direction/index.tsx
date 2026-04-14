@@ -100,13 +100,13 @@ export const AboutDirection = () => {
             </Button>
           </div>
         </div>
-        <div data-aos="fade-up" className={s.bannerWrapper}>
-          <h3 dangerouslySetInnerHTML={{ __html: t("about.asset.title") }} />
-          <Text className={s.text}>{t("about.asset.description")}</Text>
-          <Button className={s.btn} onClick={() => onLinkClick("contacts")}>
-            {t("about.asset.order_button")}
-          </Button>
-        </div>
+        {/*<div data-aos="fade-up" className={s.bannerWrapper}>*/}
+        {/*  <h3 dangerouslySetInnerHTML={{ __html: t("about.asset.title") }} />*/}
+        {/*  <Text className={s.text}>{t("about.asset.description")}</Text>*/}
+        {/*  <Button className={s.btn} onClick={() => onLinkClick("contacts")}>*/}
+        {/*    {t("about.asset.order_button")}*/}
+        {/*  </Button>*/}
+        {/*</div>*/}
       </Box>
     </>
   )

@@ -41,8 +41,8 @@ const AboutPage = () => {
         structuredData={structuredData}
       />
       <AboutMainBanner />
-      <AboutDirection />
       <Partners />
+      <AboutDirection />
       <TeamSection />
       <Box p={matches ? "0 16px 60px" : "0 64px 65px"} className={"container"}>
         <Footer />

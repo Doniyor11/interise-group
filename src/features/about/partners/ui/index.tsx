@@ -15,9 +15,6 @@ export const Partners = () => {
 
   return (
     <Box className={"container"}>
-      <Text className={s.title} data-aos="fade-up">
-        Партнеры
-      </Text>
       <div className={s.box} data-aos="fade-up">
         <Logo className={s.logo} data-aos="fade-right" />
         <Box className={cx(s.cards, { [s.maxTwo]: data?.length <= 2 })}>

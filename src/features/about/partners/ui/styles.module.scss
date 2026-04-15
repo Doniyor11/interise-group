@@ -5,14 +5,13 @@
   font-weight: 500;
   line-height: 120%;
   letter-spacing: -0.64px;
-  margin: 74px 0 12px;
 }
 
 .box {
   width: 100%;
   min-height: 630px;
   border-radius: 32px;
-  margin-bottom: 74px;
+  margin: 74px 0;
   border: 1px solid #d4e4f7;
   background-image: url("../../../../shared/assets/images/interise-group/about-bg-2.png"),
     url("../../../../shared/assets/images/interise-group/about-bg-1.png");
@@ -92,15 +91,9 @@
 }
 
 @media screen and (max-width: 1040px) {
-  .title {
-    font-size: 24px;
-    letter-spacing: -0.48px;
-    margin: 34px 0 12px;
-  }
-
   .box {
     border-radius: 24pxpx;
-    margin-bottom: 34px;
+    margin: 34px 0;
     background-image: url("../../../../shared/assets/images/interise-group/about-bg-2.png"),
       url("../../../../shared/assets/images/interise-group/about-bg-1.png");
 

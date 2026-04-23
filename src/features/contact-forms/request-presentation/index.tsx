@@ -166,12 +166,10 @@ export const RequestPresentation = () => {
                   <Input.Wrapper className={s.inputWrapper}>
                     <Select
                       required
+                      defaultValue={t("forms.contact_method.email")}
                       placeholder={t("forms.contact_method_placeholder")}
                       {...field}
-                      data={[
-                        t("forms.contact_method.phone"),
-                        t("forms.contact_method.email"),
-                      ]}
+                      data={[t("forms.contact_method.email")]}
                     />
                   </Input.Wrapper>
                 )}

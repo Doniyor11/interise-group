@@ -634,7 +634,9 @@
     "contact_method": {
       "telegram": "Telegram",
       "whatsapp": "WhatsApp",
-      "call": "Call"
+      "call": "Call",
+      "phone": "Phone",
+      "email": "Email"
     },
     "privacy_agreement": "I have read and agree to <link>the data processing terms</link>",
     "newsletter_consent": "I give <link>consent</link> to receive promotional and informational newsletters",

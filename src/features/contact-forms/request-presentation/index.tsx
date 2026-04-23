@@ -169,8 +169,8 @@ export const RequestPresentation = () => {
                       placeholder={t("forms.contact_method_placeholder")}
                       {...field}
                       data={[
-                        t("forms.contact_method.telegram"),
-                        t("forms.contact_method.call"),
+                        t("forms.contact_method.phone"),
+                        t("forms.contact_method.email"),
                       ]}
                     />
                   </Input.Wrapper>

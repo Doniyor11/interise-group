@@ -634,7 +634,9 @@
     "contact_method": {
       "telegram": "Telegram",
       "whatsapp": "What's App",
-      "call": "Звонок"
+      "call": "Звонок",
+      "phone": "Телефон",
+      "email": "Email"
     },
     "privacy_agreement": "Я ознакомлен и согласен с <link>условиями обработки данных</link>",
     "newsletter_consent": "Я даю <link>согласие</link> на направление рекламных и информационных рассылок",

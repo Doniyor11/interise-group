@@ -33,13 +33,16 @@ export const RequestPresentation = () => {
     formState: { isDirty, isValid },
   } = useForm<IEmailFormTypes>({
     mode: "onChange",
+    defaultValues: {
+      message: t("forms.contact_method.email"),
+    },
   })
 
   const onClose = () => {
     reset({
       name: "",
       surname: "",
-      message: "",
+      message: t("forms.contact_method.email"),
       phone: "",
       check: false,
     })
@@ -166,10 +169,11 @@ export const RequestPresentation = () => {
                   <Input.Wrapper className={s.inputWrapper}>
                     <Select
                       required
+                      readOnly
                       defaultValue={t("forms.contact_method.email")}
                       placeholder={t("forms.contact_method_placeholder")}
-                      {...field}
                       data={[t("forms.contact_method.email")]}
+                      {...field}
                     />
                   </Input.Wrapper>
                 )}

@@ -43,13 +43,16 @@ export const EmailForm = () => {
   } = useForm<any>({
     mode: "onSubmit",
     resolver: yupResolver(emailFormSchema),
+    defaultValues: {
+      message: t("forms.contact_method.email"),
+    },
   })
 
   const { mutate, isPending } = useSubmitFormQuery(() => {
     reset({
       name: "",
       surname: "",
-      message: null,
+      message: t("forms.contact_method.email"),
       phone: "",
       check: false,
       newsletterConsent: false,
@@ -150,10 +153,11 @@ export const EmailForm = () => {
               error={fieldState.error?.message}
             >
               <Select
+                readOnly
                 defaultValue={t("forms.contact_method.email")}
                 placeholder={t("forms.contact_method_placeholder")}
-                {...field}
                 data={[t("forms.contact_method.email")]}
+                {...field}
               />
             </Input.Wrapper>
           )}

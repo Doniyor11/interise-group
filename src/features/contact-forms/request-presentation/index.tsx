@@ -173,6 +173,7 @@ export const RequestPresentation = () => {
                       defaultValue={t("forms.contact_method.email")}
                       placeholder={t("forms.contact_method_placeholder")}
                       data={[t("forms.contact_method.email")]}
+                      rightSection={true}
                       {...field}
                     />
                   </Input.Wrapper>

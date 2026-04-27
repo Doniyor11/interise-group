@@ -630,6 +630,7 @@
     "name_placeholder": "Имя",
     "surname_placeholder": "Фамилия",
     "phone_placeholder": "+7 (000) 000 00 00",
+    "email_placeholder": "Email",
     "contact_method_placeholder": "Как с вами связаться",
     "contact_method": {
       "telegram": "Telegram",
@@ -646,6 +647,8 @@
       "surname_required": "Фамилия обязательна для заполнения",
       "phone_required": "Номер телефона обязателен для заполнения",
       "contact_method_required": "Выберите способ связи",
+      "email_required": "Email обязателен для заполнения",
+      "email_invalid": "Введите корректный email",
       "privacy_required": "Необходимо согласие с политикой конфиденциальности"
     },
     "presentation": {

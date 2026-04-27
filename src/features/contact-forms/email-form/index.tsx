@@ -30,7 +30,8 @@ export const EmailForm = () => {
     phone: yup.string().required(t("forms.validation.phone_required")),
     message: yup
       .string()
-      .required(t("forms.validation.contact_method_required")),
+      .required(t("forms.validation.email_required"))
+      .email(t("forms.validation.email_invalid")),
     check: yup.boolean().oneOf([true], t("forms.validation.privacy_required")),
     newsletterConsent: yup.boolean(),
   })
@@ -44,7 +45,7 @@ export const EmailForm = () => {
     mode: "onSubmit",
     resolver: yupResolver(emailFormSchema),
     defaultValues: {
-      message: t("forms.contact_method.email"),
+      message: "",
     },
   })
 
@@ -52,7 +53,7 @@ export const EmailForm = () => {
     reset({
       name: "",
       surname: "",
-      message: t("forms.contact_method.email"),
+      message: "",
       phone: "",
       check: false,
       newsletterConsent: false,
@@ -147,12 +148,16 @@ export const EmailForm = () => {
         <Controller
           name={"message"}
           control={control}
-          render={({ fieldState }) => (
+          render={({ field, fieldState }) => (
             <Input.Wrapper
               className={s.inputWrapper}
               error={fieldState.error?.message}
             >
-              <Input readOnly placeholder={t("forms.contact_method.email")} />
+              <Input
+                type="email"
+                placeholder={t("forms.email_placeholder")}
+                {...field}
+              />
             </Input.Wrapper>
           )}
         />

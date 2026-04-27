@@ -630,6 +630,7 @@
     "name_placeholder": "Name",
     "surname_placeholder": "Surname",
     "phone_placeholder": "+7 (000) 000 00 00",
+    "email_placeholder": "Email",
     "contact_method_placeholder": "How to contact you",
     "contact_method": {
       "telegram": "Telegram",
@@ -646,6 +647,8 @@
       "surname_required": "Surname is required",
       "phone_required": "Phone number is required",
       "contact_method_required": "Please select a contact method",
+      "email_required": "Email is required",
+      "email_invalid": "Enter a valid email",
       "privacy_required": "You must agree to the privacy policy"
     },
     "presentation": {

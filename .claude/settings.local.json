@@ -8,7 +8,9 @@
       "Bash(npm run build:*)",
       "Bash(npm show:*)",
       "Bash(node -e:*)",
-      "Bash(npm uninstall:*)"
+      "Bash(npm uninstall:*)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d.get\\('forms',{}\\), ensure_ascii=False, indent=2\\)\\)\")",
+      "Bash(npx tsc *)"
     ],
     "deny": [],
     "ask": []

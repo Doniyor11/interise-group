@@ -1,3 +1,5 @@
+import * as yup from "yup"
+import { yupResolver } from "@hookform/resolvers/yup"
 import { Box, Button, Checkbox, Flex, Input, Modal, Text } from "@mantine/core"
 import Trans from "next-translate/Trans"
 import useTranslation from "next-translate/useTranslation"
@@ -17,15 +19,28 @@ export const RequestPresentation = () => {
   const { t, lang } = useTranslation("common")
   const { requestPresentation, setRequestPresentation } = useContactFormsStore()
 
+  const presentationSchema = yup.object().shape({
+    name: yup.string().required(t("forms.validation.name_required")),
+    surname: yup.string(),
+    phone: yup.string().required(t("forms.validation.phone_required")),
+    message: yup
+      .string()
+      .required(t("forms.validation.email_required"))
+      .email(t("forms.validation.email_invalid")),
+    check: yup.boolean().oneOf([true], t("forms.validation.privacy_required")),
+    newsletterConsent: yup.boolean(),
+  })
+
   const {
     reset,
     control,
     handleSubmit,
     formState: { isDirty, isValid },
-  } = useForm<IEmailFormTypes>({
+  } = useForm<any>({
     mode: "onChange",
+    resolver: yupResolver(presentationSchema),
     defaultValues: {
-      message: t("forms.contact_method.email"),
+      message: "",
     },
   })
 
@@ -33,7 +48,7 @@ export const RequestPresentation = () => {
     reset({
       name: "",
       surname: "",
-      message: t("forms.contact_method.email"),
+      message: "",
       phone: "",
       check: false,
     })
@@ -155,15 +170,15 @@ export const RequestPresentation = () => {
               <Controller
                 name={"message"}
                 control={control}
-                rules={{ required: true }}
-                render={({ fieldState }) => (
+                render={({ field, fieldState }) => (
                   <Input.Wrapper
                     className={s.inputWrapper}
                     error={fieldState.error?.message}
                   >
                     <Input
-                      readOnly
-                      placeholder={t("forms.contact_method.email")}
+                      type="email"
+                      placeholder={t("forms.email_placeholder")}
+                      {...field}
                     />
                   </Input.Wrapper>
                 )}

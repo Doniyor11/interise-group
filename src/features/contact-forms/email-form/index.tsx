@@ -1,6 +1,6 @@
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup"
-import { Button, Checkbox, Flex, Input, Select } from "@mantine/core"
+import { Button, Checkbox, Flex, Input } from "@mantine/core"
 import Trans from "next-translate/Trans"
 import useTranslation from "next-translate/useTranslation"
 import { useRouter } from "next/router"
@@ -147,19 +147,12 @@ export const EmailForm = () => {
         <Controller
           name={"message"}
           control={control}
-          render={({ field, fieldState }) => (
+          render={({ fieldState }) => (
             <Input.Wrapper
               className={s.inputWrapper}
               error={fieldState.error?.message}
             >
-              <Select
-                readOnly
-                defaultValue={t("forms.contact_method.email")}
-                placeholder={t("forms.contact_method_placeholder")}
-                data={[t("forms.contact_method.email")]}
-                rightSection={true}
-                {...field}
-              />
+              <Input readOnly placeholder={t("forms.contact_method.email")} />
             </Input.Wrapper>
           )}
         />

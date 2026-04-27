@@ -1,13 +1,4 @@
-import {
-  Box,
-  Button,
-  Checkbox,
-  Flex,
-  Input,
-  Modal,
-  Select,
-  Text,
-} from "@mantine/core"
+import { Box, Button, Checkbox, Flex, Input, Modal, Text } from "@mantine/core"
 import Trans from "next-translate/Trans"
 import useTranslation from "next-translate/useTranslation"
 import React from "react"
@@ -165,16 +156,14 @@ export const RequestPresentation = () => {
                 name={"message"}
                 control={control}
                 rules={{ required: true }}
-                render={({ field }) => (
-                  <Input.Wrapper className={s.inputWrapper}>
-                    <Select
-                      required
+                render={({ fieldState }) => (
+                  <Input.Wrapper
+                    className={s.inputWrapper}
+                    error={fieldState.error?.message}
+                  >
+                    <Input
                       readOnly
-                      defaultValue={t("forms.contact_method.email")}
-                      placeholder={t("forms.contact_method_placeholder")}
-                      data={[t("forms.contact_method.email")]}
-                      rightSection={true}
-                      {...field}
+                      placeholder={t("forms.contact_method.email")}
                     />
                   </Input.Wrapper>
                 )}

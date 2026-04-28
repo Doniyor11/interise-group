@@ -184,17 +184,6 @@ export const Footer = () => {
                 >
                   {t("footer.legal.mailing_consent")}
                 </Anchor>
-                <Anchor
-                  target={"_blank"}
-                  href={
-                    lang === "en"
-                      ? "/Cookies_Processing.pdf"
-                      : "/Обработка_файлов_Cookies.pdf"
-                  }
-                  className={cx(s.infoText, s.menu)}
-                >
-                  {t("footer.legal.cookies_processing")}
-                </Anchor>
               </Flex>
             </Flex>
             <span className={s.line} />

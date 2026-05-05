@@ -1,6 +1,7 @@
 import { Anchor, Box, Flex, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
+import dayjs from "dayjs"
 import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
 import Link from "next/link"
@@ -227,8 +228,9 @@ export const Footer = () => {
             mt={matches ? 20 : 60}
           >
             {lang === "en"
-              ? "«InteriseGroup» Limited Liability Company."
-              : "Общество с ограниченной ответственностью «ИнтерайзГрупп»."}
+              ? "© «InteriseGroup» Limited Liability Company · "
+              : "© Общество с ограниченной ответственностью «ИнтерайзГрупп» · "}
+            {dayjs(new Date()).format("YYYY")}
           </Text>
         </Flex>
       </div>

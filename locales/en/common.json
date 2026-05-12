@@ -639,7 +639,7 @@
       "phone": "Phone",
       "email": "Email"
     },
-    "privacy_agreement": "I have read and agree to <link>the data processing terms</link>",
+    "privacy_agreement": "I have read and agree to <link1>the data processing terms</link1> and <link2>user agreement</link2>",
     "newsletter_consent": "I give <link>consent</link> to receive promotional and informational newsletters",
     "submit_button": "Submit",
     "validation": {

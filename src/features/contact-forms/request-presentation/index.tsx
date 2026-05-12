@@ -203,12 +203,23 @@ export const RequestPresentation = () => {
                       <Trans
                         i18nKey="common:forms.privacy_agreement"
                         components={{
-                          link: (
+                          link1: (
                             <a
                               href={
                                 lang === "en"
                                   ? "/Privacy_Policy.pdf"
                                   : "/Политика_конфиденциальности.pdf"
+                              }
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            />
+                          ),
+                          link2: (
+                            <a
+                              href={
+                                lang === "en"
+                                  ? "/User_Agreement.pdf"
+                                  : "/Пользовательское_соглашения.pdf"
                               }
                               target="_blank"
                               rel="noopener noreferrer"

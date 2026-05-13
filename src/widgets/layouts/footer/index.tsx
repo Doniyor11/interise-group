@@ -167,7 +167,7 @@ export const Footer = () => {
                   href={
                     lang === "en"
                       ? "/User_Agreement.pdf"
-                      : "/Пользовательское_соглашения.pdf"
+                      : "/Пользовательское_соглашение.pdf"
                   }
                   className={cx(s.infoText, s.menu)}
                 >

@@ -193,7 +193,7 @@ export const EmailForm = () => {
                         href={
                           lang === "en"
                             ? "/User_Agreement.pdf"
-                            : "/Пользовательское_соглашения.pdf"
+                            : "/Пользовательское_соглашение.pdf"
                         }
                         target="_blank"
                         rel="noopener noreferrer"

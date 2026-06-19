@@ -43,3 +43,4 @@ package-lock.json
 yarn-lock.json
 pnpm-lock.yaml
 yarn.lock
+.env

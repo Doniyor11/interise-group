@@ -26,11 +26,11 @@
     width: max-content;
 
     &.leftToRight {
-      animation: scrollLeft 15s linear infinite;
+      animation: scrollLeft 35s linear infinite;
     }
 
     &.rightToLeft {
-      animation: scrollRight 15s linear infinite;
+      animation: scrollRight 35s linear infinite;
     }
 
     .image {
@@ -62,11 +62,11 @@
     .boxImages {
       gap: 12px;
       &.leftToRight {
-        animation: scrollLeft 8s linear infinite;
+        animation: scrollLeft 20s linear infinite;
       }
 
       &.rightToLeft {
-        animation: scrollRight 8s linear infinite;
+        animation: scrollRight 20s linear infinite;
       }
       .image {
         height: 200px;

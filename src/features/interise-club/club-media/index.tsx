@@ -3,14 +3,14 @@ import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
 import useTranslation from "next-translate/useTranslation"
 import Image from "next/image"
-import React, { useMemo, useState } from "react"
+import React, { useState } from "react"
 
 import { useGetMediaImagesQuery } from "@/entities/club-images/query.ts"
 import { IMediaImages } from "@/entities/club-images/types.ts"
 
 import s from "./styles.module.scss"
 
-const getRandomWidth = () => Math.floor(Math.random() * (400 - 200 + 1)) + 200
+// const getRandomWidth = () => Math.floor(Math.random() * (400 - 200 + 1)) + 200
 
 export const ClubMedia = () => {
   const { t } = useTranslation("common")
@@ -62,10 +62,7 @@ export const BoxOne = ({
 
   const shouldAnimate = (data?.length ?? 0) >= (matches ? 2 : 5)
 
-  // Memoize random widths so they don't change on re-render
-  const imageWidths = useMemo(() => {
-    return data?.map(() => getRandomWidth()) ?? []
-  }, [data])
+  const images = data ?? []
 
   return (
     <div
@@ -73,14 +70,14 @@ export const BoxOne = ({
         [s.leftToRight]: shouldAnimate,
       })}
     >
-      {data?.map((item: IMediaImages, i: number) => {
+      {[...images, ...images].map((item: IMediaImages, i: number) => {
         return (
           <Image
             key={i}
             src={item?.url}
             alt={item?.name}
             className={s.image}
-            width={imageWidths[i]}
+            width={400}
             height={293}
             onClick={() => onImageClick(item?.url)}
             style={{ cursor: "pointer" }}
@@ -102,10 +99,7 @@ export const BoxTwo = ({
 
   const shouldAnimate = (data?.length ?? 0) >= (matches ? 2 : 5)
 
-  // Memoize random widths so they don't change on re-render
-  const imageWidths = useMemo(() => {
-    return data?.map(() => getRandomWidth()) ?? []
-  }, [data])
+  const images = data ?? []
 
   return (
     <Box
@@ -114,14 +108,14 @@ export const BoxTwo = ({
         [s.rightToLeft]: shouldAnimate,
       })}
     >
-      {data?.map((item: IMediaImages, i: number) => {
+      {[...images, ...images].map((item: IMediaImages, i: number) => {
         return (
           <Image
             key={i}
             src={item?.url}
             alt={item?.name}
             className={s.image}
-            width={imageWidths[i]}
+            width={400}
             height={293}
             onClick={() => onImageClick(item?.url)}
             style={{ cursor: "pointer" }}
